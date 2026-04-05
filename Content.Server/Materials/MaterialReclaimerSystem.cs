@@ -170,6 +170,10 @@ public sealed partial class MaterialReclaimerSystem : SharedMaterialReclaimerSys
             if (component.ReclaimSolutions)
                 SpawnChemicalsFromComposition(uid, item, completion, true, component, xform);
         }
+        // Carpmosia-start - Salvage Tickets
+        var ev = new ReclaimFinishedEvent(item);
+        RaiseLocalEvent(uid, ref ev);
+        // Carpmosia-end - Salvage Tickets
 
         QueueDel(item);
     }

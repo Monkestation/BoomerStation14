@@ -614,6 +614,7 @@
       staticPacks:
       - OreSmelting
       - RGlassSmelting
+    - type: TicketPrinter # Carpmosia-edit - Salvage Tickets
 
 - type: entity
   parent: OreProcessor
