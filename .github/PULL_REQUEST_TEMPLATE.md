@@ -18,9 +18,9 @@ Small fixes/refactors are exempt. Media may be used in SS14 progress reports wit
 - [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 - [ ] I have added media to this PR or it does not require an in-game showcase.
 - [ ] If I am porting something, I have done my best to respect the appropriate licenses associated with the presented changes.
+  - [ ] All art assets are a commercially appropriate license (CC-BY-SA-3.0, CC-BY-SA-4.0, CC0-1.0, etc)
 <!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
 
-<!-- Our repository uses REUSE headers to easily determine who contributed to what, and to also easily segregate files that have different licenses. If you wish to have your PR submitted under a different license, please list it here. Acceptable entries are: MIT, AGPL-3.0-or-later. -->
 ## License
 MIT
 

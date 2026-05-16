@@ -1,11 +1,11 @@
-﻿name: "Labels: PR"
+name: "Labels: PR"
 
 on:
 - pull_request_target
 
 jobs:
   labeler:
-    if: github.actor != 'PJBot'
+    if: github.actor != 'boomerstation'
     permissions:
       contents: read
       pull-requests: write

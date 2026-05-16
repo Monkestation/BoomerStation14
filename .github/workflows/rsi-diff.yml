@@ -39,7 +39,7 @@ jobs:
         id: fc
         with:
           issue-number: ${{ github.event.number }}
-          comment-author: 'github-actions[bot]'
+          comment-author: 'boomerstation[bot]'
           body-includes: RSI Diff Bot
 
       - name: Create comment if it doesn't exist
