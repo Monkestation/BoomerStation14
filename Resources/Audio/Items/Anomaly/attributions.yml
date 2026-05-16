@@ -13,7 +13,7 @@
   # source: https://pixabay.com/sound-effects/boom-geomorphism-cinematic-trailer-sound-effects-123876/
 
 - files: ["tech_crit.ogg"]
-  license: "CC0"
+  license: "CC0-1.0"
   copyright: "Mashup by Gontar"
   source: https://freesound.org/people/wtermini/sounds/546450/
   # Additional sources:
@@ -35,7 +35,7 @@
   # source: https://pixabay.com/sound-effects/fx-collection-of-flame-sword-swoosh-sound-design-elements-275902/ (Pixabay license)
 
 - files: ["grav_crit.ogg"]
-  license: "CC0"
+  license: "CC0-1.0"
   copyright: "Mashup by GonTar"
   source: "https://freesound.org/people/Joao_Janz/sounds/478472/"
   # additional sources:
@@ -83,7 +83,7 @@
   # source: https://pixabay.com/sound-effects/atmosphere-deep-amp-booming-256197/
 
 - files: ["fluid_crit.ogg"]
-  license: "CC0"
+  license: "CC0-1.0"
   copyright: "Mashup by GonTar"
   source: https://freesound.org/people/unfa/sounds/504930/
   # additional sources:
