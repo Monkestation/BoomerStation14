@@ -238,9 +238,6 @@
       amount: 2
     - id: PillCanisterPotassiumIodide
       prob: 0.75
-      amount: !type:ConstantNumberSelector
-        value: 2
-    - id: RadiationBlockingProjector # Far Horizons
 
 - type: entity
   parent: LockerEvacRepair
