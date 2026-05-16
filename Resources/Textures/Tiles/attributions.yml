@@ -76,7 +76,7 @@
 - files: ["deprecated.png"]
   license: "CC0"
   copyright: "created by @skarletto on github"
-  source: "original"
+  source: "https://github.com/Monkestation/forky-station"
 
 - files: ["arcadeblue2.png", "boxing.png", "carpetclown.png", "carpetoffice.png", "gym.png", "metaldiamond.png"]
   license: "CC-BY-NC-SA-3.0"
