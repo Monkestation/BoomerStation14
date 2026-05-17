@@ -1,6 +1,6 @@
 <p align="center"> <img alt="Boomerstation Logo" width="880" height="200" src="https://github.com/Monkestation/forky-station/blob/master/Resources/Textures/Logo/logo.png" /></p>
 
-This Boomerstation, a fork of the Funky Station. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server.
+This is Boomerstation, a fork of the Funky Station. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server.
 
 If you want to host or create content for SS14, or for Funky Station, go to the [Space Station 14 repository](https://github.com/space-wizards/space-station-14), or the [Funky Station repository](https://github.com/funky-station/forky-station).
 
