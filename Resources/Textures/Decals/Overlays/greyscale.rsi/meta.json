@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-NC-SA-3.0",
-  "copyright": "mirrorcult, texturized by aexxie",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "brick_ textures copied from bricktile.rsi, quarter/half/full tiles are edited from Tiles/white.png, mono is edited from Tiles/white_mono.png, diagonal/diagonal_checker a and b are edited from Tiles/white_diagonal.png, herringbone is edited from Tiles/white_herringbone.png, minitile variants from Tiles/white_mini.png, diagonal minitiles from Tiles/white_diagonal_mini.png, offsets from Tiles/white_offset.png, pavement from white_pavement.png, pavement_vertical from white_pavement_vertical.png",
   "size": {
     "x": 32,
     "y": 32
