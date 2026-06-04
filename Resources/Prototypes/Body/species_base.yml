@@ -160,6 +160,8 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: MSPissEmote # Monkestation edit - allow pissing
+  - type: MSFartEmote # Monkestation edit - allow farting
 
 - type: entity
   abstract: true

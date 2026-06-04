@@ -129,6 +129,7 @@
       Stomach: OrganMothStomach
       Liver: OrganMothLiver
       Kidneys: OrganMothKidneys
+      Bladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
   - type: HumanoidProfile
     species: Moth
 

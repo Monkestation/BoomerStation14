@@ -63,6 +63,7 @@
       Stomach: OrganArachnidStomach
       Liver: OrganArachnidLiver
       Kidneys: OrganArachnidKidneys
+      Bladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
   - type: HumanoidProfile
     species: Arachnid
 

@@ -1,0 +1,25 @@
+- type: emote
+  id: MSPiss
+  name: ms-chat-emote-name-piss
+  category: General
+  icon: _Monkestation/Interface/Emotes/piss.png
+  whitelist:
+    components:
+    - MSPissEmote
+  chatTriggers:
+  - piss
+  - pisses
+  - pissing
+
+- type: emote
+  id: MSFart
+  name: ms-chat-emote-name-fart
+  category: General
+  icon: _Monkestation/Interface/Emotes/fart.png
+  whitelist:
+    components:
+    - MSFartEmote
+  chatTriggers:
+  - fart
+  - farts
+  - farting

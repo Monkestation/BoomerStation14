@@ -32,6 +32,8 @@
       Stomach: OrganDwarfStomach
       Liver: OrganDwarfLiver
       Kidneys: OrganHumanKidneys
+      Bladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
+
   - type: HumanoidProfile
     species: Dwarf
   - type: ScaleVisuals

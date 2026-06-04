@@ -69,6 +69,7 @@
       FootRight: OrganSlimePersonFootRight
       Brain: OrganSlimePersonCore
       Lungs: OrganSlimePersonLungs
+      Bladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
   - type: HumanoidProfile
     species: SlimePerson
 

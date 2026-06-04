@@ -60,7 +60,7 @@
         mask:
         - MachineMask
         layer:
-        - None
+        - LowImpassable # Monkestation - Toilets collide (required for pissing into toilets)
   - type: PlungerUse
   - type: Appearance
   - type: SecretStash

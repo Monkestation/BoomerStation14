@@ -1,0 +1,8 @@
+- type: reagent
+  id: MSPiss
+  parent: Ammonia
+  name: ms-reagent-name-piss
+  desc: ms-reagent-desc-piss
+  color: "#c0d121"
+  group: Biological
+  evaporationSpeed: 0.1

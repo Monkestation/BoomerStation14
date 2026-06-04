@@ -107,6 +107,7 @@
       Stomach: OrganReptilianStomach
       Liver: OrganReptilianLiver
       Kidneys: OrganReptilianKidneys
+      Bladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
   - type: HumanoidProfile
     species: Reptilian
 
