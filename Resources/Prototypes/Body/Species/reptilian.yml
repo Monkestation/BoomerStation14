@@ -108,6 +108,7 @@
       Liver: OrganReptilianLiver
       Kidneys: OrganReptilianKidneys
       Bladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
+      Butt: MSOrganHumanButt # Monkestation Edit - Add butt for farting
   - type: HumanoidProfile
     species: Reptilian
 
