@@ -149,6 +149,8 @@
       Stomach: OrganVoxStomach
       Liver: OrganVoxLiver
       Kidneys: OrganVoxKidneys
+      MSBladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
+      MSButt: MSOrganHumanButt # Monkestation Edit - Add butt for farting
   - type: HumanoidProfile
     species: Vox
 

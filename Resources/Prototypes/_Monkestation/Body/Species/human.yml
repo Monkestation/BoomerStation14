@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ MSOrganBaseBladder, OrganHumanInternal ]
+  id: MSOrganHumanBladder
+  components:
+  - type: Sprite
+    sprite: _Monkestation/Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: [ MSOrganBaseButt, OrganHumanInternal ] # Internal so I don't have to deal wit it being external
+  id: MSOrganHumanButt
+  components:
+  - type: Sprite
+    sprite: _Monkestation/Mobs/Species/Human/butt.rsi
+  - type: Clothing
+    sprite: _Monkestation/Mobs/Species/Human/butt.rsi

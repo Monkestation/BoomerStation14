@@ -61,6 +61,8 @@
       Eyes: OrganDionaEyes
       Lungs: OrganDionaLungsNymphing
       Stomach: OrganDionaStomachNymphing
+      MSBladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
+      MSButt: MSOrganHumanButt # Monkestation Edit - Add butt for farting
   - type: HumanoidProfile
     species: Diona
 

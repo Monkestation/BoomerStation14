@@ -32,6 +32,8 @@
       Stomach: OrganHumanStomach
       Liver: OrganHumanLiver
       Kidneys: OrganHumanKidneys
+      MSBladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
+      MSButt: MSOrganHumanButt # Monkestation Edit - Add butt for farting
   - type: HumanoidProfile
     species: Gingerbread
 

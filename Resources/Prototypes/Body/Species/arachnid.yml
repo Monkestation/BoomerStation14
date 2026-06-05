@@ -63,6 +63,8 @@
       Stomach: OrganArachnidStomach
       Liver: OrganArachnidLiver
       Kidneys: OrganArachnidKidneys
+      MSBladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
+      MSButt: MSOrganHumanButt # Monkestation Edit - Add butt for farting
   - type: HumanoidProfile
     species: Arachnid
 

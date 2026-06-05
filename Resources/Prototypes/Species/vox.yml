@@ -1,7 +1,7 @@
 - type: species
   id: Vox
   name: species-name-vox
-  roundStart: false
+  roundStart: false # Monkestation Edit - Disable vox
   prototype: MobVox
   dollPrototype: AppearanceVox
   skinColoration: VoxFeathers

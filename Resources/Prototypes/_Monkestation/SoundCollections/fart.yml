@@ -1,0 +1,7 @@
+- type: soundCollection
+  id: MSFartBasic
+  files:
+  - /Audio/_Monkestation/Misc/Farts/fart1.ogg
+  - /Audio/_Monkestation/Misc/Farts/fart2.ogg
+  - /Audio/_Monkestation/Misc/Farts/fart3.ogg
+  - /Audio/_Monkestation/Misc/Farts/fart4.ogg

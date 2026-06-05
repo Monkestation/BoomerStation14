@@ -1,0 +1,49 @@
+- type: entity
+  parent: OrganBase
+  id: MSOrganBaseBladder
+  name: bladder
+  abstract: true
+  components:
+  - type: GibbableOrgan
+  - type: Organ
+    category: MSBladder
+  - type: MSBladder
+    pissReagents:
+      MSPiss: 1
+  - type: SolutionContainerManager
+    solutions:
+      bladder:
+        maxVol: 50
+  - type: Sprite
+    sprite:
+    layers:
+    - state: bladder
+  - type: Item
+    heldPrefix: bladder
+
+- type: entity
+  parent: OrganBase
+  id: MSOrganBaseButt
+  name: butt
+  abstract: true
+  components:
+  - type: Clothing
+    slots:
+    - HEAD
+  - type: GibbableOrgan
+  - type: Organ
+    category: MSButt
+  - type: MSButt
+    fartGas:
+      volume: 1500
+      moles:
+        Ammonia: 0.25
+      temperature: 310.15
+    fartSound:
+      collection: MSFartBasic
+  - type: Sprite
+    sprite:
+    layers:
+    - state: icon
+  - type: Item
+    heldPrefix: butt

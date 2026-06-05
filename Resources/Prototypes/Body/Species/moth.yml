@@ -129,6 +129,8 @@
       Stomach: OrganMothStomach
       Liver: OrganMothLiver
       Kidneys: OrganMothKidneys
+      MSBladder: MSOrganHumanBladder # Monkestation Edit - Add bladder for pissing
+      MSButt: MSOrganHumanButt # Monkestation Edit - Add butt for farting
   - type: HumanoidProfile
     species: Moth
 
