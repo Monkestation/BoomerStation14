@@ -38,8 +38,7 @@ public sealed partial class PlexoraManager : IPostInjectInit
     {
         if (!IsPlexoraConfigured())
         {
-            return "PLX-VERIFY-this_is_a_token";
-            // return null; TODO: Re-enable
+            return null;
         }
 
         var linkCodeRequest = new HttpRequestMessage(HttpMethod.Get, _configManager.GetCVar(CCVarsMonke.PlexoraToken) + "/link/" + session.UserId);
