@@ -55,7 +55,7 @@ public sealed partial class RoleTimeExemptionPanel : DefaultWindow
     }
 
     /// <summary>
-    /// Creates a "Role group" which stores information and logic for one "group" of roll bans.
+    /// Creates a "Role group" which stores information and logic for one "group" of roll exemptions.
     /// For example, all antags are one group, logi is a group, medical is a group, etc...
     /// </summary>
     private void CreateRoleGroup<T>(string groupName, Color color, IEnumerable<T> roles) where T : class, IPrototype

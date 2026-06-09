@@ -39,7 +39,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
     [Dependency] private readonly SharedRoleSystem _roles = default!;
     [Dependency] private readonly PlayTimeTrackingManager _tracking = default!;
 
-    [Dependency] private readonly RoleTimeExemptionManager _exemptionManager = default!;
+    [Dependency] private readonly RoleTimeExemptionManager _exemptionManager = default!; // Monkestation edit
 
     public override void Initialize()
     {
