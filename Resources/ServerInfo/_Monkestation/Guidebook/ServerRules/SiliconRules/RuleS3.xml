@@ -1,0 +1,9 @@
+<Document>
+  # Crew or Not Crew!
+  Crew is defined simply as someone who is wearing a crewmember ID card. The silicon's hud helpfully indicates this by
+  surrounding the job icon in green if they are on the default lawset and the person is crew, yellow if there has been a
+  law change (and thus 'crew' may be redefined or no longer relevant) and the person is crew, and no outline for someone
+  who is crew. This does mean that the captain taking off their ID is no longer crew, and can be treated as such. (This
+  is not an excuse to murder the captain the moment they take off their ID, your interactions with non-crew are still
+  governed by the server rules. However, the Captain's orders can be ignored)
+</Document>
