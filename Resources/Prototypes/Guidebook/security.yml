@@ -6,7 +6,7 @@
   - Forensics
   - Defusal
   - CriminalRecords
-#  - MSSpaceLaw # Monkestation edit - Use our space law - When its ready :(
+  - SpaceLaw # Monkestation edit - Use our space law - When its ready :(
 
 - type: guideEntry
   id: Forensics
@@ -24,10 +24,10 @@
   text: "/ServerInfo/Guidebook/Security/CriminalRecords.xml"
 
 # Monkestation edit start - disable default space law
-#- type: guideEntry
-#  id: SpaceLaw
-#  name: guide-entry-rules-space-law
-#  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
+- type: guideEntry
+  id: SpaceLaw
+  name: guide-entry-rules-space-law
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
 #  children:
 #  - SpaceLawCrimeList
 #

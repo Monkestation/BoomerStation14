@@ -361,11 +361,9 @@
       color: "#87011c"
     - state: icon_law
       color: "#f7d61a"
-# Monkestation edit space law isn't in yet :(
-#  - type: GuideHelp
-#    guides:
-#    - SpaceLaw
-# Monkestation edit end
+  - type: GuideHelp
+    guides:
+    - SpaceLaw
 
 - type: entity
   parent: BookBase
