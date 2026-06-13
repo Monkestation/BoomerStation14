@@ -66,16 +66,6 @@
   text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC10DeepSpaceClause.xml"
 
 - type: guideEntry
-  id: MSSiliconPolicy
-  ruleEntry: true
-  name: ms-guide-entry-rules-silicon
-  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/SiliconRules/RuleS0.xml"
-  children:
-  - MSRuleS1
-  - MSRuleS2
-  - MSRuleS3
-
-- type: guideEntry
   id: MSRuleS1
   ruleEntry: true
   name: ms-guide-entry-rules-s1
