@@ -1,0 +1,14 @@
+ms-guide-entry-rules-c1 = C1
+ms-guide-entry-rules-c2 = C2
+ms-guide-entry-rules-c3 = C3
+ms-guide-entry-rules-c4 = C4
+ms-guide-entry-rules-c5 = C5
+ms-guide-entry-rules-c6 = C6
+ms-guide-entry-rules-c7 = C7
+ms-guide-entry-rules-c8 = C8
+ms-guide-entry-rules-c9 = C9
+ms-guide-entry-rules-c10 = C10
+ms-guide-entry-rules-silicon = Silicon Policy
+ms-guide-entry-rules-s1 = S1
+ms-guide-entry-rules-s2 = S2
+ms-guide-entry-rules-s3 = S3

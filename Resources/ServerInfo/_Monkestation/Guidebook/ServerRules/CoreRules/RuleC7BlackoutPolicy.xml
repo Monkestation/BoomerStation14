@@ -1,0 +1,79 @@
+﻿<Document>
+  # Blackout Policy
+
+  Called the New Life Rule on most servers. With respect to roleplay, the Blackout Policy dictates what your character
+  will and will not remember in post-death scenarios. These rules are in place to help attempt to make the playing field
+  as fair as possible for all players.
+
+  With respect to death and revival, there are some expectations on how much round time you can remember. The method of
+  revival will help determine what you will remember. We'll start with the most restrictive memory requirements up to
+  the least restrictive.
+
+  To ensure cohesion between mechanics and in-character RP, as well as to account for antagonists who have revivals
+  built into their kits, antags do not have a limit to their post-death memory.
+
+
+  <Table Columns="2">
+    <ColorBox>
+      <Box>
+        Method
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box>
+        Memory Limit
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c281d">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Cloning
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c281d">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Your memory is completely wiped, as if it were roundstart.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c2428">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Normal revival/defibrilation
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1c2428">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Anything up to small details of your death, but not identity of the murderer
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#281c26">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Healed from critical condition
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#281c26">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        You may remember anything that happened to you if you have not died.
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1e1c28">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Brain on MMI
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#1e1c28">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Treated as: Normal revival
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#281c1c">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        Antagonist Revivals
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#281c1c">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="3">
+        No limit.
+      </Box>
+    </ColorBox>
+  </Table>
+
+</Document>

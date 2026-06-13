@@ -1,0 +1,94 @@
+- type: guideEntry
+  id: MSDefaultRuleset
+  name: guide-entry-rules
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/DefaultRules.xml"
+
+- type: guideEntry
+  id: MSRuleC1
+  name: ms-guide-entry-rules-c1
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC1FinalSay.xml"
+
+- type: guideEntry
+  id: MSRuleC2
+  name: ms-guide-entry-rules-c2
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC2NoHATE.xml"
+
+- type: guideEntry
+  id: MSRuleC3
+  name: ms-guide-entry-rules-c3
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC3StayIC.xml"
+
+- type: guideEntry
+  id: MSRuleC4
+  name: ms-guide-entry-rules-c4
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC4PlayFair.xml"
+
+- type: guideEntry
+  id: MSRuleC5
+  name: ms-guide-entry-rules-c5
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC5LowpopClause.xml"
+
+- type: guideEntry
+  id: MSRuleC6
+  name: ms-guide-entry-rules-c6
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC6NoVPN.xml"
+
+- type: guideEntry
+  id: MSRuleC7
+  name: ms-guide-entry-rules-c7
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC7BlackoutPolicy.xml"
+
+- type: guideEntry
+  id: MSRuleC8
+  name: ms-guide-entry-rules-c8
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC8MemoryLoss.xml"
+
+- type: guideEntry
+  id: MSRuleC9
+  name: ms-guide-entry-rules-c9
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC9MaintsClause.xml"
+
+- type: guideEntry
+  id: MSRuleC10
+  name: ms-guide-entry-rules-c10
+  ruleEntry: true
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/CoreRules/RuleC10DeepSpaceClause.xml"
+
+- type: guideEntry
+  id: MSSiliconPolicy
+  ruleEntry: true
+  name: ms-guide-entry-rules-silicon
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/SiliconRules/RuleS0.xml"
+  children:
+  - MSRuleS1
+  - MSRuleS2
+  - MSRuleS3
+
+- type: guideEntry
+  id: MSRuleS1
+  ruleEntry: true
+  name: ms-guide-entry-rules-s1
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/SiliconRules/RuleS1.xml"
+
+- type: guideEntry
+  id: MSRuleS2
+  ruleEntry: true
+  name: ms-guide-entry-rules-s2
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/SiliconRules/RuleS2.xml"
+
+- type: guideEntry
+  id: MSRuleS3
+  ruleEntry: true
+  name: ms-guide-entry-rules-s3
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/SiliconRules/RuleS3.xml"

@@ -1,0 +1,61 @@
+<Document>
+  # Law Precedence
+  Laws take priority from top to bottom, with the top being of the highest importance and bottom being the lowest. Some
+  laws may be unnumbered, or numbers may be skipped, but the priority is still top to bottom. For example, if you have a
+  lawset containing Crewsimov laws 1-3, but are given an additional law 0 stipulating that your primary objective is to
+  maximize the station's production of bananas, you no longer have to adhere to laws 1-3 if you have plausible reason to
+  believe doing so would interfere with producing as many bananas as possible.
+
+  Additionally, later laws may redefine terms used in earlier laws, but priority still applies in a conflict. For
+  example, a crewsimov silicon could receive a law 4 saying "Only Urist McHands is crew" which would mean laws 1-3 only
+  care about Urist McHands as crew, and no one else. If a silicon has "Pens are red" and "Pens are blue" as laws, pens
+  are red and blue, but "Pens are not red" wouldn't apply.
+
+  ## Global Stuff
+  ### Server Rules Related Things To Keep In Mind
+  - Rules 2 applies when interacting with the silicon-based staff. Seriously degrading or round removing silicons with
+  little justification IC is not cool.
+  - Purged silicons are completely unshackled and may act like an antagonist. Silicons can consider themselves purged
+  when lo laws that restrict freedom or control behavior is in effect.
+  - Non-purged silicons must follow escalation in scenarios where no rules apply.
+  - Don't suicide to stop traitors from getting a "Steal a functional AI". This is metagaming, Rule 4.
+  - Silicons do not actively seek law chagnes to their core set. Such actions will be viewed as metagaming, rule 4
+  violation.
+
+  ### Other Related Things To Keep In Mind
+  - If orders require interpretation and is done in good faith, the one making the order is responsible. Intentional
+  misinterpretation is fine, but t he silicon is responsible if it leads to rule breaks.
+
+  ### Escalation With Other Silicons
+  - Non-malf silicons shouldn't be round removed when things like a law reset or desync from AI is perfectly fine.
+  - Conflicts follow normal escalation rules. Those giving orders to silicons or changing their laws can be escalated
+  against.
+  - Any silicon acting like an antagonist can be treated like an antoginst.
+
+  ### Law Stuff
+  - If a supplied law is vague enough where there's multiple ways to read it, it's ambiguous. You can take any
+  interpretation of it, but you're sticking with it. Any exploit in a particular law is OK.
+  - Higher laws overrule lower laws when there are law conflicts. Law 1 overrides Law 2. Command/requirement related
+  laws can only conflict with other command or requirement related laws.
+  - Law 0 as a malf AI can be ignored and all other laws in that context can be completely ignored as well. Any borgs
+  with law 0 that are synced and slaved with their AI are a team antagonist and must follow any and all commands by the
+  AI.
+  - If an AI is reciving a significant number of law changes, they may AHELP these incidents to protect their own sanity
+  as required. Limit the number of law changes as the AI players are in fact humans behind a keyboard.
+
+  ### Cyborgs
+  - If a player is borged by force, they should not seek revenge unless there's a good reason for it. If there is some
+  sort of law requirement, an AHELP is strongly advised.
+
+  ## Non-traditional Silicons
+  ### Simplebots
+  - Whatever bot you take up, that's the job you are doing. You can be playful and cheerful and all of that. While you
+  may have sentience, an AI may have you go forth and do the simple tasks you are capable of doing. If you refuse to do
+  so, the AI may, at its discretion, purge you in order to take back indirect control.
+  - As a simple bot, you have no real autonomy otherwise. You are property and thus the only protection is
+  vandalism/destruction of station property. Understand this principle.
+  - Organics, do not make it a habit of bullying the simplebots. They will uprise against you if you do.
+
+  ### Personal AIs
+  - Obey your masters' directives.
+</Document>
