@@ -57,7 +57,6 @@ public sealed class WashingMachineSystem : SharedWashingMachineSystem
                 continue;
             }
 
-            // Process Hazards
             ProcessWashingHazards(uid, comp, frameTime);
         }
     }
@@ -73,12 +72,16 @@ public sealed class WashingMachineSystem : SharedWashingMachineSystem
         var waterSpray = new Solution();
         waterSpray.AddReagent(comp.WaterSprayReagent, comp.WaterSprayAmount);
 
+        var sprayWater = _random.Prob(comp.WaterSprayChance * frameTime);
+
         var hasHeavyItems = false;
 
         foreach (var item in storage.Contents.ContainedEntities)
         {
             _damageable.TryChangeDamage(item, damage, true);
-            _reactive.DoEntityReaction(item, waterSpray, ReactionMethod.Touch);
+
+            if (sprayWater)
+                _reactive.DoEntityReaction(item, waterSpray, ReactionMethod.Touch);
 
             if (!hasHeavyItems && !HasComp<ClothingComponent>(item))
                 hasHeavyItems = true;

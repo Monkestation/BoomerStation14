@@ -43,6 +43,9 @@ public sealed partial class WashingMachineComponent : Component
     public float WaterSprayAmount = 150.0f;
 
     [DataField, AutoNetworkedField]
+    public float WaterSprayChance = 1.0f;
+
+    [DataField, AutoNetworkedField]
     public float SelfDamagePerSecond = 6.0f;
 
     [ViewVariables, AutoNetworkedField]
