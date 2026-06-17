@@ -22,7 +22,6 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
         {
             RobustXamlLoader.Load(this);
             SearchBar.OnTextChanged += OnSearchTextChanged;
-            GhostScroll.OnResized += OnWindowResized; // Monkestation addition
 
             GhostnadoButton.OnPressed += _ => OnGhostnadoClicked?.Invoke();
         }
@@ -97,10 +96,10 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
         {
             //foreach (var (name, warpTarget) in _warps) // Monkestation edit old
             // Monkestation edit new start
-            byte total_antagonist_length = 0;
-            byte total_living_length = 0;
-            byte total_dead_length = 0;
-            byte total_ghost_length = 0;
+            int total_antagonist_length = 0;
+            int total_living_length = 0;
+            int total_dead_length = 0;
+            int total_ghost_length = 0;
             int total_misc_length = 0;
             foreach (var (name, warpTarget, type) in _warps)
             // Monkestation edit new end
@@ -196,15 +195,6 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
                     button.Visible = ButtonIsVisible(button);
             }
             // Monkestation addition end
-        }
-
-        private void OnWindowResized()
-        {
-            var x = GhostScroll.Size.X - 10;
-            AntagonistContainer.MaxGridWidth = x;
-            LivingContainer.MaxGridWidth = x;
-            GhostContainer.MaxGridWidth = x;
-            MiscContainer.MaxGridWidth = x;
         }
 
         private void OnSearchTextChanged(LineEdit.LineEditEventArgs args)

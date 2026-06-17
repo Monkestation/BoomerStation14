@@ -373,9 +373,21 @@ namespace Content.Server.Ghost
                         followers = (byte)followComponent.Following.Count;
                     }
                     TryComp<MindContainerComponent>(uid, out var mind);
+                    /* Debug code, meant for testing it without having multiple clients open
+                    string player_name = $"{warp.Location ?? Name(uid)} ";
                     if (mind?.Mind != null)
                     {
-                        var player_name = $"{warp.Location ?? Name(uid)} ({_jobs.MindTryGetJobName(mind.Mind)})";
+                        player_name += $"({_jobs.MindTryGetJobName(mind.Mind)})";
+                    }
+                    else
+                    {
+                        player_name += "(Unknown)";
+                    }
+                    yield return new GhostWarp(entity, player_name, warp.Mob, _mobState.IsDead(uid), warp.Ghost, warp.Antagonist, followers);
+                    */
+                    if (mind?.Mind != null)
+                    {
+                        string player_name = $"{warp.Location ?? Name(uid)} ({_jobs.MindTryGetJobName(mind.Mind)})";
                         yield return new GhostWarp(entity, player_name, warp.Mob, _mobState.IsDead(uid), warp.Ghost, warp.Antagonist, followers);
                     }
                 }
