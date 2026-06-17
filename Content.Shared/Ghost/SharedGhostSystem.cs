@@ -127,7 +127,7 @@ namespace Content.Shared.Ghost
             // Monkestation addition start
             Mob = mob;
             IsDead = isDead;
-            Player_ghost = ghost;
+            IsGhost = ghost;
             Antagonist = antagonist;
             Followers = followers;
             // Monkestation addition end
@@ -154,12 +154,12 @@ namespace Content.Shared.Ghost
         ///     Tags that determine what category this point will go into in the ghost's orbit menu
         ///     Mob: Is this a mob? If false, its a location
         ///     IsDead: Is this mob dead?
-        ///     Player_ghost: Is this a ghost?
+        ///     IsGhost: Is this a ghost?
         ///     Antagonist: Is this a visible antagonist? (dragons, nukies and such.)
         /// </summary>
         public bool Mob { get; }
         public bool IsDead { get; }
-        public bool Player_ghost { get; }
+        public bool IsGhost { get; }
         public bool Antagonist { get; }
 
         /// <summary>

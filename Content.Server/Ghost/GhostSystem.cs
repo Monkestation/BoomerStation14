@@ -16,7 +16,7 @@ using Content.Shared.Examine;
 using Content.Shared.Eye;
 using Content.Shared.FixedPoint;
 using Content.Shared.Follower;
-using Content.Shared.Follower.Components; // Monkestation addition
+using Content.Shared.Follower.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -373,22 +373,11 @@ namespace Content.Server.Ghost
                         followers = (byte)followComponent.Following.Count;
                     }
                     TryComp<MindContainerComponent>(uid, out var mind);
-                    /* Debug code, meant for testing it without having multiple clients open
-                    string player_name = $"{warp.Location ?? Name(uid)} ";
+
                     if (mind?.Mind != null)
                     {
-                        player_name += $"({_jobs.MindTryGetJobName(mind.Mind)})";
-                    }
-                    else
-                    {
-                        player_name += "(Unknown)";
-                    }
-                    yield return new GhostWarp(entity, player_name, warp.Mob, _mobState.IsDead(uid), warp.Ghost, warp.Antagonist, followers);
-                    */
-                    if (mind?.Mind != null)
-                    {
-                        string player_name = $"{warp.Location ?? Name(uid)} ({_jobs.MindTryGetJobName(mind.Mind)})";
-                        yield return new GhostWarp(entity, player_name, warp.Mob, _mobState.IsDead(uid), warp.Ghost, warp.Antagonist, followers);
+                        string playerName = $"{warp.Location ?? Name(uid)} ({_jobs.MindTryGetJobName(mind.Mind)})";
+                        yield return new GhostWarp(entity, playerName, warp.Mob, _mobState.IsDead(uid), warp.Ghost, warp.Antagonist, followers);
                     }
                 }
                 else

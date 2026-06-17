@@ -54,7 +54,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
                 if (warp.Mob)
                 {
                     name = warp.DisplayName + (warp.Followers > 0 ? " f: " + warp.Followers : "");
-                    if (warp.Player_ghost)
+                    if (warp.IsGhost)
                     {
                         type = 4;
                     }
@@ -96,15 +96,15 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
         {
             //foreach (var (name, warpTarget) in _warps) // Monkestation edit old
             // Monkestation edit new start
-            int total_antagonist_length = 0;
-            int total_living_length = 0;
-            int total_dead_length = 0;
-            int total_ghost_length = 0;
-            int total_misc_length = 0;
+            int totalAntagonistLength = 0;
+            int totalLivingLength = 0;
+            int totalDeadLength = 0;
+            int totalGhostLength = 0;
+            int totalMiscLength = 0;
             foreach (var (name, warpTarget, type) in _warps)
             // Monkestation edit new end
             {
-                var currentButtonRef = new Button
+                Button currentButtonRef = new Button
                 {
                     Text = name,
                     TextAlign = Label.AlignMode.Right,
@@ -131,37 +131,37 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls
                 switch (type)
                 {
                     case 0:
-                        total_misc_length++;
+                        totalMiscLength++;
                         MiscContainer.AddChild(currentButtonRef);
                         continue;
                     case 1:
-                        total_living_length++;
+                        totalLivingLength++;
                         LivingContainer.AddChild(currentButtonRef);
                         continue;
                     case 2:
-                        total_antagonist_length++;
+                        totalAntagonistLength++;
                         AntagonistContainer.AddChild(currentButtonRef);
                         continue;
                     case 3:
-                        total_dead_length++;
+                        totalDeadLength++;
                         DeadContainer.AddChild(currentButtonRef);
                         continue;
                     case 4:
-                        total_ghost_length++;
+                        totalGhostLength++;
                         GhostContainer.AddChild(currentButtonRef);
                         continue;
                 }
                 // Monkestation edit new end
             }
             // Monkestation edit new start
-            AntagonistHeading.Title = "Antagonists - (" + total_antagonist_length + ")";
-            LivingHeading.Title = "Alive - (" + total_living_length + ")";
-            DeadHeading.Title = "Dead - (" + total_dead_length + ")";
-            GhostHeading.Title = "Ghosts - (" + total_ghost_length + ")";
-            MiscHeading.Title = "Misc - (" + total_misc_length + ")";
+            AntagonistHeading.Title = "Antagonists - (" + totalAntagonistLength + ")";
+            LivingHeading.Title = "Alive - (" + totalLivingLength + ")";
+            DeadHeading.Title = "Dead - (" + totalDeadLength + ")";
+            GhostHeading.Title = "Ghosts - (" + totalGhostLength + ")";
+            MiscHeading.Title = "Misc - (" + totalMiscLength + ")";
             // Only check these ones for visibility, since the others will preety much always be valid
-            AntagBox.Visible = total_antagonist_length > 0;
-            DeadBox.Visible = total_dead_length > 0;
+            AntagBox.Visible = totalAntagonistLength > 0;
+            DeadBox.Visible = totalDeadLength > 0;
             // Monkestation edit new end
         }
 
