@@ -589,9 +589,9 @@
   name: reinforced wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Monkestation/Structures/Walls/solid.rsi # edited for monke ; wall sprites
   - type: Icon
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Monkestation/Structures/Walls/solid.rsi # edited for monke ; wall sprites
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -981,13 +981,13 @@
   name: solid wall
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Monkestation/Structures/Walls/solid.rsi # edited for monke ; wall sprites
   - type: WallReplacementMarker
   - type: Construction
     graph: Girder
     node: wall
   - type: Icon
-    sprite: Structures/Walls/solid.rsi
+    sprite: _Monkestation/Structures/Walls/solid.rsi # edited for monke ; wall sprites
   - type: RCDDeconstructable
     cost: 60 # Funkystation
     delay: 8
