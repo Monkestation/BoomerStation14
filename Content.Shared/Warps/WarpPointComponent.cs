@@ -12,6 +12,18 @@ public sealed partial class WarpPointComponent : Component
     [DataField]
     public string? Location;
 
+    // Monkestation addition start
+    /// <summary>
+    ///     Tags that determine what category this point will go into in the ghost's orbit menu
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public bool Mob;
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public bool Ghost;
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public bool Antagonist;
+    // Monkestation addition end
+
     /// <summary>
     /// If true, ghosts warping to this entity will begin following it.
     /// </summary>

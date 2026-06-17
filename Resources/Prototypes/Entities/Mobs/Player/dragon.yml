@@ -6,6 +6,10 @@
   description: A flying leviathan, loosely related to space carps.
   abstract: true
   components:
+  - type: WarpPoint # Monkestation addition
+    follow: true
+    mob: true
+    antagonist: true
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
