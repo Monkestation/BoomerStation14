@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from monkestation13 at commit 7bbbd50738eaa88908e1294430dd930fc663477d",
+  "copyright": "Solid and reinf walls taken from monkestation13 at commit https://github.com/Monkestation/Monkestation2.0/commit/7bbbd50738eaa88908e1294430dd930fc663477d. Both girders and reinf_cult taken from tgstation at commit https://github.com/tgstation/tgstation/commit/d90c7e5de6f6d94596c164da78dbc8d3cd35bb99 and modified by unknown.",
   "size": {
     "x": 32,
     "y": 32
