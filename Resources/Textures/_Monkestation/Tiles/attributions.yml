@@ -123,7 +123,7 @@
   copyright: "created by github user @moonheart08, modified by @Skarletto from dark.png from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
   source: "https://github.com/space-wizards/space-station-14/"
 
-- files: [ "dark_offset.png" ]
+- files: [ "dark_plastic.png" ]
   license: "CC-BY-SA-3.0"
   copyright: "created by github user @moonheart08, modified by @Skarletto from dark.png from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
   source: "https://github.com/space-wizards/space-station-14/"
@@ -132,3 +132,59 @@
   license: "CC-BY-SA-3.0"
   copyright: "Created by SlamBamActionman (github) for space-station-14, modified by @Skarletto from dark.png from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
   source: "https://github.com/space-wizards/space-station-14/"
+
+- files: [ "plastic.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "created by github user @moonheart08, modified by @Skarletto from floor.png from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/space-wizards/space-station-14/"
+
+- files: [ "steel.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/Monkestation/Monkestation2.0"
+
+- files: [ "steel_diagonal.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/Monkestation/Monkestation2.0"
+
+- files: [ "steel_diagonal_mini.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "created by github user @moonheart08, modified by @Skarletto from floor.png from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/space-wizards/space-station-14/"
+
+- files: [ "steel_dirty.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Originally created by github user @moonheart08, then modified by @Flareguy, then modified by github user @moomoobeef, then modified by github user @skarletto"
+  source: "https://github.com/space-wizards/space-station-14/"
+
+- files: [ "steel_herringbone.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/Monkestation/Monkestation2.0"
+
+- files: [ "steel_mini.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/Monkestation/Monkestation2.0"
+
+- files: [ "steel_mono.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/Monkestation/Monkestation2.0"
+
+- files: [ "steel_offset.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "created by github user @moonheart08, modified by @Skarletto from floor.png from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/space-wizards/space-station-14/"
+
+- files: [ "steel_pavement.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "created by github user @moonheart08, modified by @Skarletto from floor.png from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/space-wizards/space-station-14/"
+
+- files: [ "steel_pavement_vertical.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "created by github user @moonheart08, modified by @Skarletto from floor.png from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/space-wizards/space-station-14/"
+
