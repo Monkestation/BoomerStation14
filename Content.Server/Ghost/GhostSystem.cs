@@ -72,7 +72,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly TagSystem _tag = default!;
         [Dependency] private readonly NameModifierSystem _nameMod = default!;
 
-        [Dependency] private readonly AdminManager _adminManager = default!; // Monkestation edit
+        [Dependency] private readonly IAdminManager _adminManager = default!; // Monkestation edit
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
