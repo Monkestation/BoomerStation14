@@ -14,7 +14,7 @@
   id: Plating
   parent: BasePlating
   name: tiles-plating
-  sprite: /Textures/Tiles/plating.png
+  sprite: /Textures/_Monkestation/Tiles/plating.png # edited for monke ; tile sprites
 
 - type: tile
   id: PlatingRCD
@@ -49,7 +49,7 @@
   id: PlatingDamaged
   parent: BasePlating
   name: tiles-plating
-  sprite: /Textures/Tiles/plating_damaged.png
+  sprite: /Textures/_Monkestation/Tiles/plating_damaged.png # edited for monke ; tile sprites
   variants: 3
   placementVariants:
   - 1.0
