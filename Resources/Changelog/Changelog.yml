@@ -4006,3 +4006,14 @@
   id: 9476
   time: '2026-06-19T08:11:10.0000000+00:00'
   url: https://github.com/Monkestation/forky-station/pull/19
+- author: adamsogm
+  changes:
+  - message: Fixed mobs showing null location ids
+    type: Fix
+  - message: Made admins not show in warp menu follower count
+    type: Tweak
+  - message: Made stealthed admins not show in warp menu
+    type: Tweak
+  id: 9477
+  time: '2026-06-20T16:00:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/19

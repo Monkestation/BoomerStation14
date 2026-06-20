@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Logs;
+using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Mind;
@@ -26,6 +27,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.NameModifier.EntitySystems;
+using Content.Shared.Players;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
@@ -69,6 +71,8 @@ namespace Content.Server.Ghost
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly TagSystem _tag = default!;
         [Dependency] private readonly NameModifierSystem _nameMod = default!;
+
+        [Dependency] private readonly IAdminManager _adminManager = default!; // Monkestation edit
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -382,18 +386,20 @@ namespace Content.Server.Ghost
                 var entity = GetNetEntity(uid);
                 if (warp.Mob)
                 {
+                    if (!TryComp<MindContainerComponent>(uid, out var mind))
+                        continue;
+                    if (_player.TryGetSessionByEntity(uid, out var session) && session.ContentData()?.Stealthed == true)
+                        continue;
                     byte followers = 0;
                     if (TryComp<FollowedComponent>(uid, out var followComponent))
                     {
-                        followers = (byte)followComponent.Following.Count;
+                        followers = (byte)followComponent.Following.Count(followerEntity =>
+                            !_player.TryGetSessionByEntity(followerEntity, out var followerSession)
+                            || !_adminManager.IsAdmin(followerSession));
                     }
-                    TryComp<MindContainerComponent>(uid, out var mind);
 
-                    if (mind?.Mind != null)
-                    {
-                        string playerName = $"{warp.Location ?? Name(uid)} ({_jobs.MindTryGetJobName(mind.Mind)})";
-                        yield return new GhostWarp(entity, playerName, warp.Mob, _mobState.IsDead(uid), warp.Ghost, warp.Antagonist, followers);
-                    }
+                    var playerName = $"{warp.Location ?? Name(uid)} ({_jobs.MindTryGetJobName(mind.Mind)})";
+                    yield return new GhostWarp(entity, playerName, warp.Mob, _mobState.IsDead(uid), warp.Ghost, warp.Antagonist, followers);
                 }
                 else
                 {
