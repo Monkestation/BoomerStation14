@@ -1024,15 +1024,6 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             {
                 meleeWeapon.Hidden = false;
             }
-
-            // Funky
-            if (itemToggleMelee.ActivatedBluntStaminaDamageFactor != null)
-            {
-                //Setting deactivated damage to the weapon's regular value before changing it.
-                itemToggleMelee.DeactivatedBluntStaminaDamageFactor ??= meleeWeapon.BluntStaminaDamageFactor;
-                meleeWeapon.BluntStaminaDamageFactor = (FixedPoint2)itemToggleMelee.ActivatedBluntStaminaDamageFactor;
-                DirtyField(uid, meleeWeapon, nameof(MeleeWeaponComponent.BluntStaminaDamageFactor));
-            }
         }
         else
         {
@@ -1060,13 +1051,6 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
             if (itemToggleMelee.DeactivatedSecret)
             {
                 meleeWeapon.Hidden = true;
-            }
-
-            // Funky
-            if (itemToggleMelee.DeactivatedBluntStaminaDamageFactor != null)
-            {
-                meleeWeapon.BluntStaminaDamageFactor = (FixedPoint2)itemToggleMelee.DeactivatedBluntStaminaDamageFactor;
-                DirtyField(uid, meleeWeapon, nameof(MeleeWeaponComponent.BluntStaminaDamageFactor));
             }
         }
     }

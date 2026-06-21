@@ -25,21 +25,20 @@
 - type: entity
   parent: CrateSecgear
   id: CrateSecurityNonlethal
-  name: less-lethals crate
-  description: Contains a mix of nightsticks, flashes, shell guns, and beanbag shells. Requires Security access to open.
+  name: nonlethals crate
+  description: Contains a mix of disablers, stun batons, and flashes. Requires Security access to open.
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: Nightstick
+        - id: WeaponDisabler
+          amount: 3
+        - id: Stunbaton
           amount: 3
         - id: BoxFlashbang
         - id: Flash
           amount: 3
-        - id: WeaponFlareGunSecurity # Funky
-          amount: 3
-        - id: BoxBeanbag # Funky - That's 5 shots for each, plus 1 extra to squabble over
 #        - Pepperspray
 #        - GrenadeTeargas
 
