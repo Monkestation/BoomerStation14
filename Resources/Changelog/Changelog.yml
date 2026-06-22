@@ -4017,3 +4017,10 @@
   id: 9477
   time: '2026-06-20T16:00:00.0000000+00:00'
   url: https://github.com/Monkestation/forky-station/pull/19
+- author: AraiMaia
+  changes:
+  - message: Tweaked flammable clothing stains to make more sense
+    type: Tweak
+  id: 9478
+  time: '2026-06-22T23:00:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/25
