@@ -18,6 +18,9 @@ namespace Content.Server._Funkystation.Stains
         [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
         [Dependency] private readonly EntityLookupSystem _lookup = null!;
 
+        // Fraction of a stain's flammable reagents consumed per second while on fire
+        private const float StainBurnRatePerSecond = 0.2f;
+
         public override void Initialize()
         {
             base.Initialize();
@@ -31,9 +34,11 @@ namespace Content.Server._Funkystation.Stains
             if (totalStainFlammability <= 0)
                 return;
 
-            if (TryComp<FlammableComponent>(uid, out var flammable))
+            // Don't keep adding fire stacks every tick if they're already burning...
+            if (TryComp<FlammableComponent>(uid, out var flammable) && !flammable.OnFire)
             {
-                var extraStacks = (args.Volume / 100f) * (0.5f * totalStainFlammability);
+                // Non-linear scaling. lower flammability values are mild, high values ramp up BADLY
+                var extraStacks = (args.Volume / 100f) * (0.5f * MathF.Pow(totalStainFlammability, 1.5f));
                 _flammable.AdjustFireStacks(uid, extraStacks, flammable);
             }
         }
@@ -46,23 +51,60 @@ namespace Content.Server._Funkystation.Stains
 
             foreach (var ent in entities)
             {
-                if (!TryComp<InventoryComponent>(ent, out var inv))
+                if (!TryComp<InventoryComponent>(ent, out var inv) || !TryComp<FlammableComponent>(ent, out var flammable))
+                    continue;
+
+                if (flammable.OnFire)
                     continue;
 
                 var totalStainFlammability = GetTotalStainFlammability(ent, inv);
                 if (totalStainFlammability <= 0)
                     continue;
 
-                var ignitionTemp = 573.15f - (50f * totalStainFlammability);
+                // Non-linear scaling
+                var ignitionTemp = 573.15f - (50f * MathF.Pow(totalStainFlammability, 1.5f));
                 if (args.Temperature >= ignitionTemp)
                 {
-                    if (TryComp<FlammableComponent>(ent, out var flammable))
-                    {
-                        var fireStacks = 1f + (0.5f * totalStainFlammability);
-                        _flammable.AdjustFireStacks(ent, fireStacks, flammable);
-                        _flammable.Ignite(ent, ent, flammable);
-                    }
+                    var fireStacks = 1f + (0.5f * MathF.Pow(totalStainFlammability, 1.5f));
+                    _flammable.AdjustFireStacks(ent, fireStacks, flammable);
+                    _flammable.Ignite(ent, ent, flammable);
                 }
+            }
+        }
+
+        public override void Update(float frameTime)
+        {
+            base.Update(frameTime);
+
+            // Actively burn off stains while the wearer is on fire, same as puddles.
+            var query = EntityQueryEnumerator<FlammableComponent, InventoryComponent>();
+            while (query.MoveNext(out var uid, out var flammable, out var inv))
+            {
+                if (!flammable.OnFire)
+                    continue;
+
+                BurnStains(uid, inv, frameTime);
+            }
+        }
+
+        private void BurnStains(EntityUid uid, InventoryComponent inv, float frameTime)
+        {
+            foreach (var slot in inv.Slots)
+            {
+                if (!_inventory.TryGetSlotEntity(uid, slot.Name, out var slotEnt, inv))
+                    continue;
+
+                if (IsSlotStainBlocked(uid, slot, inv))
+                    continue;
+
+                if (!TryComp<StainableComponent>(slotEnt, out var stain) ||
+                    !_solution.TryGetSolution(slotEnt.Value, stain.SolutionName, out var soln, out var solution))
+                    continue;
+
+                if (solution.GetSolutionFlammability(_prototypeManager) <= 0)
+                    continue;
+
+                _solution.BurnFlammableReagents(soln.Value, StainBurnRatePerSecond * frameTime);
             }
         }
 
