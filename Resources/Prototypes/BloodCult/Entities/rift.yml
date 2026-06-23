@@ -48,7 +48,7 @@
     bloodPerPulse: 50.0
   - type: Clickable
   - type: TriggerOnActivate
-  - type: SolutionContainerManager
+  - type: SolutionManager
     solutions:
       sanguine_pool:
         maxVol: 1500

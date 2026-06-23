@@ -24,22 +24,22 @@ namespace Content.Shared._Monkestation.Body.Systems;
 /// <summary>
 /// Adding piss to bladders
 /// </summary>
-public sealed class BladderSystem : EntitySystem
+public sealed partial class BladderSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SolutionTransferSystem _solutionTransferSystem = default!;
-    [Dependency] private readonly SharedPuddleSystem _puddleSystem = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SolutionTransferSystem _solutionTransferSystem = default!;
+    [Dependency] private SharedPuddleSystem _puddleSystem = default!;
 
-    private EntityQuery<SolutionContainerManagerComponent> _solutionManagerQuery;
-    private EntityQuery<TransformComponent> _transformQuery;
-    private EntityQuery<ToiletComponent> _toiletQuery;
-    private EntityQuery<HandsComponent> _handsQuery;
-    private EntityQuery<ContainerManagerComponent> _containerQuery;
-    private EntityQuery<RefillableSolutionComponent> _refillableSolutionQuery;
+    [Dependency] private EntityQuery<SolutionManagerComponent> _solutionManagerQuery = default!;
+    [Dependency] private EntityQuery<TransformComponent> _transformQuery = default!;
+    [Dependency] private EntityQuery<ToiletComponent> _toiletQuery = default!;
+    [Dependency] private EntityQuery<HandsComponent> _handsQuery = default!;
+    [Dependency] private EntityQuery<ContainerManagerComponent> _containerQuery = default!;
+    [Dependency] private EntityQuery<RefillableSolutionComponent> _refillableSolutionQuery = default!;
 
     private const string DefaultSolutionName = "bladder";
     private static readonly TimeSpan PissCooldown = TimeSpan.FromSeconds(75);
@@ -52,13 +52,6 @@ public sealed class BladderSystem : EntitySystem
         SubscribeLocalEvent<MSBladderComponent, OrganGotInsertedEvent>(HandleInsertion);
         SubscribeLocalEvent<MSBladderComponent, OrganGotRemovedEvent>(HandleRemoval);
         SubscribeLocalEvent<MSBladderComponent, MapInitEvent>(OnBladderMapInit);
-
-        _solutionManagerQuery = GetEntityQuery<SolutionContainerManagerComponent>();
-        _transformQuery = GetEntityQuery<TransformComponent>();
-        _toiletQuery = GetEntityQuery<ToiletComponent>();
-        _handsQuery = GetEntityQuery<HandsComponent>();
-        _containerQuery = GetEntityQuery<ContainerManagerComponent>();
-        _refillableSolutionQuery = GetEntityQuery<RefillableSolutionComponent>();
     }
 
     private void OnBladderMapInit(Entity<MSBladderComponent> ent, ref MapInitEvent args)
@@ -99,7 +92,7 @@ public sealed class BladderSystem : EntitySystem
 
             bladder.NextTick = _timing.CurTime + PissCooldown;
             Dirty(entity, bladder);
-            SolutionContainerManagerComponent? solutionContainer = null;
+            SolutionManagerComponent? solutionContainer = null;
             if (!_solutionManagerQuery.Resolve(entity, ref solutionContainer))
             {
                 continue;
@@ -119,7 +112,7 @@ public sealed class BladderSystem : EntitySystem
         EntityUid uid,
         Solution solution,
         MSBladderComponent? bladder = null,
-        SolutionContainerManagerComponent? solutions = null)
+        SolutionManagerComponent? solutions = null)
     {
         return Resolve(uid, ref bladder, ref solutions, logMissing: false)
                && _solutionContainerSystem.ResolveSolution((uid, solutions),
@@ -134,7 +127,7 @@ public sealed class BladderSystem : EntitySystem
         EntityUid uid,
         Solution solution,
         MSBladderComponent? bladder = null,
-        SolutionContainerManagerComponent? solutions = null)
+        SolutionManagerComponent? solutions = null)
     {
         if (!Resolve(uid, ref bladder, ref solutions, logMissing: false)
             || !_solutionContainerSystem.ResolveSolution((uid, solutions), DefaultSolutionName, ref bladder.Solution)
@@ -158,7 +151,7 @@ public sealed class BladderSystem : EntitySystem
     /// <returns>If the piss attempt was handled</returns>
     public bool TryPiss(Entity<MSPissEmoteComponent> ent, EntityUid entity, MSBladderComponent bladder)
     {
-        SolutionContainerManagerComponent? solutions = null;
+        SolutionManagerComponent? solutions = null;
         if (!_solutionManagerQuery.Resolve(entity, ref solutions))
         {
             return false;

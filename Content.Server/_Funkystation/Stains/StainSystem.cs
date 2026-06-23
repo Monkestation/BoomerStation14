@@ -5,9 +5,9 @@ using Content.Shared.Tag;
 
 namespace Content.Server._Funkystation.Stains;
 
-public sealed class StainSystem : SharedStainSystem
+public sealed partial class StainSystem : SharedStainSystem
 {
-    [Dependency] private readonly TagSystem _tag = null!;
+    [Dependency] private TagSystem _tag = null!;
 
     protected override void OnStained(Entity<StainableComponent> ent, Entity<SolutionComponent> solution)
     {

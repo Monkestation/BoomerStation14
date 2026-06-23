@@ -18,15 +18,15 @@ using Content.Shared.Damage.Systems;
 
 namespace Content.Server._Funkystation.WashingMachine;
 
-public sealed class WashingMachineSystem : SharedWashingMachineSystem
+public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
 {
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = null!;
-    [Dependency] private readonly SharedStainSystem _stains = null!;
-    [Dependency] private readonly ForensicsSystem _forensics = null!;
-    [Dependency] private readonly DamageableSystem _damageable = null!;
-    [Dependency] private readonly IPrototypeManager _proto = null!;
-    [Dependency] private readonly IRobustRandom _random = null!;
-    [Dependency] private readonly ReactiveSystem _reactive = null!;
+    [Dependency] private SharedSolutionContainerSystem _solution = null!;
+    [Dependency] private SharedStainSystem _stains = null!;
+    [Dependency] private ForensicsSystem _forensics = null!;
+    [Dependency] private DamageableSystem _damageable = null!;
+    [Dependency] private IPrototypeManager _proto = null!;
+    [Dependency] private IRobustRandom _random = null!;
+    [Dependency] private ReactiveSystem _reactive = null!;
 
     private static readonly SoundSpecifier HitSound = new SoundCollectionSpecifier("MetalThud");
 

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Content.IntegrationTests.Fixtures;
 using Content.Shared.Coordinates;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
@@ -26,12 +27,12 @@ namespace Content.IntegrationTests.Tests;
 ///     spawn it into a new empty map and seeing what the map yml looks like.
 /// </remarks>
 [TestFixture]
-public sealed class PrototypeSaveTest
+public sealed class PrototypeSaveTest : GameTest
 {
     [Test]
     public async Task UninitializedSaveTest()
     {
-        await using var pair = await PoolManager.GetServerClient();
+        var pair = Pair;
         var server = pair.Server;
 
         var entityMan = server.ResolveDependency<IEntityManager>();
@@ -155,7 +156,6 @@ public sealed class PrototypeSaveTest
                 }
             });
         });
-        await pair.CleanReturnAsync();
     }
 
     public sealed class TestEntityUidContext : ISerializationContext,

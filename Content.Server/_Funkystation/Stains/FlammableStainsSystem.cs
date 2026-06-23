@@ -10,13 +10,13 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Funkystation.Stains
 {
-    public sealed class FlammableStainsSystem : EntitySystem
+    public sealed partial class FlammableStainsSystem : EntitySystem
     {
-        [Dependency] private readonly FlammableSystem _flammable = null!;
-        [Dependency] private readonly InventorySystem _inventory = null!;
-        [Dependency] private readonly SharedSolutionContainerSystem _solution = null!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
-        [Dependency] private readonly EntityLookupSystem _lookup = null!;
+        [Dependency] private FlammableSystem _flammable = null!;
+        [Dependency] private InventorySystem _inventory = null!;
+        [Dependency] private SharedSolutionContainerSystem _solution = null!;
+        [Dependency] private IPrototypeManager _prototypeManager = null!;
+        [Dependency] private EntityLookupSystem _lookup = null!;
 
         // Fraction of a stain's flammable reagents consumed per second while on fire
         private const float StainBurnRatePerSecond = 0.2f;

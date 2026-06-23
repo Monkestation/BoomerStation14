@@ -21,7 +21,7 @@ public sealed class WarpPointSystem : EntitySystem
             return;
         // Monkestation end
 
-        var loc = component.Location == null ? "<null>" : $"'{component.Location}'";
+        var loc = component.Location == null ? Name(uid) : component.Location;
         args.PushText(Loc.GetString("warp-point-component-on-examine-success", ("location", loc)));
     }
 }
