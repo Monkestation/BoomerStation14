@@ -1,5 +1,7 @@
 using System.Numerics;
+using Content.Server._Funkystation.Stains;
 using Content.Server.Decals;
+using Content.Shared._Funkystation.Stains.Components;
 using Content.Shared._Monkestation.Nutrition;
 using Content.Shared._Monkestation.Nutrition.Components;
 using Content.Shared.Actions;
@@ -20,10 +22,11 @@ using Robust.Shared.Timing;
 namespace Content.Server._Monkestation.Nutrition.EntitySystems;
 
 /// <summary>
-/// Makes a barefoot slimeperson passively slurp up puddles and clean cleanable dirt off the
-/// tiles it walks over. Slurped reagents are funneled into the stomach so they metabolize
-/// normally (food nourishes, toxins harm), while cleaned dirt grants a flat bit of hunger.
-/// The behaviour can be toggled with an innate action.
+/// Makes a slimeperson passively slurp up puddles and clean cleanable dirt off the tiles it
+/// walks over (while barefoot), and absorb stains off its own worn clothing and held items
+/// (shoes or not, since that soaks straight through the body). Slurped reagents are funneled
+/// into the stomach so they metabolize normally (food nourishes, toxins harm), while cleaned
+/// dirt grants a flat bit of hunger. The behaviour can be toggled with an innate action.
 /// </summary>
 public sealed class SlimeFloorAbsorptionSystem : EntitySystem
 {
@@ -38,6 +41,7 @@ public sealed class SlimeFloorAbsorptionSystem : EntitySystem
     [Dependency] private readonly DecalSystem _decals = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly StainSystem _stain = default!;
 
     public override void Initialize()
     {
@@ -98,12 +102,67 @@ public sealed class SlimeFloorAbsorptionSystem : EntitySystem
         if (_timing.CurTime < comp.NextAbsorb)
             return;
 
-        // Has to be barefoot to clean with its feet.
-        if (_inventory.TryGetSlotEntity(ent.Owner, "shoes", out _))
-            return;
+        var didSomething = false;
 
-        if (TryAbsorbTile(ent, gridUid, grid, tile))
+        // Stains on worn clothing / held items soak straight through the body, so shoes don't matter.
+        didSomething |= TryAbsorbStains(ent);
+
+        // Puddles and floor dirt are cleaned with the feet, so it has to be barefoot for those.
+        if (!_inventory.TryGetSlotEntity(ent.Owner, "shoes", out _))
+            didSomething |= TryAbsorbTile(ent, gridUid, grid, tile);
+
+        if (didSomething)
+        {
+            _audio.PlayPvs(comp.AbsorbSound, ent);
             comp.NextAbsorb = _timing.CurTime + comp.Cooldown;
+        }
+    }
+
+    /// <summary>
+    /// Drains stain solutions off the slime's worn clothing and held items into its stomach.
+    /// </summary>
+    private bool TryAbsorbStains(Entity<SlimeFloorAbsorptionComponent> ent)
+    {
+        var comp = ent.Comp;
+
+        if (!_body.TryGetOrgansWithComponent<StomachComponent>(ent.Owner, out var stomachs))
+            return false;
+
+        var didSomething = false;
+
+        foreach (var item in _inventory.GetHandOrInventoryEntities((ent.Owner, null, null)))
+        {
+            if (!TryComp<StainableComponent>(item, out var stainable))
+                continue;
+
+            if (!_solution.TryGetSolution(item, stainable.SolutionName, out var stainSolution, out var stain)
+                || stain.Volume <= 0)
+                continue;
+
+            foreach (var stomach in stomachs)
+            {
+                if (!_solution.ResolveSolution(stomach.Owner, StomachSystem.DefaultSolutionName, ref stomach.Comp.Solution, out var stomachSolution)
+                    || stomachSolution.AvailableVolume <= 0)
+                    continue;
+
+                var amount = FixedPoint2.Min(comp.AbsorbVolume, stomachSolution.AvailableVolume);
+                amount = FixedPoint2.Min(amount, stain.Volume);
+                if (amount <= 0)
+                    continue;
+
+                var slurped = _solution.SplitSolution(stainSolution.Value, amount);
+                _solution.TryAddSolution(stomach.Comp.Solution.Value, slurped);
+                _stain.UpdateVisuals((item, stainable));
+
+                if (comp.NutritionPerVolume > 0)
+                    _hunger.ModifyHunger(ent.Owner, slurped.Volume.Float() * comp.NutritionPerVolume);
+
+                didSomething = true;
+                break;
+            }
+        }
+
+        return didSomething;
     }
 
     private bool TryAbsorbTile(Entity<SlimeFloorAbsorptionComponent> ent, EntityUid gridUid, MapGridComponent grid, Vector2i tile)
@@ -162,9 +221,6 @@ public sealed class SlimeFloorAbsorptionSystem : EntitySystem
                 didSomething = true;
             }
         }
-
-        if (didSomething)
-            _audio.PlayPvs(comp.AbsorbSound, ent);
 
         return didSomething;
     }
