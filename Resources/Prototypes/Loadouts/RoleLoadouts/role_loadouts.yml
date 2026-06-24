@@ -408,6 +408,7 @@
   id: JobWarden
   groups:
   - WardenHead
+  - WardenNeck
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityBelt
@@ -423,7 +424,9 @@
   id: JobSecurityOfficer
   groups:
   - SecurityHead
+  - SecurityNeck
   - SecurityJumpsuit
+  - SecurityGloves
   - SecurityBackpack
   - SecurityOuterClothing
   - SecurityShoes
@@ -453,6 +456,7 @@
 - type: roleLoadout
   id: JobSecurityCadet
   groups:
+  - SecurityCadetHat
   - SecurityCadetJumpsuit
   - SecurityBackpack
   - SurvivalSecurity

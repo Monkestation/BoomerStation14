@@ -1,0 +1,8 @@
+- type: entity
+  abstract: true
+  parent: Solution
+  id: SolutionStain
+  components:
+  - type: Solution
+    id: drink
+    maxVolume: 5

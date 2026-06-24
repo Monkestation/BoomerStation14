@@ -1,3 +1,4 @@
+using Content.Server._Funkystation.Atmos.Events; // Funky
 using System.Globalization;
 using Content.Server.Atmos.Components;
 using Content.Server.Decals;
@@ -200,6 +201,11 @@ public sealed partial class AtmosphereSystem
     {
         if (tile.Air == null)
             return;
+
+        // Funky start
+        var ev = new TileExposedEvent(tile.GridIndices, exposedTemperature, exposedVolume, sparkSourceUid);
+        RaiseLocalEvent(gridAtmosphere.Owner, ref ev);
+        // Funky end
 
         if (!IsMixtureOxidizer(tile.Air))
             return;

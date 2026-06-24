@@ -8,12 +8,17 @@
     sprite: Clothing/Head/Hardsuits/atmospherics.rsi
     layers:
     - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
     - state: icon-unshaded
       shader: unshaded
+      map: [ "unshaded_base" ]
     - state: light-overlay
       visible: false
       shader: unshaded
       map: [ "light" ]
+    - state: icon-up
+      visible: false
+      map: [ "visor_icon" ]
   - type: HandheldLight
     addPrefix: false
   - type: ToggleableVisuals
@@ -62,6 +67,22 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: HelmetVisor
+    isActive: true
+    components:
+    - type: EyeProtection
+    - type: FlashImmunity
+    - type: WeldingMaskOverlay
+      texture: /Textures/_Funkystation/Clothing/Head/Welding/weldingOverlay.png
+  - type: GenericVisualizer
+    visuals:
+      enum.HelmetVisorVisuals.IsDown:
+        visor_icon:
+          False: {visible: false}
+          True: {visible: true, state: icon-up}
+        unshaded_base:
+          False: {visible: true}
+          True: {visible: false}
 
 #Engineering Hardsuit
 - type: entity
@@ -74,12 +95,17 @@
     sprite: Clothing/Head/Hardsuits/engineering.rsi
     layers:
     - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
     - state: icon-unshaded
       shader: unshaded
+      map: [ "unshaded_base" ]
     - state: light-overlay
       visible: false
       shader: unshaded
       map: [ "light" ]
+    - state: icon-up
+      visible: false
+      map: [ "visor_icon" ]
   - type: HandheldLight
     addPrefix: false
   - type: ToggleableVisuals
@@ -123,6 +149,22 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: HelmetVisor
+    isActive: true
+    components:
+    - type: EyeProtection
+    - type: FlashImmunity
+    - type: WeldingMaskOverlay
+      texture: /Textures/_Funkystation/Clothing/Head/Welding/weldingOverlay.png
+  - type: GenericVisualizer
+    visuals:
+      enum.HelmetVisorVisuals.IsDown:
+        visor_icon:
+          False: {visible: false}
+          True: {visible: true, state: icon-up}
+        unshaded_base:
+          False: {visible: true}
+          True: {visible: false}
 
 #Spationaut Hardsuit
 - type: entity
@@ -132,15 +174,20 @@
   description: A sturdy helmet designed for complex industrial operations in space.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/spatiohelm.rsi
+    sprite: _Funkystation/Clothing/Head/Hardsuits/spatiohelm.rsi
     layers:
     - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
     - state: icon-unshaded
       shader: unshaded
+      map: [ "unshaded_base" ]
     - state: light-overlay
       visible: false
       shader: unshaded
       map: [ "light" ]
+    - state: icon-up
+      visible: false
+      map: [ "visor_icon" ]
   - type: HandheldLight
     addPrefix: false
   - type: ToggleableVisuals
@@ -183,6 +230,22 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: HelmetVisor
+    isActive: true
+    components:
+    - type: EyeProtection
+    - type: FlashImmunity
+    - type: WeldingMaskOverlay
+      texture: /Textures/_Funkystation/Clothing/Head/Welding/weldingOverlay.png
+  - type: GenericVisualizer
+    visuals:
+      enum.HelmetVisorVisuals.IsDown:
+        visor_icon:
+          False: {visible: false}
+          True: {visible: true, state: icon-up}
+        unshaded_base:
+          False: {visible: true}
+          True: {visible: false}
 
 #Salvage Hardsuit
 - type: entity
@@ -192,9 +255,9 @@
   description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/salvage.rsi
+    sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/salvage.rsi
+    sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -387,12 +450,17 @@
     sprite: Clothing/Head/Hardsuits/engineering-white.rsi
     layers:
     - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
     - state: icon-unshaded
       shader: unshaded
+      map: [ "unshaded_base" ]
     - state: light-overlay
       visible: false
       shader: unshaded
       map: [ "light" ]
+    - state: icon-up
+      visible: false
+      map: [ "visor_icon" ]
   - type: HandheldLight
     addPrefix: false
   - type: ToggleableVisuals
@@ -438,6 +506,22 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+  - type: HelmetVisor
+    isActive: true
+    components:
+    - type: EyeProtection
+    - type: FlashImmunity
+    - type: WeldingMaskOverlay
+      texture: /Textures/_Funkystation/Clothing/Head/Welding/weldingOverlayWeak.png
+  - type: GenericVisualizer
+    visuals:
+      enum.HelmetVisorVisuals.IsDown:
+        visor_icon:
+          False: {visible: false}
+          True: {visible: true, state: icon-up}
+        unshaded_base:
+          False: {visible: true}
+          True: {visible: false}
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -512,9 +596,9 @@
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/luxury.rsi
+    sprite: _Funkystation/Clothing/Head/Hardsuits/luxury.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/luxury.rsi
+    sprite: _Funkystation/Clothing/Head/Hardsuits/luxury.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -996,3 +1080,18 @@
     color: "#f4ffad"
     radius: 5
     energy: 2
+
+
+# Hardsuit welding visor action, Funky
+- type: entity
+  parent: BaseAction
+  id: ActionToggleHelmetVisor
+  name: Toggle Visor
+  description: Flips the helmet visor up or down.
+  components:
+  - type: Action
+    icon:
+      sprite: Clothing/Head/Welding/welding.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:ToggleHelmetVisorEvent

@@ -125,3 +125,9 @@
   id: HeatBlur
   kind: source
   path: "/Textures/Shaders/heatBlur.swsl"
+
+# Funky goggles shader
+- type: shader
+  id: Goggles
+  kind: source
+  path: "/Textures/_Funkystation/Shaders/goggles.swsl"
