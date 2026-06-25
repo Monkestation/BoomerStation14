@@ -118,11 +118,19 @@ namespace Content.Shared.Ghost
     [Serializable, NetSerializable]
     public struct GhostWarp
     {
-        public GhostWarp(NetEntity entity, string displayName, bool isWarpPoint)
+        //public GhostWarp(NetEntity entity, string displayName, bool isWarpPoint) // Monkestation edit old
+        public GhostWarp(NetEntity entity, string displayName, bool mob, bool isDead, bool ghost, bool antagonist, byte followers) // Monkestation edit new
         {
             Entity = entity;
             DisplayName = displayName;
-            IsWarpPoint = isWarpPoint;
+            //IsWarpPoint = isWarpPoint; // Monkestation removal
+            // Monkestation addition start
+            Mob = mob;
+            IsDead = isDead;
+            IsGhost = ghost;
+            Antagonist = antagonist;
+            Followers = followers;
+            // Monkestation addition end
         }
 
         /// <summary>
@@ -139,7 +147,26 @@ namespace Content.Shared.Ghost
         /// <summary>
         /// Whether this warp represents a warp point or a player
         /// </summary>
-        public bool IsWarpPoint { get;  }
+        //public bool IsWarpPoint { get;  } // Monkestation removal
+
+        // Monkestation addition start
+        /// <summary>
+        ///     Tags that determine what category this point will go into in the ghost's orbit menu
+        ///     Mob: Is this a mob? If false, its a location
+        ///     IsDead: Is this mob dead?
+        ///     IsGhost: Is this a ghost?
+        ///     Antagonist: Is this a visible antagonist? (dragons, nukies and such.)
+        /// </summary>
+        public bool Mob { get; }
+        public bool IsDead { get; }
+        public bool IsGhost { get; }
+        public bool Antagonist { get; }
+
+        /// <summary>
+        /// How many followers this person has around them
+        /// </summary>
+        public byte Followers { get; }
+        // Monkestation addition end
     }
 
     /// <summary>
