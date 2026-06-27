@@ -32,7 +32,7 @@ public sealed partial class ServerApi
             return;
         await RunOnMainThread(() =>
         {
-            if (announcement.Subtitle != null)
+            if (announcement.Subtitle != null || announcement.Source != null)
             {
                 var formattedSource = "";
                 if (announcement.Source != null)
@@ -40,11 +40,11 @@ public sealed partial class ServerApi
                     var escapedSource = FormattedMessage.EscapeText(announcement.Source);
                     formattedSource = announcement.SourceUrl == null ? escapedSource : $"[cmdlink=\"{escapedSource}\" command=\"openurl {announcement.SourceUrl}\" /]";
                 }
-                var formattedSubtitle = FormattedMessage.EscapeText(announcement.Subtitle) + formattedSource;
+                var formattedSubtitle = FormattedMessage.EscapeText(announcement.Subtitle ?? "") + formattedSource;
                 var wrappedSubtitle = Loc.GetString("chat-manager-server-wrap-message", ("message", formattedSubtitle));
-                _chatManager.ChatMessageToAll(ChatChannel.Server, announcement.Subtitle, wrappedSubtitle, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: Color.Red);
+                _chatManager.ChatMessageToAll(ChatChannel.Server, (announcement.Subtitle ?? "") + (announcement.Source ?? ""), wrappedSubtitle, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: Color.Red);
 
-                _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Relayed announcement: {announcement.Subtitle}: {announcement.Message}");
+                _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Relayed announcement: {(announcement.Subtitle ?? "") + (announcement.Source ?? "")}: {announcement.Message}");
             }
             else
             {
