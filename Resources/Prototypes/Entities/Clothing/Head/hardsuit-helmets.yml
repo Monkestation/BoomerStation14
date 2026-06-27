@@ -217,12 +217,6 @@
       head-vulpkanin:
       - state: equipped-head-light-vulpkanin
         shader: unshaded
-      head-reptilian:
-      - state: equipped-head-light-reptilian
-        shader: unshaded
-      head-dog:
-      - state: equipped-head-light-dog
-        shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
