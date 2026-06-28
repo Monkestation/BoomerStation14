@@ -3,22 +3,22 @@
 # Monke edit, uncomment guidebook entries
 - type: guideEntry
   id: Gray
-  name: Gray
+  name: gray
   text: "/ServerInfo/_MACRO/Guidebook/Mobs/Gray.xml"
 
 - type: guideEntry
   id: Gastropoid
-  name: Gastropoid
+  name: gastropoid
   text: "/ServerInfo/_MACRO/Guidebook/Mobs/Gastropoid.xml"
 
 - type: guideEntry
   id: Apid
-  name: Apid
+  name: apid
   text: "/ServerInfo/_MACRO/Guidebook/Mobs/Apid.xml"
 
 - type: guideEntry
   id: Decapoid
-  name: Decapoid
+  name: decapoid
   text: "/ServerInfo/_MACRO/Guidebook/Mobs/Decapoid.xml"
 # Monke edit end
 
