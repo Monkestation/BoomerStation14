@@ -1,0 +1,1 @@
+Salvage Shuttle originally made by wizden, modified my flameingman2 . Old shuttle was mining.yml, new shuttle is miningmk3.yml
