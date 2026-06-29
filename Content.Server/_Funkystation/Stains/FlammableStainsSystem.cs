@@ -5,25 +5,34 @@ using Content.Shared._Funkystation.Stains.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Database;
 using Content.Shared.Inventory;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Content.Server.Administration.Logs;
+using Content.Shared._Funkystation.CCVar;
 
 namespace Content.Server._Funkystation.Stains
 {
-    public sealed class FlammableStainsSystem : EntitySystem
+    public sealed partial class FlammableStainsSystem : EntitySystem
     {
-        [Dependency] private readonly FlammableSystem _flammable = null!;
-        [Dependency] private readonly InventorySystem _inventory = null!;
-        [Dependency] private readonly SharedSolutionContainerSystem _solution = null!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
-        [Dependency] private readonly EntityLookupSystem _lookup = null!;
+        [Dependency] private FlammableSystem _flammable = null!;
+        [Dependency] private InventorySystem _inventory = null!;
+        [Dependency] private SharedSolutionContainerSystem _solution = null!;
+        [Dependency] private IPrototypeManager _prototypeManager = null!;
+        [Dependency] private EntityLookupSystem _lookup = null!;
+        [Dependency] private IConfigurationManager _cfg = null!;
+        [Dependency] private IAdminLogManager _adminLogger = default!;
 
         // Fraction of a stain's flammable reagents consumed per second while on fire
         private const float StainBurnRatePerSecond = 0.2f;
+        private float _stainStackMultiplier = 1.0f;
 
         public override void Initialize()
         {
             base.Initialize();
+            Subs.CVar(_cfg, ReagentFireCVars.StainFireStackMultiplier, value => _stainStackMultiplier = value, true);
             SubscribeLocalEvent<InventoryComponent, TileFireEvent>(OnTileFire, before: [typeof(FlammableSystem)]);
             SubscribeLocalEvent<GridAtmosphereComponent, TileExposedEvent>(OnTileExposed);
         }
@@ -38,7 +47,7 @@ namespace Content.Server._Funkystation.Stains
             if (TryComp<FlammableComponent>(uid, out var flammable) && !flammable.OnFire)
             {
                 // Non-linear scaling. lower flammability values are mild, high values ramp up BADLY
-                var extraStacks = (args.Volume / 100f) * (0.5f * MathF.Pow(totalStainFlammability, 1.5f));
+                var extraStacks = (args.Volume / 100f) * (0.5f * MathF.Pow(totalStainFlammability, 1.5f)) * _stainStackMultiplier;
                 _flammable.AdjustFireStacks(uid, extraStacks, flammable);
             }
         }
@@ -65,9 +74,15 @@ namespace Content.Server._Funkystation.Stains
                 var ignitionTemp = 573.15f - (50f * MathF.Pow(totalStainFlammability, 1.5f));
                 if (args.Temperature >= ignitionTemp)
                 {
-                    var fireStacks = 1f + (0.5f * MathF.Pow(totalStainFlammability, 1.5f));
+                    var fireStacks = (1f + (0.5f * MathF.Pow(totalStainFlammability, 1.5f))) * _stainStackMultiplier;
                     _flammable.AdjustFireStacks(ent, fireStacks, flammable);
-                    _flammable.Ignite(ent, ent, flammable);
+
+                    var igniter = args.SparkSource ?? gridUid;
+                    _flammable.Ignite(ent, igniter, flammable);
+
+                    var reagents = GetFlammableStainsString(ent, inv);
+                    _adminLogger.Add(LogType.Flammable, LogImpact.High,
+                        $"{ToPrettyString(ent):entity} was ignited by their flammable stains ({reagents}) reacting to a hotspot (Igniter: {ToPrettyString(igniter):entity}).");
                 }
             }
         }
@@ -142,6 +157,33 @@ namespace Content.Server._Funkystation.Stains
                 }
             }
             return false;
+        }
+
+        private string GetFlammableStainsString(EntityUid uid, InventoryComponent inv)
+        {
+            var names = new List<string>();
+            foreach (var slot in inv.Slots)
+            {
+                if (!_inventory.TryGetSlotEntity(uid, slot.Name, out var slotEnt, inv))
+                    continue;
+
+                if (IsSlotStainBlocked(uid, slot, inv))
+                    continue;
+
+                if (TryComp<StainableComponent>(slotEnt, out var stain) &&
+                    _solution.TryGetSolution(slotEnt.Value, stain.SolutionName, out _, out var solution))
+                {
+                    foreach (var (reagentId, _) in solution.Contents)
+                    {
+                        if (_prototypeManager.TryIndex<ReagentPrototype>(reagentId.Prototype, out var proto) && proto.Flammability > 0)
+                        {
+                            names.Add(proto.LocalizedName);
+                        }
+                    }
+                }
+            }
+
+            return names.Count > 0 ? string.Join(", ", new HashSet<string>(names)) : "unknown chemicals";
         }
     }
 }

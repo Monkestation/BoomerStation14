@@ -9,3 +9,9 @@
 
 - type: Tag # Funky atmos - /tg/ gases
   id: PlasmaSheet
+
+- type: Tag # Funky - Making plastic lighters whitelisted for cig packs
+  id: PlasticLighter
+
+- type: Tag # Funky - Rag fits in janibelt
+  id: Rag

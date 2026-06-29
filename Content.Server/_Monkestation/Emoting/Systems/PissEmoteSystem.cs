@@ -11,13 +11,13 @@ namespace Content.Server._Monkestation.Emoting.Systems;
 /// <summary>
 /// This handles the piss emote
 /// </summary>
-public sealed class PissEmoteSystem : EntitySystem
+public sealed partial class PissEmoteSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly BladderSystem _bladderSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private BladderSystem _bladderSystem = default!;
 
-    private EntityQuery<MSBladderComponent> _bladderQuery;
-    private EntityQuery<ContainerManagerComponent> _containerQuery;
+    [Dependency] private EntityQuery<MSBladderComponent> _bladderQuery;
+    [Dependency] private EntityQuery<ContainerManagerComponent> _containerQuery;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -25,9 +25,6 @@ public sealed class PissEmoteSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MSPissEmoteComponent, EmoteEvent>(OnEmote);
-
-        _bladderQuery = GetEntityQuery<MSBladderComponent>();
-        _containerQuery = GetEntityQuery<ContainerManagerComponent>();
     }
 
     private void OnEmote(Entity<MSPissEmoteComponent> ent, ref EmoteEvent args)

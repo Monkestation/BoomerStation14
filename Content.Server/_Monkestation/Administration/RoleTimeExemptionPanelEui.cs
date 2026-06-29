@@ -12,13 +12,13 @@ using Robust.Shared.Network;
 
 namespace Content.Server._Monkestation.Administration;
 
-public sealed class RoleTimeExemptionPanelEui : BaseEui
+public sealed partial class RoleTimeExemptionPanelEui : BaseEui
 {
-    [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly IAdminManager _admins = default!;
-    [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly IPlayerLocator _playerLocator = default!;
-    [Dependency] private readonly RoleTimeExemptionManager _exemptions = default!;
+    [Dependency] private ILogManager _log = default!;
+    [Dependency] private IAdminManager _admins = default!;
+    [Dependency] private IChatManager _chat = default!;
+    [Dependency] private IPlayerLocator _playerLocator = default!;
+    [Dependency] private RoleTimeExemptionManager _exemptions = default!;
 
     private readonly ISawmill _sawmill;
 

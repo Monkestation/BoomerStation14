@@ -11,21 +11,13 @@ namespace Content.Server._Monkestation.Body.Systems;
 /// <summary>
 /// Adding piss to bladders
 /// </summary>
-public sealed class ButtSystem : EntitySystem
+public sealed partial class ButtSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly AtmosphereSystem _atmos = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private AtmosphereSystem _atmos = default!;
 
-    private EntityQuery<TransformComponent> _transformQuery;
-
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        _transformQuery = GetEntityQuery<TransformComponent>();
-    }
+    [Dependency] private EntityQuery<TransformComponent> _transformQuery;
 
     /// <summary>
     /// Attempts to cause a butt to fart
