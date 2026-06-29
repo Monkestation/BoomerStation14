@@ -100,7 +100,7 @@
 - files: ["Shuttles/mining.yml"]
   authors:
 
-- flies: ["maps/_monkeystation/Shuttles/miningmk3.yml"]
+- files: ["maps/_monkeystation/Shuttles/miningmk3.yml"]
   authors: orginal by wizden, modified by Flameingman2
 
 - files: ["Shuttles/pirate.yml"]
