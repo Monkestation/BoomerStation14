@@ -9,3 +9,6 @@ lobby-state-background-justaweekaway-artist = plantyfern
 
 lobby-state-background-janishootout-title = Jani Shootout
 lobby-state-background-janishootout-artist = psychpsyo
+
+lobby-state-background-invisiblewall-title = Invisible Wall
+lobby-state-background-invisiblewall-artist = Vandersloot

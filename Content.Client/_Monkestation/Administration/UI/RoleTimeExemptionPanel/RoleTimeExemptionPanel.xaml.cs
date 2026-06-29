@@ -26,9 +26,9 @@ public sealed partial class RoleTimeExemptionPanel : DefaultWindow
     private readonly Dictionary<string, (Button, List<(Button, IPrototype)>)> _roleCheckboxes = new();
     private readonly ISawmill _sawmill;
 
-    [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private ILogManager _logManager = default!;
+    [Dependency] private IEntityManager _entMan = default!;
+    [Dependency] private IPrototypeManager _protoMan = default!;
 
     private const string ExpandedArrow = "▼";
     private const string ContractedArrow = "▶";

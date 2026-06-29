@@ -10,9 +10,9 @@
   - type: MSBladder
     pissReagents:
       MSPiss: 1
-  - type: SolutionContainerManager
-    solutions:
-      bladder:
+  - type: Solution
+    id: bladder
+    solution:
         maxVol: 50
   - type: Sprite
     sprite:

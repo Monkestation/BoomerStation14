@@ -21,3 +21,9 @@
   background: /Textures/LobbyScreens/janishootout.webp
   title: lobby-state-background-janishootout-title
   artist: lobby-state-background-janishootout-artist
+
+- type: lobbyBackground
+  id: InvisibleWall
+  background: /Textures/LobbyScreens/invisiblewall.webp
+  title: lobby-state-background-invisiblewall-title
+  artist: lobby-state-background-invisiblewall-artist
