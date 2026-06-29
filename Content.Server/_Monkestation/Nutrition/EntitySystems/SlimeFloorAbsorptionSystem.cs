@@ -28,20 +28,20 @@ namespace Content.Server._Monkestation.Nutrition.EntitySystems;
 /// into the stomach so they metabolize normally (food nourishes, toxins harm), while cleaned
 /// dirt grants a flat bit of hunger. The behaviour can be toggled with an innate action.
 /// </summary>
-public sealed class SlimeFloorAbsorptionSystem : EntitySystem
+public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly HungerSystem _hunger = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly DecalSystem _decals = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly StainSystem _stain = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private HungerSystem _hunger = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private DecalSystem _decals = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private StainSystem _stain = default!;
 
     public override void Initialize()
     {
