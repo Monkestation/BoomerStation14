@@ -12,13 +12,13 @@ namespace Content.Server._Monkestation.Emoting.Systems;
 /// <summary>
 /// This handles the piss emote
 /// </summary>
-public sealed class FartEmoteSystem : EntitySystem
+public sealed partial class FartEmoteSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly ButtSystem _buttSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private ButtSystem _buttSystem = default!;
 
-    private EntityQuery<MSButtComponent> _buttQuery;
-    private EntityQuery<ContainerManagerComponent> _containerQuery;
+    [Dependency] private EntityQuery<MSButtComponent> _buttQuery;
+    [Dependency] private EntityQuery<ContainerManagerComponent> _containerQuery;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -26,9 +26,6 @@ public sealed class FartEmoteSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MSFartEmoteComponent, EmoteEvent>(OnEmote);
-
-        _buttQuery = GetEntityQuery<MSButtComponent>();
-        _containerQuery = GetEntityQuery<ContainerManagerComponent>();
     }
 
     private void OnEmote(Entity<MSFartEmoteComponent> ent, ref EmoteEvent args)
