@@ -16,7 +16,7 @@
   - Moth
   - Reptilian
   - SlimePerson
-  - Vox
+#  - Vox, monke - disable vox guidebook
   - Vulpkanin
 
 - type: guideEntry
