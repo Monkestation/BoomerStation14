@@ -24,9 +24,9 @@
       - Window
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window.rsi
+    sprite: _Monkestation/Structures/Windows/window.rsi # edited for monke ; window sprites
   - type: Icon
-    sprite: Structures/Windows/window.rsi
+    sprite: _Monkestation/Structures/Windows/window.rsi # edited for monke ; window sprites
     state: full
   - type: Physics
     bodyType: Static
