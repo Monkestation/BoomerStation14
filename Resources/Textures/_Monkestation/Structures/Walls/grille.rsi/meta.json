@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from https://github.com/Monkestation/Monkestation2.0 at commit 1fb7ec58ee4501ba99b97126f7e244340b83c9bb. grille_diagonal and grille_broken modified by @skarletto on github.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "grille"
+    },
+    {
+      "name": "grille_diagonal"
+    },
+    {
+      "name": "grille_broken"
+    }
+  ]
+}

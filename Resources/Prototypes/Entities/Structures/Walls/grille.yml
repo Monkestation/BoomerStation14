@@ -16,7 +16,7 @@
     - type: CanBuildWindowOnTop
     - type: Sprite
       drawdepth: Walls
-      sprite: Structures/Walls/grille.rsi
+      sprite: _Monkestation/Structures/Walls/grille.rsi # edited for monke ; grille sprites
       layers:
         - state: grille
         - state: electrified
@@ -25,7 +25,7 @@
           shader: unshaded
           visible: false
     - type: Icon
-      sprite: Structures/Walls/grille.rsi
+      sprite: _Monkestation/Structures/Walls/grille.rsi # edited for monke ; grille sprites
       state: grille
     - type: Construction
       graph: Grille
@@ -114,10 +114,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/grille.rsi
+    sprite: _Monkestation/Structures/Walls/grille.rsi # edited for monke ; grille sprites
     state: grille_broken
   - type: Icon
-    sprite: Structures/Walls/grille.rsi
+    sprite: _Monkestation/Structures/Walls/grille.rsi # edited for monke ; grille sprites
     state: grille_broken
   - type: RCDDeconstructable
     cost: 60 # Funkystation
@@ -172,7 +172,7 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/grille.rsi
+    sprite: _Monkestation/Structures/Walls/grille.rsi # edited for monke ; grille sprites
     layers:
     - state: grille_diagonal
     - state: electrified_diagonal
@@ -181,7 +181,7 @@
       shader: unshaded
       visible: false
   - type: Icon
-    sprite: Structures/Walls/grille.rsi
+    sprite: _Monkestation/Structures/Walls/grille.rsi # edited for monke ; grille sprites
     state: grille_diagonal
   - type: Tag
     tags:
