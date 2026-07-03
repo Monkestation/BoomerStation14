@@ -38,4 +38,11 @@ Entries:
   id: 5
   time: '2026-06-30T02:45:00.0000000+00:00'
   url: https://github.com/Monkestation/forky-station/pull/34
+- author: Gboster-0
+  changes:
+  - message: Fixed the orbit menu showing non-player mobs
+    type: Fix
+  id: 5
+  time: '2026-07-03T21:40:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/39
 Order: 1
