@@ -372,8 +372,10 @@ namespace Content.Server.Ghost
                 var entity = GetNetEntity(uid);
                 if (warp.Mob)
                 {
-                    if (!TryComp<MindContainerComponent>(uid, out var mind))
+                    if (!TryComp<MindContainerComponent>(uid, out var mind) || !mind.HasMind)
+                    {
                         continue;
+                    }
                     if (_player.TryGetSessionByEntity(uid, out var session) && session.ContentData()?.Stealthed == true)
                         continue;
                     byte followers = 0;
