@@ -1,6 +1,6 @@
 using Content.Shared._Monkestation.Verbs;
+using Content.Shared.Examine;
 using Content.Shared.Interaction;
-using Content.Shared.Medical.SuitSensors;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 
@@ -20,6 +20,22 @@ public sealed partial class RadioAmplifierSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MSRadioAmplifierComponent, GetVerbsEvent<Verb>>(OnVerb);
+        SubscribeLocalEvent<MSRadioAmplifierComponent, ExaminedEvent>(OnExamine);
+    }
+
+    /// <summary>
+    /// Localize the RadioAmplifier status and push to the examination tooltip.
+    /// </summary>
+    /// <param name="ent">Entity with a <see cref="MSRadioAmplifierComponent"/> under examination.</param>
+    /// <param name="args"><see cref="ExaminedEvent"/> arguments,
+    /// used to determine range and retrieve the active mode.</param>
+    /// <exception cref="InvalidOperationException">Invalid mode was provided.</exception>
+    private void OnExamine(Entity<MSRadioAmplifierComponent> ent, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        args.PushMarkup(Loc.GetString(ent.Comp.Enabled ? "ms-radio-amplifier-examine-on" : "ms-radio-amplifier-examine-off"));
     }
 
     private void OnVerb(Entity<MSRadioAmplifierComponent> ent, ref GetVerbsEvent<Verb> args)
@@ -41,7 +57,7 @@ public sealed partial class RadioAmplifierSystem : EntitySystem
     /// <summary>
     /// Create a verb for viewing and setting the state of the amplifier.
     /// </summary>
-    /// <param name="ent">Entity with a <see cref="SuitSensorComponent"/> to be verbed.</param>
+    /// <param name="ent">Entity with an <see cref="MSRadioAmplifierComponent"/> to be verbed.</param>
     /// <param name="userUid">Actor requesting the verb, used to identify if a foreign actor is requesting a verb.</param>
     /// <param name="enabled">Mode to change the state to</param>
     /// <returns>A created <see cref="Verb"/> that will attempt to change to a specific mode.</returns>
@@ -59,7 +75,7 @@ public sealed partial class RadioAmplifierSystem : EntitySystem
     }
 
     /// <summary>
-    /// Sets mode of the <see cref="SuitSensorComponent"/> of the chosen entity.
+    /// Sets mode of the <see cref="MSRadioAmplifierComponent"/> of the chosen entity.
     /// Makes popup when <param name="userUid"> not null
     /// </summary>
     /// <param name="sensors">Entity and it's component that should be changed</param>
