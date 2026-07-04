@@ -8,33 +8,33 @@
   },
   "states": [
     {
-      "name": "icon"
-	  "copyright": "Sprite created by Tea(d.d.tea on Discord, @teasq.bsky.social)",
-	  "license": "CC-BY-NC-SA-4.0"
+      "name": "icon",
+      "copyright": "Sprite created by Tea(d.d.tea on Discord, @teasq.bsky.social)",
+      "license": "CC-BY-NC-SA-4.0"
     },
     {
       "name": "equipped-EYES",
-      "directions": 4
-	  "copyright": "Based on glasses.dmi from tgstation at commit https://github.com/tgstation/tgstation/commit/5a73e8f825ff279e82949b9329783a9e3070e2da by @Skarletto on github inspired by Tea(d.d.tea on Discord, @teasq.bsky.social)'s sprites color scheme",
-	  "license": "CC-BY-SA-3.0"
+      "directions": 4,
+      "copyright": "Based on glasses.dmi from tgstation at commit https://github.com/tgstation/tgstation/commit/5a73e8f825ff279e82949b9329783a9e3070e2da, edited by @Skarletto, color scheme inspired by Tea (d.d.tea on Discord, @teasq.bsky.social)",
+      "license": "CC-BY-SA-3.0"
     },
     {
       "name": "equipped-EYES-hamster",
-      "directions": 4
-	  "copyright": "Sprite created by Tea(d.d.tea on Discord, @teasq.bsky.social)",
-	  "license": "CC-BY-NC-SA-4.0"
+      "directions": 4,
+      "copyright": "Sprite created by Tea(d.d.tea on Discord, @teasq.bsky.social)",
+      "license": "CC-BY-NC-SA-4.0"
     },
     {
       "name": "inhand-left",
-      "directions": 4
-	  "copyright": "Sprite created by Tea(d.d.tea on Discord, @teasq.bsky.social)",
-	  "license": "CC-BY-NC-SA-4.0"
+      "directions": 4,
+      "copyright": "Sprite created by Tea(d.d.tea on Discord, @teasq.bsky.social)",
+      "license": "CC-BY-NC-SA-4.0"
     },
     {
       "name": "inhand-right",
-      "directions": 4
-	  "copyright": "Sprite created by Tea(d.d.tea on Discord, @teasq.bsky.social)",
-	  "license": "CC-BY-NC-SA-4.0"
+      "directions": 4,
+      "copyright": "Sprite created by Tea(d.d.tea on Discord, @teasq.bsky.social)",
+      "license": "CC-BY-NC-SA-4.0"
     }
   ]
 }
