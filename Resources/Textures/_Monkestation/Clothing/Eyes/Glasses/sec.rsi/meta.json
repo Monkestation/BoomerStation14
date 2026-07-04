@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "license": "multiple (see states)",
+  "license": "state based licensing",
   "copyright": "state based copyright",
   "size": {
     "x": 32,
@@ -15,7 +15,7 @@
     {
       "name": "equipped-EYES",
       "directions": 4,
-      "copyright": "Based on glasses.dmi from tgstation at commit https://github.com/tgstation/tgstation/commit/5a73e8f825ff279e82949b9329783a9e3070e2da, edited by @Skarletto, color scheme inspired by Tea (d.d.tea on Discord, @teasq.bsky.social)",
+      "copyright": "Derived from glasses.dmi from tgstation at commit https://github.com/tgstation/tgstation/commit/5a73e8f825ff279e82949b9329783a9e3070e2da, edited by @Skarletto, color scheme inspired by Tea (d.d.tea on Discord, @teasq.bsky.social)",
       "license": "CC-BY-SA-3.0"
     },
     {
