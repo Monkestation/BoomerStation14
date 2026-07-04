@@ -3,6 +3,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Ghost;
 using Content.Server.Power.Components;
+using Content.Shared._Monkestation.Radio;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Radio;
@@ -106,14 +107,19 @@ public sealed partial class RadioSystem : EntitySystem
         else
             speech = _chat.GetSpeechVerb(messageSource, message);
 
+        // Monke start - Radio amplifier
+        var amplified = TryComp<MSRadioAmplifierComponent>(radioSource, out var component)
+            && component.Enabled;
+        // Monke end
+
         var content = escapeMarkup
             ? FormattedMessage.EscapeText(message)
             : message;
 
-        var wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
+        var wrappedMessage = Loc.GetString((amplified || speech.Bold) ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap", // Monke - Amplified makes you bold
             ("color", channel.Color),
             ("fontType", speech.FontId),
-            ("fontSize", speech.FontSize),
+            ("fontSize", amplified ? speech.FontSizeAmplified : speech.FontSize), // Amplified makes the font bigger
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
