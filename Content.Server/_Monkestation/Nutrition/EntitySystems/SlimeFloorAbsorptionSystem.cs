@@ -96,11 +96,13 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
         if (comp.LastGrid == gridUid && comp.LastTile == tile)
             return;
 
-        comp.LastGrid = gridUid;
-        comp.LastTile = tile;
-
         if (_timing.CurTime < comp.NextAbsorb)
             return;
+
+        // Mark the tile only once we're actually going to act, so if we're stepped onto it
+        // mid-cooldown it gets retried when the cooldown finishes instead of being skipped.
+        comp.LastGrid = gridUid;
+        comp.LastTile = tile;
 
         var didSomething = false;
 
