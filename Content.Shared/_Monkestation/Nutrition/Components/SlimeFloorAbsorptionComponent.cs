@@ -1,5 +1,4 @@
 using Content.Shared.FixedPoint;
-using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -26,20 +25,20 @@ public sealed partial class SlimeFloorAbsorptionComponent : Component
     /// Maximum reagent volume slurped from puddles per tile stepped on.
     /// </summary>
     [DataField]
-    public FixedPoint2 AbsorbVolume = FixedPoint2.New(15);
+    public FixedPoint2 AbsorbVolume = FixedPoint2.New(5);
 
     /// <summary>
     /// Hunger restored for each cleanable dirt decal removed.
     /// </summary>
     [DataField]
-    public float NutritionPerDecal = 2f;
+    public float NutritionPerDecal = 0.1f;
 
     /// <summary>
     /// Flat hunger restored per unit of reagent slurped from puddles, on top of whatever
     /// those reagents do when metabolized. Makes cleaning always nourishing.
     /// </summary>
     [DataField]
-    public float NutritionPerVolume = 0.3f;
+    public float NutritionPerVolume = 0.005f;
 
     /// <summary>
     /// Minimum time between absorptions.
@@ -49,13 +48,6 @@ public sealed partial class SlimeFloorAbsorptionComponent : Component
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     public TimeSpan NextAbsorb;
-
-    /// <summary>
-    /// Sound played when something is absorbed.
-    /// </summary>
-    [DataField]
-    public SoundSpecifier? AbsorbSound =
-        new SoundPathSpecifier("/Audio/Effects/Fluids/watersplash.ogg");
 
     /// <summary>
     /// The toggle action prototype granted on map init.

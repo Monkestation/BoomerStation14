@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Server._Funkystation.Stains;
 using Content.Server.Decals;
+using Content.Shared._Funkystation.Footprints;
 using Content.Shared._Funkystation.Stains.Components;
 using Content.Shared._Monkestation.Nutrition;
 using Content.Shared._Monkestation.Nutrition.Components;
@@ -14,9 +15,9 @@ using Content.Shared.Decals;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Popups;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 
@@ -41,8 +42,10 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private DecalSystem _decals = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private StainSystem _stain = default!;
+
+    // Solution that footprint entities keep their tracked reagents in (see FootprintSystem).
+    private const string FootprintSolution = "print";
 
     public override void Initialize()
     {
@@ -61,11 +64,13 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
     {
         _actions.AddAction(ent, ref ent.Comp.ToggleActionEntity, ent.Comp.ToggleAction);
         _actions.SetToggled(ent.Comp.ToggleActionEntity, ent.Comp.Enabled);
+        UpdateFootprints(ent);
     }
 
     private void OnShutdown(Entity<SlimeFloorAbsorptionComponent> ent, ref ComponentShutdown args)
     {
         _actions.RemoveAction(ent.Owner, ent.Comp.ToggleActionEntity);
+        RemComp<NoFootprintsComponent>(ent.Owner);
     }
 
     private void OnToggle(Entity<SlimeFloorAbsorptionComponent> ent, ref ToggleSlimeFloorAbsorptionEvent args)
@@ -78,10 +83,23 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
         Dirty(ent);
 
         _actions.SetToggled(ent.Comp.ToggleActionEntity, ent.Comp.Enabled);
+        UpdateFootprints(ent);
         _popup.PopupEntity(
             Loc.GetString(ent.Comp.Enabled ? "slime-absorption-toggle-on" : "slime-absorption-toggle-off"),
             ent,
             ent);
+    }
+
+    /// <summary>
+    /// While absorbing, the slime slurps up anything it steps in instead of tracking it around,
+    /// so suppress its own footprints. Restore them when the behaviour is toggled off.
+    /// </summary>
+    private void UpdateFootprints(Entity<SlimeFloorAbsorptionComponent> ent)
+    {
+        if (ent.Comp.Enabled)
+            EnsureComp<NoFootprintsComponent>(ent.Owner);
+        else
+            RemComp<NoFootprintsComponent>(ent.Owner);
     }
 
     private void OnMove(Entity<SlimeFloorAbsorptionComponent> ent, ref MoveEvent args)
@@ -118,10 +136,7 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
             didSomething |= TryAbsorbTile(ent, gridUid, grid, tile);
 
         if (didSomething)
-        {
-            _audio.PlayPvs(comp.AbsorbSound, ent);
             comp.NextAbsorb = _timing.CurTime + comp.Cooldown;
-        }
     }
 
     /// <summary>
@@ -175,6 +190,35 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
         var intersecting = _lookup.GetLocalEntitiesIntersecting(gridUid, tile, gridComp: grid);
         foreach (var uid in intersecting)
         {
+            // Footprints are thin films, not puddles: slurp the whole mark (stomach permitting) and
+            // remove the entity so it visually disappears instead of just fading.
+            if (HasComp<FootprintComponent>(uid))
+            {
+                if (!_solution.TryGetSolution(uid, FootprintSolution, out var printSolution, out var print)
+                    || print.Volume <= 0)
+                    continue;
+
+                var printSlurped = _solution.SplitSolution(printSolution.Value, print.Volume);
+                var printIngested = IngestIntoStomach(ent.Owner, printSlurped);
+
+                // Hand back whatever the stomachs couldn't hold.
+                if (printSlurped.Volume > 0)
+                    _solution.TryAddSolution(printSolution.Value, printSlurped);
+
+                if (printIngested <= 0)
+                    continue;
+
+                // Fully absorbed the mark -> delete it so the prints vanish.
+                if (print.Volume <= 0)
+                    QueueDel(uid);
+
+                if (comp.NutritionPerVolume > 0)
+                    _hunger.ModifyHunger(ent.Owner, printIngested.Float() * comp.NutritionPerVolume);
+
+                didSomething = true;
+                continue;
+            }
+
             if (!TryComp<PuddleComponent>(uid, out var puddle))
                 continue;
 
@@ -204,7 +248,9 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
         }
 
         // --- Cleanable dirt decals: remove them and gain a flat bit of hunger each. ---
-        if (TryComp<DecalGridComponent>(gridUid, out var decalGrid))
+        // Skip when already full: otherwise we'd wipe the dirt and play the slurp sound for no gain.
+        if (_hunger.IsHungerBelowState(ent.Owner, HungerThreshold.Overfed)
+            && TryComp<DecalGridComponent>(gridUid, out var decalGrid))
         {
             var bounds = _lookup.GetLocalBounds(tile, grid.TileSize).Enlarged(0.5f).Translated(new Vector2(-0.5f, -0.5f));
             foreach (var (index, decal) in _decals.GetDecalsIntersecting(gridUid, bounds, decalGrid))
