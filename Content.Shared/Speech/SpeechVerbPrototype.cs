@@ -35,7 +35,7 @@ public sealed partial class SpeechVerbPrototype : IPrototype
     ///     What font size should be used for the message contents when amplified (loud headset, megaphone)?
     /// </summary>
     [DataField]
-    public int FontSizeAmplified = 18;
+    public int FontSizeAmplified = 14;
     // Monkestation end
 
     /// <summary>
