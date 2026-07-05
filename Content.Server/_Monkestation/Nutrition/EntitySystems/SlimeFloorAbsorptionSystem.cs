@@ -8,6 +8,7 @@ using Content.Shared.Actions;
 using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Decals;
 using Content.Shared.FixedPoint;
@@ -50,6 +51,9 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
         SubscribeLocalEvent<SlimeFloorAbsorptionComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<SlimeFloorAbsorptionComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<SlimeFloorAbsorptionComponent, MoveEvent>(OnMove);
+
+        SubscribeLocalEvent<BodyComponent, SlimeAbsorbToStomachEvent>(_body.RelayEvent);
+        SubscribeLocalEvent<StomachComponent, BodyRelayedEvent<SlimeAbsorbToStomachEvent>>(OnStomachAbsorb);
         SubscribeLocalEvent<SlimeFloorAbsorptionComponent, ToggleSlimeFloorAbsorptionEvent>(OnToggle);
     }
 
@@ -126,10 +130,6 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
     private bool TryAbsorbStains(Entity<SlimeFloorAbsorptionComponent> ent)
     {
         var comp = ent.Comp;
-
-        if (!_body.TryGetOrgansWithComponent<StomachComponent>(ent.Owner, out var stomachs))
-            return false;
-
         var didSomething = false;
 
         foreach (var item in _inventory.GetHandOrInventoryEntities((ent.Owner, null, null)))
@@ -141,27 +141,26 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
                 || stain.Volume <= 0)
                 continue;
 
-            foreach (var stomach in stomachs)
-            {
-                if (!_solution.ResolveSolution(stomach.Owner, StomachSystem.DefaultSolutionName, ref stomach.Comp.Solution, out var stomachSolution)
-                    || stomachSolution.AvailableVolume <= 0)
-                    continue;
+            var amount = FixedPoint2.Min(comp.AbsorbVolume, stain.Volume);
+            if (amount <= 0)
+                continue;
 
-                var amount = FixedPoint2.Min(comp.AbsorbVolume, stomachSolution.AvailableVolume);
-                amount = FixedPoint2.Min(amount, stain.Volume);
-                if (amount <= 0)
-                    continue;
+            var slurped = _solution.SplitSolution(stainSolution.Value, amount);
+            var ingested = IngestIntoStomach(ent.Owner, slurped);
 
-                var slurped = _solution.SplitSolution(stainSolution.Value, amount);
-                _solution.TryAddSolution(stomach.Comp.Solution.Value, slurped);
-                _stain.UpdateVisuals((item, stainable));
+            // Hand back whatever the stomachs couldn't hold.
+            if (slurped.Volume > 0)
+                _solution.TryAddSolution(stainSolution.Value, slurped);
 
-                if (comp.NutritionPerVolume > 0)
-                    _hunger.ModifyHunger(ent.Owner, slurped.Volume.Float() * comp.NutritionPerVolume);
+            if (ingested <= 0)
+                continue;
 
-                didSomething = true;
-                break;
-            }
+            _stain.UpdateVisuals((item, stainable));
+
+            if (comp.NutritionPerVolume > 0)
+                _hunger.ModifyHunger(ent.Owner, ingested.Float() * comp.NutritionPerVolume);
+
+            didSomething = true;
         }
 
         return didSomething;
@@ -173,40 +172,35 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
         var didSomething = false;
 
         // --- Puddles: ingest into the stomach so reagents metabolize per their own effects. ---
-        if (_body.TryGetOrgansWithComponent<StomachComponent>(ent.Owner, out var stomachs))
+        var intersecting = _lookup.GetLocalEntitiesIntersecting(gridUid, tile, gridComp: grid);
+        foreach (var uid in intersecting)
         {
-            var intersecting = _lookup.GetLocalEntitiesIntersecting(gridUid, tile, gridComp: grid);
-            foreach (var uid in intersecting)
-            {
-                if (!TryComp<PuddleComponent>(uid, out var puddle))
-                    continue;
+            if (!TryComp<PuddleComponent>(uid, out var puddle))
+                continue;
 
-                if (!_solution.ResolveSolution(uid, puddle.SolutionName, ref puddle.Solution, out var puddleSolution)
-                    || puddleSolution.Volume <= 0)
-                    continue;
+            if (!_solution.ResolveSolution(uid, puddle.SolutionName, ref puddle.Solution, out var puddleSolution)
+                || puddleSolution.Volume <= 0)
+                continue;
 
-                foreach (var stomach in stomachs)
-                {
-                    if (!_solution.ResolveSolution(stomach.Owner, StomachSystem.DefaultSolutionName, ref stomach.Comp.Solution, out var stomachSolution)
-                        || stomachSolution.AvailableVolume <= 0)
-                        continue;
+            var amount = FixedPoint2.Min(comp.AbsorbVolume, puddleSolution.Volume);
+            if (amount <= 0)
+                continue;
 
-                    var amount = FixedPoint2.Min(comp.AbsorbVolume, stomachSolution.AvailableVolume);
-                    amount = FixedPoint2.Min(amount, puddleSolution.Volume);
-                    if (amount <= 0)
-                        continue;
+            var slurped = _solution.SplitSolution(puddle.Solution.Value, amount);
+            var ingested = IngestIntoStomach(ent.Owner, slurped);
 
-                    var slurped = _solution.SplitSolution(puddle.Solution.Value, amount);
-                    _solution.TryAddSolution(stomach.Comp.Solution.Value, slurped);
+            // Hand back whatever the stomachs couldn't hold.
+            if (slurped.Volume > 0)
+                _solution.TryAddSolution(puddle.Solution.Value, slurped);
 
-                    // Slurping anything off the floor always nourishes a little.
-                    if (comp.NutritionPerVolume > 0)
-                        _hunger.ModifyHunger(ent.Owner, slurped.Volume.Float() * comp.NutritionPerVolume);
+            if (ingested <= 0)
+                continue;
 
-                    didSomething = true;
-                    break;
-                }
-            }
+            // Slurping anything off the floor always nourishes a little.
+            if (comp.NutritionPerVolume > 0)
+                _hunger.ModifyHunger(ent.Owner, ingested.Float() * comp.NutritionPerVolume);
+
+            didSomething = true;
         }
 
         // --- Cleanable dirt decals: remove them and gain a flat bit of hunger each. ---
@@ -226,4 +220,42 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
 
         return didSomething;
     }
+
+    /// <summary>
+    /// Pours a slurped solution into the slime's stomachs and returns how much they actually took.
+    /// Whatever the stomachs couldn't hold is left behind in <paramref name="slurped"/>.
+    /// </summary>
+    private FixedPoint2 IngestIntoStomach(EntityUid slime, Solution slurped)
+    {
+        var before = slurped.Volume;
+        var ev = new SlimeAbsorbToStomachEvent(slurped);
+        RaiseLocalEvent(slime, ref ev);
+        return before - slurped.Volume;
+    }
+
+    /// <summary>
+    /// Each stomach drinks what it can of the relayed solution, leaving the rest for the caller.
+    /// </summary>
+    private void OnStomachAbsorb(Entity<StomachComponent> ent, ref BodyRelayedEvent<SlimeAbsorbToStomachEvent> args)
+    {
+        var slurped = args.Args.Solution;
+        if (slurped.Volume <= 0)
+            return;
+
+        if (!_solution.ResolveSolution(ent.Owner, StomachSystem.DefaultSolutionName, ref ent.Comp.Solution, out var stomachSolution)
+            || stomachSolution.AvailableVolume <= 0)
+            return;
+
+        var take = FixedPoint2.Min(slurped.Volume, stomachSolution.AvailableVolume);
+        var portion = slurped.SplitSolution(take);
+        _solution.TryAddSolution(ent.Comp.Solution.Value, portion);
+    }
 }
+
+/// <summary>
+/// Raised on a slimeperson's body to pour a slurped solution into its stomachs. Each stomach
+/// drinks what it can hold; the leftover stays in the solution for the caller to put back
+/// wherever it was slurped from.
+/// </summary>
+[ByRefEvent]
+public record struct SlimeAbsorbToStomachEvent(Solution Solution);
