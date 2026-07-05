@@ -1,18 +1,14 @@
 {
-  "version": 1,
-  "license": [
-    "CC-BY-NC-SA-4.0",
-    "CC-BY-SA-3.0"
-  ],
-  "copyright": [
-    "icon.png, equipped-EYES-hamster.png, inhand-left.png and inhand-right.png are sprites created by Tea (d.d.tea on Discord, @teasq.bsky.social) and licensed as CC-BY-NC-SA-4.0",
-    "equipped-EYES.png derived from glasses.dmi from tgstation at commit https://github.com/tgstation/tgstation/commit/5a73e8f825ff279e82949b9329783a9e3070e2da, edited by @Skarletto, color scheme inspired by Tea (d.d.tea on Discord, @teasq.bsky.social) and licensed as CC-BY-SA-3.0"
-  ],
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
+	"version": 1,
+    "license": "CC-BY-NC-SA-4.0",
+    "copyright": "Applies to icon.png, equipped-EYES-hamster.png, inhand-left.png and inhand-right.png. These sprites were created by Tea (d.d.tea on Discord, @teasq.bsky.social)",
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Applies to equipped-EYES.png, derived from glasses.dmi from tgstation at commit https://github.com/tgstation/tgstation/commit/5a73e8f825ff279e82949b9329783a9e3070e2da, edited by @Skarletto, color scheme inspired by Tea (d.d.tea on Discord, @teasq.bsky.social)",
+	"size": {
+		"x": 32,
+		"y": 32
+	},
+	"states": [
     {
       "name": "icon"
     },
