@@ -13,7 +13,7 @@ namespace Content.Shared._Monkestation.Nutrition.Components;
 /// metabolizes normally (food nourishes, water hydrates, toxins harm). Toggleable
 /// through an innate action.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class SlimeFloorAbsorptionComponent : Component
 {
     /// <summary>
@@ -47,7 +47,7 @@ public sealed partial class SlimeFloorAbsorptionComponent : Component
     [DataField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(0.5);
 
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
     public TimeSpan NextAbsorb;
 
     /// <summary>
