@@ -13,6 +13,7 @@ using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Toilet.Components;
 using Robust.Shared.Containers;
+using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
@@ -188,7 +189,7 @@ public sealed partial class BladderSystem : EntitySystem
         var otherFilter = Filter.PvsExcept(ent, entityManager: EntityManager);
         if (toilet.HasValue)
         {
-            _popupSystem.PopupClient(Loc.GetString("ms-chat-emote-piss-target-self",
+            _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-target-self",
                     ("target", Identity.Entity(toilet.Value.HitEntity, EntityManager, ent))),
                 ent,
                 ent);
@@ -223,7 +224,7 @@ public sealed partial class BladderSystem : EntitySystem
                 targetSolution.Value,
                 bladder.PissAmount)) > 0)
         {
-            _popupSystem.PopupClient(Loc.GetString("ms-chat-emote-piss-target-self",
+            _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-target-self",
                     ("target", Identity.Entity(containerSlot.ContainedEntity.Value, EntityManager, ent))),
                 ent,
                 ent);
@@ -240,7 +241,7 @@ public sealed partial class BladderSystem : EntitySystem
 
         var pissedSolution = _solutionContainerSystem.SplitSolution(bladder.Solution!.Value, bladder.PissAmount);
         _puddleSystem.TrySpillAt(_transform.ToCoordinates(user!, userPos.Offset(dir)), pissedSolution, out _, false);
-        _popupSystem.PopupClient(Loc.GetString("ms-chat-emote-piss-floor-self"), ent);
+        _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-floor-self"), ent);
         _popupSystem.PopupEntity(
             Loc.GetString("ms-chat-emote-piss-floor-other", ("pisser", Identity.Entity(ent, EntityManager))),
             ent,
