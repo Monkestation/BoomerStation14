@@ -25,6 +25,7 @@
     sprite: Clothing/Ears/Headsets/cargo.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/cargo.rsi
+  - type: MSRadioAmplifier # Monkestation edit, loud command radios
 
 - type: entity
   parent: ClothingHeadsetAlt
@@ -40,6 +41,7 @@
     sprite: Clothing/Ears/Headsets/centcom.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: MSRadioAmplifier # Monkestation edit, loud command radios
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
@@ -54,6 +56,7 @@
     sprite: Clothing/Ears/Headsets/command.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/command.rsi
+  - type: MSRadioAmplifier # Monkestation edit, loud command radios
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
@@ -70,6 +73,7 @@
     sprite: Clothing/Ears/Headsets/engineering.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/engineering.rsi
+  - type: MSRadioAmplifier # Monkestation edit, loud command radios
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
@@ -88,6 +92,7 @@
     sprite: Clothing/Ears/Headsets/medical.rsi
   - type: StealTarget
     stealGroup: ClothingHeadsetAltMedical
+  - type: MSRadioAmplifier # Monkestation edit, loud command radios
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
@@ -104,6 +109,7 @@
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/security.rsi
+  - type: MSRadioAmplifier # Monkestation edit, loud command radios
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseCommandContraband]
@@ -120,6 +126,7 @@
     sprite: Clothing/Ears/Headsets/science.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/science.rsi
+  - type: MSRadioAmplifier # Monkestation edit, loud command radios
 
 - type: entity
   parent: [ClothingHeadsetAlt, BaseSyndicateContraband]
@@ -172,3 +179,4 @@
       sprite: Clothing/Ears/Headsets/wizard.rsi
     - type: Clothing
       sprite: Clothing/Ears/Headsets/wizard.rsi
+    - type: MSRadioAmplifier # Monkestation edit, loud command radios

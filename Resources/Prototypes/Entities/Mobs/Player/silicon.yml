@@ -476,6 +476,8 @@
     mindRoles:
     - MindRoleGhostRoleSilicon
     job: StationAi
+  - type: MSRadioAmplifier # Monkestation edit, loud command radios
+    enabled: true
 
 # Hologram projection that the AI's eye tracks.
 - type: entity

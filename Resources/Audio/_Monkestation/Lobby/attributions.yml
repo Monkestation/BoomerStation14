@@ -1,0 +1,9 @@
+- files: ["1._Ordnance.ogg", "2._Strange_Specimen_full_draft2_l12.ogg", "3._Comfort_draft6.ogg", "4._Generic_For_Disaster.ogg", "5._Traumatic_Glitch_draft3.ogg", "6._Nothing_To_Lose_draft4.ogg", "7._Cosmos_extended_draft3.ogg", "8._Sitar_Warrior_4.ogg", "9. Space Station 3.ogg", "10._droopy_likes_ss3.ogg", "11._Flowing_Uphill_2.ogg", "13._Clasher.ogg", "14._Frozen.ogg", "14._T87-Sulfurhead-Future_Imperfect.ogg", "15._Documents.ogg", "16._Documents_(2025_Mix).ogg", "17._Tikrit.ogg", "18._Infiltration.ogg" ]
+  license: "Custom"
+  copyright: "Licensed to monkestation by Flleeppyy"
+  source: "https://flleeppyy.bandcamp.com/album/monkestation-lobby-jams-vol-1"
+
+- files: ["Chronoquest-Always_Wanted_This.ogg", "Chronoquest-OffsetJam.ogg", "Chronoquest-One_Minute_to_Midnight.ogg", "Chronoquest-Peaceful_Autumn.ogg", "Chronoquest-Prism.ogg", "Chronoquest-REACH_OUT.ogg"]
+  license: "Custom"
+  copyright: "Licensed to monkestation by Chronoquest"
+  source: "https://github.com/Monkestation/forky-station/pull/33"

@@ -24,4 +24,53 @@ Entries:
   id: 3
   time: '2026-06-22T23:00:00.0000000+00:00'
   url: https://github.com/Monkestation/forky-station/pull/25
+- author: adamsogm
+  changes:
+  - message: Added a bunch of lobby music
+    type: Add
+  id: 4
+  time: '2026-06-30T02:45:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/33
+- author: adamsogm
+  changes:
+  - message: Removed vox from the guidebook
+    type: Remove
+  id: 5
+  time: '2026-06-30T02:45:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/34
+- author: Gboster-0
+  changes:
+  - message: Fixed the orbit menu showing non-player mobs
+    type: Fix
+  id: 6
+  time: '2026-07-03T21:40:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/39
+- author: UnidentifiedSubstance
+  changes:
+  - message: Energy magnum description
+    type: Fix
+  id: 7
+  time: '2026-07-04T03:41:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/39
+- author: Skarletto
+  changes:
+  - message: Changed the sec glassed worn sprite to the old one
+    type: Tweak
+  id: 8
+  time: '2026-07-05T16:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/40
+- author: adamsong
+  changes:
+  - message: Fixed pissing not showing you that you were pissing.
+    type: Fix
+  id: 9
+  time: '2026-07-05T16:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/41
+- author: adamsong
+  changes:
+  - message: Added loud radio for command!
+    type: Add
+  id: 10
+  time: '2026-07-05T16:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/forky-station/pull/42
 Order: 1

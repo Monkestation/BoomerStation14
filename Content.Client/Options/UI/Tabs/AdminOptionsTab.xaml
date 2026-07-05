@@ -4,6 +4,13 @@
     <BoxContainer Orientation="Vertical">
         <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
             <BoxContainer Orientation="Vertical" Margin="8">
+                <!-- Starlight BEGIN -->
+                <Label Text="{Loc 'ui-options-admin-ghost'}" StyleClasses="LabelKeyText"/>
+                <BoxContainer Orientation="Horizontal">
+	                <Label ToolTip="{Loc 'ui-options-admin-ghost-script-tooltip'}" Text="{Loc 'ui-options-admin-ghost-script-label'}"/>
+	                <LineEdit ToolTip="{Loc 'ui-options-admin-ghost-script-tooltip'}" Name="AghostScriptName" HorizontalExpand="True"></LineEdit>
+                </BoxContainer>
+                <!-- Starlight END -->
                 <Label Text="{Loc 'ui-options-admin-player-panel'}"
                        StyleClasses="LabelKeyText"/>
                 <ui:OptionDropDown Name="DropDownPlayerTabSymbolSetting" Title="{Loc 'ui-options-admin-player-tab-symbol-setting'}" />
