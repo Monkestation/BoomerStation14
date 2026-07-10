@@ -5,9 +5,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: _Monkestation/Structures/Windows/reinforced_window.rsi # edited for monke ; window sprites
+    sprite: Structures/Windows/reinforced_window.rsi
   - type: Icon
-    sprite: _Monkestation/Structures/Windows/reinforced_window.rsi # edited for monke ; window sprites
+    sprite: Structures/Windows/reinforced_window.rsi
   - type: Repairable
     fuelCost: 10
     doAfterDelay: 2
