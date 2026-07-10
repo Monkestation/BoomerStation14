@@ -1,3 +1,4 @@
+using Content.Server._Monkestation;
 using Content.Server._Monkestation.Administration.Managers;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -86,6 +87,7 @@ internal static class ServerContentIoC
 
         // Monkestation start
         deps.Register<RoleTimeExemptionManager>();
+        deps.Register<_Monkestation.Announcements.AnnouncerManager>();
         // Monkestation end
     }
 }
