@@ -198,15 +198,13 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
                     || print.Volume <= 0)
                     continue;
 
-                var printSlurped = _solution.SplitSolution(printSolution.Value, print.Volume);
-                var printIngested = IngestIntoStomach(ent.Owner, printSlurped);
-
-                // Hand back whatever the stomachs couldn't hold.
-                if (printSlurped.Volume > 0)
-                    _solution.TryAddSolution(printSolution.Value, printSlurped);
-
+                // We want the whole mark anyway, so just let the stomachs sip straight from the
+                // print. Leftovers stay in it on their own, no handing anything back.
+                var printIngested = IngestIntoStomach(ent.Owner, print);
                 if (printIngested <= 0)
                     continue;
+
+                _solution.UpdateChemicals(printSolution.Value);
 
                 // Fully absorbed the mark -> delete it so the prints vanish.
                 if (print.Volume <= 0)
