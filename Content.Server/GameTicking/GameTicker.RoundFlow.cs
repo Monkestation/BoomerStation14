@@ -803,7 +803,7 @@ namespace Content.Server.GameTicking
                 _chatSystem.DispatchGlobalAnnouncement(Loc.GetString(proto.Message), playSound: true);
 
             // Monkestation edit start - announcer overrides
-            if (proto.Sound != null && _announcer.TryGetAnnouncerSound(proto.Sound, out var sound))
+            if (proto.Sound != null && _announcer.TryGetAnnouncerSound(proto.Sound.Value, out var sound))
                 _audio.PlayGlobal(sound, Filter.Broadcast(), true);
             // Monkestation edit end - announcer overrides
         }

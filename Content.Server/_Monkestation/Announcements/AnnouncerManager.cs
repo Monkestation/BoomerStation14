@@ -71,7 +71,7 @@ public sealed partial class AnnouncerManager : IPostInjectInit
 
         var validWeights = options.Weights.Where(pair =>
         {
-            if (_prototypeManager.HasIndex(pair.Key))
+            if (_prototypeManager.HasIndex<MSAnnouncerPrototype>(pair.Key))
                 return true;
             _sawmill.Error($"Unknown announcer prototype {pair.Key}");
             return false;
