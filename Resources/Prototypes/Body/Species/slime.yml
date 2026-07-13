@@ -109,6 +109,7 @@
     allowedEmotes: ['Squish']
   - type: TypingIndicator
     proto: slime
+  - type: SlimeFloorAbsorption # Monkestation - slurp puddles/dirt while barefoot
   - type: Vocal
     sounds:
       Male: MaleSlime
