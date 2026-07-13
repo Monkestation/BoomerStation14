@@ -1,5 +1,6 @@
 using System.Threading;
 using Content.Server.StationEvents.Events;
+using Content.Shared._Monkestation.Announcements;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -9,15 +10,10 @@ namespace Content.Server.StationEvents.Components;
 public sealed partial class PowerGridCheckRuleComponent : Component
 {
     /// <summary>
-    /// Default sound for power restoration announcement.
-    /// </summary>
-    private static readonly ProtoId<SoundCollectionPrototype> DefaultPowerOn = new("PowerOn");
-
-    /// <summary>
     /// Sound to play when power is restored.
     /// </summary>
     [DataField]
-    public SoundSpecifier PowerOnSound = new SoundCollectionSpecifier(DefaultPowerOn, AudioParams.Default.WithVolume(-4f));
+    public ProtoId<MSAnnouncementSoundPrototype> PowerOnSound = "GridPowerOn";
 
     /// <summary>
     /// Token source for cancelling the power restoration announcement.
