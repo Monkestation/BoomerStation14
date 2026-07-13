@@ -1,0 +1,9 @@
+- type: entity
+  id: MSFalseAlarm
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    weight: 15
+    duration: 1
+  - type: MSFalseAlarmRule
+  - type: MSUnFakeable

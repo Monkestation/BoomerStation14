@@ -23,6 +23,7 @@
     - id: SpiderClownSpawnHorde
     - id: SpiderSpawnHorde
     - id: VentClog
+    - id: MSFalseAlarm
 
 - type: entityTable
   id: BasicAntagEventsTable

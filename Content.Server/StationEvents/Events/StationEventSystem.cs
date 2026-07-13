@@ -45,7 +45,7 @@ public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T 
         if (!TryComp<StationEventComponent>(uid, out var stationEvent))
             return;
 
-        AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}");
+        AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}{(args.Fake ? " (Fake)" : "")}");
 
         // we don't want to send to players who aren't in game (i.e. in the lobby)
         Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);

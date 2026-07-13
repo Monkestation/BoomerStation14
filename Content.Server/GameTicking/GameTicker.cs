@@ -1,4 +1,5 @@
 using Content.Server._Monkestation.Announcements;
+using Content.Server._Monkestation.StationEvents.Events;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -67,7 +68,10 @@ namespace Content.Server.GameTicking
         [Dependency] private SharedRoleSystem _roles = default!;
         [Dependency] private ServerDbEntryManager _dbEntryManager = default!;
 
+        // Monkestation start
         [Dependency] private AnnouncerManager _announcer = default!;
+        [Dependency] private FalseAlarmRule _falseAlarmRule = default!;
+        // Monkestation end
 
         [ViewVariables] private bool _initialized;
         [ViewVariables] private bool _postInitialized;

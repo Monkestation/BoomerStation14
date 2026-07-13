@@ -1,6 +1,8 @@
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Server.StationEvents.Components;
+using Content.Shared._Monkestation.GameTicking.Components;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -46,6 +48,13 @@ public sealed partial class GameTicker
             "addgamerule <rules>",
             AddGameRuleCommand,
             AddGameRuleCompletions);
+
+        // Monkestation fake game rule command
+        _consoleHost.RegisterCommand("fakegamerule",
+            string.Empty,
+            "fakegamerule <rules>",
+            FakeGameRuleCommand,
+            FakeGameRuleCompletions);
 
         // End game rule command.
         _consoleHost.RegisterCommand("endgamerule",
@@ -100,7 +109,7 @@ public sealed partial class GameTicker
 #endif
         Log.Info(str);
 
-        var ev = new GameRuleAddedEvent(ruleEntity, ruleId);
+        var ev = new GameRuleAddedEvent(ruleEntity, ruleId, false); // Monkestation edit - set fake to false
         RaiseLocalEvent(ruleEntity, ref ev, true);
 
         var currentTime = RunLevel == GameRunLevel.PreRoundLobby ? TimeSpan.Zero : RoundDuration();
@@ -493,6 +502,49 @@ public sealed partial class GameTicker
     {
         return CompletionResult.FromHintOptions(GetAllGameRulePrototypes().Select(p => p.ID), "<rule>");
     }
+
+    // Monkestation start - fake game rule commands
+    [AdminCommand(AdminFlags.Fun)]
+    private void FakeGameRuleCommand(IConsoleShell shell, string argstr, string[] args)
+    {
+        if (args.Length == 0)
+            return;
+
+        foreach (var rule in args)
+        {
+            if (!_prototypeManager.TryIndex(rule, out var ruleProto))
+            {
+                shell.WriteError($"Invalid game rule {rule} was skipped.");
+
+                continue;
+            }
+
+            if (!ruleProto.HasComponent<StationEventComponent>() || ruleProto.HasComponent<MSUnFakeableComponent>())
+            {
+                shell.WriteError($"{rule} is not a valid station event to fake.");
+                continue;
+            }
+
+            if (shell.Player != null)
+            {
+                _adminLogger.Add(LogType.EventStarted, $"{shell.Player} tried to fake game rule [{rule}] via command");
+                _chatManager.SendAdminAnnouncement(Loc.GetString("ms-fake-gamerule-admin", ("rule", rule), ("admin", shell.Player)));
+            }
+            else
+            {
+                _adminLogger.Add(LogType.EventStarted, $"Unknown tried to fake game rule [{rule}] via command");
+            }
+
+
+            _falseAlarmRule.AnnounceFakeEvent(rule);
+        }
+    }
+
+    private CompletionResult FakeGameRuleCompletions(IConsoleShell shell, string[] args)
+    {
+        return CompletionResult.FromHintOptions(_falseAlarmRule.FakeableEvents().Select(p => p.ID), "<rule>");
+    }
+    // Monkestation end - fake game rule commands
 
     [AdminCommand(AdminFlags.Fun)]
     private void EndGameRuleCommand(IConsoleShell shell, string argstr, string[] args)
