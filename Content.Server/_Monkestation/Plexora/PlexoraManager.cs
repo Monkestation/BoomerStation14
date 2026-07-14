@@ -8,17 +8,23 @@ using Robust.Shared.Player;
 
 namespace Content.Server._Monkestation.Plexora;
 
-public sealed partial class PlexoraManager
+public sealed partial class PlexoraManager : IPostInjectInit
 {
     [Dependency] private IConfigurationManager _configManager = default!;
+    [Dependency] private ILogManager _logManager = default!;
     private readonly HttpClient _httpClient = new();
+
+    public void PostInject()
+    {
+        _sawmill = _logManager.GetSawmill("plexora");
+    }
+    private ISawmill _sawmill = default!;
 
     public async Task<PlexoraDonorApiResponse?> GetDonorInfo(ICommonSession session)
     {
-        if (!_configManager.GetCVar(CCVarsMonke.PlexoraEnabled))
+        if (!IsPlexoraConfigured())
         {
-            return new PlexoraDonorApiResponse(["Staff", "Twitch1", "Nukie", "AAAAA"]);
-            // return null;
+            return null;
         }
 
         var donorRequest = new HttpRequestMessage(HttpMethod.Get, _configManager.GetCVar(CCVarsMonke.PlexoraUrl) + "/donor/" + session.UserId);
@@ -28,4 +34,37 @@ public sealed partial class PlexoraManager
         return apiResponse;
     }
 
+    public async Task<string?> GetDiscordLinkCode(ICommonSession session)
+    {
+        if (!IsPlexoraConfigured())
+        {
+            return "PLX-VERIFY-this_is_a_token";
+            // return null; TODO: Re-enable
+        }
+
+        var linkCodeRequest = new HttpRequestMessage(HttpMethod.Get, _configManager.GetCVar(CCVarsMonke.PlexoraToken) + "/link/" + session.UserId);
+        linkCodeRequest.Headers.Authorization = new AuthenticationHeaderValue("Basic", _configManager.GetCVar(CCVarsMonke.PlexoraToken));
+        var result = await _httpClient.SendAsync(linkCodeRequest);
+        var apiResponse = await result.Content.ReadFromJsonAsync<PlexoraLinkCodeApiResponse>();
+        return apiResponse?.Code;
+    }
+
+    private bool IsPlexoraConfigured()
+    {
+        if (!_configManager.GetCVar(CCVarsMonke.PlexoraEnabled))
+        {
+            return false;
+        }
+
+        if (_configManager.GetCVar(CCVarsMonke.PlexoraToken) == string.Empty
+            || _configManager.GetCVar(CCVarsMonke.PlexoraUrl) == string.Empty)
+        {
+            _sawmill.Warning("Plexora is enabled but missing either token or url.");
+            return false;
+        }
+
+        return true;
+    }
+
+    private record PlexoraLinkCodeApiResponse(string Code);
 }
