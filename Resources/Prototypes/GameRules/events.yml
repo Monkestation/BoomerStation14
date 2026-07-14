@@ -335,8 +335,8 @@
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
     startAudio: GridPowerOff # monkestation edit - announcer overrides
-    duration: 60
-    maxDuration: 120
+    duration: 30
+    maxDuration: 30
   - type: PowerGridCheckRule
 
 - type: entity
