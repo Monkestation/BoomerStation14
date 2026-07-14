@@ -55,16 +55,8 @@ namespace Content.Server.StationEvents.Events
                 }
             }
 
-            // Can't use the default EndAudio
-            component.AnnounceCancelToken?.Cancel();
-            component.AnnounceCancelToken = new CancellationTokenSource();
-            Timer.Spawn(3000, () =>
-            {
-                // Monkestation edit - announcer variations
-                _announcer.TryGetAnnouncerSound(component.PowerOnSound, out var sound);
-                Audio.PlayGlobal(sound, Filter.Broadcast(), true);
-                // Monkestation edit end - announcer variations
-            }, component.AnnounceCancelToken.Token);
+            // Can use the default EndAudio! Edit for monkestation
+
             component.Unpowered.Clear();
         }
 

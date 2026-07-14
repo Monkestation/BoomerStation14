@@ -337,6 +337,7 @@
     startAudio: GridPowerOff # monkestation edit - announcer overrides
     duration: 30
     maxDuration: 30
+    endAudio: GridPowerOn # monkestation edit - announcer overrides
   - type: PowerGridCheckRule
 
 - type: entity

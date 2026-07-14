@@ -3,7 +3,9 @@
   weights:
     DefaultAnnouncer: 0
     DukeAnnouncer: 0
-    InternAnnouncer: 100
+    InternAnnouncer: 0
+    MedbotAnnouncer: 0
+    DagothAnnouncer: 100
 
 - type: msAnnouncer
   id: DefaultAnnouncer
@@ -45,12 +47,10 @@
   sounds:
     Attention:
       collection: MSDukeAlerts
-    Announce:
-      path: /Audio/_Monkestation/Announcements/AnnouncementConsole/announce.ogg
     GridPowerOff:
       path: /Audio/_Monkestation/Announcements/Duke/power_off.ogg
     GridPowerOn:
-      collection: MSDukePowerOn
+      path: /Audio/_Monkestation/Announcements/Duke/power_on.ogg
     Intercept:
       path: /Audio/_Monkestation/Announcements/Duke/intercept.ogg
     Welcome:
@@ -63,8 +63,6 @@
       path: /Audio/_Monkestation/Announcements/Duke/shuttle_recall.ogg
     ShuttleDock:
       path: /Audio/_Monkestation/Announcements/Duke/shuttle_arrive.ogg
-    Notice1:
-      path: /Audio/Misc/notice1.ogg
 
 - type: msAnnouncer
   parent: DefaultAnnouncer
@@ -72,8 +70,6 @@
   sounds:
     Attention:
       collection: MSInternAlerts
-    Announce:
-      path: /Audio/_Monkestation/Announcements/AnnouncementConsole/announce.ogg
     GridPowerOff:
       path: /Audio/_Monkestation/Announcements/Intern/poweroff.ogg
     GridPowerOn:
@@ -89,34 +85,30 @@
     ShuttleRecalled:
       path: /Audio/_Monkestation/Announcements/Intern/shuttlerecalled.ogg
     ShuttleDock:
-      path: /Audio/Announcements/Intern/shuttledock.ogg
-    Notice1:
-      path: /Audio/Misc/notice1.ogg
+      path: /Audio/_Monkestation/Announcements/Intern/shuttledock.ogg
 
 - type: msAnnouncer
   parent: DefaultAnnouncer
   id: MedbotAnnouncer
   sounds:
-    Announce:
-      path: /Audio/_Monkestation/Announcements/AnnouncementConsole/announce.ogg
+    Attention:
+      path: /Audio/_Monkestation/Announcements/Medbot/attention.ogg
     GridPowerOff:
-      path: /Audio/_Monkestation/Announcements/Medbot/power_off.ogg
+      path: /Audio/_Monkestation/Announcements/Medbot/poweroff.ogg
     GridPowerOn:
-      collection: /Audio/_Monkestation/Announcements/Medbot/power_on.ogg
+      path: /Audio/_Monkestation/Announcements/Medbot/poweron.ogg
     Intercept:
       path: /Audio/_Monkestation/Announcements/Medbot/intercept.ogg
     Welcome:
-      path: /Audio/_Monkestation/Announcements/Medbot/welcome/welcome.ogg
+      path: /Audio/_Monkestation/Announcements/Medbot/welcome.ogg
     Meteors:
       path: /Audio/_Monkestation/Announcements/Medbot/meteors.ogg
     ShuttleCalled:
       path: /Audio/_Monkestation/Announcements/Medbot/shuttlecalled.ogg
     ShuttleRecalled:
-      path: /Audio/Announcements/Medbot/shuttlerecalled.ogg
+      path: /Audio/_Monkestation/Announcements/Medbot/shuttlerecalled.ogg
     ShuttleDock:
-      path: /Audio/Announcements/Medbot/shuttledock.ogg
-    Notice1:
-      path: /Audio/Misc/notice1.ogg
+      path: /Audio/_Monkestation/Announcements/Medbot/shuttledock.ogg
 
 
 - type: msAnnouncer
@@ -124,24 +116,24 @@
   id: DagothAnnouncer
   sounds:
     Attention:
-      path: /Audio/_Monkestation/Announcements/Dagoth/alert4.ogg
-    Announce:
-      path: /Audio/_Monkestation/Announcements/AnnouncementConsole/announce.ogg
+      collection: MSDagothAlerts
+      params:
+        volume: 10
     GridPowerOff:
       path: /Audio/_Monkestation/Announcements/Dagoth/power_off.ogg
     GridPowerOn:
-      collection: /Audio/_Monkestation/Announcements/Dagoth/power_on.ogg
+      path: /Audio/_Monkestation/Announcements/Dagoth/power_on.ogg
     Intercept:
       path: /Audio/_Monkestation/Announcements/Dagoth/intercept.ogg
     Welcome:
-      path: /Audio/_Monkestation/Announcements/Dagoth/welcome/welcome3.ogg
+      collection: MSDagothWelcome
+      params:
+        volume: 10
     Meteors:
       path: /Audio/_Monkestation/Announcements/Dagoth/meteors.ogg
     ShuttleCalled:
       path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_call.ogg
     ShuttleRecalled:
-      path: /Audio/Announcements/Dagoth/shuttle_recall.ogg
+      path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_recall.ogg
     ShuttleDock:
-      path: /Audio/Announcements/Dagoth/shuttle_arrive.ogg
-    Notice1:
-      path: /Audio/Misc/notice1.ogg
+      path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_arrive.ogg

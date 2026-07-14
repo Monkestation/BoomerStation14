@@ -18,8 +18,8 @@
 
 - files: ["Dagoth folder"]
   license: "CC BY-SA 3.0"
-  copyright: "AI generated"
-  source: "unknown"
+  copyright: "AI generated, taken from monkestation at commit https://github.com/Monkestation/Monkestation2.0/commit/1fb7ec58ee4501ba99b97126f7e244340b83c9bb"
+  source: "unknown, https://github.com/Monkestation/Monkestation2.0"
 
 - files: ["AnnouncementConsole folder"]
   license: "CC BY-SA 3.0"
