@@ -2,7 +2,7 @@
   license: "CC-BY-SA-3.0"
   copyright: "Applies to Gianni Matragrano's voice, commissioned by dukeook for Monkestation13."
   source: "https://getgianni.com/"
-  license: "CC0 1.0"
+  license: "CC0-1.0"
   copyright: "Applies to the SFX in the Duke folder's sound files, excluding the voice."
   source: "https://freesound.org/"
 
@@ -12,16 +12,16 @@
   source: "https://github.com/tgstation/tgstation"
 
 - files: ["Medbot folder"]
-  license: "CC BY-SA 3.0"
+  license: "CC-BY-SA-3.0"
   copyright: "Taken from tgstation, created by deathride58 on github for citadel"
   source: "https://github.com/tgstation/tgstation/blob/40d89d11ea4a5cb81d61dc1018b46f4e7d32c62a/sound/ai/default/attention.ogg"
 
 - files: ["Dagoth folder"]
-  license: "CC BY-SA 3.0"
+  license: "CC-BY-SA-3.0"
   copyright: "AI generated, taken from monkestation at commit https://github.com/Monkestation/Monkestation2.0/commit/1fb7ec58ee4501ba99b97126f7e244340b83c9bb"
   source: "unknown, https://github.com/Monkestation/Monkestation2.0"
 
 - files: ["AnnouncementConsole folder"]
-  license: "CC BY-SA 3.0"
+  license: "CC-BY-SA-3.0"
   copyright: "taken from monkestation at commit https://github.com/Monkestation/Monkestation2.0/commit/bc4d817908c861840a337bb879d249d9aa4bf337"
   source: "https://github.com/Monkestation/Monkestation2.0"
