@@ -30,41 +30,17 @@ public sealed partial class FartEmoteSystem : EntitySystem
 
     private void OnEmote(Entity<MSFartEmoteComponent> ent, ref EmoteEvent args)
     {
-        // Probably bad practice, but I'm not sure what else we would do with emotes that would result in pissing
         if (args.Emote.ID != "MSFart")
         {
             return;
         }
 
-        if (!TryFart(ent))
+        var ev = new TryFartEvent();
+        RaiseLocalEvent(ent, ref ev);
+
+        if (!ev.Handled)
         {
             _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-fart-failed"), ent, ent);
         }
-    }
-
-    private bool TryFart(Entity<MSFartEmoteComponent> ent)
-    {
-        ContainerManagerComponent? containerManagerComponent = null;
-        if (!_containerQuery.Resolve(ent, ref containerManagerComponent))
-        {
-            return false;
-        }
-
-        var anyBladder = false;
-        foreach(var entity in containerManagerComponent.Containers[BodyComponent.ContainerID].ContainedEntities)
-        {
-            if (!_buttQuery.TryComp(entity, out var bladder))
-            {
-                continue;
-            }
-
-            anyBladder = true;
-            if (_buttSystem.TryFart(ent, (entity, bladder)))
-            {
-                return true;
-            }
-        }
-
-        return anyBladder;
     }
 }

@@ -1,19 +1,16 @@
-using System.Linq;
 using System.Numerics;
 using Content.Shared._Monkestation.Body.Components;
-using Content.Shared._Monkestation.Emoting.Components;
 using Content.Shared.Body;
 using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.FixedPoint;
 using Content.Shared.Fluids;
 using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Toilet.Components;
-using Robust.Shared.Containers;
-using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
@@ -28,22 +25,20 @@ namespace Content.Shared._Monkestation.Body.Systems;
 public sealed partial class BladderSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private SolutionTransferSystem _solutionTransferSystem = default!;
     [Dependency] private SharedPuddleSystem _puddleSystem = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
 
-    private EntityQuery<SolutionManagerComponent> _solutionManagerQuery;
-    private EntityQuery<TransformComponent> _transformQuery;
-    private EntityQuery<ToiletComponent> _toiletQuery;
-    private EntityQuery<HandsComponent> _handsQuery;
-    private EntityQuery<ContainerManagerComponent> _containerQuery;
-    private EntityQuery<RefillableSolutionComponent> _refillableSolutionQuery;
+    [Dependency] private EntityQuery<TransformComponent> _transformQuery;
+    [Dependency] private EntityQuery<ToiletComponent> _toiletQuery;
+    [Dependency] private EntityQuery<HandsComponent> _handsQuery;
 
     private const string DefaultSolutionName = "bladder";
-    private static readonly TimeSpan PissCooldown = TimeSpan.FromSeconds(75);
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -52,20 +47,8 @@ public sealed partial class BladderSystem : EntitySystem
 
         SubscribeLocalEvent<MSBladderComponent, OrganGotInsertedEvent>(HandleInsertion);
         SubscribeLocalEvent<MSBladderComponent, OrganGotRemovedEvent>(HandleRemoval);
-        SubscribeLocalEvent<MSBladderComponent, MapInitEvent>(OnBladderMapInit);
-
-        _solutionManagerQuery = GetEntityQuery<SolutionManagerComponent>();
-        _transformQuery = GetEntityQuery<TransformComponent>();
-        _toiletQuery = GetEntityQuery<ToiletComponent>();
-        _handsQuery = GetEntityQuery<HandsComponent>();
-        _containerQuery = GetEntityQuery<ContainerManagerComponent>();
-        _refillableSolutionQuery = GetEntityQuery<RefillableSolutionComponent>();
-    }
-
-    private void OnBladderMapInit(Entity<MSBladderComponent> ent, ref MapInitEvent args)
-    {
-        ent.Comp.NextTick = _timing.CurTime + PissCooldown;
-        Dirty(ent);
+        SubscribeLocalEvent<BodyComponent, TryPissEvent>(_body.RelayEvent);
+        SubscribeLocalEvent<MSBladderComponent, BodyRelayedEvent<TryPissEvent>>(OnPiss);
     }
 
     private void HandleRemoval(EntityUid uid, MSBladderComponent component, OrganGotRemovedEvent args)
@@ -80,174 +63,122 @@ public sealed partial class BladderSystem : EntitySystem
         Dirty(uid, component);
     }
 
+    // Copied the solution regeneration code here because the bladder contents are not the solution in the solution component
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-
-        var bladderQuery = EntityQueryEnumerator<MSBladderComponent>();
-        while (bladderQuery.MoveNext(out var entity, out var bladder))
+        // TODO: SolutionRegenerationComponent on Solution Entities!
+        var query = EntityQueryEnumerator<MSBladderComponent>();
+        while (query.MoveNext(out var uid, out var bladder))
         {
-            if (!bladder.Enabled)
-            {
+            if (!bladder.Enabled || bladder.PissSolution == null || _timing.CurTime < bladder.NextTick)
                 continue;
-            }
 
-            if (bladder.NextTick > _timing.CurTime)
-            {
+            // timer ignores if its full, it's just a fixed cycle
+            bladder.NextTick += bladder.Frequency;
+            // Needs to be networked and dirtied so that the client can reroll it during prediction
+            Dirty(uid, bladder);
+            if (!_solutionContainer.ResolveSolution(uid, bladder.SolutionName, ref bladder.Solution, out var solution))
                 continue;
-            }
 
-            bladder.NextTick = _timing.CurTime + PissCooldown;
-            Dirty(entity, bladder);
-            SolutionManagerComponent? solutionContainer = null;
-            if (!_solutionManagerQuery.Resolve(entity, ref solutionContainer))
-            {
+            var amount = FixedPoint2.Min(solution.AvailableVolume, bladder.PissSolution.Volume);
+            if (amount <= FixedPoint2.Zero)
                 continue;
-            }
 
-            var solution = new Solution();
-            foreach (var product in bladder.PissReagents)
-            {
-                solution.AddReagent(product.Key, product.Value);
-            }
+            // Don't bother cloning and splitting if adding the whole thing
+            var generated = amount == bladder.PissSolution.Volume
+                ? bladder.PissSolution
+                : bladder.PissSolution.Clone().SplitSolution(amount);
 
-            TryTransferSolution(entity, solution, bladder, solutionContainer);
+            _solutionContainer.TryAddSolution(bladder.Solution.Value, generated);
         }
     }
 
-    private bool CanTransferSolution(
-        EntityUid uid,
-        Solution solution,
-        MSBladderComponent? bladder = null,
-        SolutionManagerComponent? solutions = null)
+    private void OnPiss(Entity<MSBladderComponent> ent, ref BodyRelayedEvent<TryPissEvent> args)
     {
-        return Resolve(uid, ref bladder, ref solutions, logMissing: false)
-               && _solutionContainerSystem.ResolveSolution((uid, solutions),
-                   DefaultSolutionName,
-                   ref bladder.Solution,
-                   out var bladderSolution)
-               // TODO: For now no partial transfers. Potentially change by design
-               && bladderSolution.CanAddSolution(solution);
-    }
-
-    private bool TryTransferSolution(
-        EntityUid uid,
-        Solution solution,
-        MSBladderComponent? bladder = null,
-        SolutionManagerComponent? solutions = null)
-    {
-        if (!Resolve(uid, ref bladder, ref solutions, logMissing: false)
-            || !_solutionContainerSystem.ResolveSolution((uid, solutions), DefaultSolutionName, ref bladder.Solution)
-            || !CanTransferSolution(uid, solution, bladder, solutions))
-        {
-            return false;
-        }
-
-        _solutionContainerSystem.TryAddSolution(bladder.Solution.Value, solution);
-        _solutionContainerSystem.UpdateChemicals(bladder.Solution.Value);
-
-        return true;
-    }
-
-    /// <summary>
-    /// Attempts to cause a bladder to piss
-    /// </summary>
-    /// <param name="ent">The mob containing the bladder</param>
-    /// <param name="entity">The bladder entity</param>
-    /// <param name="bladder">The bladder component</param>
-    /// <returns>If the piss attempt was handled</returns>
-    public bool TryPiss(Entity<MSPissEmoteComponent> ent, EntityUid entity, MSBladderComponent bladder)
-    {
-        SolutionManagerComponent? solutions = null;
-        if (!_solutionManagerQuery.Resolve(entity, ref solutions))
-        {
-            return false;
-        }
-
-        if (!Resolve(entity, ref solutions, logMissing: false)
-            || !_solutionContainerSystem.ResolveSolution((entity, solutions),
+        if (
+            args.Args.Handled
+            || !_solutionContainer.ResolveSolution(ent.Owner,
                 DefaultSolutionName,
-                ref bladder.Solution))
+                ref ent.Comp.Solution,
+                out var bladderSolution)
+            || bladderSolution.Volume < ent.Comp.PissAmount)
         {
-            return false;
+            return;
         }
 
-        if (bladder.Solution?.Comp.Solution.Volume < bladder.PissAmount)
-        {
-            _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-empty"), ent, ent);
-            return true;
-        }
+        // Setting to handled because we know we can piss, now we just need to find out where
+        var pissEvent = args.Args;
+        pissEvent.Handled = true;
+        args.Args = pissEvent;
 
-        var user = _transformQuery.Get(ent);
+        var user = _transformQuery.Get(args.Body);
         var userPos = _transform.ToMapCoordinates(user.Comp.Coordinates);
         var userRotation = _transform.GetWorldRotation(user.Comp);
+        // (0, -1) is looking directly up, then rotated from there
         var dir = userRotation.RotateVec(new Vector2(0, -1));
         var ray = new CollisionRay(userPos.Position, dir, (int)CollisionGroup.MobMask);
         var results = _physics.IntersectRay(user.Comp.MapID, ray, 1, returnOnFirstHit: true);
         var toilet = results.FirstOrNull(result => _toiletQuery.HasComp(result.HitEntity));
-        var otherFilter = Filter.PvsExcept(ent, entityManager: EntityManager);
+        var otherFilter = Filter.PvsExcept(args.Body, entityManager: EntityManager);
         if (toilet.HasValue)
         {
             _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-target-self",
-                    ("target", Identity.Entity(toilet.Value.HitEntity, EntityManager, ent))),
-                ent,
-                ent);
+                    ("target", Identity.Entity(toilet.Value.HitEntity, EntityManager, args.Body))),
+                args.Body,
+                args.Body);
             _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-target-other",
                 [
-                    ("pisser", Identity.Entity(ent, EntityManager)),
+                    ("pisser", Identity.Entity(args.Body, EntityManager)),
                     ("target", Identity.Entity(toilet.Value.HitEntity, EntityManager))
                 ]),
-                ent,
+                args.Body,
                 otherFilter,
                 true);
-            _solutionContainerSystem.SplitSolution(bladder.Solution!.Value, bladder.PissAmount);
-            return true;
+            // Return value is ignored to just delete the reagents (toilets don't currently support actually having fluids in them)
+            _solutionContainer.SplitSolution(ent.Comp.Solution!.Value, ent.Comp.PissAmount);
+            return;
         }
 
-        Entity<SolutionComponent>? targetSolution = default!;
-        if (_handsQuery.TryGetComponent(ent, out var handsComponent)
-            && handsComponent.ActiveHandId != null
-            && _containerQuery.TryGetComponent(ent, out var containers)
-            && containers.Containers.TryGetValue(handsComponent.ActiveHandId, out var heldItemContainer)
-            && heldItemContainer is ContainerSlot { ContainedEntity: not null } containerSlot
-            && _refillableSolutionQuery.TryGetComponent(containerSlot.ContainedEntity,
-                out var refillableSolutionComponent)
-            && _solutionManagerQuery.TryGetComponent(containerSlot.ContainedEntity, out var solutionManagerComponent)
-            && _solutionContainerSystem.ResolveSolution((containerSlot.ContainedEntity.Value, solutionManagerComponent),
-                refillableSolutionComponent.Solution,
-                ref targetSolution)
-            && _solutionTransferSystem.Transfer(new SolutionTransferData(ent,
+        if (_handsQuery.TryGetComponent(args.Body, out var handsComponent)
+            && _hands.TryGetActiveItem((args.Body, handsComponent), out var heldItem)
+            && _solutionContainer.TryGetRefillableSolution(heldItem.Value, out var targetSolution, out _)
+            && _solutionTransferSystem.Transfer(new SolutionTransferData(args.Body,
                 ent,
-                bladder.Solution!.Value,
-                containerSlot.ContainedEntity.Value,
+                ent.Comp.Solution!.Value,
+                heldItem.Value,
                 targetSolution.Value,
-                bladder.PissAmount)) > 0)
+                ent.Comp.PissAmount)) > 0)
         {
             _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-target-self",
-                    ("target", Identity.Entity(containerSlot.ContainedEntity.Value, EntityManager, ent))),
-                ent,
-                ent);
+                    ("target", Identity.Entity(heldItem.Value, EntityManager, ent))),
+                args.Body,
+                args.Body);
             _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-target-other",
                 [
-                    ("pisser", Identity.Entity(ent, EntityManager)),
-                    ("target", Identity.Entity(containerSlot.ContainedEntity.Value, EntityManager))
+                    ("pisser", Identity.Entity(args.Body, EntityManager)),
+                    ("target", Identity.Entity(heldItem.Value, EntityManager))
                 ]),
-                ent,
+                args.Body,
                 otherFilter,
                 true);
-            return true;
+            return;
         }
 
-        var pissedSolution = _solutionContainerSystem.SplitSolution(bladder.Solution!.Value, bladder.PissAmount);
+        var pissedSolution = _solutionContainer.SplitSolution(ent.Comp.Solution!.Value, ent.Comp.PissAmount);
         _puddleSystem.TrySpillAt(_transform.ToCoordinates(user!, userPos.Offset(dir)), pissedSolution, out _, false);
-        _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-floor-self"), ent);
+        _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-floor-self"), args.Body);
         _popupSystem.PopupEntity(
-            Loc.GetString("ms-chat-emote-piss-floor-other", ("pisser", Identity.Entity(ent, EntityManager))),
-            ent,
+            Loc.GetString("ms-chat-emote-piss-floor-other", ("pisser", Identity.Entity(args.Body, EntityManager))),
+            args.Body,
             otherFilter,
             true);
-
-        return true;
     }
 }
+
+/// <summary>
+/// Event triggered on the body when the piss emote is used
+/// </summary>
+[ByRefEvent]
+public record struct TryPissEvent(bool Handled = true);

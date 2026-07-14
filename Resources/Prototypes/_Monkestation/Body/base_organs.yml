@@ -8,18 +8,27 @@
   - type: Organ
     category: MSBladder
   - type: MSBladder
-    pissReagents:
-      MSPiss: 1
-  - type: Solution
-    id: bladder
-    solution:
-        maxVol: 50
+    pissSolution:
+      reagents:
+      - ReagentId: MSPiss
+        Quantity: 1
+  - type: SolutionManager
+    solutions:
+    - MSBladderSolution
   - type: Sprite
     sprite:
     layers:
     - state: bladder
   - type: Item
     heldPrefix: bladder
+
+- type: entity
+  id: MSBladderSolution
+  components:
+  - type: Solution
+    id: bladder
+    solution:
+      maxVol: 50
 
 - type: entity
   parent: OrganBase
