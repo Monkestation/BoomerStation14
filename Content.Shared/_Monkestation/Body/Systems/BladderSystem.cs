@@ -49,6 +49,14 @@ public sealed partial class BladderSystem : EntitySystem
         SubscribeLocalEvent<MSBladderComponent, OrganGotRemovedEvent>(HandleRemoval);
         SubscribeLocalEvent<BodyComponent, TryPissEvent>(_body.RelayEvent);
         SubscribeLocalEvent<MSBladderComponent, BodyRelayedEvent<TryPissEvent>>(OnPiss);
+        SubscribeLocalEvent<MSBladderComponent, MapInitEvent>(OnMapInit);
+    }
+
+    private void OnMapInit(Entity<MSBladderComponent> ent, ref MapInitEvent args)
+    {
+        ent.Comp.NextTick = _timing.CurTime + ent.Comp.Frequency;
+
+        Dirty(ent);
     }
 
     private void HandleRemoval(EntityUid uid, MSBladderComponent component, OrganGotRemovedEvent args)
