@@ -1,6 +1,7 @@
-using Content.Server._Monkestation;
 using Content.Server._Monkestation.Administration.Managers;
 using Content.Server._Monkestation.Announcements;
+using Content.Server._Monkestation.Donations;
+using Content.Server._Monkestation.Plexora;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -26,6 +27,7 @@ using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
+using Content.Shared._Monkestation.Donations;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
@@ -86,9 +88,13 @@ internal static class ServerContentIoC
         deps.Register<ServerFeedbackManager>();
         deps.Register<ISharedFeedbackManager, ServerFeedbackManager>();
 
-        // Monkestation start
+        // Monkestation Start
         deps.Register<RoleTimeExemptionManager>();
         deps.Register<AnnouncerManager>();
-        // Monkestation end
+
+        deps.Register<PlexoraManager>();
+        deps.Register<ISharedDonationManager, DonationManager>();
+        deps.Register<DonationManager>();
+        // Monkestation End
     }
 }

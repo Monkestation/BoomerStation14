@@ -1,0 +1,10 @@
+ms-donor-tier-default = Donor
+ms-donor-tier-thanks = Thanks
+ms-donor-tier-assistant = Assistant
+ms-donor-tier-command = Command Staff
+ms-donor-tier-traitor = Traitor
+ms-donor-tier-nukie = Nukie
+ms-donor-tier-tier1 = Tier 1 Twitch Sub
+ms-donor-tier-tier2 = Tier 2 Twitch Sub
+ms-donor-tier-tier3 = Tier 3 Twitch Sub
+ms-donor-tier-staff = Staff

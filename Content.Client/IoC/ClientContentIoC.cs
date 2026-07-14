@@ -1,3 +1,4 @@
+using Content.Client._Monkestation.Donations;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -22,6 +23,7 @@ using Content.Client.Voting;
 using Content.Shared.Administration.Logs;
 using Content.Client.Lobby;
 using Content.Client.Players.RateLimiting;
+using Content.Shared._Monkestation.Donations;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.FeedbackSystem;
@@ -66,6 +68,11 @@ namespace Content.Client.IoC
             collection.Register<ClientsidePlaytimeTrackingManager>();
             collection.Register<ClientFeedbackManager>();
             collection.Register<ISharedFeedbackManager, ClientFeedbackManager>();
+
+            // Monke edit start
+            collection.Register<ISharedDonationManager, ClientDonationManager>();
+            collection.Register<ClientDonationManager>();
+            // Monke edit end
         }
     }
 }
