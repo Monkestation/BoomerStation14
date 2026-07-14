@@ -42,7 +42,6 @@
       path: /Audio/Misc/notice1.ogg
 
 - type: msAnnouncer
-  parent: DefaultAnnouncer
   id: DukeAnnouncer
   sounds:
     Attention:
@@ -65,7 +64,6 @@
       path: /Audio/_Monkestation/Announcements/Duke/shuttle_arrive.ogg
 
 - type: msAnnouncer
-  parent: DefaultAnnouncer
   id: InternAnnouncer
   sounds:
     Attention:
@@ -88,7 +86,6 @@
       path: /Audio/_Monkestation/Announcements/Intern/shuttledock.ogg
 
 - type: msAnnouncer
-  parent: DefaultAnnouncer
   id: MedbotAnnouncer
   sounds:
     Attention:
@@ -112,7 +109,6 @@
 
 
 - type: msAnnouncer
-  parent: DefaultAnnouncer
   id: DagothAnnouncer
   sounds:
     Attention:
