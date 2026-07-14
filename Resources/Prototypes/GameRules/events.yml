@@ -109,7 +109,7 @@
   components:
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio: Announce # monkestation edit - announcer overrides
+    startAudio: Attention # monkestation edit - announcer overrides
     weight: 8
     duration: 35
   - type: AnomalySpawnRule
@@ -124,7 +124,7 @@
       max:  30
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio: Announce # monkestation edit - announcer overrides
+    startAudio: Attention # monkestation edit - announcer overrides
     weight: 8
     duration: 35
   - type: BluespaceArtifactRule

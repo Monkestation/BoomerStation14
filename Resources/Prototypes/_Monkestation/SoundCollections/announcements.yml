@@ -1,0 +1,65 @@
+- type: soundCollection
+  id: MSDukeAlerts
+  files:
+  - /Audio/_Monkestation/Announcements/Duke/alerts/bonus2.ogg
+  - /Audio/_Monkestation/Announcements/Duke/alerts/headsup1.ogg
+  - /Audio/_Monkestation/Announcements/Duke/alerts/headsup2.ogg
+  - /Audio/_Monkestation/Announcements/Duke/alerts/nerd.ogg
+
+- type: soundCollection
+  id: MSDukeCommandReport
+  files:
+  - /Audio/_Monkestation/Announcements/Duke/commandreport/centralcommand1.ogg
+  - /Audio/_Monkestation/Announcements/Duke/commandreport/centralcommand2.ogg
+
+- type: soundCollection
+  id: MSDukeWelcome
+  files:
+  - /Audio/_Monkestation/Announcements/Duke/welcome/bonus1.ogg
+  - /Audio/_Monkestation/Announcements/Duke/welcome/welcome1.ogg
+  - /Audio/_Monkestation/Announcements/Duke/welcome/welcome2.ogg
+
+- type: soundCollection
+  id: MSDukePowerOn
+  files:
+  - /Audio/_Monkestation/Announcements/Duke/power_on.ogg
+  
+- type: soundCollection
+  id: MSInternAlerts
+  files:
+  - /Audio/_Monkestation/Announcements/Intern/alerts/1.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/2.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/3.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/4.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/5.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/6.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/7.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/8.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/9.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/10.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/11.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/12.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/13.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/14.ogg
+
+- type: soundCollection
+  id: MSInternCommandReport
+  files:
+  - /Audio/_Monkestation/Announcements/Intern/commandreport/1.ogg
+  - /Audio/_Monkestation/Announcements/Intern/commandreport/2.ogg
+  - /Audio/_Monkestation/Announcements/Intern/commandreport/3.ogg
+
+- type: soundCollection
+  id: MSInternWelcome
+  files:
+  - /Audio/_Monkestation/Announcements/Intern/welcome/1.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/2.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/3.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/4.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/5.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/6.ogg
+
+- type: soundCollection
+  id: MSInternPowerOn
+  files:
+  - /Audio/_Monkestation/Announcements/Intern/poweron.ogg
