@@ -1,11 +1,11 @@
 - type: weightedRandom
   id: Announcers
   weights:
-    DefaultAnnouncer: 0
-    DukeAnnouncer: 0
-    InternAnnouncer: 0
-    MedbotAnnouncer: 0
-    DagothAnnouncer: 100
+    DefaultAnnouncer: 20
+    DukeAnnouncer: 20
+    InternAnnouncer: 20
+    MedbotAnnouncer: 20
+    DagothAnnouncer: 20
 
 - type: msAnnouncer
   id: DefaultAnnouncer
