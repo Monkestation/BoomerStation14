@@ -62,7 +62,7 @@
             CargoTechnician: [ 2, 2 ]
             # MailTech: [ 1, 1 ] # Bommer
             #civilian (3+)
-            Passenger: [ -1, -1 ] # Boomer replaced assistants whit passengers 
+            Passenger: [ -1, -1 ] # Boomer - Replaced assistants whit passengers 
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
