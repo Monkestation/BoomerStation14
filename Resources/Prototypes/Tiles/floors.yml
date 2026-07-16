@@ -662,7 +662,7 @@
   id: FloorBar
   parent: BaseStationTile
   name: tiles-bar-floor
-  sprite: _Monkestation/Textures/Tiles/bar.png # edited for monke ; tile sprites
+  sprite: /Textures/_Monkestation/Tiles/bar.png # edited for monke ; tile sprites
   variants: 4
   placementVariants:
   - 1.0
