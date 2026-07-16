@@ -24,9 +24,9 @@
       - Window
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window.rsi
+    sprite: _Monkestation/Structures/Windows/window.rsi # monkestation edit ; window sprites
   - type: Icon
-    sprite: Structures/Windows/window.rsi
+    sprite: _Monkestation/Structures/Windows/window.rsi # monkestation edit ; window sprites
     state: full
   - type: Physics
     bodyType: Static
@@ -104,9 +104,9 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _Monkestation/Structures/Windows/tinted_window.rsi # monkestation edit ; window sprites
   - type: Icon
-    sprite: Structures/Windows/tinted_window.rsi
+    sprite: _Monkestation/Structures/Windows/tinted_window.rsi # monkestation edit ; window sprites
   - type: IconSmooth
     base: twindow
   - type: Construction
@@ -256,7 +256,7 @@
   components:
   - type: Sprite
     drawdepth: WallTops
-    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: _Monkestation/Structures/Windows/window_diagonal.rsi # monkestation edit ; window sprites
     state: state0
   - type: Tag
     tags:
@@ -267,7 +267,7 @@
     key: windows
     base: state
   - type: Icon
-    sprite: Structures/Windows/window_diagonal.rsi
+    sprite: _Monkestation/Structures/Windows/window_diagonal.rsi # monkestation edit ; window sprites
     state: state0
   - type: Fixtures
     fixtures:

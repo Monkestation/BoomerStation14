@@ -659,9 +659,9 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Monkestation/Structures/Walls/solid_rust.rsi # monkestation edit ; wall sprites
   - type: Icon
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Monkestation/Structures/Walls/solid_rust.rsi # monkestation edit ; wall sprites
     state: rgeneric
   - type: Construction
     graph: Girder
@@ -1059,9 +1059,9 @@
   suffix: rusted
   components:
   - type: Sprite
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Monkestation/Structures/Walls/solid_rust.rsi # monkestation edit ; wall sprites
   - type: Icon
-    sprite: Structures/Walls/solid_rust.rsi
+    sprite: _Monkestation/Structures/Walls/solid_rust.rsi # monkestation edit ; wall sprites
     state: full
   - type: Construction
     graph: Girder
