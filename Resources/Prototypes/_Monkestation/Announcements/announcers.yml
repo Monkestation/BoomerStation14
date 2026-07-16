@@ -1,7 +1,11 @@
 - type: weightedRandom
   id: Announcers
   weights:
-    DefaultAnnouncer: 100
+    DefaultAnnouncer: 5
+    DukeAnnouncer: 5
+    InternAnnouncer: 1
+    MedbotAnnouncer: 1
+    DagothAnnouncer: 5
 
 - type: msAnnouncer
   id: DefaultAnnouncer
@@ -9,7 +13,7 @@
     Attention:
       path: /Audio/Announcements/attention.ogg
     Announce:
-      path: /Audio/Announcements/announce.ogg
+      path: /Audio/_Monkestation/Announcements/AnnouncementConsole/announce.ogg
     GridPowerOff:
       path: /Audio/Announcements/power_off.ogg
       params:
@@ -36,3 +40,96 @@
       path: /Audio/Announcements/shuttle_dock.ogg
     Notice1:
       path: /Audio/Misc/notice1.ogg
+
+- type: msAnnouncer
+  id: DukeAnnouncer
+  sounds:
+    Attention:
+      collection: MSDukeAlerts
+    GridPowerOff:
+      path: /Audio/_Monkestation/Announcements/Duke/power_off.ogg
+    GridPowerOn:
+      path: /Audio/_Monkestation/Announcements/Duke/power_on.ogg
+    Intercept:
+      path: /Audio/_Monkestation/Announcements/Duke/intercept.ogg
+    Welcome:
+      collection: MSDukeWelcome
+    Meteors:
+      path: /Audio/_Monkestation/Announcements/Duke/meteors.ogg
+    ShuttleCalled:
+      path: /Audio/_Monkestation/Announcements/Duke/shuttle_call.ogg
+    ShuttleRecalled:
+      path: /Audio/_Monkestation/Announcements/Duke/shuttle_recall.ogg
+    ShuttleDock:
+      path: /Audio/_Monkestation/Announcements/Duke/shuttle_arrive.ogg
+
+- type: msAnnouncer
+  id: InternAnnouncer
+  sounds:
+    Attention:
+      collection: MSInternAlerts
+    GridPowerOff:
+      path: /Audio/_Monkestation/Announcements/Intern/poweroff.ogg
+    GridPowerOn:
+      path: /Audio/_Monkestation/Announcements/Intern/poweron.ogg
+    Intercept:
+      path: /Audio/_Monkestation/Announcements/Intern/intercept.ogg
+    Welcome:
+      collection: MSInternWelcome
+    Meteors:
+      path: /Audio/_Monkestation/Announcements/Intern/meteors.ogg
+    ShuttleCalled:
+      path: /Audio/_Monkestation/Announcements/Intern/shuttlecalled.ogg
+    ShuttleRecalled:
+      path: /Audio/_Monkestation/Announcements/Intern/shuttlerecalled.ogg
+    ShuttleDock:
+      path: /Audio/_Monkestation/Announcements/Intern/shuttledock.ogg
+
+- type: msAnnouncer
+  id: MedbotAnnouncer
+  sounds:
+    Attention:
+      path: /Audio/_Monkestation/Announcements/Medbot/attention.ogg
+    GridPowerOff:
+      path: /Audio/_Monkestation/Announcements/Medbot/poweroff.ogg
+    GridPowerOn:
+      path: /Audio/_Monkestation/Announcements/Medbot/poweron.ogg
+    Intercept:
+      path: /Audio/_Monkestation/Announcements/Medbot/intercept.ogg
+    Welcome:
+      path: /Audio/_Monkestation/Announcements/Medbot/welcome.ogg
+    Meteors:
+      path: /Audio/_Monkestation/Announcements/Medbot/meteors.ogg
+    ShuttleCalled:
+      path: /Audio/_Monkestation/Announcements/Medbot/shuttlecalled.ogg
+    ShuttleRecalled:
+      path: /Audio/_Monkestation/Announcements/Medbot/shuttlerecalled.ogg
+    ShuttleDock:
+      path: /Audio/_Monkestation/Announcements/Medbot/shuttledock.ogg
+
+
+- type: msAnnouncer
+  id: DagothAnnouncer
+  sounds:
+    Attention:
+      collection: MSDagothAlerts
+      params:
+        volume: 10
+    GridPowerOff:
+      path: /Audio/_Monkestation/Announcements/Dagoth/power_off.ogg
+    GridPowerOn:
+      path: /Audio/_Monkestation/Announcements/Dagoth/power_on.ogg
+    Intercept:
+      path: /Audio/_Monkestation/Announcements/Dagoth/intercept.ogg
+    Welcome:
+      collection: MSDagothWelcome
+      params:
+        volume: 10
+    Meteors:
+      path: /Audio/_Monkestation/Announcements/Dagoth/meteors.ogg
+    ShuttleCalled:
+      path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_call.ogg
+    ShuttleRecalled:
+      path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_recall.ogg
+    ShuttleDock:
+      path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_arrive.ogg

@@ -6,7 +6,7 @@
 - type: msAnnouncementSound
   id: Announce
   defaultSound:
-    path: /Audio/Announcements/announce.ogg
+    path: /Audio/_Monkestation/Announcements/AnnouncementConsole/announce.ogg
 
 - type: msAnnouncementSound
   id: GridPowerOff
