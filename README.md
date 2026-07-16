@@ -1,8 +1,8 @@
-<p align="center"> <img alt="Boomerstation Logo" width="880" height="200" src="https://github.com/Monkestation/forky-station/blob/master/Resources/Textures/Logo/logo.png" /></p>
+<p align="center"> <img alt="Boomerstation Logo" width="880" height="200" src="https://github.com/Monkestation/BoomerStation14/blob/master/Resources/Textures/Logo/logo.png" /></p>
 
-This is Boomerstation, a fork of the Funky Station. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server.
+This is BoomerStation, a fork of the Funky Station. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server.
 
-If you want to host or create content for SS14, or for Funky Station, go to the [Space Station 14 repository](https://github.com/space-wizards/space-station-14), or the [Funky Station repository](https://github.com/funky-station/forky-station).
+If you want to host or create content for SS14, or for BoomerStation, go to the [Space Station 14 repository](https://github.com/space-wizards/space-station-14), or the [BoomerStation repository](https://github.com/BoomerStation14/BoomerStation14).
 
 ## Links
 
@@ -21,11 +21,11 @@ We recommend you read the contribution guidelines. [Contribution Guidelines](htt
 
 1. Clone this repo:
 ```shell
-git clone https://github.com/Monkestation/forky-station.git
+git clone https://github.com/Monkestation/BoomerStation14.git
 ```
 2. Go to the project folder and run `RUN_THIS.py` to initialize the submodules and load the engine:
 ```shell
-cd forky-station
+cd BoomerStation14
 python RUN_THIS.py
 ```
 3. Compile the solution:

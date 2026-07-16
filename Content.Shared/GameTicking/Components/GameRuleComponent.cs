@@ -42,7 +42,7 @@ public sealed partial class GameRuleComponent : Component
 /// Good for announcing station events and other such things.
 /// </summary>
 [ByRefEvent]
-public readonly record struct GameRuleAddedEvent(EntityUid RuleEntity, string RuleId);
+public readonly record struct GameRuleAddedEvent(EntityUid RuleEntity, string RuleId, bool Fake); // Monkestation edit - add fake parameter
 
 /// <summary>
 /// Raised when the rule actually begins.

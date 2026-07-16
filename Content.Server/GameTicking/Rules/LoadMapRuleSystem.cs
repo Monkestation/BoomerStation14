@@ -22,6 +22,14 @@ public sealed partial class LoadMapRuleSystem : StationEventSystem<LoadMapRuleCo
 
     protected override void Added(EntityUid uid, LoadMapRuleComponent comp, GameRuleComponent rule, GameRuleAddedEvent args)
     {
+        // Monkestation edit - Don't spawn grids for fake events
+        if (args.Fake)
+        {
+            base.Added(uid, comp, rule, args);
+            return;
+        }
+        // Monkestation edit end
+
         if (comp.PreloadedGrid != null && !_gridPreloader.PreloadingEnabled)
         {
             // Preloading will never work if it's disabled, duh
