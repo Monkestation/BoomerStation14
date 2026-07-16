@@ -1,7 +1,7 @@
 version = 1
 SPDX-PackageName = "Boomerstation"
 SPDX-PackageSupplier = "Monkestation <https://monkestation.com>"
-SPDX-PackageDownloadLocation = "https://github.com/Monkestation/forky-station"
+SPDX-PackageDownloadLocation = "https://github.com/Monkestation/BoomerStation14"
 
 [[annotations]]
 path = ["Resources/Audio/**", "Resources/Textures/**"]

@@ -81,7 +81,7 @@
 - files: ["deprecated.png"]
   license: "CC0-1.0"
   copyright: "created by @skarletto on github"
-  source: "https://github.com/Monkestation/forky-station"
+  source: "https://github.com/Monkestation/BoomerStation14"
 
 - files: ["arcadeblue2.png", "boxing.png", "carpetclown.png", "carpetoffice.png", "gym.png", "metaldiamond.png"]
   license: "CC-BY-NC-SA-3.0"
