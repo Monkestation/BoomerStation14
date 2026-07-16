@@ -30,15 +30,20 @@
 
 - files: ["plating_damaged.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "plating.png modified by github user @Skarletto using damaged.dmi, both from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  copyright: "modified plating.png by github user @Skarletto using damaged.dmi, both from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
   source: "https://github.com/Monkestation/Monkestation2.0"
 
 - files: ["steel_damaged.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "steel.png modified by github user @Skarletto using damaged.dmi, both from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  copyright: "modified steel.png by github user @Skarletto using damaged.dmi, both from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
   source: "https://github.com/Monkestation/Monkestation2.0"
 
 - files: ["wood_broken.png"]
   license: "CC-BY-SA-3.0"
-  copyright: "wood.png modified by github user @Skarletto using damaged.dmi, both from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  copyright: "modified wood.png by github user @Skarletto using damaged.dmi, both from Monkestation13 commit 139ca62fa81bfa1f7e1ec60e4ffa8e2831f6eeea"
+  source: "https://github.com/Monkestation/Monkestation2.0"
+  
+- files: ["bar.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "modified steel.png modified by github user @Skarletto"
   source: "https://github.com/Monkestation/Monkestation2.0"
