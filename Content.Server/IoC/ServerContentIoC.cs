@@ -1,4 +1,6 @@
+using Content.Server._Monkestation;
 using Content.Server._Monkestation.Administration.Managers;
+using Content.Server._Monkestation.Announcements;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -24,7 +26,6 @@ using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
-using Content.Server.Worldgen.Tools;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
@@ -67,7 +68,6 @@ internal static class ServerContentIoC
         deps.Register<PlayTimeTrackingManager>();
         deps.Register<UserDbDataManager>();
         deps.Register<ServerInfoManager>();
-        deps.Register<PoissonDiskSampler>();
         deps.Register<DiscordWebhook>();
         deps.Register<VoteWebhooks>();
         deps.Register<ServerDbEntryManager>();
@@ -88,6 +88,7 @@ internal static class ServerContentIoC
 
         // Monkestation start
         deps.Register<RoleTimeExemptionManager>();
+        deps.Register<AnnouncerManager>();
         // Monkestation end
     }
 }

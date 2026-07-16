@@ -6,6 +6,9 @@
   save: false
   abstract: true
   components:
+  - type: WarpPoint # Monkestation addition
+    follow: true
+    mob: true
   - type: Reactive
     groups:
       Acidic: [Touch]
@@ -167,6 +170,7 @@
     - enum.BorgUiKey.Key
   - type: LockedWiresPanel
   - type: Damageable
+  - type: Injurable
     damageContainer: Silicon
   - type: Destructible
     thresholds:

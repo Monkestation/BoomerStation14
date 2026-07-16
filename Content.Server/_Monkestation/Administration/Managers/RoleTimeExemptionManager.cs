@@ -8,17 +8,16 @@ using Robust.Server.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Server._Monkestation.Administration.Managers;
 
-public sealed class RoleTimeExemptionManager : IPostInjectInit
+public sealed partial class RoleTimeExemptionManager : IPostInjectInit
 {
-    [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly INetManager _netManager = default!;
-    [Dependency] private readonly UserDbDataManager _userDbData = default!;
-    [Dependency] private readonly IServerDbManager _db = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private ILogManager _logManager = default!;
+    [Dependency] private INetManager _netManager = default!;
+    [Dependency] private UserDbDataManager _userDbData = default!;
+    [Dependency] private IServerDbManager _db = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
 
     private ISawmill _sawmill = default!;
 

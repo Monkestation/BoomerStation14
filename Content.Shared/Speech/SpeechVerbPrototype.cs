@@ -30,6 +30,14 @@ public sealed partial class SpeechVerbPrototype : IPrototype
     [DataField("fontSize")]
     public int FontSize = 12;
 
+    // Monkestation start - Radio loud mode
+    /// <summary>
+    ///     What font size should be used for the message contents when amplified (loud headset, megaphone)?
+    /// </summary>
+    [DataField]
+    public int FontSizeAmplified = 14;
+    // Monkestation end
+
     /// <summary>
     ///     What font prototype ID should be used for the message contents?
     /// </summary>

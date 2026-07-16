@@ -57,6 +57,10 @@
   id: MobHumanSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
   suffix: Human, NukeOps
   components:
+  - type: WarpPoint # Monkestation addition
+    follow: true
+    mob: true
+    antagonist: true
   - type: NukeOperative
   - type: RandomMetadata
     nameSegments:
@@ -74,6 +78,10 @@
   components:
   - type: NukeOperative
   - type: RandomHumanoidAppearance
+  - type: WarpPoint # Monkestation addition
+    follow: true
+    mob: true
+    antagonist: true
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -81,6 +89,10 @@
   id: MobHumanLoneNuclearOperative
   name: Lone Operative
   components:
+  - type: WarpPoint # Monkestation addition
+    follow: true
+    mob: true
+    antagonist: true
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: NukeOperative
@@ -103,6 +115,10 @@
   parent: MobHuman
   id: MobHumanWizard
   components:
+  - type: WarpPoint # Monkestation addition
+    follow: true
+    mob: true
+    antagonist: true
   - type: RandomHumanoidAppearance
   - type: NpcFactionMember
     factions:

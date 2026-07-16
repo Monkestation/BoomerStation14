@@ -12,13 +12,13 @@ namespace Content.Server._Monkestation.Emoting.Systems;
 /// <summary>
 /// This handles the piss emote
 /// </summary>
-public sealed class FartEmoteSystem : EntitySystem
+public sealed partial class FartEmoteSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly ButtSystem _buttSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private ButtSystem _buttSystem = default!;
 
-    private EntityQuery<MSButtComponent> _buttQuery;
-    private EntityQuery<ContainerManagerComponent> _containerQuery;
+    [Dependency] private EntityQuery<MSButtComponent> _buttQuery;
+    [Dependency] private EntityQuery<ContainerManagerComponent> _containerQuery;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -26,48 +26,21 @@ public sealed class FartEmoteSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<MSFartEmoteComponent, EmoteEvent>(OnEmote);
-
-        _buttQuery = GetEntityQuery<MSButtComponent>();
-        _containerQuery = GetEntityQuery<ContainerManagerComponent>();
     }
 
     private void OnEmote(Entity<MSFartEmoteComponent> ent, ref EmoteEvent args)
     {
-        // Probably bad practice, but I'm not sure what else we would do with emotes that would result in pissing
         if (args.Emote.ID != "MSFart")
         {
             return;
         }
 
-        if (!TryFart(ent))
+        var ev = new TryFartEvent();
+        RaiseLocalEvent(ent, ref ev);
+
+        if (!ev.Handled)
         {
             _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-fart-failed"), ent, ent);
         }
-    }
-
-    private bool TryFart(Entity<MSFartEmoteComponent> ent)
-    {
-        ContainerManagerComponent? containerManagerComponent = null;
-        if (!_containerQuery.Resolve(ent, ref containerManagerComponent))
-        {
-            return false;
-        }
-
-        var anyBladder = false;
-        foreach(var entity in containerManagerComponent.Containers[BodyComponent.ContainerID].ContainedEntities)
-        {
-            if (!_buttQuery.TryComp(entity, out var bladder))
-            {
-                continue;
-            }
-
-            anyBladder = true;
-            if (_buttSystem.TryFart(ent, (entity, bladder)))
-            {
-                return true;
-            }
-        }
-
-        return anyBladder;
     }
 }

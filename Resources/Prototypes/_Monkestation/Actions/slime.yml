@@ -1,0 +1,11 @@
+# Monkestation - Slimeperson floor absorption
+- type: entity
+  id: ActionToggleSlimeFloorAbsorption
+  name: Toggle Floor Absorption
+  description: Toggle slurping up puddles and dirt from the floor as you walk barefoot over it, digesting whatever you absorb.
+  components:
+  - type: Action
+    icon: { sprite: Mobs/Aliens/slimes.rsi, state: green_adult_slime }
+    iconOn: { sprite: Mobs/Aliens/slimes.rsi, state: blue_adult_slime }
+  - type: InstantAction
+    event: !type:ToggleSlimeFloorAbsorptionEvent

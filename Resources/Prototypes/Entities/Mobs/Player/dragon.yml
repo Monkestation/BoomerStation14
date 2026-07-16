@@ -1,11 +1,15 @@
 - type: entity
-  parent: [ SimpleSpaceMobBase, FlyingMobBase ]
+  parent: [ SimpleSpaceMobBase, FlyingMobBase, BaseSlicingRefinable ]
   id: BaseMobDragon
   suffix: ""
   name: space dragon
   description: A flying leviathan, loosely related to space carps.
   abstract: true
   components:
+  - type: WarpPoint # Monkestation addition
+    follow: true
+    mob: true
+    antagonist: true
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
@@ -104,9 +108,7 @@
   - type: StatusEffects # Overwriting basesimplemob to remove flash, getting flashed as dragon just feelsbad
     allowed:
     - Electrocution
-    - TemporaryBlindness
     - Pacified
-    - RadiationProtection
     - Adrenaline
   - type: Temperature
   - type: TemperatureDamage
@@ -116,8 +118,8 @@
     updateInterval: 0.25
     metabolizerTypes: [ Dragon ]
     stages: [ Digestion, Bloodstream ]
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatDragon
       amount: 2
   - type: InteractionPopup
@@ -223,14 +225,13 @@
       0: Alive
       200: Dead
   # less meat spawned since it's a lot easier to kill
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatDragon
-      amount: 1
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 12
+      types:
+        Piercing: 12
 
 - type: entity
   parent: BaseAction
@@ -285,3 +286,16 @@
     range: 0
   - type: WorldTargetAction
     event: !type:ActionGunShootEvent
+
+- type: entity
+  parent: Smoke
+  id: BloodSmoke
+  name: smoke
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Smoke
+    spreadAmount: 3
+    duration: 2
+  - type: Sprite
+    sprite: Effects/chemsmoke.rsi
+    state: chemsmoke_white

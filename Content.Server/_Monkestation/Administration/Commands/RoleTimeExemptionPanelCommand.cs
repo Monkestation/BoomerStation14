@@ -6,10 +6,10 @@ using Robust.Shared.Console;
 namespace Content.Server._Monkestation.Administration.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class RoleTimeExemptionPanelCommand : LocalizedCommands
+public sealed partial class RoleTimeExemptionPanelCommand : LocalizedCommands
 {
-    [Dependency] private readonly IPlayerLocator _locator = default!;
-    [Dependency] private readonly EuiManager _euis = default!;
+    [Dependency] private IPlayerLocator _locator = default!;
+    [Dependency] private EuiManager _euis = default!;
 
     public override string Command => "role-time-exemption-panel";
 

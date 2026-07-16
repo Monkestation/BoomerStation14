@@ -4,6 +4,13 @@
     <BoxContainer Orientation="Vertical">
         <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
             <BoxContainer Orientation="Vertical" Margin="8">
+                <!-- Starlight BEGIN -->
+                <Label Text="{Loc 'ui-options-admin-ghost'}" StyleClasses="LabelKeyText"/>
+                <BoxContainer Orientation="Horizontal">
+	                <Label ToolTip="{Loc 'ui-options-admin-ghost-script-tooltip'}" Text="{Loc 'ui-options-admin-ghost-script-label'}"/>
+	                <LineEdit ToolTip="{Loc 'ui-options-admin-ghost-script-tooltip'}" Name="AghostScriptName" HorizontalExpand="True"></LineEdit>
+                </BoxContainer>
+                <!-- Starlight END -->
                 <Label Text="{Loc 'ui-options-admin-player-panel'}"
                        StyleClasses="LabelKeyText"/>
                 <ui:OptionDropDown Name="DropDownPlayerTabSymbolSetting" Title="{Loc 'ui-options-admin-player-tab-symbol-setting'}" />
@@ -18,6 +25,9 @@
                 <ui:OptionSlider Name="OverlayMergeDistanceSlider"  Title="{Loc 'ui-options-admin-overlay-merge-distance'}"/>
                 <ui:OptionSlider Name="OverlayGhostFadeSlider"  Title="{Loc 'ui-options-admin-overlay-ghost-fade-distance'}"/>
                 <ui:OptionSlider Name="OverlayGhostHideSlider"  Title="{Loc 'ui-options-admin-overlay-ghost-hide-distance'}"/>
+                <Label Text="{Loc 'ui-options-admin-strip-overlay-title'}"
+                       StyleClasses="LabelKeyText"/>
+                <CheckBox Name="EnableAdminStripOverlayDefault" Text="{Loc 'ui-options-admin-strip-overlay-setting'}" />
             </BoxContainer>
         </ScrollContainer>
         <ui:OptionsTabControlRow Name="Control" Access="Public" />

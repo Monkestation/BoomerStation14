@@ -34,7 +34,7 @@
   - type: Item
     size: Large
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+    sprite: _Funkystation/Objects/Weapons/Guns/Battery/laser_gun.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -47,7 +47,7 @@
     zeroVisible: false
   - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+    sprite: _Funkystation/Objects/Weapons/Guns/Battery/laser_gun.rsi
   - type: Gun
     selectedMode: SemiAuto
     availableModes:
@@ -886,7 +886,7 @@
   name: energy magnum
   parent: [BaseWeaponBatterySmall, BaseGrandTheftContraband]
   id: WeaponEnergyMagnum
-  description: A high powered self-charging energy pistol designed for elite security personnel. It has has three firing modes allowing for either high damage, window piercing, or non-lethal disabling.
+  description: A high powered self-charging energy pistol designed for elite security personnel. It has three firing modes allowing for either high damage, window piercing, or non-lethal disabling.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
@@ -977,6 +977,14 @@
   parent: [WeaponAdvancedLaser, BaseXenoborgContraband]
   id: WeaponLaserGunXenoborg
   name: xenoborg laser gun
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/xenoborg_laser_gun.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-unshaded-4
+      map: [ "enum.GunVisualLayers.MagUnshaded" ]
 
 - type: entity
   parent: [WeaponLaserCannon, BaseXenoborgContraband]

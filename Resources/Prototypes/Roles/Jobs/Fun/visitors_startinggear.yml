@@ -253,7 +253,7 @@
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHelmetBasic
     id: VisitorPDA
-    belt: ClothingBeltSecurityWebbingFilled
+    belt: FuClothingBeltSecurityWebbingFilled
     back: ClothingBackpackSecurity
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
@@ -326,7 +326,7 @@
     head: ClothingHeadHatBeretWarden
     neck: SecurityWhistle
     id: VisitorPDA
-    belt: ClothingBeltSecurityWebbingFilled
+    belt: FuClothingBeltSecurityWebbingFilled
     back: ClothingBackpackSecurity
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
@@ -349,7 +349,7 @@
     back: ClothingBackpackSatchelSecurity
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
-    outerClothing: ClothingOuterWinterWarden
+    outerClothing: FuClothingOuterWinterWard
     pocket1: WeaponDisabler
     pocket2: Zipties
   inhand:

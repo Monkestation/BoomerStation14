@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using Content.Server._Monkestation.Announcements;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
@@ -9,19 +11,22 @@ using Content.Shared.GameTicking.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Server.StationEvents.Events;
 
 /// <summary>
 ///     An abstract entity system inherited by all station events for their behavior.
 /// </summary>
-public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : IComponent
+public abstract partial class StationEventSystem<T> : GameRuleSystem<T> where T : IComponent
 {
-    [Dependency] protected readonly IAdminLogManager AdminLogManager = default!;
-    [Dependency] protected readonly IPrototypeManager PrototypeManager = default!;
-    [Dependency] protected readonly ChatSystem ChatSystem = default!;
-    [Dependency] protected readonly SharedAudioSystem Audio = default!;
-    [Dependency] protected readonly StationSystem StationSystem = default!;
+    [Dependency] protected IAdminLogManager AdminLogManager = default!;
+    [Dependency] protected IPrototypeManager PrototypeManager = default!;
+    [Dependency] protected ChatSystem ChatSystem = default!;
+    [Dependency] protected SharedAudioSystem Audio = default!;
+    [Dependency] protected StationSystem StationSystem = default!;
+
+    [Dependency] protected AnnouncerManager _announcer = default!; // Monkestation edit - announcer overrides
 
     protected ISawmill Sawmill = default!;
 
@@ -40,7 +45,7 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         if (!TryComp<StationEventComponent>(uid, out var stationEvent))
             return;
 
-        AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}");
+        AdminLogManager.Add(LogType.EventAnnounced, $"Event added / announced: {ToPrettyString(uid)}{(args.Fake ? " (Fake)" : "")}");
 
         // we don't want to send to players who aren't in game (i.e. in the lobby)
         Filter allPlayersInGame = Filter.Empty().AddWhere(GameTicker.UserHasJoinedGame);
@@ -48,7 +53,12 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         if (stationEvent.StartAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.StartAnnouncement), playSound: false, colorOverride: stationEvent.StartAnnouncementColor);
 
-        Audio.PlayGlobal(stationEvent.StartAudio, allPlayersInGame, true);
+        // Monkestation edit start - announcer overrides
+        if (stationEvent.StartAudio == null)
+            return;
+        _announcer.TryGetAnnouncerSound(stationEvent.StartAudio.Value, out var soundSpecifier);
+        Audio.PlayGlobal(soundSpecifier, allPlayersInGame, true);
+        // Monkestation edit end - announcer overrides
     }
 
     /// <inheritdoc/>
@@ -87,7 +97,12 @@ public abstract class StationEventSystem<T> : GameRuleSystem<T> where T : ICompo
         if (stationEvent.EndAnnouncement != null)
             ChatSystem.DispatchFilteredAnnouncement(allPlayersInGame, Loc.GetString(stationEvent.EndAnnouncement), playSound: false, colorOverride: stationEvent.EndAnnouncementColor);
 
-        Audio.PlayGlobal(stationEvent.EndAudio, allPlayersInGame, true);
+        // Monkestation edit start - announcer overrides
+        if (stationEvent.EndAudio == null)
+            return;
+        _announcer.TryGetAnnouncerSound(stationEvent.EndAudio.Value, out var soundSpecifier);
+        Audio.PlayGlobal(soundSpecifier, allPlayersInGame, true);
+        // Monkestation edit end - announcer overrides
     }
 
     /// <summary>
