@@ -108,4 +108,18 @@ Entries:
   id: 15
   time: '2026-07-16T13:45:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/52
+- author: Dishwasher0
+  changes:
+  - message: Ported Cluster from StarLight
+    type: Add
+  id: 16
+  time: '2026-07-17T15:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/59
+- author: Skarlet
+  changes:
+  - message: Ported wall and window sprites from monke
+    type: Add
+  id: 17
+  time: '2026-07-17T15:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/20
 Order: 1
