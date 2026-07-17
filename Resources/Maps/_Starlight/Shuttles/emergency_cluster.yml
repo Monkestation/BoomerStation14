@@ -4,7 +4,7 @@ meta:
   engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 07/16/2026 22:00:35
+  time: 07/17/2026 11:43:25
   entityCount: 591
 maps: []
 grids:
@@ -486,27 +486,38 @@ entities:
   - uid: 7
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 16.5,-9.5
-      parent: 1
-  - uid: 8
-    components:
-    - type: Transform
-      pos: 16.5,-15.5
       parent: 1
   - uid: 9
     components:
     - type: Transform
-      pos: 2.5,-9.5
-      parent: 1
-  - uid: 10
-    components:
-    - type: Transform
-      pos: 16.5,-17.5
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-7.5
       parent: 1
   - uid: 11
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 2.5,-7.5
+      parent: 1
+  - uid: 18
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-17.5
+      parent: 1
+  - uid: 20
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-15.5
+      parent: 1
+  - uid: 184
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 2.5,-9.5
       parent: 1
 - proto: AirlockMedicalGlassLocked
   entities:
@@ -542,35 +553,41 @@ entities:
       fixtures: {}
 - proto: AtmosDeviceFanDirectional
   entities:
+  - uid: 8
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-9.5
+      parent: 1
+  - uid: 10
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-15.5
+      parent: 1
   - uid: 16
     components:
     - type: Transform
-      pos: 16.5,-7.5
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-17.5
       parent: 1
   - uid: 17
     components:
     - type: Transform
-      pos: 16.5,-9.5
-      parent: 1
-  - uid: 18
-    components:
-    - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 2.5,-7.5
       parent: 1
   - uid: 19
     components:
     - type: Transform
-      pos: 16.5,-15.5
-      parent: 1
-  - uid: 20
-    components:
-    - type: Transform
+      rot: -1.5707963267948966 rad
       pos: 2.5,-9.5
       parent: 1
   - uid: 21
     components:
     - type: Transform
-      pos: 16.5,-17.5
+      rot: 1.5707963267948966 rad
+      pos: 16.5,-7.5
       parent: 1
 - proto: AtmosFixAirMarker
   entities:
@@ -1634,11 +1651,6 @@ entities:
     components:
     - type: Transform
       pos: 3.5,0.5
-      parent: 1
-  - uid: 184
-    components:
-    - type: Transform
-      pos: 16.5,-7.5
       parent: 1
 - proto: ChairOfficeLight
   entities:
