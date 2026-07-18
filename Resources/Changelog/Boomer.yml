@@ -122,4 +122,27 @@ Entries:
   id: 17
   time: '2026-07-17T15:30:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/20
+- author: Sif
+  changes:
+  - message: Flashlights and most handheld lights no longer need batteries to work
+    type: Tweak
+  - message: Holoprojectors now work like in SS13. You place holograms from a limited pool and can pick them back up, or wipe them all by using the projector in hand. No more powercell.
+    type: Tweak
+  id: 18
+  time: '2026-07-18T14:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/62
+- author: adamsogm
+  changes:
+  - message: Removed the ability for non-admins to use fuckrules
+    type: Remove
+  id: 19
+  time: '2026-07-18T14:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/61
+- author: ProPeperos
+  changes:
+  - message: On Reach, added even more improvements
+    type: Tweak
+  id: 20
+  time: '2026-07-18T14:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/64
 Order: 1
