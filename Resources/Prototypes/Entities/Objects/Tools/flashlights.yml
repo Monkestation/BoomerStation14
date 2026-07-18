@@ -9,6 +9,7 @@
     - Flashlight
   - type: HandheldLight
     addPrefix: false
+    selfPowered: true # Boomer edit - no power cell needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -37,16 +38,7 @@
       - state: inhand-right-light
         shader: unshaded
   - type: ItemTogglePointLight
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
+  # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer, flashlights are self-powered now
   - type: Sprite
     sprite: Objects/Tools/flashlight.rsi
     layers:
@@ -84,13 +76,9 @@
   - type: Tag
     tags:
       - SecBeltEquip
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
   - type: HandheldLight
     addPrefix: false
+    selfPowered: true # Boomer edit - no power cell needed
     wattage: 0.5
   - type: ToggleableVisuals
     inhandVisuals:
@@ -125,13 +113,4 @@
     quickEquip: false
     slots:
       - Belt
-
-- type: entity
-  parent: FlashlightLantern
-  id: EmptyFlashlightLantern
-  suffix: Empty
-  components:
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
+# Boomer edit - removed EmptyFlashlightLantern, flashlights no longer use power cells

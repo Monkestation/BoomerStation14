@@ -67,7 +67,7 @@
 - type: latheRecipe
   parent: BaseLightRecipe
   id: FlashlightLantern
-  result: EmptyFlashlightLantern
+  result: FlashlightLantern # Boomer edit - flashlights are self-powered, no empty variant
   materials:
     Steel: 100
     Glass: 100

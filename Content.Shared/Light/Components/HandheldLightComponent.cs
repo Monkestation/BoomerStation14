@@ -18,6 +18,15 @@ public sealed partial class HandheldLightComponent : Component
     [DataField("wattage")]
     public float Wattage { get; set; } = .8f;
 
+    // Boomer edit start - self-powered lights that don't need a power cell
+    /// <summary>
+    ///     If true, the light doesn't need a power cell to work and never runs out of charge.
+    ///     Battery logic is skipped entirely.
+    /// </summary>
+    [DataField]
+    public bool SelfPowered;
+    // Boomer edit end
+
     [DataField("turnOnSound")]
     public SoundSpecifier TurnOnSound = new SoundPathSpecifier("/Audio/Items/flashlight_on.ogg");
 

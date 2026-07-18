@@ -6,6 +6,7 @@
   components:
     - type: HandheldLight
       addPrefix: true
+      selfPowered: true # Boomer edit - no power cell needed
       blinkingBehaviourId: blinking
       radiatingBehaviourId: radiating
     - type: LightBehaviour
@@ -47,16 +48,7 @@
     - type: ToggleableVisuals
       spriteLayer: light
     - type: ItemTogglePointLight
-    - type: PowerCellSlot
-      cellSlotId: cell_slot
-    - type: ItemSlots
-      slots:
-        cell_slot:
-          name: power-cell-slot-component-slot-name-default
-          startingItem: PowerCellMedium
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot {}
+    # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer, lantern is self-powered now
     - type: StealTarget
       stealGroup: LAMP
     - type: Clothing

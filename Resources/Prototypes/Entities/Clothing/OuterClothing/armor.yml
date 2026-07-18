@@ -256,6 +256,7 @@
   - type: Appearance
   - type: HandheldLight
     addPrefix: false
+    selfPowered: true # Boomer edit - no battery needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: PointLight
@@ -283,11 +284,7 @@
         startValue: 0.1
         endValue: 2.0
         isLooped: true
-  - type: Battery
-    maxCharge: 600
-    startingCharge: 600
-  - type: BatterySelfRecharger
-    autoRechargeRate: 2
+  # Boomer edit - removed Battery / BatterySelfRecharger, light is self-powered now
   - type: Item
     size: Normal
 

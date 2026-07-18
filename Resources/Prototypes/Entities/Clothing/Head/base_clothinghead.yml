@@ -83,6 +83,7 @@
   - type: Appearance
   - type: HandheldLight
     addPrefix: true
+    selfPowered: true # Boomer edit - no power cell / battery needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -102,16 +103,7 @@
         startValue: 0.1
         endValue: 2.0
         isLooped: true
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot {}
+  # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer, light is self-powered now
 
 - type: entity
   abstract: true
@@ -245,6 +237,7 @@
   - type: Appearance
   - type: HandheldLight
     addPrefix: true
+    selfPowered: true # Boomer edit - no power cell / battery needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -264,11 +257,7 @@
         startValue: 0.1
         endValue: 2.0
         isLooped: true
-  - type: Battery
-    maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
-    startingCharge: 600
-  - type: BatterySelfRecharger
-    autoRechargeRate: 2 #recharge of 2 makes total drain 1w / s so max charge is 1:1 with time. Time to fully charge should be 5 minutes. Having recharge gives light an extended flicker period which gives you some warning to return to light area.
+  # Boomer edit - removed Battery / BatterySelfRecharger, light is self-powered now
 
 - type: entity
   abstract: true
