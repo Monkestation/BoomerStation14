@@ -24,25 +24,19 @@
   id: HoloprojectorBorg
   suffix: borg
   name: holosign projector
-  description: A modified holographic sign projector for use in custodial cyborgs. Automatically self-charges.
+  description: A modified holographic sign projector for use in custodial cyborgs. Place your signs and pick them back up as needed.
   components:
   - type: HolosignProjector
-  # Boomer edit - borg version passively recharges its hologram slots over time.
-  - type: AutoRecharge
-    rechargeDuration: 10
 
 - type: entity
   parent: Holoprojector
   id: HoloprojectorClownBorg
   name: holopeel projector
-  description: A holopeel projector that creates a slippery, hard light banana peel. It recharges, so that the fun never ends!
+  description: A holopeel projector that creates a slippery, hard light banana peel. Lay them down and scoop them back up so the fun never ends!
   suffix: borg
   components:
   - type: HolosignProjector
     signProto: HoloPeel
-  # Boomer edit - borg version passively recharges its hologram slots over time.
-  - type: AutoRecharge
-    rechargeDuration: 10
   - type: Sprite
     sprite: Objects/Devices/Holoprojectors/peel.rsi
     state: icon
@@ -75,11 +69,7 @@
   parent: HolofanProjector
   id: HolofanProjectorBorg
   name: integrated holofan
-  description: Stops idiots from causing more crew harm during atmospheric emergencies. Installed directly into an engineering cyborg, it recharges over time.
-  components:
-  # Boomer edit - borg version passively recharges its hologram slots over time.
-  - type: AutoRecharge
-    rechargeDuration: 10
+  description: Stops idiots from causing more crew harm during atmospheric emergencies. Installed directly into an engineering cyborg.
 
 - type: entity
   parent: Holoprojector
