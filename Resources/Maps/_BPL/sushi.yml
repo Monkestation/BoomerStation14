@@ -12889,13 +12889,6 @@ entities:
     - type: Transform
       pos: 70.5,88.5
       parent: 2
-- proto: AirlockLibraryLocked
-  entities:
-  - uid: 384
-    components:
-    - type: Transform
-      pos: 42.5,100.5
-      parent: 2
 - proto: AirlockMaint
   entities:
   - uid: 385
@@ -13209,13 +13202,6 @@ entities:
     - type: Transform
       pos: 99.5,86.5
       parent: 2
-- proto: AirlockMaintLibraryLocked
-  entities:
-  - uid: 441
-    components:
-    - type: Transform
-      pos: 37.5,99.5
-      parent: 2
 - proto: AirlockMaintLocked
   entities:
   - uid: 442
@@ -13455,13 +13441,6 @@ entities:
     - type: Transform
       pos: 119.5,64.5
       parent: 2
-- proto: AirlockMaintNewsroomLocked
-  entities:
-  - uid: 24845
-    components:
-    - type: Transform
-      pos: 88.5,88.5
-      parent: 2
 - proto: AirlockMaintRnDLocked
   entities:
   - uid: 490
@@ -13627,13 +13606,6 @@ entities:
     components:
     - type: Transform
       pos: 115.5,62.5
-      parent: 2
-- proto: AirlockNewsroomLocked
-  entities:
-  - uid: 23984
-    components:
-    - type: Transform
-      pos: 87.5,91.5
       parent: 2
 - proto: AirlockQuartermasterGlassLocked
   entities:
@@ -17849,13 +17821,6 @@ entities:
     components:
     - type: Transform
       pos: 115.36403,109.55449
-      parent: 2
-- proto: BoneGel
-  entities:
-  - uid: 18508
-    components:
-    - type: Transform
-      pos: 142.48044,55.462418
       parent: 2
 - proto: BookJourney
   entities:
@@ -59966,24 +59931,6 @@ entities:
     - type: Transform
       pos: 43.5,69.5
       parent: 2
-- proto: ClothingOuterToobRobe
-  entities:
-  - uid: 9169
-    components:
-    - type: Transform
-      pos: 11.688881,66.690384
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot {}
-  - uid: 9170
-    components:
-    - type: Transform
-      pos: 11.345131,66.596634
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot {}
 - proto: ClothingOuterWinterAtmos
   entities:
   - uid: 9171
@@ -60207,20 +60154,6 @@ entities:
     components:
     - type: Transform
       pos: 89.29202,85.59994
-      parent: 2
-- proto: ClothingWedDress
-  entities:
-  - uid: 9203
-    components:
-    - type: Transform
-      pos: 144.52698,107.5457
-      parent: 2
-- proto: ClothingWedTuxedo
-  entities:
-  - uid: 9204
-    components:
-    - type: Transform
-      pos: 146.34216,107.317184
       parent: 2
 - proto: Cobweb1
   entities:
@@ -62466,99 +62399,6 @@ entities:
     - type: Transform
       pos: 56.468643,53.761444
       parent: 2
-- proto: ConveyorBeltCorner
-  entities:
-  - uid: 9575
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 93.5,53.5
-      parent: 2
-  - uid: 9576
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 94.5,52.5
-      parent: 2
-  - uid: 9577
-    components:
-    - type: Transform
-      pos: 94.5,51.5
-      parent: 2
-  - uid: 9578
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 94.5,50.5
-      parent: 2
-  - uid: 9579
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 80.5,51.5
-      parent: 2
-  - uid: 9580
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 79.5,52.5
-      parent: 2
-  - uid: 9581
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 78.5,53.5
-      parent: 2
-  - uid: 9582
-    components:
-    - type: Transform
-      pos: 77.5,53.5
-      parent: 2
-  - uid: 9583
-    components:
-    - type: Transform
-      pos: 76.5,52.5
-      parent: 2
-  - uid: 9584
-    components:
-    - type: Transform
-      pos: 75.5,51.5
-      parent: 2
-  - uid: 9585
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 61.5,52.5
-      parent: 2
-  - uid: 9586
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 62.5,53.5
-      parent: 2
-  - uid: 9587
-    components:
-    - type: Transform
-      pos: 61.5,67.5
-      parent: 2
-  - uid: 9588
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 93.5,79.5
-      parent: 2
-  - uid: 9589
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 94.5,79.5
-      parent: 2
-  - uid: 9590
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 94.5,70.5
-      parent: 2
 - proto: CorporateCircuitBoard
   entities:
   - uid: 9591
@@ -62629,13 +62469,6 @@ entities:
     components:
     - type: Transform
       pos: 100.5,97.5
-      parent: 2
-- proto: CrateCyberSurgery
-  entities:
-  - uid: 9647
-    components:
-    - type: Transform
-      pos: 96.5,80.5
       parent: 2
 - proto: CrateEmergencyRadiation
   entities:
@@ -62770,13 +62603,6 @@ entities:
     components:
     - type: Transform
       pos: 74.5,83.5
-      parent: 2
-- proto: CrateFullCyberneticsPackage
-  entities:
-  - uid: 9648
-    components:
-    - type: Transform
-      pos: 114.5,61.5
       parent: 2
 - proto: CrateFunArtSupplies
   entities:
@@ -63832,13 +63658,6 @@ entities:
     components:
     - type: Transform
       pos: 126.5,62.5
-      parent: 2
-- proto: DefaultStationBeaconCoffeeShop
-  entities:
-  - uid: 9782
-    components:
-    - type: Transform
-      pos: 25.5,83.5
       parent: 2
 - proto: DefaultStationBeaconCourtroom
   entities:
@@ -72232,13 +72051,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: DrinkColdBrewCoffeeGlass
-  entities:
-  - uid: 11228
-    components:
-    - type: Transform
-      pos: 24.627644,86.74266
-      parent: 2
 - proto: DrinkCreamCarton
   entities:
   - uid: 11229
@@ -72592,13 +72404,6 @@ entities:
     components:
     - type: Transform
       pos: 18.583206,98.8388
-      parent: 2
-- proto: DrinkViennaCoffeeGlass
-  entities:
-  - uid: 11289
-    components:
-    - type: Transform
-      pos: 24.638058,86.40909
       parent: 2
 - proto: DrinkVodkaBottleFull
   entities:
@@ -78802,13 +78607,6 @@ entities:
     components:
     - type: Transform
       pos: 94.63598,117.63855
-      parent: 2
-- proto: FoodMealHashbrown
-  entities:
-  - uid: 11920
-    components:
-    - type: Transform
-      pos: 144.5151,98.65849
       parent: 2
 - proto: FoodMealSashimi
   entities:
@@ -117573,13 +117371,6 @@ entities:
     - type: Transform
       pos: 72.52081,49.526184
       parent: 2
-- proto: PlushieDigs
-  entities:
-  - uid: 17372
-    components:
-    - type: Transform
-      pos: 112.825584,47.05059
-      parent: 2
 - proto: PlushieHolocarp
   entities:
   - uid: 17373
@@ -124905,28 +124696,6 @@ entities:
     - type: Transform
       pos: 42.57627,31.517792
       parent: 2
-- proto: ReagentContainerCoffee
-  entities:
-  - uid: 18633
-    components:
-    - type: Transform
-      pos: 28.756248,86.805115
-      parent: 2
-  - uid: 18634
-    components:
-    - type: Transform
-      pos: 28.768593,86.44684
-      parent: 2
-  - uid: 18635
-    components:
-    - type: Transform
-      pos: 28.225384,86.82982
-      parent: 2
-  - uid: 18636
-    components:
-    - type: Transform
-      pos: 28.28711,86.44684
-      parent: 2
 - proto: ReagentContainerFlour
   entities:
   - uid: 18637
@@ -128909,7 +128678,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 55.709892,69.592186
       parent: 2
-- proto: SheetPrinter1
+- proto: Paper
   entities:
   - uid: 19401
     components:
@@ -134354,13 +134123,6 @@ entities:
     - type: Transform
       pos: 44.5,107.5
       parent: 2
-- proto: SpawnMobLeslie
-  entities:
-  - uid: 20114
-    components:
-    - type: Transform
-      pos: 95.5,31.5
-      parent: 2
 - proto: SpawnMobMcGriff
   entities:
   - uid: 20115
@@ -134908,13 +134670,6 @@ entities:
     - type: Transform
       pos: 121.5,81.5
       parent: 2
-- proto: SpawnPointSalesClerk
-  entities:
-  - uid: 20208
-    components:
-    - type: Transform
-      pos: 112.5,77.5
-      parent: 2
 - proto: SpawnPointSalvageSpecialist
   entities:
   - uid: 20209
@@ -135083,94 +134838,6 @@ entities:
     - type: Transform
       pos: 100.5,96.5
       parent: 2
-- proto: Speaker
-  entities:
-  - uid: 20237
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 52.5,44.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20238
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 50.5,68.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20239
-    components:
-    - type: Transform
-      pos: 75.5,41.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20240
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 113.5,51.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20241
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 105.5,80.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20242
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 119.5,96.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20243
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 76.5,84.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20244
-    components:
-    - type: Transform
-      pos: 99.5,92.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20245
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 67.5,95.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20246
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 78.5,107.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 20247
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 28.5,60.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: Spear
   entities:
   - uid: 20248
@@ -136208,7 +135875,7 @@ entities:
     - type: Transform
       pos: 92.5,27.5
       parent: 2
-- proto: SuitStorageSecSingle
+- proto: SuitStorageSec
   entities:
   - uid: 20118
     components:
@@ -141903,13 +141570,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        9583:
-        - - Middle
-          - Off
-        - - Left
-          - Forward
-        - - Right
-          - Reverse
         9415:
         - - Left
           - Reverse
@@ -141995,13 +141655,6 @@ entities:
         - - Middle
           - Off
         9428:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        9585:
         - - Left
           - Reverse
         - - Right
@@ -142106,13 +141759,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        9587:
-        - - Left
-          - Forward
-        - - Right
-          - Reverse
-        - - Middle
-          - Off
         9562:
         - - Left
           - Reverse
@@ -142211,13 +141857,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        9582:
-        - - Middle
-          - Off
-        - - Right
-          - Reverse
-        - - Left
-          - Forward
         9401:
         - - Left
           - Reverse
@@ -142310,13 +141949,6 @@ entities:
         - - Middle
           - Off
         9414:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        9586:
         - - Left
           - Reverse
         - - Right
@@ -142554,13 +142186,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        9581:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
         9387:
         - - Left
           - Reverse
@@ -142650,13 +142275,6 @@ entities:
           - Reverse
         - - Right
           - Forward
-        - - Middle
-          - Off
-        9575:
-        - - Left
-          - Forward
-        - - Right
-          - Reverse
         - - Middle
           - Off
         9539:
@@ -142827,20 +142445,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        9588:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        9589:
-        - - Left
-          - Forward
-        - - Right
-          - Reverse
-        - - Middle
-          - Off
         9554:
         - - Left
           - Reverse
@@ -142926,13 +142530,6 @@ entities:
         - - Middle
           - Off
         9351:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        9580:
         - - Left
           - Reverse
         - - Right
@@ -143035,13 +142632,6 @@ entities:
           - Reverse
         - - Right
           - Forward
-        - - Middle
-          - Off
-        9576:
-        - - Left
-          - Forward
-        - - Right
-          - Reverse
         - - Middle
           - Off
         9507:
@@ -143156,13 +142746,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        9590:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
         9558:
         - - Left
           - Reverse
@@ -143234,13 +142817,6 @@ entities:
         - - Middle
           - Off
         9356:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        9579:
         - - Left
           - Reverse
         - - Right
@@ -143331,20 +142907,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        9577:
-        - - Left
-          - Reverse
-        - - Right
-          - Forward
-        - - Middle
-          - Off
-        9578:
-        - - Middle
-          - Off
-        - - Right
-          - Reverse
-        - - Left
-          - Forward
         9370:
         - - Left
           - Reverse
@@ -143415,13 +142977,6 @@ entities:
           - Forward
         - - Middle
           - Off
-        9584:
-        - - Middle
-          - Off
-        - - Right
-          - Reverse
-        - - Left
-          - Forward
         9429:
         - - Left
           - Reverse
@@ -143647,28 +143202,6 @@ entities:
     components:
     - type: Transform
       pos: 31.5,48.5
-      parent: 2
-- proto: VendingMachineBeans
-  entities:
-  - uid: 21267
-    components:
-    - type: Transform
-      pos: 64.5,81.5
-      parent: 2
-  - uid: 21268
-    components:
-    - type: Transform
-      pos: 136.5,42.5
-      parent: 2
-  - uid: 21269
-    components:
-    - type: Transform
-      pos: 99.5,115.5
-      parent: 2
-  - uid: 21270
-    components:
-    - type: Transform
-      pos: 132.5,126.5
       parent: 2
 - proto: VendingMachineBooze
   entities:
