@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 277.0.0
+  engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 07/16/2026 17:09:49
-  entityCount: 24855
+  time: 07/18/2026 12:13:32
+  entityCount: 24815
 maps:
 - 1
 grids:
@@ -13500,6 +13500,18 @@ entities:
     - type: Transform
       pos: 91.5,85.5
       parent: 2
+- proto: AirlockMaintServiceLocked
+  entities:
+  - uid: 9169
+    components:
+    - type: Transform
+      pos: 88.5,88.5
+      parent: 2
+  - uid: 9203
+    components:
+    - type: Transform
+      pos: 37.5,99.5
+      parent: 2
 - proto: AirlockMedical
   entities:
   - uid: 501
@@ -13803,10 +13815,20 @@ entities:
       parent: 2
 - proto: AirlockServiceLocked
   entities:
+  - uid: 441
+    components:
+    - type: Transform
+      pos: 87.5,91.5
+      parent: 2
   - uid: 551
     components:
     - type: Transform
       pos: 65.5,80.5
+      parent: 2
+  - uid: 9170
+    components:
+    - type: Transform
+      pos: 42.5,100.5
       parent: 2
 - proto: AirlockTheatreLocked
   entities:
@@ -59967,6 +59989,16 @@ entities:
     - type: Transform
       pos: 14.489098,64.50958
       parent: 2
+  - uid: 9204
+    components:
+    - type: Transform
+      pos: 11.378128,66.73069
+      parent: 2
+  - uid: 9575
+    components:
+    - type: Transform
+      pos: 11.628128,66.51194
+      parent: 2
 - proto: ClothingOuterWinterWardenUnarmored
   entities:
   - uid: 9178
@@ -60085,6 +60117,13 @@ entities:
     - type: Transform
       pos: 55.505127,65.432236
       parent: 2
+- proto: ClothingUniformJumpskirtBlackElegantDress
+  entities:
+  - uid: 9576
+    components:
+    - type: Transform
+      pos: 144.51846,107.42552
+      parent: 2
 - proto: ClothingUniformJumpskirtColorRed
   entities:
   - uid: 9194
@@ -60133,6 +60172,13 @@ entities:
     components:
     - type: Transform
       pos: 42.692932,83.55188
+      parent: 2
+- proto: ClothingUniformJumpsuitMusician
+  entities:
+  - uid: 9577
+    components:
+    - type: Transform
+      pos: 146.37784,107.3474
       parent: 2
 - proto: ClothingUniformJumpsuitNinja
   entities:
@@ -62701,6 +62747,18 @@ entities:
     components:
     - type: Transform
       pos: 99.5,51.5
+      parent: 2
+- proto: CrateMedicalSurgery
+  entities:
+  - uid: 9578
+    components:
+    - type: Transform
+      pos: 96.5,80.5
+      parent: 2
+  - uid: 9579
+    components:
+    - type: Transform
+      pos: 114.5,61.5
       parent: 2
 - proto: CrateNPCDuck
   entities:
@@ -72198,10 +72256,10 @@ entities:
       parent: 2
 - proto: DrinkIcedCoffeeGlass
   entities:
-  - uid: 11254
+  - uid: 9582
     components:
     - type: Transform
-      pos: 24.356808,86.41952
+      pos: 24.62328,86.52634
       parent: 2
 - proto: DrinkMilkCarton
   entities:
@@ -116709,6 +116767,84 @@ entities:
 
 
         GLORY TO DOCTOR GIBB[head/]
+  - uid: 19401
+    components:
+    - type: MetaData
+      name: Sushi Station Operational Guidelines
+    - type: Transform
+      pos: 70.49147,66.50349
+      parent: 2
+    - type: Paper
+      content: >2+
+                                     ⠀  [ntlogo]
+
+                                                     [head=3][color=#6e6e6e]NanoTrasen[/color][/head]
+                      [color=#0f2b51][italic][bold]SUSHI STATION OPERATIONAL GUIDELINES[/bold][/italic][/color]
+
+        [color=#0f2b51]▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[/color]
+
+        Congratulations on your assignment to a NanoTrasen-operated facility equipped with our latest patented logistics solution:
+
+
+        [italic]Space Asset Sorting & High-speed Inventory Movement Interface[/italic]
+
+        A.K.A. Codename [bold]"S.A.S.H.I.M.I."[/bold].
+
+
+        In order to bring [bold]S.A.S.H.I.M.I.[/bold] to full operation, Command Personnel ([bold]yes, that means you![/bold]) are required to pull [bold]ALL SIX (6)[/bold] bridge-mounted activation levers:
+
+
+        • Exactly [bold]ONE (1)[/bold] time.
+
+
+        Failure to comply with the above may result in:
+
+
+        • Failure to deliver cargo.
+
+        • Catastrophic reverse system activation.
+
+        • Classification as a “learning opportunity” by Central Command.
+
+
+        Please be advised:
+
+
+        [bold]S.A.S.H.I.M.I.[/bold] is a DANGEROUS INDUSTRIAL CONVEYOR SYSTEM.
+
+
+        It is designed for the transportation of:
+
+
+        • Crates
+
+        • Lockers
+
+        • Supplies
+
+        • And other [bold]NON-SCREAMING[/bold] cargo
+
+
+        It is [bolt]NOT[/bolt], under any circumstances, to be used for:
+
+
+        • Transportation of sentient lifeforms
+
+        • Clown and/or Science experimentation
+
+
+        Any personnel inserted into [bold]S.A.S.H.I.M.I.[/bold] will be penalised.
+
+
+        Failure to maintain continuous operation of [bold]S.A.S.H.I.M.I.[/bold] throughout the shift will result in immediate enrolment in NanoTrasen's Conveyor Belt Familiarisation Program.
+
+
+        [color=#0f2b51]▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[/color]
+
+        Sincerely,
+
+        NanoTrasen Central Command.
+
 - proto: PaperBin10
   entities:
   - uid: 17262
@@ -117491,6 +117627,13 @@ entities:
     components:
     - type: Transform
       pos: 84.51142,85.579506
+      parent: 2
+- proto: PlushieVulp
+  entities:
+  - uid: 384
+    components:
+    - type: Transform
+      pos: 112.72853,46.981606
       parent: 2
 - proto: PortableFlasher
   entities:
@@ -124698,6 +124841,16 @@ entities:
       parent: 2
 - proto: ReagentContainerFlour
   entities:
+  - uid: 9580
+    components:
+    - type: Transform
+      pos: 28.263905,86.74509
+      parent: 2
+  - uid: 9581
+    components:
+    - type: Transform
+      pos: 28.576405,86.54196
+      parent: 2
   - uid: 18637
     components:
     - type: Transform
@@ -128678,86 +128831,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 55.709892,69.592186
       parent: 2
-- proto: Paper
-  entities:
-  - uid: 19401
-    components:
-    - type: MetaData
-      name: Sushi Station Operational Guidelines
-    - type: Transform
-      pos: 70.49147,66.50349
-      parent: 2
-    - type: Paper
-      content: >2+
-                                     ⠀  [ntlogo]
-
-                                                     [head=3][color=#6e6e6e]NanoTrasen[/color][/head]
-                      [color=#0f2b51][italic][bold]SUSHI STATION OPERATIONAL GUIDELINES[/bold][/italic][/color]
-
-        [color=#0f2b51]▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[/color]
-
-        Congratulations on your assignment to a NanoTrasen-operated facility equipped with our latest patented logistics solution:
-
-
-        [italic]Space Asset Sorting & High-speed Inventory Movement Interface[/italic]
-
-        A.K.A. Codename [bold]"S.A.S.H.I.M.I."[/bold].
-
-
-        In order to bring [bold]S.A.S.H.I.M.I.[/bold] to full operation, Command Personnel ([bold]yes, that means you![/bold]) are required to pull [bold]ALL SIX (6)[/bold] bridge-mounted activation levers:
-
-
-        • Exactly [bold]ONE (1)[/bold] time.
-
-
-        Failure to comply with the above may result in:
-
-
-        • Failure to deliver cargo.
-
-        • Catastrophic reverse system activation.
-
-        • Classification as a “learning opportunity” by Central Command.
-
-
-        Please be advised:
-
-
-        [bold]S.A.S.H.I.M.I.[/bold] is a DANGEROUS INDUSTRIAL CONVEYOR SYSTEM.
-
-
-        It is designed for the transportation of:
-
-
-        • Crates
-
-        • Lockers
-
-        • Supplies
-
-        • And other [bold]NON-SCREAMING[/bold] cargo
-
-
-        It is [bolt]NOT[/bolt], under any circumstances, to be used for:
-
-
-        • Transportation of sentient lifeforms
-
-        • Clown and/or Science experimentation
-
-
-        Any personnel inserted into [bold]S.A.S.H.I.M.I.[/bold] will be penalised.
-
-
-        Failure to maintain continuous operation of [bold]S.A.S.H.I.M.I.[/bold] throughout the shift will result in immediate enrolment in NanoTrasen's Conveyor Belt Familiarisation Program.
-
-
-        [color=#0f2b51]▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[/color]
-
-        Sincerely,
-
-        NanoTrasen Central Command.
-
 - proto: SheetSteel
   entities:
   - uid: 19402
