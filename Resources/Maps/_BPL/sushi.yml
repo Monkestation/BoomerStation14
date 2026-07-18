@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 07/18/2026 12:13:32
-  entityCount: 24815
+  time: 07/18/2026 12:19:23
+  entityCount: 24831
 maps:
 - 1
 grids:
@@ -13502,12 +13502,12 @@ entities:
       parent: 2
 - proto: AirlockMaintServiceLocked
   entities:
-  - uid: 9169
+  - uid: 9170
     components:
     - type: Transform
       pos: 88.5,88.5
       parent: 2
-  - uid: 9203
+  - uid: 9204
     components:
     - type: Transform
       pos: 37.5,99.5
@@ -13815,17 +13815,17 @@ entities:
       parent: 2
 - proto: AirlockServiceLocked
   entities:
-  - uid: 441
-    components:
-    - type: Transform
-      pos: 87.5,91.5
-      parent: 2
   - uid: 551
     components:
     - type: Transform
       pos: 65.5,80.5
       parent: 2
-  - uid: 9170
+  - uid: 9169
+    components:
+    - type: Transform
+      pos: 87.5,91.5
+      parent: 2
+  - uid: 9203
     components:
     - type: Transform
       pos: 42.5,100.5
@@ -59989,12 +59989,12 @@ entities:
     - type: Transform
       pos: 14.489098,64.50958
       parent: 2
-  - uid: 9204
+  - uid: 9575
     components:
     - type: Transform
       pos: 11.378128,66.73069
       parent: 2
-  - uid: 9575
+  - uid: 9576
     components:
     - type: Transform
       pos: 11.628128,66.51194
@@ -60119,7 +60119,7 @@ entities:
       parent: 2
 - proto: ClothingUniformJumpskirtBlackElegantDress
   entities:
-  - uid: 9576
+  - uid: 9577
     components:
     - type: Transform
       pos: 144.51846,107.42552
@@ -60175,7 +60175,7 @@ entities:
       parent: 2
 - proto: ClothingUniformJumpsuitMusician
   entities:
-  - uid: 9577
+  - uid: 9578
     components:
     - type: Transform
       pos: 146.37784,107.3474
@@ -60870,6 +60870,12 @@ entities:
       parent: 2
 - proto: ConveyorBelt
   entities:
+  - uid: 441
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 94.5,70.5
+      parent: 2
   - uid: 9309
     components:
     - type: Transform
@@ -62403,6 +62409,95 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 56.5,67.5
       parent: 2
+  - uid: 9584
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 93.5,53.5
+      parent: 2
+  - uid: 9585
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 78.5,53.5
+      parent: 2
+  - uid: 9586
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 93.5,79.5
+      parent: 2
+  - uid: 9587
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 94.5,79.5
+      parent: 2
+  - uid: 9588
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 94.5,52.5
+      parent: 2
+  - uid: 9589
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 79.5,52.5
+      parent: 2
+  - uid: 9590
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 80.5,51.5
+      parent: 2
+  - uid: 9647
+    components:
+    - type: Transform
+      pos: 94.5,51.5
+      parent: 2
+  - uid: 9648
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 94.5,50.5
+      parent: 2
+  - uid: 9782
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 77.5,53.5
+      parent: 2
+  - uid: 11228
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 76.5,52.5
+      parent: 2
+  - uid: 11254
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 75.5,51.5
+      parent: 2
+  - uid: 11289
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 61.5,52.5
+      parent: 2
+  - uid: 11920
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 62.5,53.5
+      parent: 2
+  - uid: 17372
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 61.5,67.5
+      parent: 2
 - proto: ConveyorBeltAssembly
   entities:
   - uid: 9567
@@ -62750,12 +62845,12 @@ entities:
       parent: 2
 - proto: CrateMedicalSurgery
   entities:
-  - uid: 9578
+  - uid: 9579
     components:
     - type: Transform
       pos: 96.5,80.5
       parent: 2
-  - uid: 9579
+  - uid: 9580
     components:
     - type: Transform
       pos: 114.5,61.5
@@ -72256,7 +72351,7 @@ entities:
       parent: 2
 - proto: DrinkIcedCoffeeGlass
   entities:
-  - uid: 9582
+  - uid: 9583
     components:
     - type: Transform
       pos: 24.62328,86.52634
@@ -124841,12 +124936,12 @@ entities:
       parent: 2
 - proto: ReagentContainerFlour
   entities:
-  - uid: 9580
+  - uid: 9581
     components:
     - type: Transform
       pos: 28.263905,86.74509
       parent: 2
-  - uid: 9581
+  - uid: 9582
     components:
     - type: Transform
       pos: 28.576405,86.54196
@@ -141874,6 +141969,27 @@ entities:
           - Forward
         - - Middle
           - Off
+        11228:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        11289:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        17372:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
   - uid: 21251
     components:
     - type: Transform
@@ -142197,6 +142313,20 @@ entities:
         - - Middle
           - Off
         9504:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        9782:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        11920:
         - - Left
           - Reverse
         - - Right
@@ -142560,6 +142690,34 @@ entities:
           - Forward
         - - Middle
           - Off
+        9584:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        9585:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        9586:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        9587:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
   - uid: 21253
     components:
     - type: Transform
@@ -142854,6 +143012,27 @@ entities:
           - Forward
         - - Middle
           - Off
+        441:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        9588:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        9589:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
   - uid: 21254
     components:
     - type: Transform
@@ -143002,6 +143181,27 @@ entities:
         - - Middle
           - Off
         9369:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        9590:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        9647:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        9648:
         - - Left
           - Reverse
         - - Right
@@ -143163,6 +143363,13 @@ entities:
         - - Middle
           - Off
         9445:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        11254:
         - - Left
           - Reverse
         - - Right
