@@ -2,7 +2,7 @@
   id: StarlightCluster
   mapName: 'Cluster'
   mapPath: /Maps/_Starlight/Stations/Cluster.yml
-  minPlayers: 10
+  minPlayers: 5
   maxPlayers: 35
   stations:
     StarlightCluster:
