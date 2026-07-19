@@ -2,7 +2,7 @@
   id: StarlightCluster
   mapName: 'Cluster'
   mapPath: /Maps/_Starlight/Stations/Cluster.yml
-  minPlayers: 0
+  minPlayers: 10
   maxPlayers: 35
   stations:
     StarlightCluster:
@@ -40,7 +40,7 @@
             MedicalDoctor: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
-            # Surgeon: [ 1, 1 ] # Boomer 
+            # Surgeon: [ 1, 1 ] # Boomer
             #science (5)
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 3, 3 ]
@@ -49,7 +49,7 @@
             #security (7)
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            # DutyOfficer: [ 1, 1 ] # Bommer 
+            # DutyOfficer: [ 1, 1 ] # Bommer
             SecurityOfficer: [ 3, 3 ]
             SecurityCadet: [ 2, 2 ]
             # Brigmedic: [ 1, 1 ] # Boomer
@@ -62,7 +62,7 @@
             CargoTechnician: [ 2, 2 ]
             # MailTech: [ 1, 1 ] # Bommer
             #civilian (3+)
-            Passenger: [ -1, -1 ] # Boomer - Replaced assistants whit passengers 
+            Passenger: [ -1, -1 ] # Boomer - Replaced assistants whit passengers
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
