@@ -136,6 +136,8 @@
       Stomach: OrganGrayStomach
       Liver: OrganGrayLiver
       Kidneys: OrganGrayKidneys
+      MSBladder: MSOrganHumanBladder # Boomer edit - add bladder for pissing
+      MSButt: MSOrganHumanButt # Boomer edit - add butt for farting
   - type: HumanoidProfile
     species: Gray
 
