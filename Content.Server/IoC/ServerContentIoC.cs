@@ -1,6 +1,7 @@
 using Content.Server._Monkestation;
 using Content.Server._Monkestation.Administration.Managers;
 using Content.Server._Monkestation.Announcements;
+using Content.Server._Monkestation.Discord.Commands;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -89,6 +90,7 @@ internal static class ServerContentIoC
         // Monkestation start
         deps.Register<RoleTimeExemptionManager>();
         deps.Register<AnnouncerManager>();
+        deps.Register<StatusDiscordCommand>();
         // Monkestation end
     }
 }
