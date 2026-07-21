@@ -37,6 +37,7 @@
     - replay_load
     - saveconfig
     - chatwindow
+    - discordlink # Monkestation edit
 
 - Flags: DEBUG
   Commands:

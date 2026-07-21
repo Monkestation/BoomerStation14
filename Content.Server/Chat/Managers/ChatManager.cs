@@ -8,6 +8,8 @@ using Content.Server.Discord.DiscordLink;
 using Content.Server.Ghost;
 using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
+using Content.Shared._Monkestation;
+using Content.Shared._Monkestation.Donations;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
@@ -49,6 +51,8 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private DiscordChatLink _discordLink = default!;
     [Dependency] private ILogManager _logManager = default!;
     [Dependency] private ILocalizationManager _localizationManager = default!;
+
+    [Dependency] private ISharedDonationManager _donations = default!; // Monkestation edit
 
     private ISawmill _sawmill = default!;
 
@@ -293,10 +297,24 @@ internal sealed partial class ChatManager : IChatManager
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
         }
-        if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
+
+        // Monke edit - Patreon color from donor data
+        var donorColor = _donations.GetDonorData(player)
+            ?.Tiers
+            .OrderBy(tier => tier.SortOrder)
+            .Select(tier => tier.OocColor)
+            .FirstOrDefault(color => color != string.Empty, string.Empty);
+        var inheritPatrons = _configurationManager.GetCVar(CCVarsMonke.InheritPatrons);
+        if (donorColor == null && inheritPatrons && player.Channel.UserData.PatronTier is { } patronTier &&
+            PatronOocColors.TryGetValue(patronTier, out var patreonColor))
         {
-            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+            donorColor = patreonColor;
         }
+        if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && donorColor != null)
+        {
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", donorColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+        }
+        // Monke edit end
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
         ChatMessageToAll(ChatChannel.OOC, message, wrappedMessage, EntityUid.Invalid, hideChat: false, recordReplay: true, colorOverride: colorOverride, author: player.UserId);

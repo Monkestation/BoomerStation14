@@ -1,3 +1,4 @@
+using Content.Server._Monkestation.Donations;
 using Content.Server._Monkestation.Administration.Managers;
 using System.Threading.Tasks;
 using Content.Server.Acz;
@@ -85,6 +86,7 @@ namespace Content.Server.Entry
 
         // Monkestation start
         [Dependency] private RoleTimeExemptionManager _roleTimeExemptionManager = default!;
+        [Dependency] private DonationManager _donationManager = default!;
         // Monkestation end
 
         public override void PreInit()
@@ -179,9 +181,10 @@ namespace Content.Server.Entry
             _cvarCtrl.Initialize();
             _feedbackManager.Initialize();
 
-            // Monkestation Start
+            // Monke edit start
+            _donationManager.Initialize();
             _roleTimeExemptionManager.Initialize();
-            // Monkestation end
+            // Monke edit end
         }
 
         public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)

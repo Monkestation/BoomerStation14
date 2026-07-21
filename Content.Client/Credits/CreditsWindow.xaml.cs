@@ -49,7 +49,7 @@ public sealed partial class CreditsWindow : DefaultWindow
         RobustXamlLoader.Load(this);
 
         TabContainer.SetTabTitle(Ss14ContributorsTab, Loc.GetString("credits-window-ss14contributorslist-tab"));
-        TabContainer.SetTabTitle(PatronsTab, Loc.GetString("credits-window-patrons-tab"));
+        // TabContainer.SetTabTitle(PatronsTab, Loc.GetString("credits-window-patrons-tab")); - Disable the patrons tab until we get it working
         TabContainer.SetTabTitle(LicensesTab, Loc.GetString("credits-window-licenses-tab"));
         TabContainer.SetTabTitle(AttributionsTab, Loc.GetString("credits-window-attributions-tab"));
 
@@ -70,8 +70,8 @@ public sealed partial class CreditsWindow : DefaultWindow
     {
         if (tab == Ss14ContributorsTab.GetPositionInParent())
             PopulateContributors(Ss14ContributorsContainer);
-        else if (tab == PatronsTab.GetPositionInParent())
-            PopulatePatrons(PatronsContainer);
+        // else if (tab == PatronsTab.GetPositionInParent()) // Monke edit - Disable until a solution is found to handle them
+        //     PopulatePatrons(PatronsContainer);
         else if (tab == LicensesTab.GetPositionInParent())
             PopulateLicenses(LicensesContainer);
         else if (tab == AttributionsTab.GetPositionInParent())

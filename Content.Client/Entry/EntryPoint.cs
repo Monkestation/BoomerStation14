@@ -1,3 +1,4 @@
+using Content.Client._Monkestation.Donations;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -80,6 +81,10 @@ namespace Content.Client.Entry
         [Dependency] private ClientsidePlaytimeTrackingManager _clientsidePlaytimeManager = default!;
         [Dependency] private ClientFeedbackManager _feedbackManager = null!;
 
+        // Monke edit start
+        [Dependency] private ClientDonationManager _donation = default!;
+        // Monke edit end
+
         public override void PreInit()
         {
             ClientContentIoC.Register(Dependencies);
@@ -142,6 +147,10 @@ namespace Content.Client.Entry
             _jobRequirements.Initialize();
             _playbackMan.Initialize();
             _clientsidePlaytimeManager.Initialize();
+
+            // Monke edit start
+            _donation.Initialize();
+            // Monke edit end
 
             //AUTOSCALING default Setup!
             _configManager.SetCVar("interface.resolutionAutoScaleUpperCutoffX", 1080);

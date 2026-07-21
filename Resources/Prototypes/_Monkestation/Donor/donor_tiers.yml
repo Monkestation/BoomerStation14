@@ -1,0 +1,61 @@
+# TODO: Confirm list of tiers
+- type: msDonorTier
+  id: Base
+  sortOrder: 999
+  fallbackTier: true
+  name: ms-donor-tier-default
+  oocColor: "#aa00ff"
+
+- type: msDonorTier
+  id: Thanks
+  sortOrder: 5
+  parent: Base
+  name: ms-donor-tier-thanks
+
+- type: msDonorTier
+  id: Assistant
+  sortOrder: 4
+  parent: Base
+  name: ms-donor-tier-assistant
+
+- type: msDonorTier
+  id: Command
+  sortOrder: 3
+  parent: Base
+  name: ms-donor-tier-command
+
+- type: msDonorTier
+  id: Traitor
+  sortOrder: 2
+  parent: Base
+  name: ms-donor-tier-traitor
+
+- type: msDonorTier
+  id: Nukie
+  sortOrder: 1
+  parent: Base
+  name: ms-donor-tier-nukie
+
+- type: msDonorTier
+  id: Twitch1
+  sortOrder: 8
+  parent: Base
+  name: ms-donor-tier-twitch1
+
+- type: msDonorTier
+  id: Twitch2
+  sortOrder: 7
+  parent: Base
+  name: ms-donor-tier-twitch2
+
+- type: msDonorTier
+  id: Twitch3
+  sortOrder: 6
+  parent: Base
+  name: ms-donor-tier-twitch3
+
+- type: msDonorTier
+  id: Staff
+  sortOrder: 9
+  parent: Base
+  name: ms-donor-tier-staff
