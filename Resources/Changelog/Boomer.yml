@@ -154,7 +154,7 @@ Entries:
   url: https://github.com/Monkestation/BoomerStation14/pull/68
 - author: adamsogm
   changes:
-  - message: Reduced teh pop requirement of packed
+  - message: Reduced the pop requirement of packed
     type: Tweak
   - message: Increased the pop requirement of cluster
     type: Tweak
