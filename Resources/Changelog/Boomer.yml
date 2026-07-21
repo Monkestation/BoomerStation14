@@ -145,4 +145,36 @@ Entries:
   id: 20
   time: '2026-07-18T14:15:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/64
+- author: AitorLogedo
+  changes:
+  - message: Nuke operatives can now hear station announcements
+    type: Tweak
+  id: 21
+  time: '2026-07-20T19:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/68
+- author: adamsogm
+  changes:
+  - message: Reduced teh pop requirement of packed
+    type: Tweak
+  - message: Increased the pop requirement of cluster
+    type: Tweak
+  id: 22
+  time: '2026-07-20T19:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/66
+- author: Dishwasher0
+  changes:
+  - message: Engi in cluster.  Moved stuff around.
+    type: Tweak
+  - message: Lack of salv lockers in Cluster.
+    type: Fix
+  id: 23
+  time: '2026-07-20T19:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/65
+- author: AitorLogedo
+  changes:
+  - message: Grays can now fart and piss like everyone else.
+    type: add
+  id: 24
+  time: '2026-07-20T19:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/69
 Order: 1
