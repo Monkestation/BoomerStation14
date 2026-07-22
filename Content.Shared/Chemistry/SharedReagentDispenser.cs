@@ -67,25 +67,12 @@ namespace Content.Shared.Chemistry
     [Serializable, NetSerializable]
     public sealed class ReagentDispenserDispenseReagentMessage : BoundUserInterfaceMessage
     {
-        public readonly ItemStorageLocation StorageLocation;
+        // Boomer edit: SS13-style dispensers generate reagents from a fixed list, identified by id, instead of draining physical jugs.
+        public readonly string ReagentId;
 
-        public ReagentDispenserDispenseReagentMessage(ItemStorageLocation storageLocation)
+        public ReagentDispenserDispenseReagentMessage(string reagentId)
         {
-            StorageLocation = storageLocation;
-        }
-    }
-
-    /// <summary>
-    ///     Message sent by the user interface to ask the reagent dispenser to eject a container
-    /// </summary>
-    [Serializable, NetSerializable]
-    public sealed class ReagentDispenserEjectContainerMessage : BoundUserInterfaceMessage
-    {
-        public readonly ItemStorageLocation StorageLocation;
-
-        public ReagentDispenserEjectContainerMessage(ItemStorageLocation storageLocation)
-        {
-            StorageLocation = storageLocation;
+            ReagentId = reagentId;
         }
     }
 
@@ -109,11 +96,11 @@ namespace Content.Shared.Chemistry
     }
 
     [Serializable, NetSerializable]
-    public sealed class ReagentInventoryItem(ItemStorageLocation storageLocation, string reagentLabel, FixedPoint2 quantity, Color reagentColor)
+    public sealed class ReagentInventoryItem(string reagentId, string reagentLabel, Color reagentColor)
     {
-        public ItemStorageLocation StorageLocation = storageLocation;
+        // Boomer edit: reagents are a fixed list generated on demand, so an item is just an id/name/color, no physical stock.
+        public string ReagentId = reagentId;
         public string ReagentLabel = reagentLabel;
-        public FixedPoint2 Quantity = quantity;
         public Color ReagentColor = reagentColor;
     }
 
@@ -131,12 +118,20 @@ namespace Content.Shared.Chemistry
 
         public readonly ReagentDispenserDispenseAmount SelectedDispenseAmount;
 
-        public ReagentDispenserBoundUserInterfaceState(ContainerInfo? outputContainer, NetEntity? outputContainerEntity, List<ReagentInventoryItem> inventory, ReagentDispenserDispenseAmount selectedDispenseAmount)
+        // Boomer edit: SS13-style internal energy buffer that recharges from power.
+        public readonly float Energy;
+        public readonly float MaxEnergy;
+        public readonly float EnergyPerUnit;
+
+        public ReagentDispenserBoundUserInterfaceState(ContainerInfo? outputContainer, NetEntity? outputContainerEntity, List<ReagentInventoryItem> inventory, ReagentDispenserDispenseAmount selectedDispenseAmount, float energy, float maxEnergy, float energyPerUnit)
         {
             OutputContainer = outputContainer;
             OutputContainerEntity = outputContainerEntity;
             Inventory = inventory;
             SelectedDispenseAmount = selectedDispenseAmount;
+            Energy = energy;
+            MaxEnergy = maxEnergy;
+            EnergyPerUnit = energyPerUnit;
         }
     }
 

@@ -32,8 +32,6 @@
     interfaces:
       enum.ReagentDispenserUiKey.Key:
         type: ReagentDispenserBoundUserInterface
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
   - type: Anchorable
   - type: Pullable
   - type: Damageable
@@ -51,26 +49,35 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak
-  - type: Storage
-    maxItemSize: Large
-    grid:
-    - 0,0,15,11
+  # Boomer edit: SS13-style dispensers generate reagents from a fixed list gated by an internal
+  # energy buffer that recharges from power, instead of draining physical jugs from storage.
   - type: ReagentDispenser
+    energyPerUnit: 0.2
+    rechargeFractionPerSecond: 0.02
     beakerSlot:
       whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message
       whitelist:
         components:
         - FitsInDispenser
       priority: 9
+  # Boomer edit: swappable power cell is the energy buffer. Upgrade it (Small -> Hyper) during the round.
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
   - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+        # No whitelist needed: PowerCellSlot rejects anything without a PowerCellComponent,
+        # and a tag whitelist would wrongly reject the small cell (it doesn't carry the PowerCell tag).
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
       beakerSlot: !type:ContainerSlot
-      storagebase: !type:Container
+      cell_slot: !type:ContainerSlot
   - type: WiresPanel
   - type: EmptyOnMachineDeconstruct
     containers:
-    - storagebase
     - beakerSlot
+    - cell_slot
