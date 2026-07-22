@@ -24,14 +24,14 @@ namespace Content.Server.Chemistry.EntitySystems
     [UsedImplicitly]
     public sealed partial class ReagentDispenserSystem : EntitySystem
     {
-        [Dependency] private readonly AudioSystem _audioSystem = default!;
-        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-        [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
-        [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly SharedPopupSystem _popup = default!;
-        [Dependency] private readonly PowerCellSystem _powerCell = default!;
-        [Dependency] private readonly SharedBatterySystem _battery = default!;
+        [Dependency] private AudioSystem _audioSystem = default!;
+        [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private ItemSlotsSystem _itemSlotsSystem = default!;
+        [Dependency] private UserInterfaceSystem _userInterfaceSystem = default!;
+        [Dependency] private IPrototypeManager _prototypeManager = default!;
+        [Dependency] private SharedPopupSystem _popup = default!;
+        [Dependency] private PowerCellSystem _powerCell = default!;
+        [Dependency] private SharedBatterySystem _battery = default!;
 
         /// <summary>How often (seconds) the UI energy bar is refreshed while recharging.</summary>
         private const float UiUpdateInterval = 1f;
