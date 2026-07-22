@@ -1,20 +1,19 @@
-using System.Linq;
 using Content.Server.Chemistry.Components;
+using Content.Server.Power.Components;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.FixedPoint;
-using Content.Shared.Nutrition.EntitySystems;
-using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Popups;
+using Content.Shared.Power.Components;
+using Content.Shared.Power.EntitySystems;
+using Content.Shared.PowerCell;
 using JetBrains.Annotations;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
-using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
-using Content.Shared.Labels.Components;
-using Content.Shared.Storage;
-using Content.Server.Hands.Systems;
 
 namespace Content.Server.Chemistry.EntitySystems
 {
@@ -25,14 +24,17 @@ namespace Content.Server.Chemistry.EntitySystems
     [UsedImplicitly]
     public sealed partial class ReagentDispenserSystem : EntitySystem
     {
-        [Dependency] private AudioSystem _audioSystem = default!;
-        [Dependency] private SharedSolutionContainerSystem _solutionContainerSystem = default!;
-        [Dependency] private SolutionTransferSystem _solutionTransferSystem = default!;
-        [Dependency] private ItemSlotsSystem _itemSlotsSystem = default!;
-        [Dependency] private UserInterfaceSystem _userInterfaceSystem = default!;
-        [Dependency] private IPrototypeManager _prototypeManager = default!;
-        [Dependency] private OpenableSystem _openable = default!;
-        [Dependency] private HandsSystem _handsSystem = default!;
+        [Dependency] private readonly AudioSystem _audioSystem = default!;
+        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+        [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
+        [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private readonly SharedPopupSystem _popup = default!;
+        [Dependency] private readonly PowerCellSystem _powerCell = default!;
+        [Dependency] private readonly SharedBatterySystem _battery = default!;
+
+        /// <summary>How often (seconds) the UI energy bar is refreshed while recharging.</summary>
+        private const float UiUpdateInterval = 1f;
 
         public override void Initialize()
         {
@@ -40,16 +42,44 @@ namespace Content.Server.Chemistry.EntitySystems
 
             SubscribeLocalEvent<ReagentDispenserComponent, ComponentStartup>(SubscribeUpdateUiState);
             SubscribeLocalEvent<ReagentDispenserComponent, SolutionChangedEvent>(SubscribeUpdateUiState);
-            SubscribeLocalEvent<ReagentDispenserComponent, EntInsertedIntoContainerMessage>(SubscribeUpdateUiState, after: [typeof(SharedStorageSystem)]);
-            SubscribeLocalEvent<ReagentDispenserComponent, EntRemovedFromContainerMessage>(SubscribeUpdateUiState, after: [typeof(SharedStorageSystem)]);
             SubscribeLocalEvent<ReagentDispenserComponent, BoundUIOpenedEvent>(SubscribeUpdateUiState);
 
             SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserSetDispenseAmountMessage>(OnSetDispenseAmountMessage);
             SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserDispenseReagentMessage>(OnDispenseReagentMessage);
-            SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserEjectContainerMessage>(OnEjectReagentMessage);
             SubscribeLocalEvent<ReagentDispenserComponent, ReagentDispenserClearContainerSolutionMessage>(OnClearContainerSolutionMessage);
 
             SubscribeLocalEvent<ReagentDispenserComponent, MapInitEvent>(OnMapInit, before: new[] { typeof(ItemSlotsSystem) });
+        }
+
+        // Boomer edit: recharge the installed power cell from mains over time while powered, SS13-style.
+        public override void Update(float frameTime)
+        {
+            base.Update(frameTime);
+
+            var query = EntityQueryEnumerator<ReagentDispenserComponent, ApcPowerReceiverComponent>();
+            while (query.MoveNext(out var uid, out var comp, out var power))
+            {
+                // No mains power, or no cell installed: nothing to recharge.
+                if (!power.Powered || !_powerCell.TryGetBatteryFromSlot(uid, out var battery))
+                    continue;
+
+                var bat = battery.Value;
+                if (_battery.IsFull(bat.Owner))
+                    continue;
+
+                // Recharge rate scales with cell size, so a better cell also fills faster.
+                var newCharge = _battery.GetCharge(bat.Owner)
+                    + bat.Comp.MaxCharge * comp.RechargeFractionPerSecond * frameTime;
+                _battery.SetCharge(bat.Owner, newCharge);
+
+                comp.UiUpdateAccumulator += frameTime;
+                if (comp.UiUpdateAccumulator < UiUpdateInterval)
+                    continue;
+
+                comp.UiUpdateAccumulator = 0f;
+                if (_userInterfaceSystem.IsUiOpen(uid, ReagentDispenserUiKey.Key))
+                    UpdateUiState((uid, comp));
+            }
         }
 
         private void SubscribeUpdateUiState<T>(Entity<ReagentDispenserComponent> ent, ref T ev)
@@ -64,7 +94,19 @@ namespace Content.Server.Chemistry.EntitySystems
 
             var inventory = GetInventory(reagentDispenser);
 
-            var state = new ReagentDispenserBoundUserInterfaceState(outputContainerInfo, GetNetEntity(outputContainer), inventory, reagentDispenser.Comp.DispenseAmount);
+            var comp = reagentDispenser.Comp;
+
+            // Energy readout comes from the installed cell; no cell means an empty gauge.
+            var energy = 0f;
+            var maxEnergy = 0f;
+            if (_powerCell.TryGetBatteryFromSlot(reagentDispenser.Owner, out var battery))
+            {
+                energy = _battery.GetCharge(battery.Value.Owner);
+                maxEnergy = battery.Value.Comp.MaxCharge;
+            }
+
+            var state = new ReagentDispenserBoundUserInterfaceState(outputContainerInfo, GetNetEntity(outputContainer), inventory,
+                comp.DispenseAmount, energy, maxEnergy, comp.EnergyPerUnit);
             _userInterfaceSystem.SetUiState(reagentDispenser.Owner, ReagentDispenserUiKey.Key, state);
         }
 
@@ -84,33 +126,17 @@ namespace Content.Server.Chemistry.EntitySystems
             return null;
         }
 
+        // Boomer edit: inventory is the fixed reagent list, not physical jugs.
         private List<ReagentInventoryItem> GetInventory(Entity<ReagentDispenserComponent> reagentDispenser)
         {
-            if (!TryComp<StorageComponent>(reagentDispenser.Owner, out var storage))
-            {
-                return [];
-            }
-
             var inventory = new List<ReagentInventoryItem>();
 
-            foreach (var (storedContainer, storageLocation) in storage.StoredItems)
+            foreach (var reagentId in reagentDispenser.Comp.ReagentIds)
             {
-                string reagentLabel;
-                if (TryComp<LabelComponent>(storedContainer, out var label) && !string.IsNullOrEmpty(label.CurrentLabel))
-                    reagentLabel = label.CurrentLabel;
-                else
-                    reagentLabel = Name(storedContainer);
+                if (!_prototypeManager.TryIndex(reagentId, out ReagentPrototype? proto))
+                    continue;
 
-                // Get volume remaining and color of solution
-                FixedPoint2 quantity = 0f;
-                var reagentColor = Color.White;
-                if (_solutionContainerSystem.TryGetDrainableSolution(storedContainer, out _, out var sol))
-                {
-                    quantity = sol.Volume;
-                    reagentColor = sol.GetColor(_prototypeManager);
-                }
-
-                inventory.Add(new ReagentInventoryItem(storageLocation, reagentLabel, quantity, reagentColor));
+                inventory.Add(new ReagentInventoryItem(reagentId, proto.LocalizedName, proto.SubstanceColor));
             }
 
             return inventory;
@@ -123,51 +149,38 @@ namespace Content.Server.Chemistry.EntitySystems
             ClickSound(reagentDispenser);
         }
 
+        // Boomer edit: generate the reagent from nothing, paying energy from the internal buffer.
         private void OnDispenseReagentMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserDispenseReagentMessage message)
         {
-            if (!TryComp<StorageComponent>(reagentDispenser.Owner, out var storage))
-            {
+            // Ensure the machine is powered before it can dispense.
+            if (!TryComp<ApcPowerReceiverComponent>(reagentDispenser, out var power) || !power.Powered)
                 return;
-            }
 
             // Ensure that the reagent is something this reagent dispenser can dispense.
-            var storageLocation = message.StorageLocation;
-            var storedContainer = storage.StoredItems.FirstOrDefault(kvp => kvp.Value == storageLocation).Key;
-            if (storedContainer == EntityUid.Invalid)
+            if (!reagentDispenser.Comp.ReagentIds.Contains(message.ReagentId))
                 return;
 
             var outputContainer = _itemSlotsSystem.GetItemOrNull(reagentDispenser, SharedReagentDispenser.OutputSlotName);
-            if (outputContainer is not { Valid: true } || !_solutionContainerSystem.TryGetFitsInDispenser(outputContainer.Value, out var solution, out _))
+            if (outputContainer is not { Valid: true } || !_solutionContainerSystem.TryGetFitsInDispenser(outputContainer.Value, out var soln, out var solution))
                 return;
 
-            if (_solutionContainerSystem.TryGetDrainableSolution(storedContainer, out var src, out _) &&
-                _solutionContainerSystem.TryGetRefillableSolution(outputContainer.Value, out var dst, out _))
+            var toDispense = FixedPoint2.Min((int)reagentDispenser.Comp.DispenseAmount, solution.AvailableVolume);
+            if (toDispense <= 0)
             {
-                // force open container, if applicable, to avoid confusing people on why it doesn't dispense
-                _openable.SetOpen(storedContainer, true);
-                _solutionTransferSystem.Transfer(new SolutionTransferData(reagentDispenser,
-                        storedContainer, src.Value,
-                        outputContainer.Value, dst.Value,
-                        (int)reagentDispenser.Comp.DispenseAmount));
+                _popup.PopupEntity(Loc.GetString("reagent-dispenser-window-container-full-text"), reagentDispenser, message.Actor);
+                return;
             }
+
+            // Pay the energy cost from the installed cell. TryUseCharge handles the "no cell" and
+            // "not enough charge" popups for us.
+            var energyCost = toDispense.Float() * reagentDispenser.Comp.EnergyPerUnit;
+            if (!_powerCell.TryUseCharge(reagentDispenser.Owner, energyCost, message.Actor))
+                return;
+
+            _solutionContainerSystem.TryAddReagent(soln.Value, message.ReagentId, toDispense, out _, reagentDispenser.Comp.DispensedTemperature);
 
             UpdateUiState(reagentDispenser);
             ClickSound(reagentDispenser);
-        }
-
-        private void OnEjectReagentMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserEjectContainerMessage message)
-        {
-            if (!TryComp<StorageComponent>(reagentDispenser.Owner, out var storage))
-            {
-                return;
-            }
-
-            var storageLocation = message.StorageLocation;
-            var storedContainer = storage.StoredItems.FirstOrDefault(kvp => kvp.Value == storageLocation).Key;
-            if (storedContainer == EntityUid.Invalid)
-                return;
-
-            _handsSystem.TryPickupAnyHand(message.Actor, storedContainer);
         }
 
         private void OnClearContainerSolutionMessage(Entity<ReagentDispenserComponent> reagentDispenser, ref ReagentDispenserClearContainerSolutionMessage message)
