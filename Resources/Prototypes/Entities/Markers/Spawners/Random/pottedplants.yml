@@ -37,6 +37,12 @@
       - id: PottedPlant23
       - id: PottedPlant24
       - id: PottedPlant26
+      - id: MSPottedPlant1 # monkestation plants
+      - id: MSPottedPlant2 # monkestation plants
+      - id: MSPottedPlant3 # monkestation plants
+      - id: MSPottedPlant4 # monkestation plants
+      - id: MSPottedPlant5 # monkestation plants
+      - id: MSPottedPlant6 # monkestation plants
 
 - type: entity
   parent: MarkerBase

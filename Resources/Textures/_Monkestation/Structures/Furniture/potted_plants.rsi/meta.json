@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Plants 1 through 6 taken from Monkestation13 at commit https://github.com/Monkestation/Monkestation2.0/commit/1fb7ec58ee4501ba99b97126f7e244340b83c9bb, inhand-left and right made by Xeri(https://github.com/Xeri7)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "plant1",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "plant2",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "plant3",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "plant4",
+      "delays": [
+        [
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "plant5",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "plant6",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

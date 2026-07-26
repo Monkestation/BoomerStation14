@@ -53,7 +53,9 @@
   - type: Pullable
   - type: Damageable
     damageModifierSet: Metallic
-  - type: Destructible #Might want to move this to the parent instead, testing required.
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
@@ -63,7 +65,7 @@
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/Effects/metal_break1.ogg
+          collection: MetalBreak
   - type: Construction
     graph: Sofa
     node: RattySofaCorner
@@ -123,7 +125,9 @@
   - type: Pullable
   - type: Damageable
     damageModifierSet: Metallic
-  - type: Destructible #May be adviseable to move to a parent.
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
@@ -133,7 +137,7 @@
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/Effects/metal_break1.ogg
+          collection: MetalBreak
   - type: Construction
     graph: Sofa
     node: CorpSofaCorner
