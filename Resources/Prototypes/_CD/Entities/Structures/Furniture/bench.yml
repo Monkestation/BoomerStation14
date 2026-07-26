@@ -2,7 +2,7 @@
 - type: entity
   abstract: true
   parent: SeatBase
-  id: BenchBaseMiddle
+  id: CDBenchBaseMiddle
   name: bench
   suffix: Middle
   description: Multiple seats spanning a single object. Truly a marvel of science.
@@ -17,170 +17,170 @@
 
 # Park benches
 - type: entity
-  parent: BenchBaseMiddle
-  id: BenchParkMiddle
+  parent: CDBenchBaseMiddle
+  id: CDBenchParkMiddle
   name: park bench
   components:
   - type: Sprite
     sprite: _CD/Structures/Furniture/Bench/parkbench_wooden.rsi
   - type: Construction
     graph: Bench
-    node: BenchParkMiddle
+    node: CDBenchParkMiddle
 
 - type: entity
-  parent: BenchParkMiddle
-  id: BenchParkLeft
+  parent: CDBenchParkMiddle
+  id: CDBenchParkLeft
   suffix: Right
   components:
   - type: Sprite
     state: left
   - type: Construction
     graph: Bench
-    node: BenchParkLeft
+    node: CDBenchParkLeft
 
 - type: entity
-  parent: BenchParkMiddle
-  id: BenchParkRight
+  parent: CDBenchParkMiddle
+  id: CDBenchParkRight
   suffix: Left
   components:
   - type: Sprite
     state: right
   - type: Construction
     graph: Bench
-    node: BenchParkRight
+    node: CDBenchParkRight
 
 # Bamboo benches
 - type: entity
-  parent: BenchBaseMiddle
-  id: BenchParkBambooMiddle
+  parent: CDBenchBaseMiddle
+  id: CDBenchParkBambooMiddle
   name: park bench
   components:
   - type: Sprite
     sprite: _CD/Structures/Furniture/Bench/parkbench_bamboo.rsi
   - type: Construction
     graph: Bench
-    node: BenchParkBambooMiddle
+    node: CDBenchParkBambooMiddle
 
 - type: entity
-  parent: BenchParkBambooMiddle
-  id: BenchParkBambooLeft
+  parent: CDBenchParkBambooMiddle
+  id: CDBenchParkBambooLeft
   suffix: Right
   components:
   - type: Sprite
     state: left
   - type: Construction
     graph: Bench
-    node: BenchParkBambooLeft
+    node: CDBenchParkBambooLeft
 
 - type: entity
-  parent: BenchParkBambooMiddle
-  id: BenchParkBambooRight
+  parent: CDBenchParkBambooMiddle
+  id: CDBenchParkBambooRight
   suffix: Left
   components:
   - type: Sprite
     state: right
   - type: Construction
     graph: Bench
-    node: BenchParkBambooRight
+    node: CDBenchParkBambooRight
 
 # Pews
 - type: entity
-  parent: BenchBaseMiddle
-  id: BenchPewMiddle
+  parent: CDBenchBaseMiddle
+  id: CDBenchPewMiddle
   name: pew
   components:
   - type: Sprite
     sprite: _CD/Structures/Furniture/Bench/pew.rsi
   - type: Construction
     graph: Bench
-    node: BenchPewMiddle
+    node: CDBenchPewMiddle
 
 - type: entity
-  parent: BenchPewMiddle
-  id: BenchPewLeft
+  parent: CDBenchPewMiddle
+  id: CDBenchPewLeft
   suffix: Left
   components:
   - type: Sprite
     state: left
   - type: Construction
     graph: Bench
-    node: BenchPewLeft
+    node: CDBenchPewLeft
 
 - type: entity
-  parent: BenchPewMiddle
-  id: BenchPewRight
+  parent: CDBenchPewMiddle
+  id: CDBenchPewRight
   suffix: Right
   components:
   - type: Sprite
     state: right
   - type: Construction
     graph: Bench
-    node: BenchPewRight
+    node: CDBenchPewRight
 
 # Steel benches
 - type: entity
-  parent: BenchBaseMiddle
-  id: BenchSteelMiddle
+  parent: CDBenchBaseMiddle
+  id: CDBenchSteelMiddle
   name: steel bench
   components:
   - type: Sprite
     sprite: _CD/Structures/Furniture/Bench/steel_bench.rsi
   - type: Construction
     graph: Bench
-    node: BenchSteelMiddle
+    node: CDBenchSteelMiddle
 
 - type: entity
-  parent: BenchSteelMiddle
-  id: BenchSteelLeft
+  parent: CDBenchSteelMiddle
+  id: CDBenchSteelLeft
   suffix: Left
   components:
   - type: Sprite
     state: left
   - type: Construction
     graph: Bench
-    node: BenchSteelLeft
+    node: CDBenchSteelLeft
 
 - type: entity
-  parent: BenchSteelMiddle
-  id: BenchSteelRight
+  parent: CDBenchSteelMiddle
+  id: CDBenchSteelRight
   suffix: Right
   components:
   - type: Sprite
     state: right
   - type: Construction
     graph: Bench
-    node: BenchSteelRight
+    node: CDBenchSteelRight
 
 # White steel benches
 - type: entity
-  parent: BenchBaseMiddle
-  id: BenchSteelWhiteMiddle
+  parent: CDBenchBaseMiddle
+  id: CDBenchSteelWhiteMiddle
   name: white steel bench
   components:
   - type: Sprite
     sprite: _CD/Structures/Furniture/Bench/steel_bench_white.rsi
   - type: Construction
     graph: Bench
-    node: BenchSteelWhiteMiddle
+    node: CDBenchSteelWhiteMiddle
 
 - type: entity
-  parent: BenchSteelWhiteMiddle
-  id: BenchSteelWhiteLeft
+  parent: CDBenchSteelWhiteMiddle
+  id: CDBenchSteelWhiteLeft
   suffix: Left
   components:
   - type: Sprite
     state: left
   - type: Construction
     graph: Bench
-    node: BenchSteelWhiteLeft
+    node: CDBenchSteelWhiteLeft
 
 - type: entity
-  parent: BenchSteelWhiteMiddle
-  id: BenchSteelWhiteRight
+  parent: CDBenchSteelWhiteMiddle
+  id: CDBenchSteelWhiteRight
   suffix: Right
   components:
   - type: Sprite
     state: right
   - type: Construction
     graph: Bench
-    node: BenchSteelWhiteRight
+    node: CDBenchSteelWhiteRight

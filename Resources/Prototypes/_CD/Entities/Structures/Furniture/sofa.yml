@@ -1,39 +1,39 @@
 # "Ratty" sofa
 - type: entity
-  parent: BenchBaseMiddle
-  id: RattySofaMiddle
+  parent: CDBenchBaseMiddle
+  id: CDRattySofaMiddle
   name: sofa
   components:
   - type: Sprite
     sprite: _CD/Structures/Furniture/Sofa/sofa.rsi
   - type: Construction
     graph: Sofa
-    node: RattySofaMiddle
+    node: CDRattySofaMiddle
 
 - type: entity
-  parent: RattySofaMiddle
-  id: RattySofaLeft
+  parent: CDRattySofaMiddle
+  id: CDRattySofaLeft
   suffix: Right
   components:
   - type: Sprite
     state: left
   - type: Construction
     graph: Sofa
-    node: RattySofaLeft
+    node: CDRattySofaLeft
 
 - type: entity
-  parent: RattySofaMiddle
-  id: RattySofaRight
+  parent: CDRattySofaMiddle
+  id: CDRattySofaRight
   suffix: Left
   components:
   - type: Sprite
     state: right
   - type: Construction
     graph: Sofa
-    node: RattySofaRight
+    node: CDRattySofaRight
 
 - type: entity
-  id: RattySofaCorner
+  id: CDRattySofaCorner
   name: sofa
   suffix: Corner
   placement:
@@ -68,45 +68,45 @@
           collection: MetalBreak
   - type: Construction
     graph: Sofa
-    node: RattySofaCorner
+    node: CDRattySofaCorner
 
 # Corp sofa
 - type: entity
-  parent: BenchBaseMiddle
-  id: CorpSofaMiddle
+  parent: CDBenchBaseMiddle
+  id: CDCorpSofaMiddle
   name: grey sofa
   components:
   - type: Sprite
     sprite: _CD/Structures/Furniture/Sofa/sofa_corp.rsi
   - type: Construction
     graph: Sofa
-    node: CorpSofaMiddle
+    node: CDCorpSofaMiddle
 
 - type: entity
-  parent: CorpSofaMiddle
-  id: SofaCorpLeft
+  parent: CDCorpSofaMiddle
+  id: CDSofaCorpLeft
   suffix: Right
   components:
   - type: Sprite
     state: left
   - type: Construction
     graph: Sofa
-    node: CorpSofaLeft
+    node: CDCorpSofaLeft
 
 - type: entity
-  parent: CorpSofaMiddle
-  id: SofaCorpRight
+  parent: CDCorpSofaMiddle
+  id: CDSofaCorpRight
   suffix: Left
   components:
   - type: Sprite
     state: right
   - type: Construction
     graph: Sofa
-    node: CorpSofaRight
+    node: CDCorpSofaRight
 
 - type: entity
   name: grey sofa
-  id: SofaCorpCorner
+  id: CDSofaCorpCorner
   suffix: Corner
   placement:
     mode: SnapgridCenter
@@ -140,4 +140,4 @@
           collection: MetalBreak
   - type: Construction
     graph: Sofa
-    node: CorpSofaCorner
+    node: CDCorpSofaCorner

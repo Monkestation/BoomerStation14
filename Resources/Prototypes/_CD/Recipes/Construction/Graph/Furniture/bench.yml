@@ -8,84 +8,84 @@
       actions:
         - !type:DestroyEntity {}
       edges:
-        - to: BenchParkMiddle
+        - to: CDBenchParkMiddle
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: BenchParkLeft
+        - to: CDBenchParkLeft
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: BenchParkRight
+        - to: CDBenchParkRight
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: BenchParkBambooMiddle
+        - to: CDBenchParkBambooMiddle
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: BenchParkBambooLeft
+        - to: CDBenchParkBambooLeft
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: BenchParkBambooRight
+        - to: CDBenchParkBambooRight
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: BenchPewMiddle
+        - to: CDBenchPewMiddle
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: BenchPewLeft
+        - to: CDBenchPewLeft
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: BenchPewRight
+        - to: CDBenchPewRight
           steps:
             - material: WoodPlank
               amount: 2
               doAfter: 1
-        - to: BenchSteelMiddle
+        - to: CDBenchSteelMiddle
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: BenchSteelLeft
+        - to: CDBenchSteelLeft
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: BenchSteelRight
+        - to: CDBenchSteelRight
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: BenchSteelWhiteMiddle
+        - to: CDBenchSteelWhiteMiddle
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: BenchSteelWhiteLeft
+        - to: CDBenchSteelWhiteLeft
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: BenchSteelWhiteRight
+        - to: CDBenchSteelWhiteRight
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
 
-    - node: BenchParkMiddle
-      entity: BenchParkMiddle
+    - node: CDBenchParkMiddle
+      entity: CDBenchParkMiddle
       edges:
         - to: start
           completed:
@@ -96,8 +96,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchParkLeft
-      entity: BenchParkLeft
+    - node: CDBenchParkLeft
+      entity: CDBenchParkLeft
       edges:
         - to: start
           completed:
@@ -108,8 +108,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchParkRight
-      entity: BenchParkRight
+    - node: CDBenchParkRight
+      entity: CDBenchParkRight
       edges:
         - to: start
           completed:
@@ -120,8 +120,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchParkBambooMiddle
-      entity: BenchParkBambooMiddle
+    - node: CDBenchParkBambooMiddle
+      entity: CDBenchParkBambooMiddle
       edges:
         - to: start
           completed:
@@ -132,8 +132,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchParkBambooLeft
-      entity: BenchParkBambooLeft
+    - node: CDBenchParkBambooLeft
+      entity: CDBenchParkBambooLeft
       edges:
         - to: start
           completed:
@@ -144,8 +144,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchParkBambooRight
-      entity: BenchParkBambooRight
+    - node: CDBenchParkBambooRight
+      entity: CDBenchParkBambooRight
       edges:
         - to: start
           completed:
@@ -156,8 +156,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchPewMiddle
-      entity: BenchPewMiddle
+    - node: CDBenchPewMiddle
+      entity: CDBenchPewMiddle
       edges:
         - to: start
           completed:
@@ -168,8 +168,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchPewLeft
-      entity: BenchPewLeft
+    - node: CDBenchPewLeft
+      entity: CDBenchPewLeft
       edges:
         - to: start
           completed:
@@ -180,8 +180,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchPewRight
-      entity: BenchPewRight
+    - node: CDBenchPewRight
+      entity: CDBenchPewRight
       edges:
         - to: start
           completed:
@@ -192,8 +192,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchSteelMiddle
-      entity: BenchSteelMiddle
+    - node: CDBenchSteelMiddle
+      entity: CDBenchSteelMiddle
       edges:
         - to: start
           completed:
@@ -204,8 +204,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchSteelLeft
-      entity: BenchSteelLeft
+    - node: CDBenchSteelLeft
+      entity: CDBenchSteelLeft
       edges:
         - to: start
           completed:
@@ -216,8 +216,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchSteelRight
-      entity: BenchSteelRight
+    - node: CDBenchSteelRight
+      entity: CDBenchSteelRight
       edges:
         - to: start
           completed:
@@ -228,8 +228,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchSteelWhiteMiddle
-      entity: BenchSteelWhiteMiddle
+    - node: CDBenchSteelWhiteMiddle
+      entity: CDBenchSteelWhiteMiddle
       edges:
         - to: start
           completed:
@@ -240,8 +240,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchSteelWhiteLeft
-      entity: BenchSteelWhiteLeft
+    - node: CDBenchSteelWhiteLeft
+      entity: CDBenchSteelWhiteLeft
       edges:
         - to: start
           completed:
@@ -252,8 +252,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: BenchSteelWhiteRight
-      entity: BenchSteelWhiteRight
+    - node: CDBenchSteelWhiteRight
+      entity: CDBenchSteelWhiteRight
       edges:
         - to: start
           completed:

@@ -1,10 +1,10 @@
 # Benches
 # Wooden Park
 - type: construction
-  id: BenchParkMiddle
+  id: CDBenchParkMiddle
   graph: Bench
   startNode: start
-  targetNode: BenchParkMiddle
+  targetNode: CDBenchParkMiddle
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -13,10 +13,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchParkLeft
+  id: CDBenchParkLeft
   graph: Bench
   startNode: start
-  targetNode: BenchParkLeft
+  targetNode: CDBenchParkLeft
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -25,10 +25,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchParkRight
+  id: CDBenchParkRight
   graph: Bench
   startNode: start
-  targetNode: BenchParkRight
+  targetNode: CDBenchParkRight
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -38,10 +38,10 @@
 
 # Bamboo Park
 - type: construction
-  id: BenchParkBambooMiddle
+  id: CDBenchParkBambooMiddle
   graph: Bench
   startNode: start
-  targetNode: BenchParkBambooMiddle
+  targetNode: CDBenchParkBambooMiddle
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -50,10 +50,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchParkBambooLeft
+  id: CDBenchParkBambooLeft
   graph: Bench
   startNode: start
-  targetNode: BenchParkBambooLeft
+  targetNode: CDBenchParkBambooLeft
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -62,10 +62,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchParkBambooRight
+  id: CDBenchParkBambooRight
   graph: Bench
   startNode: start
-  targetNode: BenchParkBambooRight
+  targetNode: CDBenchParkBambooRight
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -75,10 +75,10 @@
 
 # Pews
 - type: construction
-  id: BenchPewMiddle
+  id: CDBenchPewMiddle
   graph: Bench
   startNode: start
-  targetNode: BenchPewMiddle
+  targetNode: CDBenchPewMiddle
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -87,10 +87,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchPewLeft
+  id: CDBenchPewLeft
   graph: Bench
   startNode: start
-  targetNode: BenchPewLeft
+  targetNode: CDBenchPewLeft
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -99,10 +99,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchPewRight
+  id: CDBenchPewRight
   graph: Bench
   startNode: start
-  targetNode: BenchPewRight
+  targetNode: CDBenchPewRight
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -112,10 +112,10 @@
 
 # Steel Bench
 - type: construction
-  id: BenchSteelMiddle
+  id: CDBenchSteelMiddle
   graph: Bench
   startNode: start
-  targetNode: BenchSteelMiddle
+  targetNode: CDBenchSteelMiddle
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -124,10 +124,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchSteelLeft
+  id: CDBenchSteelLeft
   graph: Bench
   startNode: start
-  targetNode: BenchSteelLeft
+  targetNode: CDBenchSteelLeft
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -136,10 +136,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchSteelRight
+  id: CDBenchSteelRight
   graph: Bench
   startNode: start
-  targetNode: BenchSteelRight
+  targetNode: CDBenchSteelRight
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -149,10 +149,10 @@
 
 # White Steel Bench
 - type: construction
-  id: BenchSteelWhiteMiddle
+  id: CDBenchSteelWhiteMiddle
   graph: Bench
   startNode: start
-  targetNode: BenchSteelWhiteMiddle
+  targetNode: CDBenchSteelWhiteMiddle
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -161,10 +161,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchSteelWhiteLeft
+  id: CDBenchSteelWhiteLeft
   graph: Bench
   startNode: start
-  targetNode: BenchSteelWhiteLeft
+  targetNode: CDBenchSteelWhiteLeft
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -173,10 +173,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: BenchSteelWhiteRight
+  id: CDBenchSteelWhiteRight
   graph: Bench
   startNode: start
-  targetNode: BenchSteelWhiteRight
+  targetNode: CDBenchSteelWhiteRight
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -187,10 +187,10 @@
 #  Sofas
 # RattySofa
 - type: construction
-  id: RattySofaMiddle
+  id: CDRattySofaMiddle
   graph: Sofa
   startNode: start
-  targetNode: RattySofaMiddle
+  targetNode: CDRattySofaMiddle
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -199,10 +199,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: RattySofaRight
+  id: CDRattySofaRight
   graph: Sofa
   startNode: start
-  targetNode: RattySofaRight
+  targetNode: CDRattySofaRight
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -211,10 +211,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: RattySofaLeft
+  id: CDRattySofaLeft
   graph: Sofa
   startNode: start
-  targetNode: RattySofaLeft
+  targetNode: CDRattySofaLeft
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -224,10 +224,10 @@
 
 # Corporate Sofa
 - type: construction
-  id: RattySofaCorner
+  id: CDRattySofaCorner
   graph: Sofa
   startNode: start
-  targetNode: RattySofaCorner
+  targetNode: CDRattySofaCorner
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -236,10 +236,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: CorpSofaMiddle
+  id: CDCorpSofaMiddle
   graph: Sofa
   startNode: start
-  targetNode: CorpSofaMiddle
+  targetNode: CDCorpSofaMiddle
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -248,10 +248,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: CorpSofaRight
+  id: CDCorpSofaRight
   graph: Sofa
   startNode: start
-  targetNode: CorpSofaRight
+  targetNode: CDCorpSofaRight
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -260,10 +260,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: CorpSofaLeft
+  id: CDCorpSofaLeft
   graph: Sofa
   startNode: start
-  targetNode: CorpSofaLeft
+  targetNode: CDCorpSofaLeft
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter
@@ -272,10 +272,10 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: CorpSofaCorner
+  id: CDCorpSofaCorner
   graph: Sofa
   startNode: start
-  targetNode: CorpSofaCorner
+  targetNode: CDCorpSofaCorner
   category: construction-category-furniture
   objectType: Structure
   placementMode: SnapgridCenter

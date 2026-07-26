@@ -8,49 +8,49 @@
       actions:
         - !type:DestroyEntity {}
       edges:
-        - to: RattySofaMiddle
+        - to: CDRattySofaMiddle
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: RattySofaRight
+        - to: CDRattySofaRight
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: RattySofaLeft
+        - to: CDRattySofaLeft
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: RattySofaCorner
+        - to: CDRattySofaCorner
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: CorpSofaMiddle
+        - to: CDCorpSofaMiddle
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: CorpSofaLeft
+        - to: CDCorpSofaLeft
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: CorpSofaRight
+        - to: CDCorpSofaRight
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
-        - to: CorpSofaCorner
+        - to: CDCorpSofaCorner
           steps:
             - material: Steel
               amount: 2
               doAfter: 1
 
-    - node: RattySofaMiddle
-      entity: RattySofaMiddle
+    - node: CDRattySofaMiddle
+      entity: CDRattySofaMiddle
       edges:
         - to: start
           completed:
@@ -61,8 +61,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: RattySofaRight
-      entity: RattySofaRight
+    - node: CDRattySofaRight
+      entity: CDRattySofaRight
       edges:
         - to: start
           completed:
@@ -73,8 +73,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: RattySofaLeft
-      entity: RattySofaLeft
+    - node: CDRattySofaLeft
+      entity: CDRattySofaLeft
       edges:
         - to: start
           completed:
@@ -85,8 +85,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: RattySofaCorner
-      entity: RattySofaCorner
+    - node: CDRattySofaCorner
+      entity: CDRattySofaCorner
       edges:
         - to: start
           completed:
@@ -97,8 +97,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: CorpSofaMiddle
-      entity: CorpSofaMiddle
+    - node: CDCorpSofaMiddle
+      entity: CDCorpSofaMiddle
       edges:
         - to: start
           completed:
@@ -109,8 +109,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: CorpSofaRight
-      entity: SofaCorpRight
+    - node: CDCorpSofaRight
+      entity: CDSofaCorpRight
       edges:
         - to: start
           completed:
@@ -121,8 +121,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: CorpSofaLeft
-      entity: SofaCorpLeft
+    - node: CDCorpSofaLeft
+      entity: CDSofaCorpLeft
       edges:
         - to: start
           completed:
@@ -133,8 +133,8 @@
             - tool: Screwing
               doAfter: 1
 
-    - node: CorpSofaCorner
-      entity: SofaCorpCorner
+    - node: CDCorpSofaCorner
+      entity: CDSofaCorpCorner
       edges:
         - to: start
           completed:
