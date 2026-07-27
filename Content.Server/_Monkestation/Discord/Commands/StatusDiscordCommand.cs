@@ -24,13 +24,30 @@ public sealed partial class StatusDiscordCommand : IPostInjectInit
     [Dependency] private IGameMapManager _gameMapManager = default!;
     [Dependency] private IEntityManager _entityManager = default!;
     [Dependency] private ITaskManager _taskManager = default!;
+    [Dependency] private ILogManager _logManager = default!;
+
+    private ISawmill _sawmill = default!;
 
     public void PostInject()
     {
         _discordLink.RegisterCommandCallback(OnStatusCommand, "status");
+
+        _sawmill = _logManager.GetSawmill("discord.command.status");
     }
 
     private async void OnStatusCommand(CommandReceivedEventArgs args)
+    {
+        try
+        {
+            await DoStatusCommand(args);
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error("Failed to run status command: {0}", e);
+        }
+    }
+
+    private async Task DoStatusCommand(CommandReceivedEventArgs args)
     {
         var channelId = args.Message.Channel?.Id;
         if (channelId == null)
