@@ -26,11 +26,11 @@
 - type: guideEntry
   id: SpaceLaw
   name: guide-entry-rules-space-law
-  text: "/ServerInfo/Guidebook/_Monkestation/Guidebook/ServerRules/SpaceLaw/Spacelaw.xml"
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/SpaceLaw/Spacelaw.xml"
   children:
   - SpaceLawCrimeList
 
 - type: guideEntry
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
-  text: "/ServerInfo/Guidebook/_Monkestation/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
+  text: "/ServerInfo/_Monkestation/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
