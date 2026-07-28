@@ -1,5 +1,5 @@
 - type: gameMap
-  id: pathfinder
+  id: Pathfinder
   mapName: 'pathfinder'
   mapPath: /Maps/pathfinder.yml
   minPlayers: 0
