@@ -1714,21 +1714,6 @@ entities:
       - 3240
     - type: Fixtures
       fixtures: {}
-  - uid: 2668
-    components:
-    - type: Transform
-      pos: -58.5,-5.5
-      parent: 2
-    - type: DeviceList
-      devices:
-      - 2674
-      - 2673
-      - 2671
-      - 679
-      - 3237
-      - 3236
-    - type: Fixtures
-      fixtures: {}
   - uid: 2743
     components:
     - type: Transform
