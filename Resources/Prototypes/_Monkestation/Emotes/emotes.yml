@@ -23,3 +23,15 @@
   - fart
   - farts
   - farting
+
+- type: emote
+  id: Blink
+  name: chat-emote-name-blink
+  category: General
+  icon: Interface/Emotes/squeak.png
+  chatMessages: ["chat-emote-msg-blink"]
+  chatTriggers:
+  - blink
+  - blinks
+  - blinked
+  - blinking

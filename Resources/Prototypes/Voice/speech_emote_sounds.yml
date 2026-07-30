@@ -608,6 +608,8 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Monke
+      collection: Blinks # Monke
 
 - type: emoteSounds
   id: DionaBodyEmotes
@@ -625,6 +627,8 @@
       path: /Audio/Voice/Diona/diona_salute.ogg
       params:
        volume: -5
+    Blink: # Monke
+      collection: Blinks # Monke   
 
 - type: emoteSounds
   id: ReptilianBodyEmotes
@@ -643,6 +647,8 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Monke
+      collection: Blinks # Monke
 
 - type: emoteSounds
   id: MothBodyEmotes
@@ -659,6 +665,8 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Monke
+      collection: Blinks # Monke  
 
 # mobs
 - type: emoteSounds
@@ -791,3 +799,5 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: WawaDeath
+    Blink: # Monke
+      collection: Blinks # Monke  
