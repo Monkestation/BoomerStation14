@@ -28,7 +28,7 @@
   id: Blink
   name: chat-emote-name-blink
   category: General
-  icon: Interface/Emotes/squeak.png
+  icon: _Monkestation/Interface/Emotes/eyes.png
   chatMessages: ["chat-emote-msg-blink"]
   chatTriggers:
   - blink
