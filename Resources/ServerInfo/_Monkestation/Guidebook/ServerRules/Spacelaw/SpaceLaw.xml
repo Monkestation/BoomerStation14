@@ -672,7 +672,7 @@ Anyone who illegally removes security implants, or reverses the effects of legal
 <Box>
 <GuideEntityEmbed Entity="PrisonerIDCard" Caption=""/>
 </Box>
-Authorization for permabrigging must be given by the Head of Security, Warden, or Captain.\nIf all 3 of these individuals are not assigned, dead, missing, or otherwise rendered incapable of providing authorization, The Acting Captain or Acting Head of Security may authorize a permabrigging in their stead.\nOtherwise, detainees should be released if the 10 minute grace period for processing time has elapsed.
+Authorization for permabrigging must be given by the Head of Security, Warden, or Captain.\nIf all 3 of these individuals are not assigned, dead, missing, or otherwise rendered incapable of providing authorization, The Acting Captain or Acting Head of Security may authorize a permabrigging in their stead.\nOtherwise, detained crew should be released if the 10 minute grace period for processing time has elapsed.
 
  - 1. Prisoners must be cuffed, and their ID must be terminated.
 
