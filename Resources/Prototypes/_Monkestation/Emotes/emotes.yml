@@ -29,9 +29,10 @@
   name: chat-emote-name-blink
   category: General
   icon: _Monkestation/Interface/Emotes/eyes.png
+  blacklist:
+    components:
+    - Ghost
   chatMessages: ["chat-emote-msg-blink"]
   chatTriggers:
   - blink
   - blinks
-  - blinked
-  - blinking
