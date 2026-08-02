@@ -12,3 +12,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Created by Sarahon, modified by Blumbee"
   source: "https://github.com/Sarahon"
+
+- files: ["crack.png"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Spritework by Pinkbat5"
+  source: "https://github.com/Pinkbat5"

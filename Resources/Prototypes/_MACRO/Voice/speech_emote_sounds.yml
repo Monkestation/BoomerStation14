@@ -12,5 +12,7 @@
     Salute:
       collection: Salutes
     Blink: # Monke
-      collection: Blinks # Monke  
+      collection: Blinks # Monke 
+    Knuckles: # Monke
+      collection: Knuckles # Monke   
 
