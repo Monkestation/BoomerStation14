@@ -32,7 +32,7 @@
   blacklist:
     components:
     - Ghost
-  chatMessages: ["chat-emote-msg-blink"]
+  chatMessages: ["ms-chat-emote-msg-blink"]
   chatTriggers:
   - blink
   - blinks
@@ -46,7 +46,7 @@
     components:
     - BorgChassis
     - Ghost
-  chatMessages: ["chat-emote-msg-knuckles"]
+  chatMessages: ["ms-chat-emote-msg-knuckles"]
   chatTriggers:
   - crack knuckles
   - cracks knuckles
