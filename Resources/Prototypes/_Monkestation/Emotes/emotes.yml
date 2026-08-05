@@ -26,7 +26,7 @@
 
 - type: emote
   id: Blink
-  name: chat-emote-name-blink
+  name: ms-chat-emote-name-blink
   category: General
   icon: _Monkestation/Interface/Emotes/eyes.png
   blacklist:
@@ -39,7 +39,7 @@
 
 - type: emote
   id: Knuckles
-  name: chat-emote-name-knuckles
+  name: ms-chat-emote-name-knuckles
   category: Hands
   icon: _Monkestation/Interface/Emotes/crack.png
   blacklist:
