@@ -46,7 +46,7 @@ If you find that your work is misattributed or someone elses work is misattribut
 
 Our folders are modularized to avoid merge conflicts down the line. Content found within these subdirectories either originate directly from the source or are edited to fit Boomerstation's needs.
 
-Boomer Station is MIT, therefore it cannot accept content from AGPL sources, unless the content has a dual license or has been explicitely relicensed to MIT by the author. PRs porting content from AGPL forks **MUST INCLUDE PROOF OF RELICENSING/DUAL LICENSING** in their PRs.
+Boomer Station is MIT, therefore it cannot accept content from AGPL (or any other incompatible licenses) sources, unless the content has a dual license or has been explicitely relicensed to MIT by the author. PRs porting content from AGPL forks **MUST INCLUDE PROOF OF RELICENSING/DUAL LICENSING** in their PRs.
 
 | Subdirectory     | Fork Name           | Fork Repository                                         | License  |
 |------------------|---------------------|---------------------------------------------------------|----------|
