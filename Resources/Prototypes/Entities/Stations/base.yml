@@ -59,14 +59,12 @@
             - type: TradeStation
           paths:
             - /Maps/Shuttles/trading_outpost.yml
-<<<<<<< HEAD
-=======
         # Carpmosia-start - Salvage shuttle revert
         mining: !type:GridSpawnGroup
           paths:
             - /Maps/_Carpmosia/Shuttles/mining.yml
         # Carpmosia-end - Salvage shuttle revert
->>>>>>> 7bbd122d50 (Ports the Salvage Ticket Vendor from Starlight (#76))
+
         # Spawn last
         ruins: !type:GridSpawnGroup
           hide: true
