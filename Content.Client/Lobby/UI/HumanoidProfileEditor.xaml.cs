@@ -146,7 +146,7 @@ namespace Content.Client.Lobby.UI
             NameEdit.IsValid = args => args.Length <= _maxNameLength;
             NameRandomize.OnPressed += args => RandomizeName();
             RandomizeEverythingButton.OnPressed += args => { RandomizeEverything(); };
-            WarningLabel.SetMarkup($"[color=red]{Loc.GetString("MS-humanoid-profile-editor-naming-rules-warning")}[/color]"); // Monkestation name rules
+            WarningLabel.SetMarkup($"[color=red]{Loc.GetString("ms-humanoid-profile-editor-naming-rules-warning")}[/color]"); // Monkestation name rules
 
             #endregion Name
 
