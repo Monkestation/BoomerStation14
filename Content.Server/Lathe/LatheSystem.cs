@@ -260,6 +260,10 @@ namespace Content.Server.Lathe
                         _puddle.TrySpillAt(uid, toAdd, out _);
                     }
                 }
+                // Carpmosia-start - Salvage Tickets
+                var ev = new LatheFinishPrintingEvent(_proto.Index(comp.CurrentRecipe));
+                RaiseLocalEvent(uid, ref ev);
+                // Carpmosia-end - Salvage Tickets
             }
 
             comp.CurrentRecipe = null;
