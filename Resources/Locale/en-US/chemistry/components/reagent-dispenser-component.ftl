@@ -17,3 +17,8 @@ reagent-dispenser-window-no-container-loaded-text = No container loaded.
 reagent-dispenser-window-reagent-name-not-found-text = Reagent name not found
 reagent-dispenser-window-unknown-reagent-text = Unknown reagent
 reagent-dispenser-window-quantity-label-text = {$quantity}u
+
+# Boomer edit: SS13-style power-cell energy buffer.
+reagent-dispenser-window-energy-label = Charge
+reagent-dispenser-window-energy-units-text = {$units}u available
+reagent-dispenser-window-container-full-text = The container is full!

@@ -40,8 +40,7 @@ namespace Content.Client.Chemistry.UI
 
             _window.AmountGrid.OnButtonPressed += s => SendMessage(new ReagentDispenserSetDispenseAmountMessage(s));
 
-            _window.OnDispenseReagentButtonPressed += (location) => SendMessage(new ReagentDispenserDispenseReagentMessage(location));
-            _window.OnEjectJugButtonPressed += (location) => SendMessage(new ReagentDispenserEjectContainerMessage(location));
+            _window.OnDispenseReagentButtonPressed += (reagentId) => SendMessage(new ReagentDispenserDispenseReagentMessage(reagentId));
         }
 
         /// <summary>

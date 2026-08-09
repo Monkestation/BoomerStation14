@@ -19,6 +19,22 @@
                 RadioGroup="True">
             </ui:ButtonGrid>
             <Control VerticalExpand="True" />
+            <!-- Boomer edit: SS13-style internal energy buffer readout. -->
+            <Label Text="{Loc 'reagent-dispenser-window-energy-label'}"
+                   HorizontalAlignment="Center" />
+            <ProgressBar Name="EnergyBar"
+                         Access="Public"
+                         MinValue="0"
+                         MaxValue="1"
+                         Value="1"
+                         MinHeight="16"
+                         Margin="10 2 10 0" />
+            <Label Name="EnergyLabel"
+                   Access="Public"
+                   Text=""
+                   HorizontalAlignment="Center"
+                   StyleClasses="LabelSubText" />
+            <Control VerticalExpand="True" />
             <Label Name="ContainerInfoName"
                    Access="Public"
                    Text=""
