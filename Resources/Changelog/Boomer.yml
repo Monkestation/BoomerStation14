@@ -122,4 +122,87 @@ Entries:
   id: 17
   time: '2026-07-17T15:30:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/20
+- author: Sif
+  changes:
+  - message: Flashlights and most handheld lights no longer need batteries to work
+    type: Tweak
+  - message: Holoprojectors now work like in SS13. You place holograms from a limited pool and can pick them back up, or wipe them all by using the projector in hand. No more powercell.
+    type: Tweak
+  id: 18
+  time: '2026-07-18T14:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/62
+- author: adamsogm
+  changes:
+  - message: Removed the ability for non-admins to use fuckrules
+    type: Remove
+  id: 19
+  time: '2026-07-18T14:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/61
+- author: ProPeperos
+  changes:
+  - message: On Reach, added even more improvements
+    type: Tweak
+  id: 20
+  time: '2026-07-18T14:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/64
+- author: AitorLogedo
+  changes:
+  - message: Nuke operatives can now hear station announcements
+    type: Tweak
+  id: 21
+  time: '2026-07-20T19:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/68
+- author: adamsogm
+  changes:
+  - message: Reduced the pop requirement of packed
+    type: Tweak
+  - message: Increased the pop requirement of cluster
+    type: Tweak
+  id: 22
+  time: '2026-07-20T19:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/66
+- author: Dishwasher0
+  changes:
+  - message: Engi in cluster.  Moved stuff around.
+    type: Tweak
+  - message: Lack of salv lockers in Cluster.
+    type: Fix
+  id: 23
+  time: '2026-07-20T19:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/65
+- author: AitorLogedo
+  changes:
+  - message: Grays can now fart and piss like everyone else.
+    type: add
+  id: 24
+  time: '2026-07-20T19:30:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/69
+- author: adamsogm
+  changes:
+  - message: Added status command to discord
+    type: add
+  id: 25
+  time: '2026-07-27T13:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/72
+- author: Blumbee
+  changes:
+  - message: Guidebook now contains Spacelaw, Crime List
+    type: add
+  id: 26
+  time: '2026-08-08T07:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/70
+- author: Blumbee
+  changes:
+  - message: You can blink and crack your knuckles now! Hurray!
+    type: add
+  id: 27
+  time: '2026-08-08T07:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/79
+- author: Skarlet
+  changes:
+  - message: Ported Carpmosia's AI navmap overlay, which shows the station layout without static.
+    type: tweak
+  id: 28
+  time: '2026-08-08T07:15:00.0000000+00:00'
+  url: https://github.com/Monkestation/BoomerStation14/pull/83
 Order: 1

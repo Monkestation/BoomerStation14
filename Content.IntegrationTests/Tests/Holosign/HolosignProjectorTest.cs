@@ -1,10 +1,9 @@
 #nullable enable
 using Content.IntegrationTests.Tests.Movement;
+using Content.Shared.Charges.Systems;
 using Content.Shared.Holosign;
-using Content.Shared.PowerCell;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Spawners;
 
 namespace Content.IntegrationTests.Tests.Holosign;
 
@@ -30,15 +29,16 @@ public sealed class HolosignProjectorTest : MovementTest
         // No holosigns before using the item.
         await AssertEntityLookup((WallPrototype, 2));
 
-        var powerCellSystem = SEntMan.System<PowerCellSystem>();
-        var initialUses = powerCellSystem.GetRemainingUses(ToServer(projector), projectorComp.ChargeUse);
+        // Boomer edit - holoprojectors now use LimitedCharges instead of a power cell.
+        var chargesSystem = SEntMan.System<SharedChargesSystem>();
+        var initialUses = chargesSystem.GetCurrentCharges(ToServer(projector));
         Assert.That(initialUses, Is.GreaterThan(0), "Holoprojector spawned without usable charges.");
 
         // Click on the tile next to the player.
         await Interact(null, TargetCoords);
 
         // We should have one charge less.
-        var remainingUses = powerCellSystem.GetRemainingUses(ToServer(projector), projectorComp.ChargeUse);
+        var remainingUses = chargesSystem.GetCurrentCharges(ToServer(projector));
         Assert.That(remainingUses, Is.EqualTo(initialUses - 1), "Holoprojector did not use the right amount of charge when used.");
 
         // We should have spawned exactly one holosign.
@@ -58,7 +58,7 @@ public sealed class HolosignProjectorTest : MovementTest
             (WallPrototype, 2));
 
         // We should have no charges left.
-        remainingUses = powerCellSystem.GetRemainingUses(ToServer(projector), projectorComp.ChargeUse);
+        remainingUses = chargesSystem.GetCurrentCharges(ToServer(projector));
         Assert.That(remainingUses, Is.Zero, "Holoprojector did not use up all charges.");
     }
 
@@ -81,7 +81,6 @@ public sealed class HolosignProjectorTest : MovementTest
             (holoBarrierProtoId, 1),
             (WallPrototype, 2));
         Target = FromServer(await FindEntity(holoBarrierProtoId));
-        var timeRemaining = Comp<TimedDespawnComponent>(Target).Lifetime;
 
         // Check that the barrier is at the location we clicked at.
         AssertLocation(Target, TargetCoords);
@@ -102,8 +101,8 @@ public sealed class HolosignProjectorTest : MovementTest
         await Move(DirectionFlag.West, 0.5f);
         Assert.That(Delta(), Is.LessThan(-0.5), "Player was able to walk through a holobarrier.");
 
-        // Wait until the barrier despawns.
-        await RunSeconds(timeRemaining);
+        // Boomer edit - barriers no longer despawn on a timer; remove it with the projector instead.
+        await Interact(Target, TargetCoords);
         AssertDeleted(Target);
 
         // We should be able to walk back now.

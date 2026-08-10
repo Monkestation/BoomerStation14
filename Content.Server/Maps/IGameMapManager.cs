@@ -74,4 +74,12 @@ public interface IGameMapManager
     /// <param name="gameMap">name of the map</param>
     /// <returns>existence</returns>
     bool CheckMapExists(string gameMap);
+
+    /// <summary>
+    /// Sets the map for a specified number of rounds
+    /// </summary>
+    /// <param name="gameMap">The map, empty to clear</param>
+    /// <param name="rounds">The number of rounds to play this map</param>
+    /// <returns>If the map will take effect this round, false if the map has been selected for this round.</returns>
+    bool SetMap(string gameMap, int rounds); // Monkestation
 }

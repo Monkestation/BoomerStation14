@@ -21,6 +21,7 @@
   - type: Appearance
   - type: HandheldLight
     addPrefix: false
+    selfPowered: true # Boomer edit - no power cell needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -51,18 +52,9 @@
       head:
       - state: on-equipped-HELMET
   - type: ItemTogglePointLight
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
+  # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer, light is self-powered now
   - type: Item
     heldPrefix: off
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
   - type: Tag
     tags:
     - WhitelistChameleon

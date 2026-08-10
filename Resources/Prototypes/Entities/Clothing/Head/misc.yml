@@ -75,10 +75,6 @@
     autoRot: true
     color: "#cc6600"
     netsync: false
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
   - type: HideLayerClothing
     slots:
     - Hair

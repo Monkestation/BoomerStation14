@@ -24,7 +24,6 @@
     - gc
     - gc_mode
     - cvar
-    - fuckrules
     - midipanic
     - replay_recording_start
     - replay_recording_stop
@@ -96,3 +95,7 @@
 - Flags: ADMINCHAT
   Commands:
     - achatwindow
+
+- Flags: ADMIN
+  Commands:
+    - fuckrules

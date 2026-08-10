@@ -42,4 +42,24 @@ Most media assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/
 
 If you find that your work is misattributed or someone elses work is misattributed, please create an issue on this repo's GitHub page, or contact us on the [Monkestation Discord Server](https://discord.com/invite/monkestation).
 
+## Attributions and Namespaces
 
+Our folders are modularized to avoid merge conflicts down the line. Content found within these subdirectories either originate directly from the source or are edited to fit Boomerstation's needs.
+
+Boomer Station is MIT, therefore it cannot accept content from AGPL (or any other incompatible licenses) sources, unless the content has a dual license or has been explicitely relicensed to MIT by the author. PRs porting content from AGPL forks **MUST INCLUDE PROOF OF RELICENSING/DUAL LICENSING** in their PRs.
+
+| Subdirectory     | Fork Name           | Fork Repository                                         | License  |
+|------------------|---------------------|---------------------------------------------------------|----------|
+| `_Monkestation`  | Boomer Station      | https://github.com/Monkestation/BoomerStation14         | MIT      |
+| `_Funkystation`  | Funky Station       | https://github.com/funky-station/forky-station          | MIT      |
+| `_MACRO`         | Macrocosm           | https://github.com/syndicate-ss14/macrocosm             | MIT      |
+| `_Starfall`      | Starfall Drift      | https://github.com/Starfall-Drift/Starfall-Drift        | MIT      |
+| `_CD`            | Cosmatic Drift      | https://github.com/cosmatic-drift-14/cosmatic-drift     | MIT      |
+| `_Starlight`     | Starlight           | https://github.com/ss14Starlight/space-station-14       | MIT, Starlight License|
+| `_Umbra`         | Sector Umbra        | https://github.com/Sector-Umbra/Sector-Umbra            | MIT      |
+| `_Umbra`         | Carpmosia           | https://github.com/carpmosia/carpmosia                  | MIT      |
+
+Additional repos that we have ported features from without subdirectories are listed below.
+| Fork Name | Fork Repository | License |
+|-----------|-----------------|---------|
+| Space Station 14 | https://github.com/space-wizards/space-station-14 | MIT |

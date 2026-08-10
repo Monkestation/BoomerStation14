@@ -13,8 +13,7 @@
   - type: Sprite
     sprite: Structures/Holo/wetfloor.rsi
     state: icon
-  - type: TimedDespawn
-    lifetime: 90
+  # Boomer edit - holograms no longer despawn on a timer; you place and remove them like in SS13
   - type: Clickable
   - type: Damageable
   - type: Injurable
@@ -43,8 +42,7 @@
         shape:
           !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
-  - type: TimedDespawn
-    lifetime: 180
+  # Boomer edit - no timed despawn
   - type: Airtight
     noAirWhenFullyAirBlocked: false
 
@@ -74,8 +72,7 @@
         hard: false
         layer:
         - SlipLayer
-  - type: TimedDespawn
-    lifetime: 30
+  # Boomer edit - no timed despawn
   - type: Destructible
     thresholds:
     - trigger:
@@ -107,8 +104,7 @@
             - TableMask
           layer:
             - TableLayer
-    - type: TimedDespawn
-      lifetime: 180
+    # Boomer edit - no timed despawn
     - type: PointLight
       enabled: true
       radius: 3
@@ -137,8 +133,7 @@
         - FullTileMask
         layer:
         - GlassLayer
-  - type: TimedDespawn
-    lifetime: 180
+  # Boomer edit - no timed despawn
   - type: PointLight
     enabled: true
     radius: 3
