@@ -174,7 +174,7 @@
   description: A sturdy helmet designed for complex industrial operations in space.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hardsuits/spatiohelm.rsi
+    sprite: _Monkestation/Clothing/Head/Hardsuits/spatiohelm.rsi # monkestation edit ; hardsuit sprites
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
@@ -195,25 +195,11 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
         shader: unshaded
   - type: PointLight
     radius: 6
@@ -248,9 +234,9 @@
   description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
+    sprite: _Monkestation/Clothing/Head/Hardsuits/salvage.rsi # monkestation edit ; hardsuits
   - type: Clothing
-    sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
+    sprite: _Monkestation/Clothing/Head/Hardsuits/salvage.rsi # monkestation edit ; hardsuits
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000

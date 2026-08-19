@@ -81,9 +81,9 @@
   description: A lightweight hardsuit designed for industrial EVA in zero gravity.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/spatio.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Hardsuits/spatio.rsi # monkestation edit ; hardsuit sprites
   - type: Clothing
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/spatio.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Hardsuits/spatio.rsi # monkestation edit ; hardsuit sprites
   - type: PressureProtection
     highPressureMultiplier: 0.7
     lowPressureMultiplier: 1000
@@ -115,9 +115,9 @@
   description: A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/salvage.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Hardsuits/salvage.rsi # monkestation edit ; hardsuits
   - type: Clothing
-    sprite: _Funkystation/Clothing/OuterClothing/Hardsuits/salvage.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Hardsuits/salvage.rsi # monkestation edit ; hardsuits
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000

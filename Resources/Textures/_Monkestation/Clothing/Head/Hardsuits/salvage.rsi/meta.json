@@ -1,0 +1,33 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from monestation13 at commit https://github.com/Monkestation/Monkestation2.0/commit/11f3ae776e3211a5bf29cea509c38a5b7d8fc976, Icon at https://github.com/Monkestation/Monkestation2.0/commit/1fb7ec58ee4501ba99b97126f7e244340b83c9bb",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-flash"
+        },
+        {
+            "name": "off-equipped-HELMET",
+            "directions": 4
+        },
+        {
+            "name": "on-equipped-HELMET",
+            "directions": 4
+        },
+        {
+            "name": "off-equipped-HELMET-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "on-equipped-HELMET-reptilian",
+            "directions": 4
+        }
+    ]
+}

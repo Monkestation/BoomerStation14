@@ -1,0 +1,63 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from monkestation13 at commit https://github.com/Monkestation/Monkestation2.0/commit/11f3ae776e3211a5bf29cea509c38a5b7d8fc976, edited by Skarletto (github), Reptilian state edited by Skarletto. Visor versions adapted from welding masks by AraiMaia, taken from /vg/station at commit https://github.com/vgstation-coders/vgstation13/commit/31d6576ba8102135d058ef49c3cb6ecbe8db8a79. Icon state taken from monkestation13 at commit https://github.com/Monkestation/Monkestation2.0/commit/1fb7ec58ee4501ba99b97126f7e244340b83c9bb, Light states from https://github.com/Monkestation/Monkestation2.0/commit/2fabc48c368632326c0f4c48d96f1c84f818501c",
+
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-up"
+        },
+        {
+            "name": "icon-unshaded"
+        },
+        {
+            "name": "icon-flash"
+        },
+        {
+            "name": "light-overlay"
+        },
+        {
+            "name": "equipped-head",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-up",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-up-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-up-dog",
+            "directions": 4
+        }
+    ]
+}
