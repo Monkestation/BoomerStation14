@@ -5,9 +5,9 @@
   description: A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Hardsuits/atmospherics.rsi # monkestation edit ; hardsuits
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Hardsuits/atmospherics.rsi # monkestation edit ; hardsuits
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -45,9 +45,9 @@
   description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Hardsuits/engineering.rsi # monkestation edit ; hardsuits
   - type: Clothing
-    sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Hardsuits/engineering.rsi # monkestation edit ; hardsuits
   - type: PressureProtection
     highPressureMultiplier: 0.04
     lowPressureMultiplier: 1000

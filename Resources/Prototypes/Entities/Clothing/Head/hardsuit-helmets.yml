@@ -5,7 +5,7 @@
   description: A special hardsuit helmet designed for working in low-pressure, high thermal environments.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/atmospherics.rsi
+    sprite: _Monkestation/Clothing/Head/Hardsuits/atmospherics.rsi # monkestation edit ; hardsuits
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
@@ -27,12 +27,6 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
@@ -41,14 +35,6 @@
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
         shader: unshaded
       head-reptilian:
       - state: equipped-head-reptilian
@@ -92,7 +78,7 @@
   description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/engineering.rsi
+    sprite: _Monkestation/Clothing/Head/Hardsuits/engineering.rsi # monkestation edit ; hardsuits
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
@@ -114,12 +100,6 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
@@ -128,15 +108,7 @@
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
-        shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
+        shader: unshaded  
       head-reptilian:
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian

@@ -1,0 +1,62 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from monkestation13 at commit https://github.com/Monkestation/Monkestation2.0/commit/0fb5765256837530804838ccc7a12cbdd4ad7833, icon and icon-flash edited by Skarletto (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "icon-up"
+        },
+        {
+            "name": "icon-unshaded"
+        },
+        {
+            "name": "icon-flash"
+        },
+        {
+            "name": "light-overlay"
+        },
+        {
+            "name": "equipped-head",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-up",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-up-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-up-dog",
+            "directions": 4
+        }
+    ]
+}
