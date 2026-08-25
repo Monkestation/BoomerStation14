@@ -53,6 +53,10 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+    Blink: # Monke
+      collection: Blinks # Monke 
+    Knuckles: # Monke
+      collection: Knuckles # Monke  
 
 - type: emoteSounds
   id: FemaleOvinia
@@ -87,3 +91,7 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+    Blink: # Monke
+      collection: Blinks # Monke 
+    Knuckles: # Monke
+      collection: Knuckles # Monke  
