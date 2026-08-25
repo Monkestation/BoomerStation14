@@ -1,0 +1,265 @@
+# Benches
+
+- type: constructionGraph
+  id: Bench
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CDBenchParkMiddle
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: CDBenchParkLeft
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: CDBenchParkRight
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: CDBenchParkBambooMiddle
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: CDBenchParkBambooLeft
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: CDBenchParkBambooRight
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: CDBenchPewMiddle
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: CDBenchPewLeft
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: CDBenchPewRight
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 1
+        - to: CDBenchSteelMiddle
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDBenchSteelLeft
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDBenchSteelRight
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDBenchSteelWhiteMiddle
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDBenchSteelWhiteLeft
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDBenchSteelWhiteRight
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+
+    - node: CDBenchParkMiddle
+      entity: CDBenchParkMiddle
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchParkLeft
+      entity: CDBenchParkLeft
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchParkRight
+      entity: CDBenchParkRight
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchParkBambooMiddle
+      entity: CDBenchParkBambooMiddle
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchParkBambooLeft
+      entity: CDBenchParkBambooLeft
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchParkBambooRight
+      entity: CDBenchParkBambooRight
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchPewMiddle
+      entity: CDBenchPewMiddle
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchPewLeft
+      entity: CDBenchPewLeft
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchPewRight
+      entity: CDBenchPewRight
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchSteelMiddle
+      entity: CDBenchSteelMiddle
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchSteelLeft
+      entity: CDBenchSteelLeft
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchSteelRight
+      entity: CDBenchSteelRight
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchSteelWhiteMiddle
+      entity: CDBenchSteelWhiteMiddle
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchSteelWhiteLeft
+      entity: CDBenchSteelWhiteLeft
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDBenchSteelWhiteRight
+      entity: CDBenchSteelWhiteRight
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1

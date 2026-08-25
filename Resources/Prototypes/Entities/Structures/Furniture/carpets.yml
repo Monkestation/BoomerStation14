@@ -289,11 +289,11 @@
   name: "chapel's carpet"
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Carpets/chapel_carpet.rsi
+    sprite: _Monkestation/Structures/Furniture/Carpets/chapel_carpet.rsi # monkestation edit ; carpet edit
     state: chapel
     drawdepth: FloorTiles
   - type: Icon
-    sprite: Structures/Furniture/Carpets/chapel_carpet.rsi
+    sprite: _Monkestation/Structures/Furniture/Carpets/chapel_carpet.rsi # monkestation edit ; carpet edit
     state: chapel
   - type: Tag
     tags:

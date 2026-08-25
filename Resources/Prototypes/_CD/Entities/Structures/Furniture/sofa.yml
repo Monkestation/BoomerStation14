@@ -1,0 +1,143 @@
+# "Ratty" sofa
+- type: entity
+  parent: CDBenchBaseMiddle
+  id: CDRattySofaMiddle
+  name: sofa
+  components:
+  - type: Sprite
+    sprite: _CD/Structures/Furniture/Sofa/sofa.rsi
+  - type: Construction
+    graph: Sofa
+    node: CDRattySofaMiddle
+
+- type: entity
+  parent: CDRattySofaMiddle
+  id: CDRattySofaLeft
+  suffix: Right
+  components:
+  - type: Sprite
+    state: left
+  - type: Construction
+    graph: Sofa
+    node: CDRattySofaLeft
+
+- type: entity
+  parent: CDRattySofaMiddle
+  id: CDRattySofaRight
+  suffix: Left
+  components:
+  - type: Sprite
+    state: right
+  - type: Construction
+    graph: Sofa
+    node: CDRattySofaRight
+
+- type: entity
+  id: CDRattySofaCorner
+  name: sofa
+  suffix: Corner
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _CD/Structures/Furniture/Sofa/sofa.rsi
+    state: corner
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+    canCollide: False
+  - type: Pullable
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Construction
+    graph: Sofa
+    node: CDRattySofaCorner
+
+# Corp sofa
+- type: entity
+  parent: CDBenchBaseMiddle
+  id: CDCorpSofaMiddle
+  name: grey sofa
+  components:
+  - type: Sprite
+    sprite: _CD/Structures/Furniture/Sofa/sofa_corp.rsi
+  - type: Construction
+    graph: Sofa
+    node: CDCorpSofaMiddle
+
+- type: entity
+  parent: CDCorpSofaMiddle
+  id: CDSofaCorpLeft
+  suffix: Right
+  components:
+  - type: Sprite
+    state: left
+  - type: Construction
+    graph: Sofa
+    node: CDCorpSofaLeft
+
+- type: entity
+  parent: CDCorpSofaMiddle
+  id: CDSofaCorpRight
+  suffix: Left
+  components:
+  - type: Sprite
+    state: right
+  - type: Construction
+    graph: Sofa
+    node: CDCorpSofaRight
+
+- type: entity
+  name: grey sofa
+  id: CDSofaCorpCorner
+  suffix: Corner
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Rotatable
+  - type: Sprite
+    sprite: _CD/Structures/Furniture/Sofa/sofa_corp.rsi
+    state: corner
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+    canCollide: False
+  - type: Pullable
+  - type: Damageable
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Construction
+    graph: Sofa
+    node: CDCorpSofaCorner

@@ -1,0 +1,146 @@
+# Sofas
+
+- type: constructionGraph
+  id: Sofa
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: CDRattySofaMiddle
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDRattySofaRight
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDRattySofaLeft
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDRattySofaCorner
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDCorpSofaMiddle
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDCorpSofaLeft
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDCorpSofaRight
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: CDCorpSofaCorner
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+
+    - node: CDRattySofaMiddle
+      entity: CDRattySofaMiddle
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDRattySofaRight
+      entity: CDRattySofaRight
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDRattySofaLeft
+      entity: CDRattySofaLeft
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDRattySofaCorner
+      entity: CDRattySofaCorner
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDCorpSofaMiddle
+      entity: CDCorpSofaMiddle
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDCorpSofaRight
+      entity: CDSofaCorpRight
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDCorpSofaLeft
+      entity: CDSofaCorpLeft
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: CDCorpSofaCorner
+      entity: CDSofaCorpCorner
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 1
