@@ -14,10 +14,13 @@
   - Gray # macro - uncomment to enable, monke - we did do that
   - Human
   - Moth
+  - Ovinia # macro - uncomment to enable
   - Reptilian
   - SlimePerson
-#  - Vox, monke - disable vox guidebook
+  - Ungu # macro - uncomment to enable
+  # - Vox, monke - disable vox guidebook
   - Vulpkanin
+
 
 - type: guideEntry
   id: Arachnid
