@@ -57,13 +57,13 @@
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
 
-# Monke edit, disable vox
+# Monke edit, disable vox and vulp
 #- type: guideEntry
 #  id: Vox
 #  name: species-name-vox
 #  text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
 
-- type: guideEntry
-  id: Vulpkanin
-  name: species-name-vulpkanin
-  text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
+#- type: guideEntry
+#  id: Vulpkanin
+#  name: species-name-vulpkanin
+#  text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
