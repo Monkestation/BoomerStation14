@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [SolutionTank, SolutionGinormous, BaseWallmountMetallic]
+  parent: [SolutionTank, Solution3840, BaseWallmountMetallic]
   id: BaseDispenser
   components:
   - type: Sprite
@@ -58,7 +58,7 @@
     solution:
       reagents:
       - ReagentId: SpaceCleaner
-        Quantity: 960
+        Quantity: 3000
 
 - type: entity
   parent: BaseDispenser
