@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 277.0.0
+  engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 05/29/2026 14:24:54
-  entityCount: 2870
+  time: 08/27/2026 15:44:47
+  entityCount: 2869
 maps:
 - 1
 grids:
@@ -1223,13 +1223,14 @@ entities:
           1,3:
             1: 65262
           1,-1:
-            1: 55807
+            1: 55775
+            2: 32
           1,2:
             1: 61166
           1,4:
             1: 34959
             0: 256
-            2: 512
+            3: 512
           2,0:
             1: 61663
           2,1:
@@ -1242,7 +1243,7 @@ entities:
             1: 56575
           2,4:
             1: 7
-            2: 512
+            3: 512
             0: 1024
           3,0:
             1: 63711
@@ -1256,7 +1257,7 @@ entities:
           3,-1:
             1: 53725
           3,4:
-            2: 1
+            3: 1
             0: 30
           4,0:
             1: 58623
@@ -1298,20 +1299,21 @@ entities:
           1,-3:
             1: 61695
           1,-2:
-            1: 61695
+            1: 61631
+            2: 64
           2,-3:
             1: 28895
           2,-2:
             1: 61687
           2,-4:
-            3: 6
-            4: 1536
+            4: 6
+            5: 1536
           3,-4:
-            2: 256
+            3: 256
             0: 25668
           3,-3:
             1: 1
-            2: 4096
+            3: 4096
             0: 18022
           3,-2:
             1: 53248
@@ -1325,19 +1327,19 @@ entities:
             1: 62463
           -8,0:
             0: 4160
-            2: 8750
+            3: 8750
           -8,1:
-            2: 1
+            3: 1
             0: 200
           -8,-1:
-            2: 8737
+            3: 8737
             0: 16408
           -7,0:
-            2: 29799
+            3: 29799
           -7,1:
             0: 3325
           -7,-1:
-            2: 25712
+            3: 25712
             0: 5
           -6,0:
             1: 61439
@@ -1362,10 +1364,10 @@ entities:
             0: 2190
           1,-5:
             0: 79
-            2: 512
+            3: 512
           2,-5:
             0: 31
-            2: 512
+            3: 512
           4,4:
             0: 15
           5,0:
@@ -1409,6 +1411,11 @@ entities:
           moles: {}
         - volume: 2500
           temperature: 293.15
+          moles:
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
+        - volume: 2500
+          temperature: 293.14975
           moles:
             Oxygen: 21.824879
             Nitrogen: 82.10312
@@ -2122,7 +2129,7 @@ entities:
       pos: 4.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -18543.127
+      secondsUntilStateChange: -18924.77
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -2133,7 +2140,7 @@ entities:
       pos: 3.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -18543.627
+      secondsUntilStateChange: -18925.27
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -2182,7 +2189,7 @@ entities:
       pos: -6.5,4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -21678.32
+      secondsUntilStateChange: -22059.963
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -2611,11 +2618,6 @@ entities:
       invokeCounter: 1
 - proto: BluespaceBeaker
   entities:
-  - uid: 93
-    components:
-    - type: Transform
-      pos: 6.428499,-0.45732337
-      parent: 2
   - uid: 2777
     components:
     - type: Transform
@@ -2640,7 +2642,7 @@ entities:
   - uid: 95
     components:
     - type: Transform
-      pos: 2.1883464,-3.3355293
+      pos: 12.044775,1.751423
       parent: 2
 - proto: BoxFolderQmClipboard
   entities:
@@ -13971,6 +13973,11 @@ entities:
     - type: Transform
       pos: 4.5,-4.5
       parent: 2
+  - uid: 2640
+    components:
+    - type: Transform
+      pos: 2.5,-3.5
+      parent: 2
 - proto: LockerMedicineFilled
   entities:
   - uid: 1739
@@ -14020,7 +14027,7 @@ entities:
   - uid: 852
     components:
     - type: Transform
-      pos: -4.7787523,7.392292
+      pos: -4.651558,7.4620113
       parent: 2
 - proto: MachineArtifactAnalyzer
   entities:
@@ -14094,14 +14101,14 @@ entities:
   - uid: 1667
     components:
     - type: Transform
-      pos: 2.6258464,-3.1063626
+      pos: 10.326533,-4.192943
       parent: 2
 - proto: MedkitBurnFilled
   entities:
   - uid: 1668
     components:
     - type: Transform
-      pos: 2.6154299,-3.564696
+      pos: 10.5,-4.5
       parent: 2
 - proto: MopBucket
   entities:
@@ -16483,13 +16490,6 @@ entities:
     - type: Transform
       pos: 7.5,0.5
       parent: 2
-- proto: SpawnPointClown
-  entities:
-  - uid: 2640
-    components:
-    - type: Transform
-      pos: -4.5,-2.5
-      parent: 2
 - proto: SpawnPointHeadOfSecurity
   entities:
   - uid: 1986
@@ -16538,22 +16538,17 @@ entities:
       parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:
-  - uid: 2025
-    components:
-    - type: Transform
-      pos: 6.5,-3.5
-      parent: 2
   - uid: 2026
     components:
     - type: Transform
       pos: 8.5,-3.5
       parent: 2
-- proto: SpawnPointMime
+- proto: SpawnPointMedicalIntern
   entities:
-  - uid: 2641
+  - uid: 1999
     components:
     - type: Transform
-      pos: -4.5,-3.5
+      pos: 6.5,-3.5
       parent: 2
 - proto: SpawnPointMusician
   entities:
@@ -16581,6 +16576,13 @@ entities:
     - type: Transform
       pos: 8.5,15.5
       parent: 2
+- proto: SpawnPointResearchAssistant
+  entities:
+  - uid: 2438
+    components:
+    - type: Transform
+      pos: -2.5,9.5
+      parent: 2
 - proto: SpawnPointSalvageSpecialist
   entities:
   - uid: 2829
@@ -16595,6 +16597,13 @@ entities:
     - type: Transform
       pos: -3.5,9.5
       parent: 2
+- proto: SpawnPointSecurityCadet
+  entities:
+  - uid: 2025
+    components:
+    - type: Transform
+      pos: 16.5,-3.5
+      parent: 2
 - proto: SpawnPointSecurityOfficer
   entities:
   - uid: 1998
@@ -16602,15 +16611,17 @@ entities:
     - type: Transform
       pos: 15.5,-3.5
       parent: 2
-  - uid: 1999
-    components:
-    - type: Transform
-      pos: 16.5,-3.5
-      parent: 2
   - uid: 2000
     components:
     - type: Transform
       pos: 17.5,-3.5
+      parent: 2
+- proto: SpawnPointServiceWorker
+  entities:
+  - uid: 93
+    components:
+    - type: Transform
+      pos: -4.5,-3.5
       parent: 2
 - proto: SpawnPointStationEngineer
   entities:
@@ -16619,6 +16630,8 @@ entities:
     - type: Transform
       pos: -17.5,-3.5
       parent: 2
+- proto: SpawnPointTechnicalAssistant
+  entities:
   - uid: 2002
     components:
     - type: Transform
@@ -17114,12 +17127,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 8.5,1.5
-      parent: 2
-  - uid: 2438
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 2.5,-3.5
       parent: 2
 - proto: TableReinforced
   entities:
@@ -19149,7 +19156,7 @@ entities:
   - uid: 102
     components:
     - type: Transform
-      pos: -4.4414973,7.695301
+      pos: -4.167709,7.6940503
       parent: 2
   - uid: 2420
     components:
