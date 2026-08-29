@@ -11,4 +11,8 @@
         volume: -3
     Salute:
       collection: Salutes
+    Blink: # Monke
+      collection: Blinks # Monke 
+    Knuckles: # Monke
+      collection: Knuckles # Monke   
 

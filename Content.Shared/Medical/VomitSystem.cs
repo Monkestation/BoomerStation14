@@ -13,6 +13,7 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared._Funkystation.Fluids;
+using Content.Shared._Funkystation.WallStains; // Funky Wall Stains
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -23,7 +24,6 @@ namespace Content.Shared.Medical;
 public sealed partial class VomitSystem : EntitySystem
 {
     [Dependency] private INetManager _netManager = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private HungerSystem _hunger = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MovementModStatusSystem _movementMod = default!;
@@ -60,7 +60,7 @@ public sealed partial class VomitSystem : EntitySystem
             return;
 
         // Empty stomach solution into the new vomit solution
-        args.Args.Sol.AddSolution(sol, _proto);
+        args.Args.Sol.AddSolution(sol, ProtoMan);
         sol.RemoveAllSolution();
 
         // Remind the stomach that it's empty.
@@ -113,7 +113,7 @@ public sealed partial class VomitSystem : EntitySystem
                 if (vomitChemstreamAmount != null)
                 {
                     vomitChemstreamAmount.ScaleSolution(ChemMultiplier);
-                    solution.AddSolution(vomitChemstreamAmount, _proto);
+                    solution.AddSolution(vomitChemstreamAmount, ProtoMan);
                     vomitAmount -= (float)vomitChemstreamAmount.Volume;
                 }
             }
@@ -124,6 +124,10 @@ public sealed partial class VomitSystem : EntitySystem
 
         var stainEv = new SpilledOnEvent(uid, solution.Clone());
         RaiseLocalEvent(uid, stainEv);
+
+        // Funky Wall Stains
+        var splashEv = new SplashOnWallEvent(Transform(uid).Coordinates, solution.Clone());
+        RaiseLocalEvent(ref splashEv);
 
         if (_puddle.TrySpillAt(uid, solution, out var puddle, false))
         {
