@@ -5,7 +5,7 @@
   description: A special hardsuit helmet designed for working in low-pressure, high thermal environments.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/atmospherics.rsi
+    sprite: _Monkestation/Clothing/Head/Hardsuits/atmospherics.rsi # monkestation edit ; hardsuits
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
@@ -27,12 +27,12 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-light-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-light-vulpkanin
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
@@ -42,14 +42,14 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-vox
+      # - state: equipped-head-unshaded-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-vulpkanin
+      # - state: equipped-head-unshaded-vulpkanin
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
@@ -92,7 +92,7 @@
   description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hardsuits/engineering.rsi # Funky changes
+    sprite: _Monkestation/Clothing/Head/Hardsuits/engineering.rsi # monkestation edit ; hardsuits
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
@@ -111,12 +111,12 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-light-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-light-vulpkanin
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
@@ -124,10 +124,16 @@
     clothingVisuals:
       head:
       - state: equipped-head
-      head-vox:
-      - state: equipped-head-vox
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
+      - state: equipped-head-unshaded
+        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-vox
+      # - state: equipped-head-unshaded-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-vulpkanin
+      # - state: equipped-head-unshaded-vulpkanin
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-reptilian
   - type: PointLight
@@ -163,7 +169,7 @@
   description: A sturdy helmet designed for complex industrial operations in space.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hardsuits/spatiohelm.rsi
+    sprite: _Monkestation/Clothing/Head/Hardsuits/spatiohelm.rsi # monkestation edit ; hardsuit sprites
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
@@ -184,26 +190,26 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-light-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-light-vulpkanin
+        # shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-vox
+      # - state: equipped-head-unshaded-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-vulpkanin
+      # - state: equipped-head-unshaded-vulpkanin
+        # shader: unshaded
   - type: PointLight
     radius: 6
   - type: PressureProtection
@@ -237,9 +243,9 @@
   description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
+    sprite: _Monkestation/Clothing/Head/Hardsuits/salvage.rsi # monkestation edit ; hardsuits
   - type: Clothing
-    sprite: _Funkystation/Clothing/Head/Hardsuits/salvage.rsi
+    sprite: _Monkestation/Clothing/Head/Hardsuits/salvage.rsi # monkestation edit ; hardsuits
   - type: PressureProtection
     highPressureMultiplier: 0.525
     lowPressureMultiplier: 1000
@@ -274,9 +280,9 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-light-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
@@ -286,10 +292,10 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-vox
+      # - state: equipped-head-unshaded-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
@@ -451,12 +457,12 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-light-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-light-vulpkanin
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
@@ -466,14 +472,14 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-vox
+      # - state: equipped-head-unshaded-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-vulpkanin
+      # - state: equipped-head-unshaded-vulpkanin
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
@@ -797,9 +803,9 @@
       head:
       - state: equipped-HELMET-light
         shader: unshaded
-      head-vox:
-      - state: equipped-HELMET-light-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-HELMET-light-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-HELMET-light-reptilian
         shader: unshaded
@@ -810,10 +816,10 @@
       - state: equipped-HELMET
       - state: equipped-HELMET-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-HELMET-vox
-      - state: equipped-HELMET-unshaded-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-HELMET-vox
+      # - state: equipped-HELMET-unshaded-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-HELMET-reptilian
       - state: equipped-HELMET-unshaded-reptilian
@@ -964,10 +970,10 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-vox
+      # - state: equipped-head-unshaded-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
