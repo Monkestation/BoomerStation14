@@ -7,6 +7,8 @@
     <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
     <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
     <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
+    <GuideEntityEmbed Entity="MobUngu" Caption="Ungu"/>
+    <GuideEntityEmbed Entity="MobOvinia" Caption="Oviinia"/>
   </Box>
   <Box>
     <GuideEntityEmbed Entity="MobArachnid" Caption="Arachnid"/>

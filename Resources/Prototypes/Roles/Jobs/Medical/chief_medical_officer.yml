@@ -16,6 +16,7 @@
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
+  joinNotifyCrew: true # Funky
   supervisors: job-supervisors-captain
   access:
   - Medical
@@ -46,7 +47,7 @@
   job: ChiefMedicalOfficer
   hasMindShield: true
   equipment:
-    head: ClothingHeadHatBeretCmo
+    head: FuClothingHeadHatScrubcapTeal # ClothingHeadHatBeretCmo funky - fuck department berets
     eyes: ClothingEyesHudMedical
     mask: ClothingMaskSterile
     neck: ClothingCloakCmo

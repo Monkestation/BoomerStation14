@@ -1,4 +1,4 @@
-﻿# MACROCOSM - If you enable extra species, uncomment their related guideEntry prototype here to add them to the guidebook for your players!
+# MACROCOSM - If you enable extra species, uncomment their related guideEntry prototype here to add them to the guidebook for your players!
 
 # Monke edit, uncomment guidebook entries
 - type: guideEntry
@@ -17,6 +17,11 @@
 #  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Apid.xml"
 
 - type: guideEntry
+  id: Ungu
+  name: species-name-ungu
+  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Ungu.xml"
+
+- type: guideEntry
   id: Decapoid
   name: species-name-decapoid
   text: "/ServerInfo/_MACRO/Guidebook/Mobs/Decapoid.xml"
@@ -31,3 +36,8 @@
 #  id: Ant
 #  name: Ant
 #  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Ant.xml"
+
+- type: guideEntry
+  id: Ovinia
+  name: species-name-ovinia
+  text: "/ServerInfo/_MACRO/Guidebook/Mobs/Ovinia.xml"

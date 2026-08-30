@@ -709,7 +709,7 @@
   id: FloorBlue
   parent: BaseStationTile
   name: tiles-blue-tile
-  sprite: /Textures/Tiles/blue.png
+  sprite: /Textures/_Funkystation/Tiles/blue.png # Funky
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemBlue
@@ -775,7 +775,7 @@
   id: FloorHydro
   parent: BaseStationTile
   name: tiles-hydro-floor
-  sprite: /Textures/Tiles/hydro.png
+  sprite: /Textures/_Funkystation/Tiles/hydro.png # Funky
   itemDrop: FloorTileItemHydro
 
 - type: tile
@@ -795,14 +795,14 @@
   id: FloorClown
   parent: BaseStationTile
   name: tiles-clown-floor
-  sprite: /Textures/Tiles/clown.png
+  sprite: /Textures/_Funkystation/Tiles/clown.png # Funky
   itemDrop: FloorTileItemClown
 
 - type: tile
   id: FloorMime
   parent: BaseStationTile
   name: tiles-mime-floor
-  sprite: /Textures/Tiles/mime.png
+  sprite: /Textures/_Funkystation/Tiles/mime.png # Funky
   itemDrop: FloorTileItemMime
 
 - type: tile
@@ -818,7 +818,7 @@
   id: FloorLaundry
   parent: BaseStationTile
   name: tiles-laundry-floor
-  sprite: /Textures/Tiles/laundry.png
+  sprite: /Textures/_Funkystation/Tiles/laundry.png # Funky
   footstepSounds:
     collection: FootstepTile
   itemDrop: FloorTileItemLaundry
@@ -1632,7 +1632,7 @@
   id: FloorTechMaint2
   parent: BaseStationTile
   name: tiles-techmaint2-floor
-  sprite: /Textures/Tiles/steel_maint.png
+  sprite: /Textures/_Funkystation/Tiles/steel_maint.png # Funky
   footstepSounds:
     collection: FootstepHull
   itemDrop: FloorTileItemSteelMaint
