@@ -243,9 +243,9 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-light-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
@@ -255,10 +255,10 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-vox
+      # - state: equipped-head-unshaded-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
@@ -420,12 +420,12 @@
       head:
       - state: equipped-head-light
         shader: unshaded
-      head-vox:
-      - state: equipped-head-light-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-light-vulpkanin
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-light-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-light-vulpkanin
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-light-reptilian
         shader: unshaded
@@ -435,14 +435,14 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
-      head-vulpkanin:
-      - state: equipped-head-vulpkanin
-      - state: equipped-head-unshaded-vulpkanin
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-vox
+      # - state: equipped-head-unshaded-vox
+        # shader: unshaded
+      # head-vulpkanin:  (disabled on monkestation)
+      # - state: equipped-head-vulpkanin
+      # - state: equipped-head-unshaded-vulpkanin
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian
@@ -766,9 +766,9 @@
       head:
       - state: equipped-HELMET-light
         shader: unshaded
-      head-vox:
-      - state: equipped-HELMET-light-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-HELMET-light-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-HELMET-light-reptilian
         shader: unshaded
@@ -779,10 +779,10 @@
       - state: equipped-HELMET
       - state: equipped-HELMET-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-HELMET-vox
-      - state: equipped-HELMET-unshaded-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-HELMET-vox
+      # - state: equipped-HELMET-unshaded-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-HELMET-reptilian
       - state: equipped-HELMET-unshaded-reptilian
@@ -933,10 +933,10 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
-      head-vox:
-      - state: equipped-head-vox
-      - state: equipped-head-unshaded-vox
-        shader: unshaded
+      # head-vox:  (disabled on monkestation)
+      # - state: equipped-head-vox
+      # - state: equipped-head-unshaded-vox
+        # shader: unshaded
       head-reptilian:
       - state: equipped-head-reptilian
       - state: equipped-head-unshaded-reptilian

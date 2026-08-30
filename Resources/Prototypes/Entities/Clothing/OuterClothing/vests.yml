@@ -87,9 +87,9 @@
         shader: unshaded
       - state: equipped-OUTERCLOTHING-unshaded
         shader: shaded
-      outerClothing-vox:
-      - state: equipped-OUTERCLOTHING-vox
-      - state: equipped-OUTERCLOTHING-unshaded-vox
-        shader: unshaded
-      - state: equipped-OUTERCLOTHING-unshaded-vox
-        shader: shaded
+      # outerClothing-vox:  (disabled on monkestation)
+      # - state: equipped-OUTERCLOTHING-vox
+      # - state: equipped-OUTERCLOTHING-unshaded-vox
+        # shader: unshaded
+      # - state: equipped-OUTERCLOTHING-unshaded-vox
+        # shader: shaded
