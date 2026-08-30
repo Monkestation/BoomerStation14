@@ -57,7 +57,7 @@ Boomer Station is MIT, therefore it cannot accept content from AGPL (or any othe
 | `_CD`            | Cosmatic Drift      | https://github.com/cosmatic-drift-14/cosmatic-drift     | MIT      |
 | `_Starlight`     | Starlight           | https://github.com/ss14Starlight/space-station-14       | MIT, Starlight License|
 | `_Umbra`         | Sector Umbra        | https://github.com/Sector-Umbra/Sector-Umbra            | MIT      |
-| `_Umbra`         | Carpmosia           | https://github.com/carpmosia/carpmosia                  | MIT      |
+| `_Carpmosia`     | Carpmosia           | https://github.com/carpmosia/carpmosia                  | MIT      |
 
 Additional repos that we have ported features from without subdirectories are listed below.
 | Fork Name | Fork Repository | License |
