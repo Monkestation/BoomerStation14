@@ -100,6 +100,11 @@ public sealed partial class RadioSystem : EntitySystem
         var name = evt.VoiceName;
         name = FormattedMessage.EscapeText(name);
 
+        // Monke start - Job Icons
+        var (iconId, jobName) = GetJobIcon(messageSource);
+        name = $"[icon src=\"{iconId}\" tooltip=\"{jobName}\"] {name}";
+        // Monke end
+
         SpeechVerbPrototype speech;
         if (evt.SpeechVerb != null && ProtoMan.Resolve(evt.SpeechVerb, out var evntProto))
             speech = evntProto;
