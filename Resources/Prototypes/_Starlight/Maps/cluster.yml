@@ -77,3 +77,5 @@
             # BlueShield: [ 1, 1 ] #Boomer
             # NanoTrasenRepresentative: [ 1, 1 ] # Bommer
             # NanotrasenCareerTrainer: [ 1, 2 ] # Bommer
+            #prisoner
+            Prisoner: [1, 2]

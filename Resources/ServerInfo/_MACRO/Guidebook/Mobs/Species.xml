@@ -17,5 +17,6 @@
     <GuideEntityEmbed Entity="MobDecapoid" Caption="Decapoid"/>
     <GuideEntityEmbed Entity="MobGastropoid" Caption="Gastropoid"/>
     <GuideEntityEmbed Entity="MobGray" Caption="Gray"/>
+    <GuideEntityEmbed Entity="MobKodepiia" Caption="Kodepiia"/>
   </Box>
 </Document>

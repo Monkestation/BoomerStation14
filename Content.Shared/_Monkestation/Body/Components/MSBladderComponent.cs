@@ -19,12 +19,6 @@ public sealed partial class MSBladderComponent : Component
     public bool Enabled;
 
     /// <summary>
-    /// The solution inside of this bladder
-    /// </summary>
-    [ViewVariables]
-    public Entity<SolutionComponent>? Solution;
-
-    /// <summary>
     /// The name of the solution inside of this bladder
     /// </summary>
     [DataField]

@@ -89,7 +89,7 @@
   id: AtmosphericTech
   name: research-technology-atmospheric-tech
   icon:
-    sprite: Structures/Piping/Atmospherics/thermomachine.rsi
+    sprite: _Funkystation/Structures/Piping/Atmospherics/thermomachine.rsi # Funky
     state: freezerOff
   discipline: Industrial
   tier: 1

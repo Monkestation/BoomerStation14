@@ -14,15 +14,6 @@ public sealed partial class RadioAmplifierSystem : EntitySystem
     [Dependency] private SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private SharedPopupSystem _popupSystem = default!;
 
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<MSRadioAmplifierComponent, GetVerbsEvent<Verb>>(OnVerb);
-        SubscribeLocalEvent<MSRadioAmplifierComponent, ExaminedEvent>(OnExamine);
-    }
-
     /// <summary>
     /// Localize the RadioAmplifier status and push to the examination tooltip.
     /// </summary>
@@ -30,6 +21,7 @@ public sealed partial class RadioAmplifierSystem : EntitySystem
     /// <param name="args"><see cref="ExaminedEvent"/> arguments,
     /// used to determine range and retrieve the active mode.</param>
     /// <exception cref="InvalidOperationException">Invalid mode was provided.</exception>
+    [SubscribeLocalEvent]
     private void OnExamine(Entity<MSRadioAmplifierComponent> ent, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
@@ -38,6 +30,7 @@ public sealed partial class RadioAmplifierSystem : EntitySystem
         args.PushMarkup(Loc.GetString(ent.Comp.Enabled ? "ms-radio-amplifier-examine-on" : "ms-radio-amplifier-examine-off"));
     }
 
+    [SubscribeLocalEvent]
     private void OnVerb(Entity<MSRadioAmplifierComponent> ent, ref GetVerbsEvent<Verb> args)
     {
         // standard interaction checks

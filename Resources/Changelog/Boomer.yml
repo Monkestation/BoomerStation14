@@ -1,4 +1,4 @@
-Entries:
+﻿Entries:
 - author: Gboster-0
   changes:
   - message: Changed the orbit menu to be nicer to use
@@ -82,7 +82,10 @@ Entries:
   url: https://github.com/Monkestation/BoomerStation14/pull/42
 - author: AitorLogedo
   changes:
-  - message: Slimepeople can now passively slurp up puddles, clean dirt and footprints off the floor while barefoot, and soak stains off their own clothing and held items, feeding off what they absorb. They also stop leaving their own footprints while doing it. Toggle it with an action.
+  - message: Slimepeople can now passively slurp up puddles, clean dirt and footprints
+      off the floor while barefoot, and soak stains off their own clothing and held
+      items, feeding off what they absorb. They also stop leaving their own footprints
+      while doing it. Toggle it with an action.
     type: Add
   id: 12
   time: '2026-07-13T20:00:00.0000000+00:00'
@@ -126,7 +129,9 @@ Entries:
   changes:
   - message: Flashlights and most handheld lights no longer need batteries to work
     type: Tweak
-  - message: Holoprojectors now work like in SS13. You place holograms from a limited pool and can pick them back up, or wipe them all by using the projector in hand. No more powercell.
+  - message: Holoprojectors now work like in SS13. You place holograms from a limited
+      pool and can pick them back up, or wipe them all by using the projector in hand.
+      No more powercell.
     type: Tweak
   id: 18
   time: '2026-07-18T14:15:00.0000000+00:00'
@@ -200,7 +205,8 @@ Entries:
   url: https://github.com/Monkestation/BoomerStation14/pull/79
 - author: Skarlet
   changes:
-  - message: Ported Carpmosia's AI navmap overlay, which shows the station layout without static.
+  - message: Ported Carpmosia's AI navmap overlay, which shows the station layout
+      without static.
     type: Tweak
   id: 28
   time: '2026-08-08T07:15:00.0000000+00:00'
@@ -233,4 +239,25 @@ Entries:
   id: 32
   time: '2026-08-27T04:30:00.0000000+00:00'
   url: https://github.com/Monkestation/BoomerStation14/pull/104
-Order: 1
+- author: adamsong
+  changes:
+  - message: Added upstream changes, see other changelogs for details!
+    type: Add
+  id: 33
+  time: '2026-09-02T06:36:17Z'
+  url: https://github.com/Monkestation/BoomerStation14/pull/107
+- author: Blumbee
+  changes:
+  - message: Reverted JobIcons to wizden ones
+    type: Tweak
+  id: 34
+  time: '2026-09-02T06:40:42Z'
+  url: https://github.com/Monkestation/BoomerStation14/pull/108
+- author: Alkheemist
+  changes:
+  - message: The job icon on your ID now appears next to your name on radio messages.
+    type: Add
+  id: 35
+  time: '2026-09-02T06:53:55Z'
+  url: https://github.com/Monkestation/BoomerStation14/pull/109
+Order: -2

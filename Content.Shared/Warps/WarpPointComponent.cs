@@ -9,7 +9,7 @@ namespace Content.Shared.Warps;
 public sealed partial class WarpPointComponent : Component
 {
     [DataField]
-    public string? Location;
+    public LocId? Location;
 
     // Monkestation addition start
     /// <summary>

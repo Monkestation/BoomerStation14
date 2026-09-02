@@ -12,14 +12,7 @@ public sealed partial class PissEmoteSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popupSystem = default!;
 
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<MSPissEmoteComponent, EmoteEvent>(OnEmote);
-    }
-
+    [SubscribeLocalEvent]
     private void OnEmote(Entity<MSPissEmoteComponent> ent, ref EmoteEvent args)
     {
         // Probably bad practice, but I'm not sure what else we would do with emotes that would result in pissing

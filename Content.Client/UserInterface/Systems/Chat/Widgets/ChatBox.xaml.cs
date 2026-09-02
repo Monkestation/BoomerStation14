@@ -62,7 +62,7 @@ public partial class ChatBox : UIWidget
         }
 
         if (msg is { Read: false, AudioPath: { } })
-            _entManager.System<AudioSystem>().PlayGlobal(msg.AudioPath, Filter.Local(), false, AudioParams.Default.WithVolume(msg.AudioVolume));
+            _entManager.System<AudioSystem>().PlayGlobal(msg.AudioPath, Filter.Local(), false, AudioParams.Default.AddVolume(msg.AudioVolume));
 
         msg.Read = true;
 
@@ -83,6 +83,7 @@ public partial class ChatBox : UIWidget
 
     public void Repopulate()
     {
+        Contents.RemoveAllChildren(); // Starlight
         Contents.Clear();
 
         foreach (var message in _controller.History)
@@ -93,6 +94,7 @@ public partial class ChatBox : UIWidget
 
     private void OnChannelFilter(ChatChannel channel, bool active)
     {
+        Contents.RemoveAllChildren(); // Starlight
         Contents.Clear();
 
         foreach (var message in _controller.History)

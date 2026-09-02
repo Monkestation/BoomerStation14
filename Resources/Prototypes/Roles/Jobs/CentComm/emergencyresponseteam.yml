@@ -593,7 +593,6 @@
     suitstorage: WeaponLauncherHydra
   storage:
     back:
-    - TrashBag
     - SoapNT
     - Plunger
     - Screwdriver
@@ -607,12 +606,14 @@
     belt:
     - MegaSprayBottleSpaceCleaner
     - Holoprojector
-    - LightReplacer
+    - LightReplacerFilled
     - WireBrush
     - CrowbarRed
     - WeaponPistolMk58
     - MagazinePistol
     - EmergencyMedipen
+  inhand:
+    - TrashBag
 
 - type: chameleonOutfit
   id: ERTJanitorChameleonOutfit

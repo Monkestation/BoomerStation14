@@ -14,13 +14,13 @@
   - Male
   - Female
   - Unsexed
+  voices:
+  - MaleOvinia
+  - FemaleOvinia
   defaultSoundsBySex:
   - MaleOvinia
   - FemaleOvinia
   - MaleOvinia
-  voices:
-  - MaleOvinia
-  - FemaleOvinia
 
 # Developer Notes
 #
