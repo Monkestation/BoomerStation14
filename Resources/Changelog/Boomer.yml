@@ -260,4 +260,11 @@
   id: 35
   time: '2026-09-02T06:53:55Z'
   url: https://github.com/Monkestation/BoomerStation14/pull/109
+- author: adamsong
+  changes:
+  - message: Fixed chemvend jug labels!
+    type: Fix
+  id: 36
+  time: '2026-09-05T14:24:47Z'
+  url: https://github.com/Monkestation/BoomerStation14/pull/112
 Order: -2
