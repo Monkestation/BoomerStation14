@@ -267,4 +267,11 @@
   id: 36
   time: '2026-09-05T14:24:47Z'
   url: https://github.com/Monkestation/BoomerStation14/pull/112
+- author: Blumbee
+  changes:
+  - message: Radio channel colours have been returned to wizden colours
+    type: Tweak
+  id: 37
+  time: '2026-09-05T18:05:17Z'
+  url: https://github.com/Monkestation/BoomerStation14/pull/111
 Order: -2
