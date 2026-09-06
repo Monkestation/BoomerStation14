@@ -1,0 +1,61 @@
+[game]
+hostname = "[EN] Boomerstation"
+desc = "Beginner Friendly: Learn to play SS14! Monkestation13's 14 branch!"
+# For post launch
+admin_job_tracking = true
+soft_max_players = 80
+lobbyduration = 240
+
+[chat]
+motd = "Welcome to Boomer Station 14! We're often testing features, so content may or may not be changed! If you're new, let someone know, and they'll help you. Enjoy your stay!"
+
+[ic]
+flavor_text = true
+ssd_sleep = true
+ssd_sleep_time = 6000000
+
+[admin]
+see_own_notes = true
+new_player_threshold = 480
+admins_count_in_playercount = true
+
+[admin.alert]
+min_players_sharing_connection = 2
+
+[adminlogs]
+server_name = "boomerstation"
+
+
+[infolinks]
+discord = "https://discord.gg/monkestation"
+github = "https://github.com/Monkestation/forky-station"
+website = "https://monkestation.com/"
+wiki = "https://wiki.monkestation.com/Main_Page"
+patreon = "https://www.patreon.com/dukeook"
+bug_report = "https://github.com/Monkestation/forky-station/issues"
+appeal = "https://discord.gg/monkestation, #ss14-create-a-ticket"
+
+[server]
+id = "boomerstation"
+lobby_name = "Boomer Station"
+rules_file = "MSDefaultRuleset"
+
+[shuttle]
+emergency_early_launch_allowed = true
+
+[build]
+fork_id = "monke14"
+
+[funkystation]
+viewcone_enabled = false
+force_walk_backwards = false
+always_face_cursor = false
+
+[vote]
+map_enabled = true
+
+[afk]
+time = 1200
+
+[content_warning]
+display = false
