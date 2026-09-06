@@ -148,7 +148,7 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
         if (prototype.TryComp<LabelComponent>(out var label, _componentFactory) &&
             label.LocalizedLabel is { } locId)
         {
-            return _loc.GetString("comp-label-format",
+            itemName = _loc.GetString("comp-label-format",
                 ("baseName", itemName),
                 ("label", _loc.GetString(locId)));
         }
