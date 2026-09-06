@@ -25,7 +25,6 @@ min_players_sharing_connection = 2
 [adminlogs]
 server_name = "boomerstation"
 
-
 [infolinks]
 discord = "https://discord.gg/monkestation"
 github = "https://github.com/Monkestation/forky-station"
