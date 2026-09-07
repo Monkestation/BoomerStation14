@@ -40,14 +40,14 @@ jobs:
 
     - name: Merge entry into Funklog.yml
       if: steps.extract.outputs.has_entry == 'true'
-      run: python3 Tools/update_changelog.py Resources/Changelog/Boomer.yml Resources/Changelog/Parts/Boomer --category Boomer
+      run: python3 Tools/update_changelog.py Resources/Changelog/Monke14.yml Resources/Changelog/Parts/Monke14 --category Monke14
 
     - name: Commit Funklog.yml
       if: steps.extract.outputs.has_entry == 'true'
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "Automatic Changelog Generation"
-        commit_user_name: boomerstation
-        commit_user_email: boomerstation@users.noreply.github.com
-        file_pattern: Resources/Changelog/Boomer.yml
+        commit_user_name: RoboMonke
+        commit_user_email: RoboMonke@users.noreply.github.com
+        file_pattern: Resources/Changelog/Monke14.yml
         branch: master

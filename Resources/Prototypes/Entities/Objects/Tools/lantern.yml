@@ -6,7 +6,7 @@
   components:
     - type: HandheldLight
       addPrefix: true
-      selfPowered: true # Boomer edit - no power cell needed
+      selfPowered: true # Monke edit - no power cell needed
       blinkingBehaviourId: blinking
       radiatingBehaviourId: radiating
     - type: LightBehaviour
@@ -48,7 +48,7 @@
     - type: ToggleableVisuals
       spriteLayer: light
     - type: ItemTogglePointLight
-    # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer, lantern is self-powered now
+    # Monke edit - removed PowerCellSlot / ItemSlots / ContainerContainer, lantern is self-powered now
     - type: StealTarget
       stealGroup: LAMP
     - type: Clothing

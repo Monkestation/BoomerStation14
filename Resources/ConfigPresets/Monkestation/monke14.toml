@@ -1,5 +1,5 @@
 [game]
-hostname = "[EN] Boomerstation"
+hostname = "[EN] Monkestation 14"
 desc = "Beginner Friendly: Learn to play SS14! Monkestation13's 14 branch!"
 # For post launch
 admin_job_tracking = true
@@ -23,7 +23,7 @@ admins_count_in_playercount = true
 min_players_sharing_connection = 2
 
 [adminlogs]
-server_name = "boomerstation"
+server_name = "monkestation14"
 
 [infolinks]
 discord = "https://discord.gg/monkestation"
@@ -35,8 +35,8 @@ bug_report = "https://github.com/Monkestation/forky-station/issues"
 appeal = "https://discord.gg/monkestation, #ss14-create-a-ticket"
 
 [server]
-id = "boomerstation"
-lobby_name = "Boomer Station"
+id = "monkestation14"
+lobby_name = "Monkestation 14"
 rules_file = "MSDefaultRuleset"
 
 [shuttle]

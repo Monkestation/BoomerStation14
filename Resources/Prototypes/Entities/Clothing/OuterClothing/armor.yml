@@ -250,7 +250,7 @@
   - type: Appearance
   - type: HandheldLight
     addPrefix: false
-    selfPowered: true # Boomer edit - no battery needed
+    selfPowered: true # Monke edit - no battery needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: PointLight
@@ -278,7 +278,7 @@
         startValue: 0.1
         endValue: 2.0
         isLooped: true
-  # Boomer edit - removed Battery / BatterySelfRecharger, light is self-powered now
+  # Monke edit - removed Battery / BatterySelfRecharger, light is self-powered now
   - type: Item
     size: Normal
 

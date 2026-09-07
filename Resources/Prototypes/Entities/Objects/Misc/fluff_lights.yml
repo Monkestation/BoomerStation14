@@ -6,7 +6,7 @@
   components:
   - type: HandheldLight
     addPrefix: true
-    selfPowered: true # Boomer edit - decorative lamps are self-powered; interrogator/floodlight re-add their cell below
+    selfPowered: true # Monke edit - decorative lamps are self-powered; interrogator/floodlight re-add their cell below
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -25,7 +25,7 @@
         startValue: 0.1
         endValue: 2.0
         isLooped: true
-  # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer from base, decorative lamps are self-powered now
+  # Monke edit - removed PowerCellSlot / ItemSlots / ContainerContainer from base, decorative lamps are self-powered now
   - type: Sprite
     sprite: Objects/Misc/Lights/lights.rsi
   - type: Item
@@ -164,7 +164,7 @@
     damage:
       types:
         Blunt: 0 # melee weapon to allow flashing individual targets
-  # Boomer edit - interrogator lamp is self-powered too (inherits from base); flash still runs on LimitedCharges
+  # Monke edit - interrogator lamp is self-powered too (inherits from base); flash still runs on LimitedCharges
   - type: GenericVisualizer
     visuals:
       enum.FlashVisuals.Burnt:
@@ -208,7 +208,7 @@
     radius: 8
     energy: 5
     color: '#ffe0b7' # Funky
-  # Boomer edit - floodlight keeps its battery (base is self-powered now, so re-add the cell here)
+  # Monke edit - floodlight keeps its battery (base is self-powered now, so re-add the cell here)
   - type: HandheldLight
     selfPowered: false
   - type: PowerCellSlot
@@ -216,7 +216,7 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
-  # Boomer edit end
+  # Monke edit end
   - type: ItemSlots
     slots:
       cell_slot:
