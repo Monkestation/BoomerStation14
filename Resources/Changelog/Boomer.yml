@@ -274,4 +274,11 @@
   id: 37
   time: '2026-09-05T18:05:17Z'
   url: https://github.com/Monkestation/BoomerStation14/pull/111
+- author: whatston3
+  changes:
+  - message: Slowdown from hunger once again starts at Starving, not Peckish.
+    type: Tweak
+  id: 38
+  time: '2026-09-07T01:40:03Z'
+  url: https://github.com/Monkestation/BoomerStation14/pull/117
 Order: -2
