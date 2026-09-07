@@ -1,7 +1,7 @@
 using Content.Server._MACRO.Announcements;
 using Content.Shared.Chat;
 using Content.Shared.Database;
-using Content.Shared.NukeOps; // Boomer edit - nukies hear station announcements
+using Content.Shared.NukeOps;
 using Content.Shared.Station.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
@@ -90,13 +90,13 @@ public sealed partial class ChatSystem
 
         var filter = _stationSystem.GetInStation(stationDataComp);
 
-        // Boomer edit start - nuke operatives can listen in on station announcements from their outpost
+        // Monke edit start - nuke operatives can listen in on station announcements from their outpost
         var nukies = AllEntityQuery<NukeOperativeComponent, ActorComponent>();
         while (nukies.MoveNext(out _, out _, out var actor))
         {
             filter.AddPlayer(actor.PlayerSession);
         }
-        // Boomer edit end
+        // Monke edit end
 
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source, false, true, colorOverride);
 

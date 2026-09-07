@@ -76,7 +76,7 @@
 
 - type: latheRecipe
   id: Holoprojector
-  result: Holoprojector # Boomer edit - no empty variant, prints ready to use
+  result: Holoprojector # Monke edit - no empty variant, prints ready to use
   completetime: 3
   materials:
     Plastic: 250

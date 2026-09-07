@@ -5,8 +5,8 @@ import re
 import sys
 import yaml
 
-CATEGORY = "Boomer"
-PARTS_DIR = "Resources/Changelog/Parts/Boomer"
+CATEGORY = "Monke14"
+PARTS_DIR = "Resources/Changelog/Parts/Monke14"
 
 COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
 HEADER_RE = re.compile(r"^[ \t]*(?::cl:|\U0001F191)[ \t]*(.*)$", re.MULTILINE)

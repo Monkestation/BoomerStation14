@@ -9,7 +9,7 @@
     - Flashlight
   - type: HandheldLight
     addPrefix: false
-    selfPowered: true # Boomer edit - no power cell needed
+    selfPowered: true # Monke edit - no power cell needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -38,7 +38,7 @@
       - state: inhand-right-light
         shader: unshaded
   - type: ItemTogglePointLight
-  # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer, flashlights are self-powered now
+  # Monke edit - removed PowerCellSlot / ItemSlots / ContainerContainer, flashlights are self-powered now
   - type: Sprite
     sprite: _Funkystation/Objects/Tools/flashlight.rsi
     layers:
@@ -78,7 +78,7 @@
       - SecBeltEquip
   - type: HandheldLight
     addPrefix: false
-    selfPowered: true # Boomer edit - no power cell needed
+    selfPowered: true # Monke edit - no power cell needed
     wattage: 0.5
   - type: ToggleableVisuals
     inhandVisuals:
@@ -113,4 +113,4 @@
     quickEquip: false
     slots:
       - Belt
-# Boomer edit - removed EmptyFlashlightLantern, flashlights no longer use power cells
+# Monke edit - removed EmptyFlashlightLantern, flashlights no longer use power cells
