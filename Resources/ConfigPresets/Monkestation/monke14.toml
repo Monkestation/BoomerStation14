@@ -1,5 +1,5 @@
 [game]
-hostname = "[EN] Monkestation 14"
+hostname = "[EN] Monkestation: 14 times the lag!"
 desc = "Beginner Friendly: Learn to play SS14! Monkestation13's 14 branch!"
 # For post launch
 admin_job_tracking = true
@@ -7,7 +7,7 @@ soft_max_players = 80
 lobbyduration = 240
 
 [chat]
-motd = "Welcome to Boomer Station 14! We're often testing features, so content may or may not be changed! If you're new, let someone know, and they'll help you. Enjoy your stay!"
+motd = "Welcome to Monkestation 14! We're often testing features, so content may or may not be changed! If you're new, let someone know, and they'll help you. Enjoy your stay!"
 
 [ic]
 flavor_text = true
