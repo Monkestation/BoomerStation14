@@ -63,9 +63,9 @@
   description: A baseball cap colored to match cargo's uniforms.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Soft/cargosoft.rsi
+    sprite: _Monkestation/Clothing/Head/Soft/cargosoft.rsi # monkestation edit ; head sprites
   - type: Clothing
-    sprite: Clothing/Head/Soft/cargosoft.rsi
+    sprite: _Monkestation/Clothing/Head/Soft/cargosoft.rsi # monkestation edit ; head sprites
   - type: Tag
     tags:
     - ClothMade

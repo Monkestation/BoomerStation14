@@ -435,7 +435,7 @@
   description: Special hardsuit helmet, made for the chief engineer of the station.
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Head/Hardsuits/engineering-white.rsi # Funky
+    sprite: _Monkestation/Clothing/Head/Hardsuits/engineering-white.rsi # monkestation edit ; head sprites
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]

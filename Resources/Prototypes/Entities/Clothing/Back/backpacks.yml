@@ -72,7 +72,7 @@
   description: It's a very robust backpack.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/security.rsi
+    sprite: _Monkestation/Clothing/Back/Modsuits/security.rsi # monkestation edit ; back sprites
 
 - type: entity
   parent: [ClothingBackpack, BaseSecurityContraband]
@@ -117,7 +117,7 @@
   description: It's a special backpack made exclusively for Nanotrasen officers.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/captain.rsi
+    sprite: _Monkestation/Clothing/Back/Modsuits/captain.rsi # monkestation edit ; back sprites
 
 - type: entity
   parent: ClothingBackpack
@@ -183,7 +183,7 @@
   description: A robust backpack for stealing cargo's loot.
   components:
     - type: Sprite
-      sprite: Clothing/Back/Backpacks/cargo.rsi
+      sprite: _Monkestation/Clothing/Back/Backpacks/cargo.rsi # monkestation edit ; back sprites
 
 - type: entity
   parent: ClothingBackpack

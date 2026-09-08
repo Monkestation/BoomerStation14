@@ -10,7 +10,7 @@
       - ClothMade
       - Recyclable
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       layers:
       - state: icon
         color: "#3f3f3f"
@@ -26,7 +26,7 @@
           color: "#3f3f3f"
         - state: trinkets-inhand-right
     - type: Clothing
-      sprite: Clothing/Shoes/color.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       clothingVisuals:
         shoes:
         - state: equipped-FEET

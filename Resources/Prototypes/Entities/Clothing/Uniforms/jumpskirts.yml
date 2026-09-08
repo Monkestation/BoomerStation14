@@ -5,9 +5,9 @@
   description: A nice and tidy uniform. Shame about the bar though.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/bartender.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/bartender.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/bartender.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/bartender.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
@@ -71,9 +71,9 @@
   description: Can't cook without this.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/chef.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/chef.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/chef.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/chef.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -189,13 +189,13 @@
       left:
       - state: inhand-left
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-left
         sprite: Clothing/Uniforms/Jumpsuit/hos.rsi
       right:
       - state: inhand-right
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-right
         sprite: Clothing/Uniforms/Jumpsuit/hos.rsi
 
@@ -305,7 +305,7 @@
   description: A jumpskirt used for prisoners. It has suit sensors automatically enabled at all times.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
     layers:
     - state: icon
       color: "#ff8300"
@@ -321,7 +321,7 @@
         color: "#ff8300"
       - state: prisoner-inhand-right
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -356,9 +356,9 @@
   description: A sharp turtleneck made for the hardy work environment of supply.
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/qmturtleskirt.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/Cargo/qmturtleskirt.rsi # monkestation edit ; uniform sprites
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/qmturtleskirt.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/Cargo/qmturtleskirt.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseCommandContraband]
@@ -408,13 +408,13 @@
       left:
       - state: inhand-left
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-left
         sprite: Clothing/Uniforms/Jumpsuit/security.rsi
       right:
       - state: inhand-right
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-right
         sprite: Clothing/Uniforms/Jumpsuit/security.rsi
 
@@ -434,13 +434,13 @@
       left:
       - state: inhand-left
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-left
         sprite: Clothing/Uniforms/Jumpsuit/warden.rsi
       right:
       - state: inhand-right
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpskirt/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-right
         sprite: Clothing/Uniforms/Jumpsuit/warden.rsi
 
@@ -518,9 +518,9 @@
   description: Uniform for elite syndicate operatives performing tactical operations in deep space.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/operative_s.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/Syndicate/operative_s.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/operative_s.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/Syndicate/operative_s.rsi # monkestation edit ; uniform sprites
   - type: StaticPrice
     price: 500
 
@@ -887,9 +887,9 @@
   description: I don't lose things. I place things in locations which later elude me.
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/psychologist.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/psychologist.rsi # monkestation edit ; uniform sprites
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/psychologist.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/psychologist.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformSkirtBase

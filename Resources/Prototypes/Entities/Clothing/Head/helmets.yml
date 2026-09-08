@@ -32,9 +32,9 @@
   description: Standard security gear. Protects the head from impacts.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/security.rsi
+    sprite: _Monkestation/Clothing/Head/Helmets/security.rsi # monkestation edit ; head sprites
   - type: Clothing
-    sprite: Clothing/Head/Helmets/security.rsi
+    sprite: _Monkestation/Clothing/Head/Helmets/security.rsi # monkestation edit ; head sprites
   - type: Tag
     tags:
     - WhitelistChameleon

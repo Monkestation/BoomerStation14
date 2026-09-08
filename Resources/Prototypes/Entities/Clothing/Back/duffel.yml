@@ -49,7 +49,7 @@
   description: A large duffel bag for holding extra captainly goods.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/captain.rsi
+    sprite: _Monkestation/Clothing/Back/Modsuits/captain.rsi # monkestation edit ; back sprites
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -76,7 +76,7 @@
   description: A large duffel bag for holding extra security related goods.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/security.rsi
+    sprite: _Monkestation/Clothing/Back/Modsuits/security.rsi # monkestation edit ; back sprites
 
 - type: entity
   parent: [ClothingBackpackDuffel, BaseSecurityContraband]
@@ -151,7 +151,7 @@
   description: A large duffel bag for stealing cargo's precious loot.
   components:
     - type: Sprite
-      sprite: Clothing/Back/Duffels/cargo.rsi
+      sprite: _Monkestation/Clothing/Back/Duffels/cargo.rsi # monkestation edit ; back sprites
 
 - type: entity
   parent: ClothingBackpackDuffel

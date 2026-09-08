@@ -27,7 +27,7 @@
   description: An exquisite dark and red cloak fitting for those who can assert dominance over wrongdoers. Take a stab at being civil in prosecution!
   components:
   - type: Sprite
-    sprite: _Funkystation/Clothing/Neck/Cloaks/hos.rsi
+    sprite: _Monkestation/Clothing/Neck/Cloaks/hos.rsi # monkestation edit ; neck sprites
   - type: StealTarget
     stealGroup: HeadCloak
 
@@ -60,7 +60,7 @@
   description: A white cloak with violet stripes, showing your status as the arbiter of cutting-edge technology.
   components:
   - type: Sprite
-    sprite: Clothing/Neck/Cloaks/rd.rsi
+    sprite: _Monkestation/Clothing/Neck/Cloaks/rd.rsi # monkestation edit ; neck sprites
   - type: StealTarget
     stealGroup: HeadCloak
 
@@ -82,7 +82,7 @@
   description: A blue cloak with red shoulders and gold buttons, proving you are the gatekeeper to any airlock on the station.
   components:
   - type: Sprite
-    sprite: Clothing/Neck/Cloaks/hop.rsi
+    sprite: _Monkestation/Clothing/Neck/Cloaks/hop.rsi # monkestation edit ; neck sprites
   - type: StealTarget
     stealGroup: HeadCloak
 

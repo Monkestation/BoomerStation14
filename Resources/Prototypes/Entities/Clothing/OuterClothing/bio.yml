@@ -71,9 +71,9 @@
   description: A suit that protects against biological contamination, kitted out with additional armor.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Bio/security.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Modsuits/security.rsi # monkestation edit ; outerclothing sprites
   - type: Clothing
-    sprite: Clothing/OuterClothing/Bio/security.rsi
+    sprite: _Monkestation/Clothing/OuterClothing/Modsuits/security.rsi # monkestation edit ; outerclothing sprites
   - type: HideLayerClothing
     slots:
     - Tail

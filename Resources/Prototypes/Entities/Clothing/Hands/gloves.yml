@@ -140,9 +140,9 @@
   description: Regal blue gloves, with a nice gold trim. Swanky.
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/captain.rsi
+    sprite: _Monkestation/Clothing/Hands/Modsuits/captain.rsi # monkestation edit ; hand sprites
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/captain.rsi
+    sprite: _Monkestation/Clothing/Hands/Modsuits/captain.rsi # monkestation edit ; hand sprites
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-durathread
@@ -502,10 +502,10 @@
   description: "Cold plasteel knuckle dusters, makes your punches hit much harder."
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
+    sprite: _Monkestation/Clothing/Hands/Gloves/knuckleduster.rsi # monkestation edit ; hand sprites
     state: knuckleduster
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/KnuckleDusters/knuckleduster.rsi
+    sprite: _Monkestation/Clothing/Hands/Gloves/knuckleduster.rsi # monkestation edit ; hand sprites
   - type: Fiber
     fiberColor: fibers-silver
   - type: MeleeWeapon

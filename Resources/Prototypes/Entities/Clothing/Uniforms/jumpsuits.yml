@@ -16,9 +16,9 @@
   description: A terribly ragged and frayed grey jumpsuit. It looks like it hasn't been washed in over a decade.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/ancient.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/color/ancient.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/ancient.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/color/ancient.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -27,7 +27,7 @@
   description: A nice and tidy uniform. Shame about the bar though.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/bartender.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/bartender.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -62,9 +62,9 @@
   description: It's a blue jumpsuit with some gold markings denoting the rank of "Captain".
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/captain.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/captain.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/captain.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/captain.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -73,7 +73,7 @@
   description: A sturdy jumpsuit, issued to members of the Cargo department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/cargotech.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Cargo/cargotech.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -82,7 +82,7 @@
   description: It's a snappy jumpsuit with a sturdy set of overalls. It's very dirty.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/salvage.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Cargo/salvage.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband, ClothingUniformFoldableBase]
@@ -91,7 +91,7 @@
   description: It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of Chief Engineer.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/ce.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Engineering/ce.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -155,9 +155,9 @@
   description: Can't cook without this.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/chef.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/chef.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/chef.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/chef.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -166,7 +166,7 @@
   description: There's some odd stains on this jumpsuit. Hm.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/chemistry.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/chemistry.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -175,9 +175,9 @@
   description: It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/virology.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/virology.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/virology.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/virology.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -186,9 +186,9 @@
   description: It's made of a special fiber that gives special protection against biohazards. It has a geneticist rank stripe on it.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/genetics.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/genetics.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/genetics.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/genetics.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -249,7 +249,7 @@
   description: It's a jumpsuit worn by those with the experience to be Chief Medical Officer. It provides minor biological protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/cmo.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/cmo.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -269,9 +269,9 @@
   description: Someone who wears this means business.
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/detective.rsi # monkestation edit ; uniform sprites
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/detective.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/detective.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -280,9 +280,9 @@
   description: A hard-boiled private investigator's grey suit, complete with tie clip.
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/detective_grey.rsi # monkestation edit ; uniform sprites
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/detective_grey.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -291,7 +291,7 @@
   description: If this suit was non-conductive, maybe engineers would actually do their damn job.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/engineering.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Engineering/engineering.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -300,7 +300,7 @@
   description: Woven in a grungy, warm orange. Lets others around you know that you really mean business when it comes to work.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/engineering_hazard.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Engineering/engineering_hazard.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband, ClothingUniformFoldableBase]
@@ -309,7 +309,7 @@
   description: Rather bland and inoffensive. Perfect for vanishing off the face of the universe.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hop.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/hop.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -318,20 +318,20 @@
   description: It's bright red and rather crisp, much like security's victims tend to be.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/hos.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/hos.rsi # monkestation edit ; uniform sprites
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-left
       right:
       - state: inhand-right
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-right
 
 - type: entity
@@ -341,9 +341,9 @@
   description: It's a turtleneck worn by those strong and disciplined enough to achieve the position of Head of Security.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/hos_alt.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/hos_alt.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -352,9 +352,9 @@
   description: A blue jumpsuit of Head of Security.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos_blue.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/hos_blue.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos_blue.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/hos_blue.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -363,9 +363,9 @@
   description: A grey jumpsuit of Head of Security, which make him look somewhat like a passenger.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hos_grey.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/hos_grey.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/hos_grey.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/hos_grey.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -396,7 +396,7 @@
   description: Has a strong earthy smell to it. Hopefully it's merely dirty as opposed to soiled.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/hydro.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/hydro.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -405,7 +405,7 @@
   description: The jumpsuit for the poor sop with a mop.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/janitor.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/janitor.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -425,7 +425,7 @@
   description: It's made of a special fiber that provides minor protection against biohazards. It has a cross on the chest denoting that the wearer is trained medical personnel.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/medical.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/medical.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -434,9 +434,9 @@
   description: ...
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/mime.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/mime.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/mime.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Civilian/mime.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -445,9 +445,9 @@
   description: It's got a plus on it, that's a good thing right?
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/paramedic.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/paramedic.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -467,7 +467,7 @@
   description: A jumpsuit used for prisoners. It has suit sensors automatically enabled at all times.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
     layers:
     - state: icon
       color: "#ff8300"
@@ -483,7 +483,7 @@
         color: "#ff8300"
       - state: prisoner-inhand-right
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
     clothingVisuals:
       jumpsuit:
       - state: equipped-INNERCLOTHING
@@ -507,9 +507,9 @@
   description: 'What can brown do for you?'
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/qm.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Cargo/qm.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/qm.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Cargo/qm.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -518,9 +518,9 @@
   description: A sharp turtleneck made for the hardy work environment of supply.
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Cargo/qmturtle.rsi # monkestation edit ; uniform sprites
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpsuit/qmturtle.rsi
+      sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Cargo/qmturtle.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseCommandContraband]
@@ -540,9 +540,9 @@
   description: It's a turtleneck worn by those with the know-how to achieve the position of Research Director. Its fabric provides minor protection from biological contaminants.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/rnd.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/RND/rnd.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/rnd.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/RND/rnd.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -580,18 +580,18 @@
   description: A jumpsuit made of strong material, providing robust protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/security.rsi # monkestation edit ; uniform sprites
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-left
       right:
       - state: inhand-right
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-right
 
 - type: entity
@@ -612,9 +612,9 @@
   description: A tactical relic of years past before Nanotrasen decided it was cheaper to dye the suits red instead of washing out the blood.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/security_grey.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/security_grey.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/security_grey.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/security_grey.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -634,20 +634,20 @@
   description: A formal security suit for officers complete with Nanotrasen belt buckle.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/warden.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/warden.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/warden.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/warden.rsi # monkestation edit ; uniform sprites
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-left
       right:
       - state: inhand-right
         color: "#C12D30"
-        sprite: Clothing/Uniforms/Jumpsuit/color.rsi
+        sprite: _Monkestation/Clothing/Uniforms/Jumpskirt/color/color.rsi # monkestation edit ; uniform sprites
       - state: overlay-inhand-right
 
 - type: entity
@@ -822,9 +822,9 @@
   description: Uniform for elite syndicate operatives performing tactical operations in deep space.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/operative.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Syndicate/operative.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/operative.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Syndicate/operative.rsi # monkestation edit ; uniform sprites
   - type: StaticPrice
     price: 500
 
@@ -850,9 +850,9 @@
   description: Clothing for real mercenaries who have gone through fire, water and the jungle of planets flooded with dangerous monsters or targets for which a reward has been assigned.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/mercenary.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Syndicate/mercenary.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/mercenary.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Syndicate/mercenary.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: UnsensoredClothingUniformBase
@@ -872,7 +872,7 @@
   description: I am at work. I can't leave work. Work is breathing. I am testing air quality.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/atmos.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Engineering/atmos.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -890,9 +890,9 @@
   description: I don't lose things. I place things in locations which later elude me.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/psychologist.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/psychologist.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/psychologist.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/psychologist.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -1147,9 +1147,9 @@
   description: A sign of skill and prestige within the engineering department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/senior_engineer.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Engineering/senior_engineer.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/senior_engineer.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Engineering/senior_engineer.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: ClothingUniformBase
@@ -1169,9 +1169,9 @@
   description: A sign of skill and prestige within the medical department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/senior_physician.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/senior_physician.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/senior_physician.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Medical/senior_physician.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
@@ -1180,9 +1180,9 @@
   description: A sign of skill and prestige within the security department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/senior_officer.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/senior_officer.rsi # monkestation edit ; uniform sprites
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/senior_officer.rsi
+    sprite: _Monkestation/Clothing/Uniforms/Jumpsuit/Security/senior_officer.rsi # monkestation edit ; uniform sprites
 
 - type: entity
   parent: [ClothingUniformBase, BaseSlicingRefinable]

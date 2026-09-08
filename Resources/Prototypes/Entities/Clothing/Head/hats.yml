@@ -142,9 +142,9 @@
   description: A beret with the cargo department's insignia.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/beret_qm.rsi
+    sprite: _Monkestation/Clothing/Head/Hats/beret_qm.rsi # monkestation edit ; head sprites
   - type: Clothing
-    sprite: Clothing/Head/Hats/beret_qm.rsi
+    sprite: _Monkestation/Clothing/Head/Hats/beret_qm.rsi # monkestation edit ; head sprites
   - type: Tag
     tags:
     - PetWearable
@@ -273,9 +273,9 @@
   description: Feels good being the king.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hats/captain.rsi
+    sprite: _Monkestation/Clothing/Head/Modsuits/captain.rsi # monkestation edit ; head sprites
   - type: Clothing
-    sprite: Clothing/Head/Hats/captain.rsi
+    sprite: _Monkestation/Clothing/Head/Modsuits/captain.rsi # monkestation edit ; head sprites
   - type: Tag
     tags:
     - PetWearable
