@@ -5,7 +5,7 @@ body:
     attributes:
       value: |
         Thank you for taking the time to fill out an issue. This template is intended for any issues related to mapping.
-        For feedback or help running Boomer Station, please join our [Discord](https://discord.gg/monkestation).
+        For feedback or help running Monkestation 14, please join our [Discord](https://discord.gg/monkestation).
   - type: input
     attributes:
       label: What version did the issue occur in?

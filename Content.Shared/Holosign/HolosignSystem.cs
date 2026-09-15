@@ -12,7 +12,7 @@ public sealed partial class HolosignSystem : EntitySystem
     [Dependency] private SharedChargesSystem _charges = default!;
     [Dependency] private INetManager _net = default!;
 
-    // Boomer edit - wipe every hologram this projector has out (charges come back via OnSignTerminating).
+    // Monkestation edit - wipe every hologram this projector has out (charges come back via OnSignTerminating).
     [SubscribeLocalEvent]
     private void OnUseInHand(Entity<HolosignProjectorComponent> ent, ref UseInHandEvent args)
     {
@@ -41,7 +41,7 @@ public sealed partial class HolosignSystem : EntitySystem
             )
             return;
 
-        // Boomer edit - clicking one of our own holograms picks it back up and refunds the charge.
+        // Monkestation edit - clicking one of our own holograms picks it back up and refunds the charge.
         if (TryComp<HolosignSignComponent>(args.Target, out var existingSign) && existingSign.Projector == ent.Owner)
         {
             if (_net.IsServer)
@@ -50,7 +50,7 @@ public sealed partial class HolosignSystem : EntitySystem
             return;
         }
 
-        // Boomer edit - need a free hologram slot instead of a power cell charge.
+        // Monkestation edit - need a free hologram slot instead of a power cell charge.
         if (!_charges.TryUseCharge(ent.Owner))
             return;
 

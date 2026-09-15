@@ -106,10 +106,10 @@ namespace Content.Server.Light.EntitySystems
             // Curently every single flashlight has the same number of levels for status and that's all it uses the charge for
             // Thus we'll just check if the level changes.
 
-            // Boomer edit start - self-powered lights don't have a battery, they just always read full.
+            // Monke edit start - self-powered lights don't have a battery, they just always read full.
             if (ent.Comp.SelfPowered)
                 return (byte?)HandheldLightComponent.StatusLevels;
-            // Boomer edit end
+            // Monke edit end
 
             if (!_powerCell.TryGetBatteryFromSlotOrEntity(ent.Owner, out var battery))
                 return null;
@@ -199,7 +199,7 @@ namespace Content.Server.Light.EntitySystems
                 return false;
             }
 
-            // Boomer edit start - self-powered lights don't care about batteries at all.
+            // Monke edit start - self-powered lights don't care about batteries at all.
             if (component.SelfPowered)
             {
                 _lights.SetEnabled(uid, true, pointLightComponent);
@@ -207,7 +207,7 @@ namespace Content.Server.Light.EntitySystems
                 _activeLights.Add(uid);
                 return true;
             }
-            // Boomer edit end
+            // Monke edit end
 
             if (!_powerCell.TryGetBatteryFromSlotOrEntity(uid.Owner, out var battery))
             {
@@ -237,14 +237,14 @@ namespace Content.Server.Light.EntitySystems
         {
             var component = uid.Comp;
 
-            // Boomer edit start - self-powered lights never drain and always show full power.
+            // Monke edit start - self-powered lights never drain and always show full power.
             if (component.SelfPowered)
             {
                 _appearance.SetData(uid, HandheldLightVisuals.Power, HandheldLightPowerStates.FullPower);
                 UpdateLevel(uid);
                 return;
             }
-            // Boomer edit end
+            // Monke edit end
 
             if (!_powerCell.TryGetBatteryFromSlotOrEntity(uid.Owner, out var battery))
             {

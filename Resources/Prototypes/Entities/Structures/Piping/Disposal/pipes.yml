@@ -63,7 +63,7 @@
     damageOnTurn: # Funky
       types:
         Blunt: 12 # Like getting whacked with a toolbox.
-    maxAllowedDamage: 90 # Funky, nerfed to 90 for boomer
+    maxAllowedDamage: 90 # Funky, nerfed to 90 for monke
     container:
       occludes: true
       showEnts: false

@@ -1,0 +1,1 @@
+ms-humanoid-profile-editor-naming-rules-warning = No names referencing political/criminal figures. References to games, shows, movies, books etc. are acceptable so long as they do not break other rules, such as rule 1.

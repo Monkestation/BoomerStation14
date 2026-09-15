@@ -24,7 +24,7 @@
   - type: Appearance
   - type: HandheldLight
     addPrefix: false
-    selfPowered: true # Boomer edit - no power cell needed
+    selfPowered: true # Monke edit - no power cell needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -58,7 +58,7 @@
       - state: equipped-helmet-light
         shader: unshaded
   - type: ItemTogglePointLight
-  # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer, light is self-powered now
+  # Monke edit - removed PowerCellSlot / ItemSlots / ContainerContainer, light is self-powered now
   - type: Item
     heldPrefix: off
     inhandVisuals:

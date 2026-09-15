@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   build:
-    if: github.actor != 'boomerstation' && github.event.pull_request.draft == false
+    if: github.actor != 'RoboMonke' && github.event.pull_request.draft == false
     strategy:
       matrix:
         os: [ubuntu-latest]
