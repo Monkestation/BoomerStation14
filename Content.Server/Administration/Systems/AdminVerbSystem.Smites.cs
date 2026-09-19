@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using System.Threading;
+using Content.Server._Monkestation.Speech.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.EntitySystems;
 using Content.Server.Body.Systems;
@@ -986,6 +987,7 @@ public sealed partial class AdminVerbSystem
                 EnsureComp<SouthernAccentComponent>(args.Target);
                 EnsureComp<SpanishAccentComponent>(args.Target);
                 EnsureComp<StutteringAccentComponent>(args.Target);
+                EnsureComp<SkibidiAccentComponent>(args.Target);
 
                 if (_random.Next(0, 8) == 0)
                 {
