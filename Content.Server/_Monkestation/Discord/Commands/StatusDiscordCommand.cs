@@ -5,7 +5,6 @@ using Content.Server.Discord.DiscordLink;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Shared.CCVar;
-using NetCord;
 using NetCord.Rest;
 using Robust.Server;
 using Robust.Server.Player;
@@ -54,13 +53,18 @@ public sealed partial class StatusDiscordCommand : IPostInjectInit
             return;
         var embed = await RunOnMainThread(() =>
         {
+            var playerCount = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
+                ? _playerManager.PlayerCount
+                : _playerManager.PlayerCount - _adminManager.ActiveAdmins.Count();
+
+            if (playerCount == 0)
+            {
+                return null;
+            }
             var gameTicker = _entityManager.System<GameTicker>();
 
             List<string> rows = [];
 
-            var playerCount = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
-                ? _playerManager.PlayerCount
-                : _playerManager.PlayerCount - _adminManager.ActiveAdmins.Count();
             var playerCap = _cfg.GetCVar(CCVars.SoftMaxPlayers);
             rows.Add(Loc.GetString("ms-discord-cmd-status-playercount", ("players", playerCount), ("maxPlayers", playerCap)));
 
@@ -91,7 +95,17 @@ public sealed partial class StatusDiscordCommand : IPostInjectInit
 
         });
 
-        await _discordLink.SendEmbedAsync(channelId.Value, embed);
+
+        // TODO - refactor to just pass a data object out of the game thread and format it if this ever needs to be more complicated
+        if (embed != null)
+        {
+            await _discordLink.SendEmbedAsync(channelId.Value, embed);
+        }
+        else
+        {
+            await _discordLink.SendMessageAsync(channelId.Value, "https://cdn.discordapp.com/attachments/1399528572254949437/1553169869200040047/Deadpop_again.png");
+        }
+
     }
 
     private async Task<T> RunOnMainThread<T>(Func<T> func)
