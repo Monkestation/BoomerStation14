@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Shared._Monkestation.Body.Components;
 using Content.Shared.Body;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids;
@@ -44,14 +45,10 @@ public sealed partial class BladderSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeLocalEvent<MSBladderComponent, OrganGotInsertedEvent>(HandleInsertion);
-        SubscribeLocalEvent<MSBladderComponent, OrganGotRemovedEvent>(HandleRemoval);
         SubscribeLocalEvent<BodyComponent, TryPissEvent>(_body.RelayEvent);
-        SubscribeLocalEvent<MSBladderComponent, BodyRelayedEvent<TryPissEvent>>(OnPiss);
-        SubscribeLocalEvent<MSBladderComponent, MapInitEvent>(OnMapInit);
     }
 
+    [SubscribeLocalEvent]
     private void OnMapInit(Entity<MSBladderComponent> ent, ref MapInitEvent args)
     {
         ent.Comp.NextTick = _timing.CurTime + ent.Comp.Frequency;
@@ -59,12 +56,14 @@ public sealed partial class BladderSystem : EntitySystem
         Dirty(ent);
     }
 
+    [SubscribeLocalEvent]
     private void HandleRemoval(EntityUid uid, MSBladderComponent component, OrganGotRemovedEvent args)
     {
         component.Enabled = false;
         Dirty(uid, component);
     }
 
+    [SubscribeLocalEvent]
     private void HandleInsertion(EntityUid uid, MSBladderComponent component, OrganGotInsertedEvent args)
     {
         component.Enabled = true;
@@ -77,8 +76,8 @@ public sealed partial class BladderSystem : EntitySystem
         base.Update(frameTime);
 
         // TODO: SolutionRegenerationComponent on Solution Entities!
-        var query = EntityQueryEnumerator<MSBladderComponent>();
-        while (query.MoveNext(out var uid, out var bladder))
+        var query = EntityQueryEnumerator<MSBladderComponent, SolutionManagerComponent>();
+        while (query.MoveNext(out var uid, out var bladder, out var solutionManager))
         {
             if (!bladder.Enabled || bladder.PissSolution == null || _timing.CurTime < bladder.NextTick)
                 continue;
@@ -87,7 +86,7 @@ public sealed partial class BladderSystem : EntitySystem
             bladder.NextTick += bladder.Frequency;
             // Needs to be networked and dirtied so that the client can reroll it during prediction
             Dirty(uid, bladder);
-            if (!_solutionContainer.ResolveSolution(uid, bladder.SolutionName, ref bladder.Solution, out var solution))
+            if (!_solutionContainer.TryGetSolution((uid, solutionManager), bladder.SolutionName, out var solutionEnt, out var solution))
                 continue;
 
             var amount = FixedPoint2.Min(solution.AvailableVolume, bladder.PissSolution.Volume);
@@ -99,17 +98,18 @@ public sealed partial class BladderSystem : EntitySystem
                 ? bladder.PissSolution
                 : bladder.PissSolution.Clone().SplitSolution(amount);
 
-            _solutionContainer.TryAddSolution(bladder.Solution.Value, generated);
+            _solutionContainer.TryAddSolution(solutionEnt.Value, generated);
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnPiss(Entity<MSBladderComponent> ent, ref BodyRelayedEvent<TryPissEvent> args)
     {
         if (
             args.Args.Handled
-            || !_solutionContainer.ResolveSolution(ent.Owner,
+            || !_solutionContainer.TryGetSolution(ent.Owner,
                 DefaultSolutionName,
-                ref ent.Comp.Solution,
+                out var solutionEnt,
                 out var bladderSolution)
             || bladderSolution.Volume < ent.Comp.PissAmount)
         {
@@ -145,7 +145,7 @@ public sealed partial class BladderSystem : EntitySystem
                 otherFilter,
                 true);
             // Return value is ignored to just delete the reagents (toilets don't currently support actually having fluids in them)
-            _solutionContainer.SplitSolution(ent.Comp.Solution!.Value, ent.Comp.PissAmount);
+            _solutionContainer.SplitSolution(solutionEnt.Value, ent.Comp.PissAmount);
             return;
         }
 
@@ -154,7 +154,7 @@ public sealed partial class BladderSystem : EntitySystem
             && _solutionContainer.TryGetRefillableSolution(heldItem.Value, out var targetSolution, out _)
             && _solutionTransferSystem.Transfer(new SolutionTransferData(args.Body,
                 ent,
-                ent.Comp.Solution!.Value,
+                solutionEnt.Value,
                 heldItem.Value,
                 targetSolution.Value,
                 ent.Comp.PissAmount)) > 0)
@@ -174,7 +174,7 @@ public sealed partial class BladderSystem : EntitySystem
             return;
         }
 
-        var pissedSolution = _solutionContainer.SplitSolution(ent.Comp.Solution!.Value, ent.Comp.PissAmount);
+        var pissedSolution = _solutionContainer.SplitSolution(solutionEnt.Value, ent.Comp.PissAmount);
         _puddleSystem.TrySpillAt(_transform.ToCoordinates(user!, userPos.Offset(dir)), pissedSolution, out _, false);
         _popupSystem.PopupEntity(Loc.GetString("ms-chat-emote-piss-floor-self"), args.Body);
         _popupSystem.PopupEntity(

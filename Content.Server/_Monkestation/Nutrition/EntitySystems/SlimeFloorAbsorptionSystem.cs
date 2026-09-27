@@ -11,7 +11,6 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Decals;
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Inventory;
@@ -37,7 +36,7 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actions = default!;
     [Dependency] private SharedSolutionContainerSystem _solution = default!;
     [Dependency] private BodySystem _body = default!;
-    [Dependency] private HungerSystem _hunger = default!;
+    [Dependency] private SatiationSystem _satiation = default!;
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private DecalSystem _decals = default!;
@@ -51,15 +50,10 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<SlimeFloorAbsorptionComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<SlimeFloorAbsorptionComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<SlimeFloorAbsorptionComponent, MoveEvent>(OnMove);
-
         SubscribeLocalEvent<BodyComponent, SlimeAbsorbToStomachEvent>(_body.RelayEvent);
-        SubscribeLocalEvent<StomachComponent, BodyRelayedEvent<SlimeAbsorbToStomachEvent>>(OnStomachAbsorb);
-        SubscribeLocalEvent<SlimeFloorAbsorptionComponent, ToggleSlimeFloorAbsorptionEvent>(OnToggle);
     }
 
+    [SubscribeLocalEvent]
     private void OnMapInit(Entity<SlimeFloorAbsorptionComponent> ent, ref MapInitEvent args)
     {
         _actions.AddAction(ent, ref ent.Comp.ToggleActionEntity, ent.Comp.ToggleAction);
@@ -67,12 +61,14 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
         UpdateFootprints(ent);
     }
 
+    [SubscribeLocalEvent]
     private void OnShutdown(Entity<SlimeFloorAbsorptionComponent> ent, ref ComponentShutdown args)
     {
         _actions.RemoveAction(ent.Owner, ent.Comp.ToggleActionEntity);
         RemComp<NoFootprintsComponent>(ent.Owner);
     }
 
+    [SubscribeLocalEvent]
     private void OnToggle(Entity<SlimeFloorAbsorptionComponent> ent, ref ToggleSlimeFloorAbsorptionEvent args)
     {
         if (args.Handled)
@@ -102,10 +98,17 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
             RemComp<NoFootprintsComponent>(ent.Owner);
     }
 
+    [SubscribeLocalEvent]
     private void OnMove(Entity<SlimeFloorAbsorptionComponent> ent, ref MoveEvent args)
     {
         var comp = ent.Comp;
         if (!comp.Enabled)
+            return;
+
+        if (!TryComp<SatiationComponent>(ent, out var satiation))
+            return;
+
+        if (_satiation.IsValueInRange((ent, satiation), SatiationSystem.Hunger, above: comp.MaxSatiation))
             return;
 
         var xform = args.Component;
@@ -129,11 +132,11 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
         var didSomething = false;
 
         // Stains on worn clothing / held items soak straight through the body, so shoes don't matter.
-        didSomething |= TryAbsorbStains(ent);
+        didSomething |= TryAbsorbStains(ent, satiation);
 
         // Puddles and floor dirt are cleaned with the feet, so it has to be barefoot for those.
         if (!_inventory.TryGetSlotEntity(ent.Owner, "shoes", out _))
-            didSomething |= TryAbsorbTile(ent, gridUid, grid, tile);
+            didSomething |= TryAbsorbTile(ent, satiation, gridUid, grid, tile);
 
         if (didSomething)
             comp.NextAbsorb = _timing.CurTime + comp.Cooldown;
@@ -142,7 +145,7 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
     /// <summary>
     /// Drains stain solutions off the slime's worn clothing and held items into its stomach.
     /// </summary>
-    private bool TryAbsorbStains(Entity<SlimeFloorAbsorptionComponent> ent)
+    private bool TryAbsorbStains(Entity<SlimeFloorAbsorptionComponent> ent, SatiationComponent satiationComponent)
     {
         var comp = ent.Comp;
         var didSomething = false;
@@ -173,7 +176,7 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
             _stain.UpdateVisuals((item, stainable));
 
             if (comp.NutritionPerVolume > 0)
-                _hunger.ModifyHunger(ent.Owner, ingested.Float() * comp.NutritionPerVolume);
+                _satiation.ModifyValue((ent, satiationComponent), SatiationSystem.Hunger, ingested.Float() * comp.NutritionPerVolume);
 
             didSomething = true;
         }
@@ -181,7 +184,11 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
         return didSomething;
     }
 
-    private bool TryAbsorbTile(Entity<SlimeFloorAbsorptionComponent> ent, EntityUid gridUid, MapGridComponent grid, Vector2i tile)
+    private bool TryAbsorbTile(Entity<SlimeFloorAbsorptionComponent> ent,
+        SatiationComponent satiationComponent,
+        EntityUid gridUid,
+        MapGridComponent grid,
+        Vector2i tile)
     {
         var comp = ent.Comp;
         var didSomething = false;
@@ -211,7 +218,7 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
                     QueueDel(uid);
 
                 if (comp.NutritionPerVolume > 0)
-                    _hunger.ModifyHunger(ent.Owner, printIngested.Float() * comp.NutritionPerVolume);
+                    _satiation.ModifyValue((ent, satiationComponent), SatiationSystem.Hunger, printIngested.Float() * comp.NutritionPerVolume);
 
                 didSomething = true;
                 continue;
@@ -240,26 +247,20 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
 
             // Slurping anything off the floor always nourishes a little.
             if (comp.NutritionPerVolume > 0)
-                _hunger.ModifyHunger(ent.Owner, ingested.Float() * comp.NutritionPerVolume);
+                _satiation.ModifyValue((ent, satiationComponent), SatiationSystem.Hunger, ingested.Float() * comp.NutritionPerVolume);
 
             didSomething = true;
         }
 
-        // --- Cleanable dirt decals: remove them and gain a flat bit of hunger each. ---
-        // Skip when already full: otherwise we'd wipe the dirt and play the slurp sound for no gain.
-        if (_hunger.IsHungerBelowState(ent.Owner, HungerThreshold.Overfed)
-            && TryComp<DecalGridComponent>(gridUid, out var decalGrid))
+        var bounds = _lookup.GetLocalBounds(tile, grid.TileSize).Enlarged(0.5f).Translated(new Vector2(-0.5f, -0.5f));
+        foreach (var (index, decal) in _decals.GetDecalsIntersecting(gridUid, bounds))
         {
-            var bounds = _lookup.GetLocalBounds(tile, grid.TileSize).Enlarged(0.5f).Translated(new Vector2(-0.5f, -0.5f));
-            foreach (var (index, decal) in _decals.GetDecalsIntersecting(gridUid, bounds, decalGrid))
-            {
-                if (!decal.Cleanable)
-                    continue;
+            if (!decal.Cleanable)
+                continue;
 
-                _decals.RemoveDecal(gridUid, index, decalGrid);
-                _hunger.ModifyHunger(ent.Owner, comp.NutritionPerDecal);
-                didSomething = true;
-            }
+            _decals.RemoveDecal(gridUid, index);
+            _satiation.ModifyValue((ent, satiationComponent), SatiationSystem.Hunger, comp.NutritionPerDecal);
+            didSomething = true;
         }
 
         return didSomething;
@@ -280,6 +281,7 @@ public sealed partial class SlimeFloorAbsorptionSystem : EntitySystem
     /// <summary>
     /// Each stomach drinks what it can of the relayed solution, leaving the rest for the caller.
     /// </summary>
+    [SubscribeLocalEvent]
     private void OnStomachAbsorb(Entity<StomachComponent> ent, ref BodyRelayedEvent<SlimeAbsorbToStomachEvent> args)
     {
         var slurped = args.Args.Solution;

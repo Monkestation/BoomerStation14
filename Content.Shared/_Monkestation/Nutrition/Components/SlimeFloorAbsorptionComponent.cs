@@ -1,4 +1,5 @@
 using Content.Shared.FixedPoint;
+using Content.Shared.Nutrition.Prototypes;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -60,6 +61,9 @@ public sealed partial class SlimeFloorAbsorptionComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? ToggleActionEntity;
+
+    [DataField]
+    public SatiationValue? MaxSatiation = "Overfed";
 
     /// <summary>
     /// Grid we last absorbed from. Runtime only; used to act once per new tile.

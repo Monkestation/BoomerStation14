@@ -1,7 +1,7 @@
-using Content.Server._Monkestation.Announcements;
+using Content.Server._MACRO.Announcements;
 using Content.Shared.Chat;
 using Content.Shared.Database;
-using Content.Shared.NukeOps; // Boomer edit - nukies hear station announcements
+using Content.Shared.NukeOps;
 using Content.Shared.Station.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
@@ -11,7 +11,7 @@ namespace Content.Server.Chat.Systems;
 
 public sealed partial class ChatSystem
 {
-    [Dependency] private AnnouncerManager _announcer = default!; // Monkestation edit
+    [Dependency] private AnnouncerManager _announcer = default!; // macrocosm
 
     /// <inheritdoc />
     public override void DispatchGlobalAnnouncement(
@@ -28,13 +28,13 @@ public sealed partial class ChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
-            // Monkestation edit start - announcer variation
+            // Macrocosm edit start - announcer variation
             if (announcementSound == null)
             {
                 _announcer.TryGetAnnouncerSound(DefaultAnnouncementSound, out announcementSound);
             }
             _audio.PlayGlobal(announcementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
-            // Monkestation edit end - announcer variation
+            // Macrocosm edit end
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }
@@ -55,13 +55,13 @@ public sealed partial class ChatSystem
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source ?? default, false, true, colorOverride);
         if (playSound)
         {
-            // Monkestation edit start - announcer variation
+            // Macrocosm edit start - announcer variation
             if (announcementSound == null)
             {
                 _announcer.TryGetAnnouncerSound(DefaultAnnouncementSound, out announcementSound);
             }
             _audio.PlayGlobal(announcementSound, filter, true, AudioParams.Default.WithVolume(-2f));
-            // Monkestation edit end - announcer variation
+            // Macrocosm edit end
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement from {sender}: {message}");
     }
@@ -90,25 +90,25 @@ public sealed partial class ChatSystem
 
         var filter = _stationSystem.GetInStation(stationDataComp);
 
-        // Boomer edit start - nuke operatives can listen in on station announcements from their outpost
+        // Monke edit start - nuke operatives can listen in on station announcements from their outpost
         var nukies = AllEntityQuery<NukeOperativeComponent, ActorComponent>();
         while (nukies.MoveNext(out _, out _, out var actor))
         {
             filter.AddPlayer(actor.PlayerSession);
         }
-        // Boomer edit end
+        // Monke edit end
 
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, message, wrappedMessage, source, false, true, colorOverride);
 
         if (playDefaultSound)
         {
-            // Monkestation edit start - announcer variation
+            // Macrocosm edit start - announcer variation
             if (announcementSound == null)
             {
                 _announcer.TryGetAnnouncerSound(DefaultAnnouncementSound, out announcementSound);
             }
             _audio.PlayGlobal(announcementSound, filter, true, AudioParams.Default.WithVolume(-2f));
-            // Monkestation edit end - announcer variation
+            // Macrocosm edit end
         }
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Station Announcement on {station} from {sender}: {message}");

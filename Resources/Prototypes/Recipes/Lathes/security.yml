@@ -137,6 +137,13 @@
 
 - type: latheRecipe
   parent: BaseToolRecipe
+  id: SecurityBola
+  result: SecurityBola
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  parent: BaseToolRecipe
   id: Zipties
   result: Zipties
   materials:
@@ -153,7 +160,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: HoloprojectorSecurity
-  result: HoloprojectorSecurity # Boomer edit - no empty variant, prints ready to use
+  result: HoloprojectorSecurity # Monke edit - no empty variant, prints ready to use
   materials:
     Steel: 300
     Glass: 50

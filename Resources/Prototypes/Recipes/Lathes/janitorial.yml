@@ -49,8 +49,18 @@
     Plastic: 100
 
 - type: latheRecipe
+  id: TrashBagHolding
+  result: TrashBagHolding
+  completetime: 5
+  materials:
+    Plastic: 1500
+    Silver: 300
+    Plasma: 1000
+    Uranium: 100
+
+- type: latheRecipe
   id: LightReplacer
-  result: LightReplacerEmpty
+  result: LightReplacer
   completetime: 2.4
   materials:
     Steel: 100
@@ -66,7 +76,7 @@
 
 - type: latheRecipe
   id: Holoprojector
-  result: Holoprojector # Boomer edit - no empty variant, prints ready to use
+  result: Holoprojector # Monke edit - no empty variant, prints ready to use
   completetime: 3
   materials:
     Plastic: 250

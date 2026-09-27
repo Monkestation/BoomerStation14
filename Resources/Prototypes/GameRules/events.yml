@@ -23,7 +23,8 @@
     - id: SpiderClownSpawnHorde
     - id: SpiderSpawnHorde
     - id: VentClog
-    - id: MSFalseAlarm
+    - id: MSFalseAlarm # Monkestation
+#    - id: UtilityLineRupture # Funky Station # Monkestation
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -110,7 +111,7 @@
   components:
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Announce # Macrocosm edit - sound prototypes
     weight: 8
     duration: 35
   - type: AnomalySpawnRule
@@ -125,7 +126,7 @@
       max:  30
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Announce # Macrocosm edit - sound prototypes
     weight: 8
     duration: 35
   - type: BluespaceArtifactRule
@@ -150,6 +151,10 @@
     duration: 1
     minimumPlayers: 15
   - type: BreakerFlipRule
+    blacklist:
+      components:
+        - ProtectedGrid
+
 
 - type: entity
   id: BureaucraticError
@@ -186,6 +191,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
+    occursDuringRoundEnd: false
     minimumPlayers: 10
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
@@ -200,6 +206,7 @@
     reoccurrenceDelay: 20
     minimumPlayers: 20
     duration: null
+    occursDuringRoundEnd: false
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
@@ -224,6 +231,7 @@
   - type: StationEvent
     weight: 6
     duration: null
+    occursDuringRoundEnd: false
     earliestStart: 30
     reoccurrenceDelay: 20
     minimumPlayers: 30
@@ -252,6 +260,7 @@
   - type: StationEvent
     weight: 5
     duration: null
+    occursDuringRoundEnd: false
     earliestStart: 20
     reoccurrenceDelay: 20
     minimumPlayers: 15
@@ -279,6 +288,7 @@
   - type: StationEvent
     weight: 7.5
     duration: 1
+    occursDuringRoundEnd: false
     earliestStart: 45
     minimumPlayers: 20
   - type: RandomSpawnRule
@@ -291,6 +301,7 @@
   - type: StationEvent
     weight: 1 # rare
     duration: null
+    occursDuringRoundEnd: false
     earliestStart: 30
     reoccurrenceDelay: 60
     minimumPlayers: 30
@@ -311,7 +322,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Attention # Macrocosm edit - sound prototypes
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
   - type: GasLeakRule
@@ -335,10 +346,9 @@
     weight: 5
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
-    startAudio: GridPowerOff # monkestation edit - announcer overrides
-    duration: 30
-    maxDuration: 30
-    endAudio: GridPowerOn # monkestation edit - announcer overrides
+    startAudio: GridPowerOff # Macrocosm edit - sound prototypes
+    duration: 50
+    maxDuration: 100
   - type: PowerGridCheckRule
 
 - type: entity
@@ -349,7 +359,7 @@
     weight: 8
     startAnnouncement: station-event-solar-flare-start-announcement
     endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Attention # Macrocosm edit - sound prototypes
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
@@ -374,7 +384,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Attention # Macrocosm edit - sound prototypes
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -389,7 +399,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-horde-announcement
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Attention # Macrocosm edit - sound prototypes
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -409,7 +419,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-horde-announcement
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Attention # Macrocosm edit - sound prototypes
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -429,7 +439,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-horde-announcement
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Attention # Macrocosm edit - sound prototypes
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -447,7 +457,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-horde-announcement
-    startAudio: Attention # monkestation edit - announcer overrides
+    startAudio: Attention # Macrocosm edit - sound prototypes
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
@@ -489,6 +499,7 @@
     weight: 5.5
     minimumPlayers: 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
+    occursDuringRoundEnd: false
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -511,7 +522,7 @@
     minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
-    startAudio: Intercept # monkestation edit - announcer overrides
+    startAudio: Intercept # Macrocosm edit - sound prototypes
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
   - type: AlertLevelInterceptionRule
@@ -554,7 +565,7 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAudio: Intercept # monkestation edit - announcer overrides
+    startAudio: Intercept # Macrocosm edit - sound prototypes
     weight: 5
     minimumPlayers: 25
     reoccurrenceDelay: 20
@@ -593,6 +604,7 @@
     reoccurrenceDelay: 20
     minimumPlayers: 4
     duration: null
+    occursDuringRoundEnd: false
   - type: SpaceSpawnRule
     spawnDistance: 0
 
@@ -664,3 +676,19 @@
     antags:
     - !type:FixedAntagCount
       proto: DerelictSyndicateAssaultCyborg
+
+# Funky Station
+- type: entity
+  parent: BaseStationEvent
+  id: UtilityLineRupture
+  name: Utility Line Rupture
+  components:
+  - type: UtilityLineRuptureRule
+  - type: StationEvent
+    earliestStart: 15
+    weight: 6.5
+    duration: null
+  - type: GameRule
+    delay:
+      min: 0
+      max: 0

@@ -63,29 +63,13 @@ namespace Content.IntegrationTests.Tests
         /// </remarks>
         private static readonly Dictionary<string, HashSet<EntProtoId>> DoNotMapWhitelistSpecific = new()
         {
-            // Funkystation edit - allow DNM disablers and such on base maps
-            {"/Maps/bagel.yml", ["RubberStampMime", "GunSafeDisabler"]}, // Mime stamp is original
-            {"/Maps/reach.yml", ["HandheldCrewMonitor", "Stunbaton"]}, // HH crew monitor is original
-            {"/Maps/plasma.yml", ["GunSafeDisabler"]},
-            {"/Maps/packed.yml", ["GunSafeDisabler"]},
-            {"/Maps/box.yml", ["GunSafeDisabler", "Stunbaton"]},
-            {"/Maps/exo.yml", ["Stunbaton"]},
-            {"/Maps/fland.yml", ["GunSafeDisabler", "WeaponDisabler"]},
-            {"/Maps/marathon.yml", ["GunSafeDisabler"]},
-            {"/Maps/oasis.yml", ["GunSafeDisabler", "WeaponDisabler"]},
-            {"/Maps/relic.yml", ["GunSafeDisabler", "Stunbaton"]},
-            {"/Maps/saltern.yml", ["WeaponDisabler"]},
-            {"/Maps/serpentcrest.yml", ["GunSafeDisabler", "Stunbaton"]},
-            {"/Maps/snowball.yml", ["GunSafeDisabler"]},
-            {"/Maps/Shuttles/cargo_relic.yml", ["WeaponTaser"]},
-            {"/Maps/Shuttles/dart.yml", ["Stunbaton", "WeaponTaser"]},
-            {"/Maps/Shuttles/emergency_raven.yml", ["Stunbaton", "WeaponDisabler"]},
-            {"/Maps/Ruins/ruined_prison_ship.yml", ["WeaponDisabler"]},
-            // Funkystation edit end
+            {"/Maps/bagel.yml", ["RubberStampMime"]},
             {"/Maps/Shuttles/ShuttleEvent/honki.yml", ["GoldenBikeHorn", "RubberStampClown"]},
             {"/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", ["RubberStampSyndicate"]},
             {"/Maps/Shuttles/ShuttleEvent/cruiser.yml", ["ShuttleGunPerforator"]},
             {"/Maps/Shuttles/ShuttleEvent/instigator.yml", ["ShuttleGunFriendship"]},
+            // Monkestation maps
+            {"/Maps/_Monkestation/reach.yml", ["HandheldCrewMonitor"]},
         };
 
         /// <summary>
@@ -347,7 +331,6 @@ namespace Content.IntegrationTests.Tests
             var pair = Pair;
             var server = pair.Server;
 
-            var mapManager = server.ResolveDependency<IMapManager>();
             var entManager = server.ResolveDependency<IEntityManager>();
             var mapLoader = entManager.System<MapLoaderSystem>();
             var mapSystem = entManager.System<SharedMapSystem>();
@@ -374,7 +357,7 @@ namespace Content.IntegrationTests.Tests
                 EntityUid? targetGrid = null;
                 var memberQuery = entManager.GetEntityQuery<StationMemberComponent>();
 
-                var grids = mapManager.GetAllGrids(mapId).ToList();
+                var grids = mapSystem.GetAllGrids(mapId).ToList();
                 var gridUids = grids.Select(o => o.Owner).ToList();
                 targetGrid = gridUids.First();
 

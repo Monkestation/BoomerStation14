@@ -15,19 +15,8 @@ namespace Content.Server._Monkestation.Emoting.Systems;
 public sealed partial class FartEmoteSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popupSystem = default!;
-    [Dependency] private ButtSystem _buttSystem = default!;
 
-    [Dependency] private EntityQuery<MSButtComponent> _buttQuery;
-    [Dependency] private EntityQuery<ContainerManagerComponent> _containerQuery;
-
-    /// <inheritdoc/>
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<MSFartEmoteComponent, EmoteEvent>(OnEmote);
-    }
-
+    [SubscribeLocalEvent]
     private void OnEmote(Entity<MSFartEmoteComponent> ent, ref EmoteEvent args)
     {
         if (args.Emote.ID != "MSFart")

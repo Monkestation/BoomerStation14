@@ -1,7 +1,7 @@
 - type: species
   id: Vulpkanin
   name: species-name-vulpkanin
-  roundStart: true
+  roundStart: false
   prototype: MobVulpkanin
   defaultSkinTone: "#5a3f2d"
   dollPrototype: AppearanceVulpkanin
@@ -9,3 +9,10 @@
   maleFirstNames: names_vulpkanin_male
   femaleFirstNames: names_vulpkanin_female
   lastNames: names_vulpkanin_last
+  defaultSoundsBySex:
+  - MaleVulpkanin
+  - FemaleVulpkanin
+  - MaleVulpkanin
+  voices:
+  - MaleVulpkanin
+  - FemaleVulpkanin

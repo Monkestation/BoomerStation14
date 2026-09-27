@@ -22,14 +22,7 @@ public sealed partial class FalseAlarmRule : StationEventSystem<MSFalseAlarmRule
 
     private ImmutableList<EntityPrototype>? FakeableEventCache;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<MSFalseAlarmRuleComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
-    }
-
+    [SubscribeLocalEvent]
     private void OnMapInit(Entity<MSFalseAlarmRuleComponent> ent, ref MapInitEvent args)
     {
         if (ent.Comp.RuleId == null)
@@ -41,6 +34,7 @@ public sealed partial class FalseAlarmRule : StationEventSystem<MSFalseAlarmRule
         _metaData.SetEntityName(ent, $"False Alarm ({ent.Comp.RuleId})");
     }
 
+    [SubscribeLocalEvent]
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
     {
         if (args.WasModified<EntityPrototype>())

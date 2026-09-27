@@ -45,3 +45,4 @@ job-description-serviceworker = Learn the basics of bartending, cooking, and gro
 job-description-station-ai = Follow your laws, serve the crew.
 job-description-visitor = Enjoy your visit to the station.
 job-description-warden = Patrol the Security department, ensure that no one is stealing from the armory, and make sure that all prisoners are processed and let out when their time is up.
+job-description-tram-driver = Drive around a tram from stop to stop.

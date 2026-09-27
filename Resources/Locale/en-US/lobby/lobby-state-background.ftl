@@ -12,3 +12,6 @@ lobby-state-background-janishootout-artist = psychpsyo
 
 lobby-state-background-invisiblewall-title = Invisible Wall
 lobby-state-background-invisiblewall-artist = Vandersloot
+
+lobby-state-background-stationisafuck-title = Station Is a Fuck
+lobby-state-background-stationisafuck-artist = fuzyfries

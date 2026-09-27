@@ -17,7 +17,7 @@ public sealed partial class HandheldLightSystem : SharedHandheldLightSystem
     {
         base.Initialize();
 
-        // Boomer edit - self-powered lights have no battery, so the charge meter is pointless.
+        // Monke edit - self-powered lights have no battery, so the charge meter is pointless.
         Subs.ItemStatus<HandheldLightComponent>(ent => ent.Comp.SelfPowered ? null : new HandheldLightStatus(ent));
         SubscribeLocalEvent<HandheldLightComponent, AppearanceChangeEvent>(OnAppearanceChange);
     }
@@ -38,13 +38,8 @@ public sealed partial class HandheldLightSystem : SharedHandheldLightSystem
         return true;
     }
 
-    private void OnAppearanceChange(EntityUid uid, HandheldLightComponent? component, ref AppearanceChangeEvent args)
+    private void OnAppearanceChange(EntityUid uid, HandheldLightComponent component, ref AppearanceChangeEvent args)
     {
-        if (!Resolve(uid, ref component))
-        {
-            return;
-        }
-
         if (!_appearance.TryGetData<bool>(uid, ToggleableVisuals.Enabled, out var enabled, args.Component))
         {
             return;

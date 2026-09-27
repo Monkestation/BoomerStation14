@@ -1,0 +1,4 @@
+- files: [ "simian_deathgasp.ogg", "simian_screech_1.ogg", "simian_screech_2.ogg", "simian_screech_3.ogg", "simian_screech_4.ogg", "simian_screech_5.ogg", "simian_screech_6.ogg", "simian_screech_7.ogg", "simian_laugh_1.ogg" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from monkestation13"
+  source: "https://github.com/Monkestation/Monkestation2.0/commit/bc4d817908c861840a337bb879d249d9aa4bf337"

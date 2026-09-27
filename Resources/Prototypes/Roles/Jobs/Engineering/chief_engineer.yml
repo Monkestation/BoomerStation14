@@ -13,9 +13,9 @@
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 10h
-  weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
+  joinNotifyCrew: true # Funky
   supervisors: job-supervisors-captain
   access:
   - Maintenance

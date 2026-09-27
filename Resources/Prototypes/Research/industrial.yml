@@ -45,7 +45,7 @@
   id: MechanicalCompression
   name: research-technology-mechanical-compression
   icon:
-    sprite: Structures/Machines/flatpacker.rsi
+    sprite: _Funkystation/Structures/Machines/flatpacker.rsi #Funky resprite
     state: base
   discipline: Industrial
   tier: 1
@@ -89,7 +89,7 @@
   id: AtmosphericTech
   name: research-technology-atmospheric-tech
   icon:
-    sprite: Structures/Piping/Atmospherics/thermomachine.rsi
+    sprite: _Funkystation/Structures/Piping/Atmospherics/thermomachine.rsi # Funky
     state: freezerOff
   discipline: Industrial
   tier: 1

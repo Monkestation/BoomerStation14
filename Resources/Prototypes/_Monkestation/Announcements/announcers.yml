@@ -1,5 +1,5 @@
 - type: weightedRandom
-  id: Announcers
+  id: announcers
   weights:
     DefaultAnnouncer: 5
     DukeAnnouncer: 5
@@ -7,41 +7,7 @@
     MedbotAnnouncer: 1
     DagothAnnouncer: 5
 
-- type: msAnnouncer
-  id: DefaultAnnouncer
-  sounds:
-    Attention:
-      path: /Audio/Announcements/attention.ogg
-    Announce:
-      path: /Audio/_Monkestation/Announcements/AnnouncementConsole/announce.ogg
-    GridPowerOff:
-      path: /Audio/Announcements/power_off.ogg
-      params:
-        volume: -4
-    GridPowerOn:
-      collection: PowerOn
-      params:
-        volume: -4
-    Intercept:
-      path: /Audio/Announcements/intercept.ogg
-    Welcome:
-      path: /Audio/Announcements/welcome.ogg
-    Meteors:
-      path: /Audio/Announcements/meteors.ogg
-      params:
-        volume: -4
-    War:
-      path: /Audio/Announcements/war.ogg
-    ShuttleCalled:
-      path: /Audio/Announcements/shuttlecalled.ogg
-    ShuttleRecalled:
-      path: /Audio/Announcements/shuttlerecalled.ogg
-    ShuttleDock:
-      path: /Audio/Announcements/shuttle_dock.ogg
-    Notice1:
-      path: /Audio/Misc/notice1.ogg
-
-- type: msAnnouncer
+- type: announcer
   id: DukeAnnouncer
   sounds:
     Attention:
@@ -63,7 +29,7 @@
     ShuttleDock:
       path: /Audio/_Monkestation/Announcements/Duke/shuttle_arrive.ogg
 
-- type: msAnnouncer
+- type: announcer
   id: InternAnnouncer
   sounds:
     Attention:
@@ -85,7 +51,7 @@
     ShuttleDock:
       path: /Audio/_Monkestation/Announcements/Intern/shuttledock.ogg
 
-- type: msAnnouncer
+- type: announcer
   id: MedbotAnnouncer
   sounds:
     Attention:
@@ -108,7 +74,7 @@
       path: /Audio/_Monkestation/Announcements/Medbot/shuttledock.ogg
 
 
-- type: msAnnouncer
+- type: announcer
   id: DagothAnnouncer
   sounds:
     Attention:

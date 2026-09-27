@@ -6,7 +6,7 @@
   components:
   - type: HandheldLight
     addPrefix: true
-    selfPowered: true # Boomer edit - decorative lamps are self-powered; interrogator/floodlight re-add their cell below
+    selfPowered: true # Monke edit - decorative lamps are self-powered; interrogator/floodlight re-add their cell below
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -25,7 +25,7 @@
         startValue: 0.1
         endValue: 2.0
         isLooped: true
-  # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer from base, decorative lamps are self-powered now
+  # Monke edit - removed PowerCellSlot / ItemSlots / ContainerContainer from base, decorative lamps are self-powered now
   - type: Sprite
     sprite: Objects/Misc/Lights/lights.rsi
   - type: Item
@@ -53,7 +53,7 @@
   description: A light emitting device.
   components:
   - type: Sprite
-    sprite: Objects/Misc/Lights/lamp.rsi
+    sprite: _Funkystation/Objects/Misc/Lights/lamp.rsi # Funky
     layers:
       - state: lamp
         map: [ "base" ]
@@ -62,7 +62,7 @@
         visible: false
         map: [ "light" ]
   - type: Item
-    sprite: Objects/Misc/Lights/lamp.rsi
+    sprite: _Funkystation/Objects/Misc/Lights/lamp.rsi # Funky
   - type: HolidayVisuals
     holidays:
       festive:
@@ -96,7 +96,7 @@
   description: A light emitting device that would look great on a desk.
   components:
   - type: Sprite
-    sprite: Objects/Misc/Lights/lampgreen.rsi
+    sprite: _Funkystation/Objects/Misc/Lights/lampgreen.rsi # Funky
     layers:
       - state: lampgreen
         map: [ "base" ]
@@ -105,7 +105,7 @@
         visible: false
         map: [ "light" ]
   - type: Item
-    sprite: Objects/Misc/Lights/lampgreen.rsi
+    sprite: _Funkystation/Objects/Misc/Lights/lampgreen.rsi # Funky
   - type: HolidayVisuals
     holidays:
       festive:
@@ -164,7 +164,7 @@
     damage:
       types:
         Blunt: 0 # melee weapon to allow flashing individual targets
-  # Boomer edit - interrogator lamp is self-powered too (inherits from base); flash still runs on LimitedCharges
+  # Monke edit - interrogator lamp is self-powered too (inherits from base); flash still runs on LimitedCharges
   - type: GenericVisualizer
     visuals:
       enum.FlashVisuals.Burnt:
@@ -184,7 +184,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: Objects/Misc/Lights/lights.rsi
+    sprite: _Funkystation/Objects/Misc/Lights/lights.rsi # Funky
     layers:
       - state: floodlight
         map: [ "base" ]
@@ -207,7 +207,8 @@
     enabled: false
     radius: 8
     energy: 5
-  # Boomer edit - floodlight keeps its battery (base is self-powered now, so re-add the cell here)
+    color: '#ffe0b7' # Funky
+  # Monke edit - floodlight keeps its battery (base is self-powered now, so re-add the cell here)
   - type: HandheldLight
     selfPowered: false
   - type: PowerCellSlot
@@ -215,6 +216,7 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
+  # Monke edit end
   - type: ItemSlots
     slots:
       cell_slot:
@@ -224,7 +226,7 @@
   - type: Damageable
     damageModifierSet: Metallic
   - type: Injurable
-    damageContainer: StructuralInorganic
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:
@@ -254,16 +256,16 @@
   components:
   - type: Item
     size: Normal
-    sprite: Objects/Misc/Lights/lights.rsi
+    sprite: _Funkystation/Objects/Misc/Lights/lights.rsi # Funky
     heldPrefix: floodlight-broken
   - type: Sprite
-    sprite: Objects/Misc/Lights/lights.rsi
+    sprite: _Funkystation/Objects/Misc/Lights/lights.rsi # Funky
     state: floodlight-broken
   - type: Anchorable
   - type: Damageable
     damageModifierSet: Metallic
   - type: Injurable
-    damageContainer: StructuralInorganic
+    damageContainer: Inorganic
   - type: Destructible
     thresholds:
     - trigger:

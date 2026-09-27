@@ -14,6 +14,7 @@
   description: department-Civilian-description
   color: "#9FED58"
   weight: -10
+  ignoreForDepartmentFallback: true
   roles:
   - Bartender
   - Botanist
@@ -30,6 +31,8 @@
   - Reporter
   - Visitor
   - ServiceWorker
+  - TramDriver
+  - Prisoner # funky
 
 - type: department
   id: CentralCommand
@@ -136,7 +139,9 @@
   description: department-Specific-description
   color: "#9FED58"
   weight: 10
+  ignoreForDepartmentFallback: true
   roles:
   - Reporter
   - Psychologist
+  - TramDriver
   primary: false

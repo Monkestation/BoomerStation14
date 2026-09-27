@@ -2,15 +2,15 @@
 <Document>
   # Space Law
    - Space Law is a collection of rules and regulations enacted by Nanotrasen Central Command and enforced by the Security Officers on board the station.
-  
+
    - Space Law applies to all ranks and positions on station, from the lowliest Assistant to the highest Captain, all are equal under the eyes of the Law and ultimately answer to it.
-  
+
    - As such, a good working knowledge of Space Law is important for any person on the station, though a more in-depth understanding of Space Law is required for such positions as the Lawyer, Warden, and the Head of Security.
 
    - [italic]The rules and regulations herein are not absolutes, instead they exist to serve mainly as guidelines for the law and order of the dynamic situations that exist for stations on the frontiers of space. As such, some leeway is permitted.[/italic]
-  
+
    - While everything written here is only a guideline, the sections regarding what grants permissible lethal force, executions, or permanent brigging will generally keep security members on the right side of the rules and keep you away from conflict with Central Command.
-  
+
   ## The Law: Crime Code
 
    - Refer to [textlink="Crime Listing" link="SpaceLawCrimeList"] for a description of each crime
@@ -555,17 +555,17 @@
     </ColorBox>
     <ColorBox Color="#473129">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3 min brig time 
+        3 min brig time
       </Box>
     </ColorBox>
     <ColorBox Color="#462828">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        5 min brig time 
+        5 min brig time
       </Box>
     </ColorBox>
     <ColorBox Color="#452939">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        7 min brig time 
+        7 min brig time
       </Box>
     </ColorBox>
     <ColorBox Color="#462947">
@@ -600,7 +600,7 @@
 
  - 9. A crew member cannot be held for more than 10 minutes without being sentenced. If 10 minutes elapses and no evidence is provided, the crew member should be set free.[italic]Any time spent in processing this way should also be subtracted from the final sentence.[/italic]
 
- - 10. Officers are expected to know Space Law.\nOfficers who are seen to not know the law can be demoted. 
+ - 10. Officers are expected to know Space Law.\nOfficers who are seen to not know the law can be demoted.
 
 ## Arrest Procedure
  <Box>
@@ -639,7 +639,7 @@ The Warden, Head of Security, and Captain all share authority over the brig. Bri
 Standard procedure for brigging is as follows:
 
  - 1. Take the prisoner to the brig and inform the Warden of their crimes so their security record may be updated.
- 
+
  - 2. Bring the prisoner to the prisoner closet next to the cell they will occupy. Hold them over it and empty their pockets to remove their gloves, backpacks, tool belt, gas masks, and any flash resistant equipment such as Sunglasses, Welding Masks/Goggles, Space Helmets, etc. [bold]Do not remove their jumpsuit. Do not remove life sustaining equipment (Internals and masks). Do not remove their headset, unless you can provide them with a basic one. You may confiscate radios if abused.[/bold].
 
  - 3. Search the items removed and be sure to check any boxes in their backpack. Confiscate any contraband and/or stolen items, as well as any tools that were used to commit crimes.
@@ -762,7 +762,7 @@ There are a few circumstances where deadly force is permissible:
  - [color=blue]Non-Lethal Weapons (NWL) Ineffective[/color] - Certain targets are impervious to NLWs, such as mechs, xenomorphs, and borgs. Lethal force may be used against these targets if they prove hostile until they are incapacitated.
 
  - [color=#505050]Severe Personal Risk[/color] - Sometimes, getting close enough to a target to slap the cuffs on will create significant personal risk to the officer. Deadly force from range is recommended to subdue hostile wizards and changelings.\n[bold]Criminals in hostile environments such as space, fire, or plasma leaks also fall into this category[/bold], as well as criminals believed to be in possession of high explosives. Ranged lethal force is the only reasonable option in these conditions.
- 
+
  - [color=yellow]Armed and Dangerous[/color] - If a suspect is in possession of weapons, including stun weapons, and you have reasonable suspicion that they will use these against you, lethal force is permitted. However, it is still preferable to attempt to detain them non-lethally.
 
  - [color=orange]Multiple Hostiles[/color] - It can be extremely difficult to detain multiple hostiles. As a last resort, you may use lethal arms to thin the crowd.
@@ -780,7 +780,6 @@ Priority threats currently include:
 <GuideEntityEmbed Entity="ClothingOuterArmorChangeling" Caption="Changelings"/>
 <GuideEntityEmbed Entity="NukeDisk" Caption="Nuclear Operatives"/>
 <GuideEntityEmbed Entity="ToyFigurineSpaceDragon" Caption="Space Dragons"/>
-<GuideEntityEmbed Entity="CultDaggerCurved" Caption="Blood Cult"/>
 </Box>
 <Box>
 <GuideEntityEmbed Entity="ClothingMaskNinja" Caption="Spider Clan"/>
@@ -800,14 +799,14 @@ Priority threats currently include:
  - Accessory charges can be given to anyone who assists a criminal in committing a crime. This can include directly assisting in the crime or otherwise assisting the criminal while they are committing said crime.\nThe sentence for accessory charges can be the same as the original criminal up to and including execution.\nFor more broad cases of assisting criminals, you should charge with Aiding and Abetting instead. This can also be applied to crew members who create pets (eg. chaplains), creatures (eg. slimes, killer tomatoes) and other kinds of dynamics involving owning or waking something up (eg. pAIs).
 
 ###Conspiracy
-  - Conspiracy charges can be given to anyone who can be proven to have knowingly planned, either alone or with others, committing a crime. This is usually proven via radio or PDA communication records. Conspiracy charges should be sentenced at one level lower than the normal charge; for example, Conspiracy to Commit Grand Theft would be sentenced as a Felony, not a Grand Felony. 
+  - Conspiracy charges can be given to anyone who can be proven to have knowingly planned, either alone or with others, committing a crime. This is usually proven via radio or PDA communication records. Conspiracy charges should be sentenced at one level lower than the normal charge; for example, Conspiracy to Commit Grand Theft would be sentenced as a Felony, not a Grand Felony.
  - [italic]The exception is Murder; Conspiracy to Murder is charged the same charge as Murder.[/italic]
 
 ###Attempted
  - Attempted charges can be given to anyone who can be proven to have attempted to commit a crime but were unable to complete it for whatever reason.\nFor this charge to apply, the suspect must have taken a material act towards the commission of the crime - merely planning is not enough (that would be a Conspiracy charge instead).\nCatching and detaining someone in the middle of committing a crime would be an example.
 
   - Security should be careful to use this charge recklessly; suspicion alone is not enough. Attempted charges should be sentenced at the same level as the crime normally would be.
-  
+
  - [italic]Note that 402 Attempted Murder is its own separate charge and has special considerations for when it should be charged - see the [textlink="crime description" link="SpaceLawCrimeList"] for details.[/italic]
 <Box HorizontalAlignment="Center">
   [bold][color=green]Glory to Nanotrasen[/bold][/color]

@@ -6,12 +6,15 @@
   components:
   - type: IgnitionSource
     ignited: false
+  - type: ItemToggleExaminableStatus
   - type: ItemToggle
     predictable: false
     soundActivate:
       collection: lighterOnSounds
     soundDeactivate:
       collection: lighterOffSounds
+    soundFailToActivate: # funky station
+      collection: lighterFailSounds
   - type: ItemToggleMeleeWeapon
     activatedDamage:
       types:
@@ -100,12 +103,16 @@
         shader: unshaded
   - type: Item
     sprite: Objects/Tools/Lighters/lighters.rsi
+  - type: ItemToggleRandomFail # funky station
+    failChance: 0.4
+    popupText: lighter-activate-attempt-failure
 
 - type: entity
   parent: Lighter
   id: CheapLighter
   name: cheap lighter
   description: "A dangerously inexpensive plastic lighter. Don't burn your thumb!"
+  categories: [ HideSpawnMenu ] # funky station # readded by monke
   components:
   - type: Sprite
     sprite: Objects/Tools/Lighters/lighters.rsi
@@ -125,6 +132,9 @@
   - type: Welder
     fuelConsumption: 0.02
     fuelLitCost: 0.2
+  - type: ItemToggleRandomFail # funky station
+    failChance: 0.25
+    popupText: lighter-activate-attempt-failure
 
 - type: entity
   parent: [ SolutionLighter, BaseLighter ]
@@ -166,6 +176,9 @@
       damage:
         types:
           Heat: 2
+  - type: ItemToggleRandomFail # funkystation
+    failChance: 0.5
+    popupText: lighter-activate-attempt-failure
 
 ## Flippos
 
@@ -367,7 +380,7 @@
   - type: Tool
     useSound:
       collection: Welder
-    qualities: Welding
+    qualities: [ Welding ]
   - type: Lock
   - type: AccessReader
     access: [["CentralCommand"]]

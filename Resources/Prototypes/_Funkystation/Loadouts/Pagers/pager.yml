@@ -1,0 +1,35 @@
+﻿- type: loadout
+  id: PagerGray
+  storage:
+    back:
+    - PagerGray # Monkestation - Put pagers in backpack since pockets are sometimes full
+
+- type: loadout
+  id: PagerBeige
+  storage:
+    back:
+    - PagerBeige # Monkestation - Put pagers in backpack since pockets are sometimes full
+
+- type: loadout
+  id: PagerBlue
+  storage:
+    back:
+    - PagerBlue # Monkestation - Put pagers in backpack since pockets are sometimes full
+
+- type: loadout
+  id: PagerTransCyan
+  storage:
+    back:
+    - PagerTransCyan # Monkestation - Put pagers in backpack since pockets are sometimes full
+
+- type: loadout
+  id: PagerTransPink
+  storage:
+    back:
+    - PagerTransPink # Monkestation - Put pagers in backpack since pockets are sometimes full
+
+- type: loadout
+  id: PagerTransYellow
+  storage:
+    back:
+    - PagerTransYellow # Monkestation - Put pagers in backpack since pockets are sometimes full

@@ -27,3 +27,9 @@
   background: /Textures/LobbyScreens/invisiblewall.webp
   title: lobby-state-background-invisiblewall-title
   artist: lobby-state-background-invisiblewall-artist
+
+- type: lobbyBackground
+  id: StationIsAFuck
+  background: /Textures/LobbyScreens/stationisafuck.webp
+  title: lobby-state-background-stationisafuck-title
+  artist: lobby-state-background-stationisafuck-artist

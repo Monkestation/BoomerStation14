@@ -22,7 +22,6 @@
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/pop_high.ogg
-  - type: Appearance
   - type: Item
     size: Normal
   - type: RandomMetadata # No metagaming these, jimbo.
@@ -38,10 +37,10 @@
   - type: ItemTogglePointLight
   - type: Foldable
     folded: true
-  # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer, decoy light is self-powered now
+  # Monke edit - removed PowerCellSlot / ItemSlots / ContainerContainer, decoy light is self-powered now
   - type: HandheldLight
     addPrefix: false
-    selfPowered: true # Boomer edit - no power cell needed
+    selfPowered: true # Monke edit - no power cell needed
   - type: PointLight # Just like the real thing...
     autoRot: true
     radius: 1.5

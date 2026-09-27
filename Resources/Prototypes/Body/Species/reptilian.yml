@@ -138,10 +138,7 @@
       sprite: Effects/creampie.rsi
       state: creampie_lizard
   - type: Vocal
-    sounds:
-      Male: MaleReptilian
-      Female: FemaleReptilian
-      Unsexed: MaleReptilian
+    emoteSounds: MaleReptilian
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: Damageable
@@ -154,9 +151,6 @@
     damage:
       types:
         Slash: 5
-  - type: Temperature
-    currentTemperature: 310.15
-    specificHeat: 42
   - type: TemperatureDamage
     heatDamageThreshold: 400
     coldDamageThreshold: 285
@@ -172,6 +166,7 @@
       295: 0.8
       285: 0.7
   - type: Wagging
+  - type: TailDuoEmote # Funky Change
 
 - type: entity
   parent: OrganBaseOrganic
