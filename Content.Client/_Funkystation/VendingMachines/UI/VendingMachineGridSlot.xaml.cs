@@ -152,7 +152,6 @@ public sealed partial class VendingMachineGridSlot : PanelContainer
                 ("baseName", itemName),
                 ("label", _loc.GetString(locId)));
         }
-
         return string.IsNullOrWhiteSpace(prototype.Description)
             ? itemName
             : $"{itemName}\n{prototype.Description}";

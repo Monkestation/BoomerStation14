@@ -2,6 +2,7 @@
 using Content.IntegrationTests.Tests.Movement;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Holosign;
+using Robust.Shared.Input;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 
@@ -87,18 +88,22 @@ public sealed class HolosignProjectorTest : MovementTest
 
         // Try moving past the barrier.
         Assert.That(Delta(), Is.GreaterThan(0.5), "Player was not located west of the holobarrier.");
+        await SetKey(EngineKeyFunctions.Walk, BoundKeyState.Down); // funky - sprint and walk states got flipped, so we need to make sure we're moving fast enough to satisfy these tests.
         await Move(DirectionFlag.East, 0.5f);
+        await SetKey(EngineKeyFunctions.Walk, BoundKeyState.Up); // funky
         Assert.That(Delta(), Is.GreaterThan(0.5), "Player was able to walk through a holobarrier.");
 
         // Try to climb the barrier.
         await Interact(Target, TargetCoords, altInteract: true);
 
         // We should be able to move past the barrier now.
+        await SetKey(EngineKeyFunctions.Walk, BoundKeyState.Down); // funky - sprint and walk states got flipped, so we need to make sure we're moving fast enough to satisfy these tests.
         await Move(DirectionFlag.East, 0.5f);
         Assert.That(Delta(), Is.LessThan(-0.5), "Player was not able to climb over a holobarrier.");
 
         // We should not be able to walk back without climbing again.
         await Move(DirectionFlag.West, 0.5f);
+        await SetKey(EngineKeyFunctions.Walk, BoundKeyState.Up); // funky
         Assert.That(Delta(), Is.LessThan(-0.5), "Player was able to walk through a holobarrier.");
 
         // Monke edit - barriers no longer despawn on a timer; remove it with the projector instead.
@@ -106,7 +111,9 @@ public sealed class HolosignProjectorTest : MovementTest
         AssertDeleted(Target);
 
         // We should be able to walk back now.
+        await SetKey(EngineKeyFunctions.Walk, BoundKeyState.Down); // funky - sprint and walk states got flipped, so we need to make sure we're moving fast enough to satisfy these tests.
         await Move(DirectionFlag.West, 0.5f);
+        await SetKey(EngineKeyFunctions.Walk, BoundKeyState.Up); // funky
         Assert.That(DeltaCoordinates(), Is.GreaterThan(0.5), "Player was able to walk past a deleted holobarrier.");
     }
 }

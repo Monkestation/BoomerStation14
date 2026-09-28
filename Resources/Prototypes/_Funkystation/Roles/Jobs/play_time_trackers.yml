@@ -1,2 +1,5 @@
 - type: playTimeTracker
+  id: FuJobCourier
+
+- type: playTimeTracker
   id: JobPrisoner
