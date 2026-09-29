@@ -29,7 +29,7 @@ public sealed class HolosignProjectorTest : MovementTest
         // No holosigns before using the item.
         await AssertEntityLookup((WallPrototype, 2));
 
-        // Boomer edit - holoprojectors now use LimitedCharges instead of a power cell.
+        // Monke edit - holoprojectors now use LimitedCharges instead of a power cell.
         var chargesSystem = SEntMan.System<SharedChargesSystem>();
         var initialUses = chargesSystem.GetCurrentCharges(ToServer(projector));
         Assert.That(initialUses, Is.GreaterThan(0), "Holoprojector spawned without usable charges.");
@@ -101,7 +101,7 @@ public sealed class HolosignProjectorTest : MovementTest
         await Move(DirectionFlag.West, 0.5f);
         Assert.That(Delta(), Is.LessThan(-0.5), "Player was able to walk through a holobarrier.");
 
-        // Boomer edit - barriers no longer despawn on a timer; remove it with the projector instead.
+        // Monke edit - barriers no longer despawn on a timer; remove it with the projector instead.
         await Interact(Target, TargetCoords);
         AssertDeleted(Target);
 

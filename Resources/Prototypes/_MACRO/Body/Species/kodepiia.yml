@@ -80,8 +80,8 @@
       Stomach: OrganKodepiiaStomach
       Liver: OrganKodepiiaLiver
       Kidneys: OrganKodepiiaKidneys
-      MSBladder: MSOrganHumanBladder # Boomer edit - add bladder for pissing
-      MSButt: MSOrganHumanButt # Boomer edit - add butt for farting
+      MSBladder: MSOrganHumanBladder # Monke edit - add bladder for pissing
+      MSButt: MSOrganHumanButt # Monke edit - add butt for farting
   - type: HumanoidProfile
     species: Kodepiia
 

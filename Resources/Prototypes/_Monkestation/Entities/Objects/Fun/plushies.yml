@@ -1,0 +1,30 @@
+- type: entity
+  parent: BasePlushie
+  id: MSPlushieOok
+  name: ook plushie
+  description: What's under the bag, anyway?
+  components:
+  - type: Sprite
+    sprite: _Monkestation/Objects/Fun/Plushies/ook.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound: &PlushieOokSoundLaugh
+      path: /Audio/_Monkestation/Voice/Simian/simian_laugh_1.ogg
+  - type: EmitSoundOnLand
+    sound: &PlushieOokSoundScream
+      path: /Audio/_Monkestation/Voice/Simian/simian_screech_1.ogg
+  - type: EmitSoundOnActivate
+    sound: *PlushieOokSoundLaugh
+  - type: EmitSoundOnTrigger
+    sound: *PlushieOokSoundLaugh
+  - type: EmitSoundOnCollide
+    sound: *PlushieOokSoundScream
+  - type: Edible
+    useSound: *PlushieOokSoundScream
+  - type: MeleeWeapon
+    soundHit: *PlushieOokSoundScream
+  - type: Clothing
+    quickEquip: false
+    sprite: _Monkestation/Objects/Fun/Plushies/ook.rsi
+    slots:
+    - HEAD

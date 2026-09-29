@@ -1,4 +1,4 @@
-# Boomer edit - holoprojectors no longer use power cells. They have a pool of LimitedCharges:
+# Monke edit - holoprojectors no longer use power cells. They have a pool of LimitedCharges:
 # placing a hologram spends one, removing/destroying that hologram refunds it. Holograms are persistent (no despawn).
 - type: entity
   parent: BaseItem

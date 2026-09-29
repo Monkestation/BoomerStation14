@@ -13,7 +13,7 @@
   - type: Damageable
   - type: Injurable
     damageContainer: Inorganic
-  # Boomer edit - holograms no longer despawn on a timer; you place and remove them like in SS13
+  # Monke edit - holograms no longer despawn on a timer; you place and remove them like in SS13
 
 - type: entity
   parent: BaseHoloSign
@@ -48,7 +48,7 @@
         shape:
           !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
-  # Boomer edit - no timed despawn
+  # Monke edit - no timed despawn
   - type: Airtight
     noAirWhenFullyAirBlocked: false
   - type: Destructible
@@ -85,7 +85,7 @@
         hard: false
         layer:
         - SlipLayer
-  # Boomer edit - no timed despawn
+  # Monke edit - no timed despawn
   - type: Destructible
     thresholds:
     - trigger:
@@ -116,7 +116,7 @@
             - TableMask
           layer:
             - TableLayer
-    # Boomer edit - no timed despawn
+    # Monke edit - no timed despawn
     - type: PointLight
       enabled: true
       radius: 3
@@ -185,7 +185,7 @@
         - FullTileMask
         layer:
         - GlassLayer
-  # Boomer edit - no timed despawn
+  # Monke edit - no timed despawn
   - type: PointLight
     enabled: true
     radius: 3

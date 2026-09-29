@@ -14,7 +14,7 @@ concurrency:
 jobs:
   build:
     name: YAML Linter
-    if: github.actor != 'boomerstation' && github.event.pull_request.draft == false
+    if: github.actor != 'RoboMonke' && github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

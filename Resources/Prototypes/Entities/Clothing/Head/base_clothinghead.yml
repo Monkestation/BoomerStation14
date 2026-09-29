@@ -91,7 +91,7 @@
   - type: Appearance
   - type: HandheldLight
     addPrefix: true
-    selfPowered: true # Boomer edit - no power cell / battery needed
+    selfPowered: true # Monke edit - no power cell / battery needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -111,7 +111,7 @@
         startValue: 0.1
         endValue: 2.0
         isLooped: true
-  # Boomer edit - removed PowerCellSlot / ItemSlots / ContainerContainer, light is self-powered now
+  # Monke edit - removed PowerCellSlot / ItemSlots / ContainerContainer, light is self-powered now
 
 - type: entity
   abstract: true
@@ -260,7 +260,7 @@
   - type: Appearance
   - type: HandheldLight
     addPrefix: true
-    selfPowered: true # Boomer edit - no power cell / battery needed
+    selfPowered: true # Monke edit - no power cell / battery needed
     blinkingBehaviourId: blinking
     radiatingBehaviourId: radiating
   - type: LightBehaviour
@@ -280,7 +280,7 @@
         startValue: 0.1
         endValue: 2.0
         isLooped: true
-  # Boomer edit - removed Battery / BatterySelfRecharger, light is self-powered now
+  # Monke edit - removed Battery / BatterySelfRecharger, light is self-powered now
 
 - type: entity
   abstract: true

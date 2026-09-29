@@ -176,7 +176,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: HolofanProjector
-  result: HolofanProjector # Boomer edit - no empty variant, prints ready to use
+  result: HolofanProjector # Monke edit - no empty variant, prints ready to use
   completetime: 8
   materials:
     Steel: 300
@@ -206,7 +206,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: HoloprojectorField
-  result: HoloprojectorField # Boomer edit - no empty variant, prints ready to use
+  result: HoloprojectorField # Monke edit - no empty variant, prints ready to use
   completetime: 3
   materials:
     Steel: 500
