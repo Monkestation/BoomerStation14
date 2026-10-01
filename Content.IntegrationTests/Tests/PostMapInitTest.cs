@@ -83,7 +83,7 @@ namespace Content.IntegrationTests.Tests
         {
             "/Maps/centcomm.yml",
             "/Maps/Shuttles/AdminSpawn/**", // admin gaming
-            "/Maps/_Monkeystation/monkeCC.yml" // Monke
+            "/Maps/_Monkestation/monkeCC.yml" // Monke
         };
 
         /// <summary>

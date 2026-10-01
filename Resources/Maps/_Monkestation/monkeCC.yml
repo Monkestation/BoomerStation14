@@ -1,16 +1,16 @@
 meta:
   format: 7
-  category: Map
+  category: Grid
   engineVersion: 289.0.0
   forkId: monke14
   forkVersion: ""
-  time: 09/27/2026 17:22:53
-  entityCount: 17866
-maps:
-- 1
+  time: 10/01/2026 17:16:59
+  entityCount: 17865
+maps: []
 grids:
 - 2
-orphans: []
+orphans:
+- 2
 nullspace:
 - 13714
 - 17732
@@ -122,24 +122,12 @@ tilemap:
 entities:
 - proto: ""
   entities:
-  - uid: 1
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: GridTree
-    - type: Broadphase
-    - type: OccluderTree
-    - type: ChunkContainer
-      chunkEntities: []
   - uid: 2
     components:
     - type: MetaData
       name: grid
     - type: Transform
-      parent: 1
+      parent: invalid
       pos: -3.4125862,0.5585921
     - type: MapGrid
       chunks:
@@ -47455,9 +47443,6 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: -125.5,-6.5
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 12098
     components:
     - type: Transform
@@ -56478,8 +56463,6 @@ entities:
       - 1622
       - 1616
       - 1618
-      configurators:
-      - invalid
   - uid: 1641
     components:
     - type: Transform
@@ -56623,8 +56606,6 @@ entities:
       - 3981
       - 3987
       - 3984
-      configurators:
-      - invalid
   - uid: 3993
     components:
     - type: Transform
@@ -56899,8 +56880,6 @@ entities:
       - 9521
       - 17500
       - 17510
-      configurators:
-      - invalid
   - uid: 9840
     components:
     - type: Transform
@@ -57092,8 +57071,6 @@ entities:
       - 1611
       - 1616
       - 1618
-      configurators:
-      - invalid
   - uid: 1633
     components:
     - type: Transform
@@ -57106,8 +57083,6 @@ entities:
       - 1611
       - 1616
       - 1618
-      configurators:
-      - invalid
   - uid: 1634
     components:
     - type: Transform
@@ -57120,8 +57095,6 @@ entities:
       - 1611
       - 1616
       - 1618
-      configurators:
-      - invalid
   - uid: 1635
     components:
     - type: Transform
@@ -57133,8 +57106,6 @@ entities:
       - 1622
       - 1616
       - 1618
-      configurators:
-      - invalid
   - uid: 1636
     components:
     - type: Transform
@@ -57146,8 +57117,6 @@ entities:
       - 1622
       - 1616
       - 1618
-      configurators:
-      - invalid
   - uid: 1637
     components:
     - type: Transform
@@ -57159,8 +57128,6 @@ entities:
       - 1622
       - 1616
       - 1618
-      configurators:
-      - invalid
   - uid: 2044
     components:
     - type: Transform
@@ -57314,8 +57281,6 @@ entities:
       - 2469
       - 2203
       - 2066
-      configurators:
-      - invalid
   - uid: 3995
     components:
     - type: Transform
@@ -58225,8 +58190,6 @@ entities:
       - 6401
       - 17500
       - 17510
-      configurators:
-      - invalid
   - uid: 6399
     components:
     - type: Transform
@@ -58240,8 +58203,6 @@ entities:
       - 6401
       - 17500
       - 17510
-      configurators:
-      - invalid
   - uid: 6928
     components:
     - type: Transform
@@ -80609,8 +80570,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1618
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 1647
@@ -80829,8 +80788,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 3984
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 3978
@@ -81068,8 +81025,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6401
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 6894
@@ -81196,8 +81151,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 9304
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 9492
@@ -81209,8 +81162,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 9521
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 9786
@@ -82106,8 +82057,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1618
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 1648
@@ -82348,8 +82297,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 3984
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 5659
@@ -82569,8 +82516,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 6401
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 6892
@@ -82708,8 +82653,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 9304
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 9493
@@ -82721,8 +82664,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 9521
-      configurators:
-      - invalid
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 9785
@@ -109499,9 +109440,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -129.5,-7.5
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: DeviceLinkSource
       linkedPorts:
         12121:
@@ -123385,8 +123323,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 740
     components:
     - type: Transform
@@ -123402,8 +123338,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 741
     components:
     - type: Transform
@@ -123419,8 +123353,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 742
     components:
     - type: Transform
@@ -123436,8 +123368,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 743
     components:
     - type: Transform
@@ -123453,8 +123383,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 744
     components:
     - type: Transform
@@ -123470,8 +123398,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 745
     components:
     - type: Transform
@@ -123487,8 +123413,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 746
     components:
     - type: Transform
@@ -123504,8 +123428,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 747
     components:
     - type: Transform
@@ -123521,8 +123443,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 748
     components:
     - type: Transform
@@ -123538,8 +123458,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 759
-      configurators:
-      - invalid
   - uid: 2899
     components:
     - type: Transform
@@ -123667,8 +123585,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 3775
-      configurators:
-      - invalid
   - uid: 3774
     components:
     - type: Transform
@@ -123684,8 +123600,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 3775
-      configurators:
-      - invalid
   - uid: 6557
     components:
     - type: Transform
