@@ -130,12 +130,12 @@
   description: A light and compact fibreglass-framed model fire extinguisher. It holds less water than its bigger brother.
   components:
   - type: Sprite
-    sprite: _Funkystation/Objects/Misc/fire_extinguisher_mini.rsi # Funky
+    sprite: Objects/Misc/fire_extinguisher_mini.rsi
     layers:
         - state: fire_extinguisher_closed
           map: [ "enabled" ]
   - type: Item
-    sprite: _Funkystation/Objects/Misc/fire_extinguisher_mini.rsi # Funky
+    sprite: Objects/Misc/fire_extinguisher_mini.rsi
     size: Small
   - type: MeleeWeapon
     wideAnimationRotation: 180

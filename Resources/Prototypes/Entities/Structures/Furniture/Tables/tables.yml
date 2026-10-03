@@ -9,9 +9,9 @@
   description: Pieces of metal that make the frame of a table.
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Furniture/Tables/frame.rsi # Funky
+    sprite: Structures/Furniture/Tables/frame.rsi
   - type: Icon
-    sprite: _Funkystation/Structures/Furniture/Tables/frame.rsi # Funky
+    sprite: Structures/Furniture/Tables/frame.rsi
     state: full
   - type: Fixtures
     fixtures:
@@ -57,9 +57,9 @@
   components:
   - type: SpriteFade
   - type: Sprite
-    sprite: _Funkystation/Structures/Furniture/Tables/frame.rsi # Funky
+    sprite: Structures/Furniture/Tables/frame.rsi
   - type: Icon
-    sprite: _Funkystation/Structures/Furniture/Tables/frame.rsi # Funky
+    sprite: Structures/Furniture/Tables/frame.rsi
     state: full
   - type: Fixtures
     fixtures:
@@ -94,16 +94,6 @@
   - type: Construction
     graph: Table
     node: CounterWoodFrame
-  - type: ItemSlots # funky start
-    slots:
-      hidden_slot:
-        name: hidden_slot
-        whitelist:
-          tags:
-          - SurveillanceDevices
-  - type: ContainerContainer
-    containers:
-      hidden_slot: !type:ContainerSlot # funky end
 
 - type: entity
   parent: [ BaseStructure, StructureHealthFurnitureWeak ]
@@ -113,9 +103,9 @@
   components:
   - type: SpriteFade
   - type: Sprite
-    sprite: _Funkystation/Structures/Furniture/Tables/frame.rsi # Funky
+    sprite: Structures/Furniture/Tables/frame.rsi
   - type: Icon
-    sprite: _Funkystation/Structures/Furniture/Tables/frame.rsi # Funky
+    sprite: Structures/Furniture/Tables/frame.rsi
     state: full
   - type: Fixtures
     fixtures:
@@ -157,9 +147,9 @@
   description: A square piece of metal standing on four metal legs.
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Furniture/Tables/generic.rsi # Funky
+    sprite: Structures/Furniture/Tables/generic.rsi
   - type: Icon
-    sprite: _Funkystation/Structures/Furniture/Tables/generic.rsi # Funky
+    sprite: Structures/Furniture/Tables/generic.rsi
   - type: Damageable
     damageModifierSet: SteelMod
   - type: Destructible
@@ -427,9 +417,9 @@
   description: Do not apply fire to this. Rumour says it burns easily.
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Furniture/Tables/wood.rsi # Funky
+    sprite: Structures/Furniture/Tables/wood.rsi
   - type: Icon
-    sprite: _Funkystation/Structures/Furniture/Tables/wood.rsi # Funky
+    sprite: Structures/Furniture/Tables/wood.rsi
   - type: Damageable
     damageModifierSet: WoodMod
   - type: Destructible
@@ -459,9 +449,9 @@
   description: Play em' cowboy.
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Furniture/Tables/carpet.rsi # Funky
+    sprite: Structures/Furniture/Tables/carpet.rsi
   - type: Icon
-    sprite: _Funkystation/Structures/Furniture/Tables/carpet.rsi # Funky
+    sprite: Structures/Furniture/Tables/carpet.rsi
   - type: Damageable
     damageModifierSet: WoodMod
   - type: Destructible
@@ -856,9 +846,9 @@
   description: Do not apply fire to this. Rumour says it burns easily.
   components:
   - type: Sprite
-    sprite: _Funkystation/Structures/Furniture/Tables/counterwood.rsi # Funky
+    sprite: Structures/Furniture/Tables/counterwood.rsi
   - type: Icon
-    sprite: _Funkystation/Structures/Furniture/Tables/counterwood.rsi # Funky
+    sprite: Structures/Furniture/Tables/counterwood.rsi
     state: full
   - type: Damageable
     damageModifierSet: WoodMod

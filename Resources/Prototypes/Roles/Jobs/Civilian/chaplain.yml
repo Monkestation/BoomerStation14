@@ -18,7 +18,7 @@
   id: ChaplainGear
   equipment:
     shoes: ClothingShoesColorBlack
-    id: ChaplainWallet # Funky: the wallet-ening
+    id: ChaplainPDA
     ears: ClothingHeadsetService
   storage:
     back:

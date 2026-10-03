@@ -89,5 +89,5 @@
         - id: WelderIndustrial
         - id: PowerCellHigh
         - id: PowerCellSmall
-        - id: FuClothingHandsGlovesInsulsBudget #Funky
+        - id: ClothingHandsGlovesColorYellowBudget
     offset: 0.0

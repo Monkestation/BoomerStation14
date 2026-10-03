@@ -10,21 +10,21 @@
   name: tool-quality-prying-name
   toolName: tool-quality-prying-tool-name
   spawn: Crowbar
-  icon: { sprite: _Funkystation/Objects/Tools/crowbar.rsi, state: icon } # Funky
+  icon: { sprite: Objects/Tools/crowbar.rsi, state: icon }
 
 - type: tool
   id: Screwing
   name: tool-quality-screwing-name
   toolName: tool-quality-screwing-tool-name
   spawn: Screwdriver
-  icon: { sprite: _Funkystation/Objects/Tools/screwdriver.rsi, state: screwdriver-map } # Funky
+  icon: { sprite: Objects/Tools/screwdriver.rsi, state: screwdriver-map }
 
 - type: tool
   id: Cutting
   name: tool-quality-cutting-name
   toolName: tool-quality-cutting-tool-name
   spawn: Wirecutter
-  icon: { sprite: _Funkystation/Objects/Tools/wirecutters.rsi, state: cutters-map } # Funky
+  icon: { sprite: Objects/Tools/wirecutters.rsi, state: cutters-map }
 
 - type: tool
   id: Welding
@@ -80,7 +80,7 @@
   name: tool-quality-shearing-name
   toolName: tool-quality-shearing-tool-name
   spawn: Wirecutter
-  icon: { sprite: _Funkystation/Objects/Tools/wirecutters.rsi, state: cutters-map } # Funky
+  icon: { sprite: Objects/Tools/wirecutters.rsi, state: cutters-map }
 
 - type: tool # Funky - Hull prying with a fire axe - Cherrypick of github.com/michaelchessall/SS14-Persistence/pull/182
   id: Axing

@@ -54,5 +54,5 @@
     mask: ClothingMaskBreath
     neck: ClothingNeckCloakCe
     outerClothing: ClothingOuterWinterCE
-    gloves: FuClothingHandsGlovesInsuls #Funky
+    gloves: ClothingHandsGlovesColorYellow
     shoes: ClothingShoesBootsMagAdv

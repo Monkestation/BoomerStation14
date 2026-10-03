@@ -13,7 +13,7 @@
         name: construction-graph-tag-medkit
       - tag: DiscreteHealthAnalyzer
         icon:
-          sprite: _Funkystation/Objects/Specific/Medical/healthanalyzer.rsi # Funky
+          sprite: Objects/Specific/Medical/healthanalyzer.rsi
           state: analyzer
         name: construction-graph-tag-health-analyzer
         doAfter: 2

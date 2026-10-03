@@ -724,19 +724,12 @@
     radius: 1.5
     energy: 4.0
     color: "#3c5eb5"
-  - type: ContainerContainer # funky start
+  - type: ItemSlots
+  - type: ContainerContainer
     containers:
       board: !type:Container
       IdCardConsole-privilegedId: !type:ContainerSlot
       IdCardConsole-targetId: !type:ContainerSlot
-      hidden_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      hidden_slot:
-        name: hidden_slot
-        whitelist:
-          tags:
-          - SurveillanceDevices # funky end
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -1181,7 +1174,7 @@
   - type: CargoOrderConsole
     account: Service
     announcementChannel: Service
-    removeLimitAccess: [ "HospitalityDirector" ] # funky
+    removeLimitAccess: [ "HeadOfPersonnel" ]
     mode: SendToPrimary
   - type: ActiveRadio
     channels:
@@ -1256,7 +1249,7 @@
     key: enum.FundingAllocationConsoleUiKey.Key
   - type: ActivatableUIRequiresAccess
   - type: AccessReader
-    access: [["ExecutiveOfficer"]] # funky
+    access: [["HeadOfPersonnel"]]
   - type: UserInterface
     interfaces:
       enum.FundingAllocationConsoleUiKey.Key:

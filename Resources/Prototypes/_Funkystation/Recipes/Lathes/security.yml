@@ -1,7 +1,0 @@
-- type: latheRecipe
-  parent: BaseToolRecipe
-  id: EvidenceBag
-  result: EvidenceBag
-  completetime: 4
-  materials:
-    Plastic: 25

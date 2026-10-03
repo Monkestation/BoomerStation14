@@ -22,7 +22,7 @@
   id: BartenderGear
   equipment:
     shoes: ClothingShoesColorBlack
-    id: BartenderWallet # Funky: the wallet-ening
+    id: BartenderPDA
     ears: ClothingHeadsetService
   #storage:
     #back:

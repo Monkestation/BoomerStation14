@@ -12,21 +12,6 @@
     maxTransferAmount: 10
   - type: StaticPrice
     price: 10
-  - type: EmitSoundOnPickup # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/drinkglass_pickup.ogg
-      params:
-        volume: -4
-  - type: EmitSoundOnDrop # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/drinkglass_drop.ogg
-      params:
-        volume: -4
-  - type: EmitSoundOnLand # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/drinkglass_drop.ogg
-      params:
-        volume: -4
 
 # A mug is a type of cup.[2]
 - type: entity
@@ -129,21 +114,6 @@
   components:
   - type: Sprite
     sprite: _Funkystation/Objects/Consumable/Drinks/mug.rsi # Funky
-  - type: EmitSoundOnPickup # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/drinkglass_pickup.ogg
-      params:
-        volume: -4
-  - type: EmitSoundOnDrop # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/drinkglass_drop.ogg
-      params:
-        volume: -4
-  - type: EmitSoundOnLand # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/drinkglass_drop.ogg
-      params:
-        volume: -4
 
 - type: entity
   parent: DrinkBaseMug
@@ -296,10 +266,10 @@
       - ReagentId: CafeLatte
         Quantity: 30
   - type: Icon
-    sprite: _Funkystation/Objects/Consumable/Drinks/cafe_latte.rsi # Funky
+    sprite: Objects/Consumable/Drinks/cafe_latte.rsi
     state: icon-vend
   - type: Sprite
-    sprite: _Funkystation/Objects/Consumable/Drinks/cafe_latte.rsi # Funky
+    sprite: Objects/Consumable/Drinks/cafe_latte.rsi
     layers:
     - state: icon
     - state: fill-1

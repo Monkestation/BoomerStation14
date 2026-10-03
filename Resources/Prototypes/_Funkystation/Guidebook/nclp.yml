@@ -1,6 +1,7 @@
 - type: guideEntry
   id: NCLP
   name: guide-entry-nclp
+  enabled: false
   text: "/ServerInfo/_Funkystation/Guidebook/NCLP/nclp.xml"
   children:
     - Article_1

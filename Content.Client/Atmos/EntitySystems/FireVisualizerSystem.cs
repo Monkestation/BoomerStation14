@@ -97,10 +97,6 @@ public sealed partial class FireVisualizerSystem : VisualizerSystem<FireVisualsC
             component.CurrentDisplacement = fireDisplacement;
         }
 
-        // funky, wait to create pointlight until after the entity is initialized
-        if (component.LightEntity == null && MetaData(uid).EntityLifeStage < EntityLifeStage.Initialized)
-            return;
-
         component.LightEntity ??= Spawn(null, new EntityCoordinates(uid, default));
         var light = EnsureComp<PointLightComponent>(component.LightEntity.Value);
 

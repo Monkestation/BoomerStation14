@@ -22,7 +22,7 @@
   id: ChefGear
   equipment:
     shoes: ClothingShoesChef
-    id: ChefWallet # Funky: the wallet-ening
+    id: ChefPDA
     ears: ClothingHeadsetService
     belt: ClothingBeltChefFilled
   #storage:

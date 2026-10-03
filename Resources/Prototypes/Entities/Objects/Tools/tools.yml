@@ -6,14 +6,12 @@
   components:
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/_Funkystation/Items/Handling/wirecutter_drop.ogg # Funky
-      params:
-        volume: -4
+      path: /Audio/Items/wirecutter_drop.ogg
   - type: Tag
     tags:
     - Wirecutter
   - type: Sprite
-    sprite: _Funkystation/Objects/Tools/wirecutters.rsi # Funky
+    sprite: Objects/Tools/wirecutters.rsi
     layers:
     - state: cutters
       map: [ "enum.DamageStateVisualLayers.Base" ]
@@ -37,7 +35,7 @@
       - enum.DamageStateVisualLayers.Base:
           cutters: Rainbow
   - type: Item
-    sprite: _Funkystation/Objects/Tools/wirecutters.rsi # Funky
+    sprite: Objects/Tools/wirecutters.rsi
     storedRotation: -90
   - type: ToolTileCompatible
   - type: PhysicalComposition
@@ -46,16 +44,6 @@
   - type: StaticPrice
     price: 30
   - type: BotanySampleTaker
-  - type: EmitSoundOnPickup # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/wirecutter_pickup.ogg
-      params:
-        volume: -4
-  - type: EmitSoundOnDrop # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/wirecutter_drop.ogg
-      params:
-        volume: -4
 
 - type: entity
   name: screwdriver
@@ -70,13 +58,13 @@
     tags:
     - Screwdriver
   - type: Sprite
-    sprite: _Funkystation/Objects/Tools/screwdriver.rsi # Funky
+    sprite: Objects/Tools/screwdriver.rsi
     layers:
       - state: screwdriver
         map: [ "enum.DamageStateVisualLayers.Base" ]
       - state: screwdriver-screwybits
   - type: Item
-    sprite: _Funkystation/Objects/Tools/screwdriver.rsi # Funky
+    sprite: Objects/Tools/screwdriver.rsi
     storedRotation: -90
   - type: MeleeWeapon
     wideAnimationRotation: -90
@@ -100,16 +88,6 @@
       Steel: 100
   - type: StaticPrice
     price: 30
-  - type: EmitSoundOnPickup # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/screwdriver_pickup.ogg
-      params:
-        volume: -4
-  - type: EmitSoundOnDrop # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/screwdriver_drop.ogg
-      params:
-        volume: -4
 
 - type: entity
   name: wrench
@@ -152,16 +130,6 @@
   - type: GuideHelp
     guides:
     - Construction
-  - type: EmitSoundOnPickup # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/wrench_pickup.ogg
-      params:
-        volume: -4
-  - type: EmitSoundOnDrop # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/wrench_drop.ogg
-      params:
-        volume: -4
 
 - type: entity
   name: multitool
@@ -216,16 +184,6 @@
     - WirePanels
     - Airlocks
     - InspectingPower
-  - type: EmitSoundOnPickup # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/multitool_pickup.ogg
-      params:
-        volume: -4
-  - type: EmitSoundOnDrop # Funky
-    sound:
-      path: /Audio/_Funkystation/Items/Handling/multitool_drop.ogg
-      params:
-        volume: -4
 
 - type: entity
   name: network configurator

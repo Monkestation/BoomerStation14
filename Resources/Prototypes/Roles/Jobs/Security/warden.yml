@@ -32,7 +32,7 @@
   id: WardenGear
   equipment:
     eyes: ClothingEyesGlassesSecurity
-    id: WardenWallet # Funky: the wallet-ening
+    id: WardenPDA
     ears: ClothingHeadsetWarden # funkystation
     pocket1: WeaponPistolMk58
   storage:

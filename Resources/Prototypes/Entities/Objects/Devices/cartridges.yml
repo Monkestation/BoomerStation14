@@ -152,7 +152,7 @@
     - type: Cartridge
       programName: med-tek-program-name
       icon:
-        sprite: _Funkystation/Objects/Specific/Medical/healthanalyzer.rsi # Funky
+        sprite: Objects/Specific/Medical/healthanalyzer.rsi
         state: icon
     - type: MedTekCartridge
 

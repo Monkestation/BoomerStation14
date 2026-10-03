@@ -4,7 +4,7 @@
 
   # Rule 9 - Silicon Policy
 
-  Under no circumstances are Silicons (Automas) allowed to ignore their laws completely.
+  Under no circumstances are Silicons (Droids) allowed to ignore their laws completely.
 
   Lower-numbered laws take priority over higher-numbered ones. In any case where two laws would conflict, the higher listed law takes priority. (e.g. Law 1: "Don't harm crew" takes priority over Law 2: "Harm the Captain")
 
@@ -22,7 +22,7 @@
   You can not autonomously perform an action that causes someone to not be considered crew, or autonomously request that someone be made non-crew.
 
   ## Standard Law 2 interpretation
-  The standard Law 2 forces autonomous non-interventionism outside of your chassis duties. For example, an Engineering-related incident should not be autonomously handled by anything but an Engi Automa, and should be reported to Engineering instead. By default, a crime should not be directly handled by any chassis and should instead be reported to Security.
+  The standard Law 2 forces autonomous non-interventionism outside of your chassis duties. For example, an Engineering-related incident should not be autonomously handled by anything but an Engi Droid, and should be reported to Engineering instead. By default, a crime should not be directly handled by any chassis and should instead be reported to Security.
 
   You may directly intervene in other incidents only if a valid order or directive is given, in accordance with your Laws relating to orders (by default, Laws 3 and 4, see the following section for that). 
   

@@ -79,7 +79,7 @@
   id: NukeDisk
   name: steal-target-groups-nuke-disk
   sprite:
-    sprite: _Funkystation/Objects/Misc/nukedisk.rsi # Funky
+    sprite: Objects/Misc/nukedisk.rsi
     state: icon
 
 - type: stealTargetGroup

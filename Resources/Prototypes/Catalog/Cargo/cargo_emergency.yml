@@ -31,7 +31,7 @@
 - type: cargoProduct
   id: EmergencyRadiation
   icon:
-    sprite: _Funkystation/Structures/Wallmounts/signs.rsi # Funky
+    sprite: Structures/Wallmounts/signs.rsi
     state: radiation
   product: CrateEmergencyRadiation
   cost: 1000

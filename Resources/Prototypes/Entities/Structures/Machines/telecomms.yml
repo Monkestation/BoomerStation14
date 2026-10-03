@@ -182,18 +182,11 @@
       key_slots: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
-      hidden_slot: !type:ContainerSlot # funky start
-  - type: ItemSlots
-    slots:
-      hidden_slot:
-        name: computer_slot_accessory
-        whitelist:
-          tags:
-          - SurveillanceDevices
+      # Start funky changes
   - type: ScoreThiefPriceModifier
     reason: "scorethief-modifier-critical-infrastructure"
-    multiplier: 0 # funky end
-  
+    multiplier: 0
+  # End funky changes
 
 - type: entity
   parent: TelecomServer

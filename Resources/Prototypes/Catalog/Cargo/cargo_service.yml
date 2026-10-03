@@ -21,7 +21,7 @@
 - type: cargoProduct
   id: ServiceCookGetmore
   icon:
-    sprite: _Funkystation/Objects/Consumable/Food/snacks.rsi # Funky
+    sprite: Objects/Consumable/Food/snacks.rsi
     state: raisins
   product: CrateServiceGetMore
   cost: 750
@@ -31,7 +31,7 @@
 - type: cargoProduct
   id: ServiceDinnerware
   icon:
-    sprite: _Funkystation/Objects/Consumable/Food/plates.rsi # Funky
+    sprite: Objects/Consumable/Food/plates.rsi
     state: tin
   product: CrateServiceDinnerware
   cost: 750

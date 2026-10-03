@@ -1,0 +1,8 @@
+- type: entity
+  parent: CargoPDA
+  id: CourierPDA
+  name: courier PDA
+  description: PDA for the guys that deliver the mail.
+  components:
+  - type: Pda
+    id: FuCourierIDCard

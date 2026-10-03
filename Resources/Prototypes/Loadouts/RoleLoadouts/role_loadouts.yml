@@ -288,7 +288,7 @@
   - CargoTechnicianBackpack
    # Funky - previously CargoTechnicianOuterClothing
   - CargoTechnicianShoes
-  #- CargoTechnicianID # Funky: the wallet-ening, also removing the loadout choice for senior stuff
+  - CargoTechnicianID
   - Pager
   - Glasses
   - AssistiveItems
@@ -357,7 +357,7 @@
   - StationEngineerBackpack
   - StationEngineerOuterClothing
   - StationEngineerShoes
-  #- StationEngineerID # Funky: the wallet-ening, also removing the loadout choice for senior stuff
+  - StationEngineerID
   - Pager
   - AssistiveItems
   - SurvivalExtended
@@ -414,7 +414,7 @@
   - ScientistOuterClothing
   - ScientistGloves
   - ScientistShoes
-  #- ScientistPDA # Funky: the wallet-ening, also removing the loadout choice for senior stuff
+  - ScientistPDA
   - Pager
   - Glasses
   - AssistiveItems
@@ -486,7 +486,7 @@
   - SecurityBackpack
   - SecurityOuterClothing
   - SecurityShoes
-  #- SecurityPDA # Funky: the wallet-ening, also removing the loadout choice for senior stuff
+  - SecurityPDA
   - SecurityBelt
   - AssistiveItems
   - Pager

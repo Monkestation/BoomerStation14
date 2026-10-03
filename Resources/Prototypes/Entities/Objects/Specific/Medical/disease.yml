@@ -51,5 +51,5 @@
   - type: Item
     size: Tiny
   - type: Sprite
-    sprite: _Funkystation/Objects/Specific/Medical/medipen.rsi # Funky
+    sprite: Objects/Specific/Medical/medipen.rsi
     state: salpen

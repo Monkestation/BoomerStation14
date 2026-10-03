@@ -36,7 +36,7 @@
 - type: entity
   id: LeftArmBorg
   parent: PartSilicon
-  name: automa left arm # Funky
+  name: cyborg left arm
   components:
   - type: Sprite
     state: borg_l_arm
@@ -51,7 +51,7 @@
 - type: entity
   id: RightArmBorg
   parent: PartSilicon
-  name: automa right arm # Funky
+  name: cyborg right arm
   components:
   - type: Sprite
     state: borg_r_arm
@@ -66,7 +66,7 @@
 - type: entity
   id: LeftLegBorg
   parent: PartSilicon
-  name: automa left leg # Funky
+  name: cyborg left leg
   components:
   - type: Sprite
     state: borg_l_leg
@@ -81,7 +81,7 @@
 - type: entity
   id: RightLegBorg
   parent: PartSilicon
-  name: automa right leg # Funky
+  name: cyborg right leg
   components:
   - type: Sprite
     state: borg_r_leg
@@ -96,7 +96,7 @@
 - type: entity
   id: LightHeadBorg
   parent: PartSilicon
-  name: automa head # Funky
+  name: cyborg head
   components:
   - type: Sprite
     state: borg_head
@@ -110,7 +110,7 @@
 - type: entity
   id: TorsoBorg
   parent: PartSilicon
-  name: automa torso # Funky
+  name: cyborg torso
   components:
   - type: Sprite
     state: borg_chest

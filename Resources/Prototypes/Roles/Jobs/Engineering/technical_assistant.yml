@@ -22,7 +22,7 @@
   id: TechnicalAssistantGear
   equipment:
     shoes: ClothingShoesBootsWork
-    id: TechnicalAssistantWallet # Funky: the wallet-ening
+    id: TechnicalAssistantPDA
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering
     pocket2: BookEngineersHandbook
@@ -39,4 +39,4 @@
     mask: ClothingMaskBreath
     neck: ClothingNeckScarfStripedOrange
     outerClothing: ClothingOuterVestHazard
-    gloves: FuClothingHandsGlovesInsuls #Funky
+    gloves: ClothingHandsGlovesColorYellow

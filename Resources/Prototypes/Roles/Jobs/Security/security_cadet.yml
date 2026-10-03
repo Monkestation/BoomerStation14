@@ -29,7 +29,7 @@
   equipment:
     shoes: ClothingShoesBootsJackFilled
     outerClothing: ClothingOuterArmorBasic
-    id: SecurityCadetWallet # Funky: the wallet-ening
+    id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
     pocket1: WeaponPistolMk58

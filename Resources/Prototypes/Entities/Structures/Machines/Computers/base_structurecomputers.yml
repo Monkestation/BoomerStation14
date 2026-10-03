@@ -66,18 +66,10 @@
     blacklist:
       tags:
       - NoConsoleSound
-  - type: ContainerContainer # funky start
+  - type: ContainerContainer
     containers:
       board: !type:Container
         ents: []
-      hidden_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      hidden_slot:
-        name: computer_slot_accessory
-        whitelist:
-          tags:
-          - SurveillanceDevices # funky end
   - type: LightningTarget
     priority: 1
   - type: RequireProjectileTarget

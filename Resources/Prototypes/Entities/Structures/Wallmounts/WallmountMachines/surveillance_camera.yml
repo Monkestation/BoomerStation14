@@ -96,16 +96,6 @@
           SheetSteel1:
             min: 0
             max: 1
-  - type: ContainerContainer # funky start
-    containers:
-      hidden_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      hidden_slot:
-        name: hidden_slot
-        whitelist:
-          tags:
-          - SurveillanceDevices # funky end
 
 - type: entity
   parent: SurveillanceCameraBase

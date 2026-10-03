@@ -6,10 +6,6 @@
     "x": 32,
     "y": 32
   },
-  "states": [
-    {"name": "crypt_det"},
-    {"name": "det_label"}
-  ],
     "states": [
         {
             "name": "crypt_gray"
@@ -88,12 +84,6 @@
         },
         {
             "name": "pirate_label"
-        },
-        {
-            "name": "crypt_det"
-        },
-        {
-            "name": "det_label"
         },
         {
             "name": "label-future",

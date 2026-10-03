@@ -100,16 +100,6 @@
     price: 100
   - type: Appearance
   - type: WiresVisuals
-  - type: ContainerContainer # funky start
-    containers:
-      hidden_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      hidden_slot:
-        name: hidden_slot
-        whitelist:
-          tags:
-          - SurveillanceDevices # funky end
   - type: VendingMachineEject
   - type: VendingMachineDispenseOnHit
     chance: 0.25
@@ -336,7 +326,7 @@
     energy: 2.0
     color: "#ffb0b0"
   - type: AccessReader
-    access: [["ExecutiveOfficer"]] # funky
+    access: [["HeadOfPersonnel"]]
 
 - type: entity
   parent: VendingMachine

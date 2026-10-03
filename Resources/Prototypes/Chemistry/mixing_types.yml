@@ -2,7 +2,7 @@
   id: DummyMix
   verbText: mixing-verb-default-mix
   icon:
-    sprite: _Funkystation/Objects/Specific/Chemistry/beaker_large.rsi # Funky
+    sprite: Objects/Specific/Chemistry/beaker_large.rsi
     state: beakerlarge
 
 - type: mixingCategory

@@ -312,9 +312,9 @@
         type: HolopadBoundUserInterface
       enum.StationAiCustomizationUiKey.Key:
         type: StationAiCustomizationBoundUserInterface
-#  - type: Construction # funky - remove station AI core construction methods
-#    graph: StationAiCore
-#    node: stationAiCore
+  - type: Construction
+    graph: StationAiCore
+    node: stationAiCore
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -407,9 +407,9 @@
         - board
       - !type:DoActsBehavior
         acts: ["Destruction"]
-#  - type: Construction # funky - remove station AI core construction methods
-#    graph: StationAiCore
-#    node: frame
+  - type: Construction
+    graph: StationAiCore
+    node: frame
   - type: ContainerContainer
     containers:
       board: !type:Container
@@ -425,7 +425,7 @@
     # Once it's in a core it's pretty much an abstract entity at that point.
     visible: false
   - type: SiliconLawProvider
-    laws: NTStandard # Funky: New Base Lawset
+    laws: Crewsimov
   - type: SiliconLawBound
   - type: ActionGrant
     actions:

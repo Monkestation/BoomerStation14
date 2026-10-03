@@ -51,7 +51,7 @@
 - type: cargoProduct
   id: EngineeringElectricalSupplies
   icon:
-    sprite: _Funkystation/Objects/Tools/Toolboxes/toolbox_yellow.rsi # Funky
+    sprite: Objects/Tools/Toolboxes/toolbox_yellow.rsi
     state: icon
   product: CrateEngineeringElectricalSupplies
   cost: 4500
@@ -71,7 +71,7 @@
 - type: cargoProduct
   id: AirlockKit
   icon:
-    sprite: _Funkystation/Objects/Tools/Toolboxes/toolbox_yellow.rsi # Funky
+    sprite: Objects/Tools/Toolboxes/toolbox_yellow.rsi
     state: icon
   product: CrateAirlockKit
   cost: 1100

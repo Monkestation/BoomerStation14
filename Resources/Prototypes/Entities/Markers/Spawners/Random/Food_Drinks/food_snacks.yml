@@ -9,7 +9,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: _Funkystation/Objects/Consumable/Food/snacks.rsi # Funky
+      - sprite: Objects/Consumable/Food/snacks.rsi
         state: cheesiehonkers
   - type: EntityTableSpawner
     table: !type:NestedSelector

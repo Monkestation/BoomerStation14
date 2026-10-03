@@ -97,7 +97,7 @@
     sprite: Markers/jobs.rsi
     layers:
       - state: green
-      - sprite: _Funkystation/Structures/Wallmounts/signs.rsi # Funky
+      - sprite: Structures/Wallmounts/signs.rsi
         state: radiation
 
 - type: entity
@@ -115,7 +115,7 @@
     sprite: Markers/jobs.rsi
     layers:
       - state: green
-      - sprite: _Funkystation/Structures/Wallmounts/signs.rsi # Funky
+      - sprite: Structures/Wallmounts/signs.rsi
         state: radiation
 
 - type: entity

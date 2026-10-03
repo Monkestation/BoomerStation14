@@ -11,7 +11,7 @@
 - type: cargoProduct
   id: FoodMRE
   icon:
-    sprite: _Funkystation/Objects/Consumable/Food/snacks.rsi # Funky
+    sprite: Objects/Consumable/Food/snacks.rsi
     state: nutribrick
   product: CrateFoodMRE
   cost: 1400

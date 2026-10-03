@@ -1,3 +1,3 @@
 chat-radio-emergency = Emergency
-chat-radio-prisoner = Prisoner
+chat-radio-logistics = Logistics
 chat-radio-hailing = Hailing Frequency

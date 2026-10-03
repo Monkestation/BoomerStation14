@@ -43,14 +43,8 @@
   - type: ContainerContainer
     containers:
       gasTankSlot: !type:ContainerSlot {}
-      hidden_slot: !type:ContainerSlot
   - type: ItemSlots
     slots:
-      hidden_slot:
-        name: hidden_slot
-        whitelist:
-          tags:
-          - SurveillanceDevices
       gasTankSlot:
         name: comp-gas-canister-slot-name-gas-tank
         whitelist:

@@ -151,14 +151,6 @@
       machine_board: !type:Container
       machine_parts: !type:Container
       blueprint: !type:Container
-      hidden_slot: !type:ContainerSlot # funky start
-  - type: ItemSlots
-    slots:
-      hidden_slot:
-        name: computer_slot_accessory
-        whitelist:
-          tags:
-          - SurveillanceDevices # funky end
   - type: EmptyOnMachineDeconstruct
     containers:
     - blueprint
@@ -619,11 +611,6 @@
       staticPacks:
       - OreSmelting
       - RGlassSmelting
-      #Funky start - Prisoner salvage magnet
-    - type: ActivatableUIRequiresAccess
-    - type: AccessReader
-      access: [["Security"]]
-      #Funky end - Prisoner salvage magnet
 
 - type: entity
   parent: OreProcessor

@@ -41,7 +41,7 @@
 - type: cargoProduct
   id: BulkPlantBGone
   icon:
-    sprite: _Funkystation/Objects/Specific/Chemistry/jug.rsi # Funky
+    sprite: Objects/Specific/Chemistry/jug.rsi
     state: icon_empty
   product: CratePlantBGone
   cost: 750

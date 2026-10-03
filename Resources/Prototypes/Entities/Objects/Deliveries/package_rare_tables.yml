@@ -186,7 +186,7 @@
         prob: 0.1 #funky change I LOVE GAMBLING!!!
     - id: ClothingShoesBootsMag
       prob: 0.5
-    - id: FuClothingHandsGlovesInsuls #Funky
+    - id: ClothingHandsGlovesColorYellow
     - id: ClothingShoesColorYellow
 
 #funkstart

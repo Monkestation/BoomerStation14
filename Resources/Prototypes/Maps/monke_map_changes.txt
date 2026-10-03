@@ -1,0 +1,67 @@
+This is a folder documenting all the major changes made to upstream maps in the event upstream updates them.
+Minor changes like re-running variantize and door alignment are not documented.
+
+Bagel:
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+Box:
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+Elkridge
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+Exo
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+Marathon
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+Packed
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+Plasma
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+Saltern
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+- Mail teleporter
+
+Snowball
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+Sushi
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+Tram2
+- Department comms consoles
+- Prisoner spawn/suits
+- Courier spawns
+
+
+
+
+
+
+
+
+

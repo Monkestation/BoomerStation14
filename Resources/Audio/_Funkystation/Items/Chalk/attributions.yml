@@ -1,24 +1,4 @@
-- files: ["chalk_1.ogg"]
-  license: "CC-BY-NC-3.0"
-  copyright: "By Liefdier101, sourced from Freesound.org"
-  source: "https://freesound.org/people/Liefdier101/sounds/366615/"
-
-- files: ["chalk_2.ogg"]
-  license: "CC-BY-NC-3.0"
-  copyright: "By Liefdier101, sourced from Freesound.org"
-  source: "https://freesound.org/people/Liefdier101/sounds/366615/"
-
-- files: ["chalk_3.ogg"]
-  license: "CC-BY-NC-3.0"
-  copyright: "By Liefdier101, sourced from Freesound.org"
-  source: "https://freesound.org/people/Liefdier101/sounds/366615/"
-
-- files: ["chalk_4.ogg"]
-  license: "CC-BY-NC-3.0"
-  copyright: "By Liefdier101, sourced from Freesound.org"
-  source: "https://freesound.org/people/Liefdier101/sounds/366615/"
-
-- files: ["chalk_5.ogg"]
-  license: "CC-BY-NC-3.0"
-  copyright: "By Liefdier101, sourced from Freesound.org"
-  source: "https://freesound.org/people/Liefdier101/sounds/366615/"
+- files: ["chalk_1.ogg", "chalk_2.ogg", "chalk_3.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "Chalk - Writing - 02.wav by Sirderf -- https://freesound.org/s/332291/ -- License: Attribution 4.0"
+  source: "https://freesound.org/s/332291/"
