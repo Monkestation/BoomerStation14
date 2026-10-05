@@ -55,7 +55,8 @@
             Lawyer: [ 2, 2 ]
             #supply (9)
             SalvageSpecialist: [ 3, 3 ]
-            CargoTechnician: [ 6, 6 ]
+            CargoTechnician: [ 5, 5 ]
+            FuCourier: [2, 2]
             #civilian (3+)
             Passenger: [ -1, -1 ] #infinite, not counted
             Clown: [ 1, 1 ]

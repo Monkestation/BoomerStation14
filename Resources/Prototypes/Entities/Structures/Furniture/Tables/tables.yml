@@ -180,9 +180,9 @@
   description: A square piece of metal standing on four metal legs. Extra robust.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/reinforced.rsi
+    sprite: _Funkystation/Structures/Furniture/Tables/reinforced.rsi # Funky
   - type: Icon
-    sprite: Structures/Furniture/Tables/reinforced.rsi
+    sprite: _Funkystation/Structures/Furniture/Tables/reinforced.rsi # Funky
   - type: Damageable
     damageModifierSet: PlasteelMod
   - type: Destructible
@@ -219,9 +219,9 @@
   description: A square piece of glass, standing on four metal legs.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/glass.rsi
+    sprite: _Funkystation/Structures/Furniture/Tables/glass.rsi # Funky
   - type: Icon
-    sprite: Structures/Furniture/Tables/glass.rsi
+    sprite: _Funkystation/Structures/Furniture/Tables/glass.rsi # Funky
   - type: GlassTable
     climberDamage:
       types:
@@ -302,9 +302,9 @@
   description: A square piece of glass, standing on four metal legs. Extra robust.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/r_glass.rsi
+    sprite: _Funkystation/Structures/Furniture/Tables/r_glass.rsi # Funky
   - type: Icon
-    sprite: Structures/Furniture/Tables/r_glass.rsi
+    sprite: _Funkystation/Structures/Furniture/Tables/r_glass.rsi # Funky
   - type: GlassTable
     climberDamage:
       types:
@@ -881,9 +881,9 @@
   description: Looks like a good place to put a drink down.
   components:
   - type: Sprite
-    sprite: Structures/Furniture/Tables/countermetal.rsi
+    sprite: _Funkystation/Structures/Furniture/Tables/countermetal.rsi # Funky
   - type: Icon
-    sprite: Structures/Furniture/Tables/countermetal.rsi
+    sprite: _Funkystation/Structures/Furniture/Tables/countermetal.rsi # Funky
     state: full
   - type: Damageable
     damageModifierSet: SteelMod

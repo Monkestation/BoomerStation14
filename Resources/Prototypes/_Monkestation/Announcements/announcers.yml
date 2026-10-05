@@ -11,91 +11,203 @@
   id: DukeAnnouncer
   sounds:
     Attention:
-      collection: MSDukeAlerts
+      monoSound:
+        collection: MSDukeAlertsMono
+      stereoSound:
+        collection: MSDukeAlerts
     GridPowerOff:
-      path: /Audio/_Monkestation/Announcements/Duke/power_off.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/power_off.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/power_off.ogg
     GridPowerOn:
-      path: /Audio/_Monkestation/Announcements/Duke/power_on.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/power_on.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/power_on.ogg
     Intercept:
-      path: /Audio/_Monkestation/Announcements/Duke/intercept.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/intercept.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/intercept.ogg
     Welcome:
-      collection: MSDukeWelcome
+      monoSound:
+        collection: MSDukeWelcomeMono
+      stereoSound:
+        collection: MSDukeWelcome
     Meteors:
-      path: /Audio/_Monkestation/Announcements/Duke/meteors.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/meteors.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/meteors.ogg
     ShuttleCalled:
-      path: /Audio/_Monkestation/Announcements/Duke/shuttle_call.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/shuttle_call.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/shuttle_call.ogg
     ShuttleRecalled:
-      path: /Audio/_Monkestation/Announcements/Duke/shuttle_recall.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/shuttle_recall.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/shuttle_recall.ogg
     ShuttleDock:
-      path: /Audio/_Monkestation/Announcements/Duke/shuttle_arrive.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/shuttle_arrive.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Duke/shuttle_arrive.ogg
 
 - type: announcer
   id: InternAnnouncer
   sounds:
     Attention:
-      collection: MSInternAlerts
+      monoSound:
+        collection: MSInternAlertsMono
+      stereoSound:
+        collection: MSInternAlerts
     GridPowerOff:
-      path: /Audio/_Monkestation/Announcements/Intern/poweroff.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/poweroff.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/poweroff.ogg
     GridPowerOn:
-      path: /Audio/_Monkestation/Announcements/Intern/poweron.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/poweron.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/poweron.ogg
     Intercept:
-      path: /Audio/_Monkestation/Announcements/Intern/intercept.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/intercept.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/intercept.ogg
     Welcome:
-      collection: MSInternWelcome
+      monoSound:
+        collection: MSInternWelcomeMono
+      stereoSound:
+        collection: MSInternWelcome
     Meteors:
-      path: /Audio/_Monkestation/Announcements/Intern/meteors.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/meteors.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/meteors.ogg
     ShuttleCalled:
-      path: /Audio/_Monkestation/Announcements/Intern/shuttlecalled.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/shuttlecalled.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/shuttlecalled.ogg
     ShuttleRecalled:
-      path: /Audio/_Monkestation/Announcements/Intern/shuttlerecalled.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/shuttlerecalled.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/shuttlerecalled.ogg
     ShuttleDock:
-      path: /Audio/_Monkestation/Announcements/Intern/shuttledock.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/shuttledock.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Intern/shuttledock.ogg
 
 - type: announcer
   id: MedbotAnnouncer
   sounds:
     Attention:
-      path: /Audio/_Monkestation/Announcements/Medbot/attention.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/attention.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/attention.ogg
     GridPowerOff:
-      path: /Audio/_Monkestation/Announcements/Medbot/poweroff.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/poweroff.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/poweroff.ogg
     GridPowerOn:
-      path: /Audio/_Monkestation/Announcements/Medbot/poweron.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/poweron.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/poweron.ogg
     Intercept:
-      path: /Audio/_Monkestation/Announcements/Medbot/intercept.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/intercept.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/intercept.ogg
     Welcome:
-      path: /Audio/_Monkestation/Announcements/Medbot/welcome.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/welcome.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/welcome.ogg
     Meteors:
-      path: /Audio/_Monkestation/Announcements/Medbot/meteors.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/meteors.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/meteors.ogg
     ShuttleCalled:
-      path: /Audio/_Monkestation/Announcements/Medbot/shuttlecalled.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/shuttlecalled.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/shuttlecalled.ogg
     ShuttleRecalled:
-      path: /Audio/_Monkestation/Announcements/Medbot/shuttlerecalled.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/shuttlerecalled.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/shuttlerecalled.ogg
     ShuttleDock:
-      path: /Audio/_Monkestation/Announcements/Medbot/shuttledock.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/shuttledock.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Medbot/shuttledock.ogg
 
 
 - type: announcer
   id: DagothAnnouncer
   sounds:
     Attention:
-      collection: MSDagothAlerts
-      params:
-        volume: 10
+      monoSound:
+        collection: MSDagothAlertsMono
+        params:
+          volume: 10
+      stereoSound:
+        collection: MSDagothAlerts
+        params:
+          volume: 10
     GridPowerOff:
-      path: /Audio/_Monkestation/Announcements/Dagoth/power_off.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/power_off.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/power_off.ogg
     GridPowerOn:
-      path: /Audio/_Monkestation/Announcements/Dagoth/power_on.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/power_on.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/power_on.ogg
     Intercept:
-      path: /Audio/_Monkestation/Announcements/Dagoth/intercept.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/intercept.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/intercept.ogg
     Welcome:
-      collection: MSDagothWelcome
-      params:
-        volume: 10
+      monoSound:
+        collection: MSDagothWelcomeMono
+        params:
+          volume: 10
+      stereoSound:
+        collection: MSDagothWelcome
+        params:
+          volume: 10
     Meteors:
-      path: /Audio/_Monkestation/Announcements/Dagoth/meteors.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/meteors.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/meteors.ogg
     ShuttleCalled:
-      path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_call.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_call.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_call.ogg
     ShuttleRecalled:
-      path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_recall.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_recall.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_recall.ogg
     ShuttleDock:
-      path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_arrive.ogg
+      monoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_arrive.mono.ogg
+      stereoSound:
+        path: /Audio/_Monkestation/Announcements/Dagoth/shuttle_arrive.ogg

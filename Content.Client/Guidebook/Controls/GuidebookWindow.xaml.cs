@@ -311,6 +311,9 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
             return null;
         }
 
+        if (!entry.Enabled)
+            return null;
+
         var rulesProto = UserInterfaceManager.GetUIController<InfoUIController>().GetCoreRuleEntry();
         if (entry.RuleEntry && entry.Id != rulesProto.Id)
             return null;

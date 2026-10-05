@@ -41,6 +41,12 @@ public partial class GuideEntry
 
     [DataField] public bool RuleEntry;
 
+    // Monkestation edit - Added ability to disable guidebook entries
+    /// <summary>
+    /// If set to false, guidebook and it's children don't render.
+    /// </summary>
+    [DataField] public bool Enabled = true;
+
     /// <summary>
     ///     Priority for sorting top-level guides when shown in a tree / table of contents.
     ///     If the guide is the child of some other guide, the order simply determined by the order of children in <see cref="Children"/>.

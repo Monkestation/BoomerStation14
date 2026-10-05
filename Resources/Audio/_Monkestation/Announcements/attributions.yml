@@ -25,3 +25,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "taken from monkestation at commit https://github.com/Monkestation/Monkestation2.0/commit/bc4d817908c861840a337bb879d249d9aa4bf337"
   source: "https://github.com/Monkestation/Monkestation2.0"
+
+- files: [".mono variants"]
+  license: "Custom"
+  copyright: "Processed into mono from the original"
+  source: "https://github.com/Monkestation/BoomerStation14/pull/128"

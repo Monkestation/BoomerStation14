@@ -1,0 +1,5 @@
+- type: guideEntry
+  id: Unions
+  name: guide-entry-unions
+  enabled: false
+  text: "/ServerInfo/Guidebook/_Funkystation/Unions/Unions.xml"

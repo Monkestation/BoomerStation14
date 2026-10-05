@@ -8,10 +8,24 @@
   - /Audio/_Monkestation/Announcements/Duke/alerts/nerd.ogg
 
 - type: soundCollection
+  id: MSDukeAlertsMono
+  files:
+  - /Audio/_Monkestation/Announcements/Duke/alerts/bonus2.mono.ogg
+  - /Audio/_Monkestation/Announcements/Duke/alerts/headsup1.mono.ogg
+  - /Audio/_Monkestation/Announcements/Duke/alerts/headsup2.mono.ogg
+  - /Audio/_Monkestation/Announcements/Duke/alerts/nerd.mono.ogg
+
+- type: soundCollection
   id: MSDukeCommandReport
   files:
   - /Audio/_Monkestation/Announcements/Duke/commandreport/centralcommand1.ogg
   - /Audio/_Monkestation/Announcements/Duke/commandreport/centralcommand2.ogg
+
+- type: soundCollection
+  id: MSDukeCommandReportMono
+  files:
+  - /Audio/_Monkestation/Announcements/Duke/commandreport/centralcommand1.mono.ogg
+  - /Audio/_Monkestation/Announcements/Duke/commandreport/centralcommand2.mono.ogg
 
 - type: soundCollection
   id: MSDukeWelcome
@@ -19,6 +33,13 @@
   - /Audio/_Monkestation/Announcements/Duke/welcome/bonus1.ogg
   - /Audio/_Monkestation/Announcements/Duke/welcome/welcome1.ogg
   - /Audio/_Monkestation/Announcements/Duke/welcome/welcome2.ogg
+
+- type: soundCollection
+  id: MSDukeWelcomeMono
+  files:
+  - /Audio/_Monkestation/Announcements/Duke/welcome/bonus1.mono.ogg
+  - /Audio/_Monkestation/Announcements/Duke/welcome/welcome1.mono.ogg
+  - /Audio/_Monkestation/Announcements/Duke/welcome/welcome2.mono.ogg
 
 # INTERN
 - type: soundCollection
@@ -40,11 +61,36 @@
   - /Audio/_Monkestation/Announcements/Intern/alerts/14.ogg
 
 - type: soundCollection
+  id: MSInternAlertsMono
+  files:
+  - /Audio/_Monkestation/Announcements/Intern/alerts/1.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/2.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/3.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/4.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/5.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/6.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/7.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/8.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/9.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/10.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/11.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/12.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/13.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/alerts/14.mono.ogg
+
+- type: soundCollection
   id: MSInternCommandReport
   files:
   - /Audio/_Monkestation/Announcements/Intern/commandreport/1.ogg
   - /Audio/_Monkestation/Announcements/Intern/commandreport/2.ogg
   - /Audio/_Monkestation/Announcements/Intern/commandreport/3.ogg
+
+- type: soundCollection
+  id: MSInternCommandReportMono
+  files:
+  - /Audio/_Monkestation/Announcements/Intern/commandreport/1.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/commandreport/2.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/commandreport/3.mono.ogg
 
 - type: soundCollection
   id: MSInternWelcome
@@ -55,6 +101,16 @@
   - /Audio/_Monkestation/Announcements/Intern/welcome/4.ogg
   - /Audio/_Monkestation/Announcements/Intern/welcome/5.ogg
   - /Audio/_Monkestation/Announcements/Intern/welcome/6.ogg
+
+- type: soundCollection
+  id: MSInternWelcomeMono
+  files:
+  - /Audio/_Monkestation/Announcements/Intern/welcome/1.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/2.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/3.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/4.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/5.mono.ogg
+  - /Audio/_Monkestation/Announcements/Intern/welcome/6.mono.ogg
 
 # DAGOTH
 - type: soundCollection
@@ -69,10 +125,27 @@
   - /Audio/_Monkestation/Announcements/Dagoth/alerts/alert7.ogg
 
 - type: soundCollection
+  id: MSDagothAlertsMono
+  files:
+  - /Audio/_Monkestation/Announcements/Dagoth/alerts/alert1.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/alerts/alert2.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/alerts/alert3.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/alerts/alert4.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/alerts/alert5.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/alerts/alert6.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/alerts/alert7.mono.ogg
+
+- type: soundCollection
   id: MSDagothCommandReport
   files:
   - /Audio/_Monkestation/Announcements/Dagoth/commandreport/centralcommand1.ogg
   - /Audio/_Monkestation/Announcements/Dagoth/commandreport/centralcommand2.ogg
+
+- type: soundCollection
+  id: MSDagothCommandReportMono
+  files:
+  - /Audio/_Monkestation/Announcements/Dagoth/commandreport/centralcommand1.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/commandreport/centralcommand2.mono.ogg
 
 - type: soundCollection
   id: MSDagothWelcome
@@ -81,3 +154,11 @@
   - /Audio/_Monkestation/Announcements/Dagoth/welcome/welcome2.ogg
   - /Audio/_Monkestation/Announcements/Dagoth/welcome/welcome3.ogg
   - /Audio/_Monkestation/Announcements/Dagoth/welcome/welcome4.ogg
+
+- type: soundCollection
+  id: MSDagothWelcomeMono
+  files:
+  - /Audio/_Monkestation/Announcements/Dagoth/welcome/welcome.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/welcome/welcome2.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/welcome/welcome3.mono.ogg
+  - /Audio/_Monkestation/Announcements/Dagoth/welcome/welcome4.mono.ogg

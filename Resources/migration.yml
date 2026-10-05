@@ -1153,3 +1153,9 @@ DrinkNeurotoxinGlass: null
 #2026-08-19
 JanitorServiceLight: null
 
+# 2026-08-31 RMC Pump/Breech Ports
+WeaponSniperMosin: FuWeaponSniperMosin
+WeaponShotgunKammerer: FuWeaponShotgunKammerer
+WeaponShotgunDoubleBarreled: FuWeaponShotgunDoubleBarreled
+WeaponShotgunSawn: FuWeaponShotgunSawn
+WeaponLauncherChinaLake: FuWeaponLauncherChinaLake

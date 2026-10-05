@@ -306,6 +306,7 @@
 - type: entity
   id: RCD
   parent: [ BaseItem, BaseEngineeringContraband ]
+  suffix: Deprecated # Funky - Use ConstructionChalkBox instead.
   name: RCD
   description: The rapid construction device can be used to quickly place and remove various station structures and fixtures. Requires compressed matter to function.
   components:
@@ -359,6 +360,7 @@
 - type: entity
   id: RPD
   parent: RCD
+  suffix: Deprecated # Funky - Use ConstructionChalkBox instead.
   name: RPD
   description: A device used to rapidly pipe things.
   components:
@@ -400,7 +402,7 @@
 - type: entity
   id: RCDEmpty
   parent: RCD
-  suffix: Empty
+  suffix: Empty, Deprecated # Funky
   components:
   - type: LimitedCharges
     lastCharges: -1
@@ -410,7 +412,7 @@
   parent: RCD
   name: experimental RCD
   description: Cyborg-mounted Rapid Construction Device which creates compressed matter on the fly using an internal fabricator.
-  suffix: AutoRecharge
+  suffix: AutoRecharge, Deprecated # Funky
   components:
   - type: LimitedCharges
     maxCharges: 200
@@ -431,6 +433,7 @@
   name: compressed matter
   parent: BaseItem
   id: RCDAmmo
+  suffix: Deprecated # Funky
   description: A cartridge of raw matter compacted by bluespace technology. Used in rapid construction devices.
   components:
   - type: RCDAmmo
